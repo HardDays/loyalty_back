@@ -65,13 +65,14 @@ module Api
         end
       end
 
-      def auth
-        @user = User.authorize(request.headers['Authorization'])
-      end
-
       private
+      
+        def auth
+          @user = User.authorize(request.headers['Authorization'])
+        end
+
         def user_params
-          params.permit(:email, :password, :password_confirm)
+          params.permit(:email, :password, :password_confirmation)
         end
     end
   end

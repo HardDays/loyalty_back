@@ -39,3 +39,4 @@ en:
         too_long: "TOO_LONG"
         invalid: "INVALID"
         taken: "ALREADY_TAKEN"
+        confirmation: "NOT_MATCHED"
