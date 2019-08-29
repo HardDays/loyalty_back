@@ -5,7 +5,7 @@ module Api
             def login
                 @user = User.find_by(email: params[:email])
                 if @user 
-                    if @user.authenticate(params[:password]) && @user.user_confirmation.confirm_status.to_sym == :confirmed
+                    if @user.authenticate(params[:password])
                         render json: @user, token: true, status: :ok
                     else
                         render status: :unauthorized

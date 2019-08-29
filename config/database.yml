@@ -22,14 +22,12 @@ default: &default
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 #   timeout: 5000
 
+# рекомендую сделать новую базу, т.к. миграциии с той ветки пойдут по п
 
 development:
   <<: *default
   database: loyalty_lend
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: loyalty_lend
