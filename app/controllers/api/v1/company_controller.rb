@@ -2,40 +2,34 @@
 module Api
   module V1
     class CompanyController < ApplicationController
-      # before_action :auth, only: [:create]
-      # before_action :auth_creator, only: [:update]
+      before_action :auth, only: [:create]
+      before_action :auth_creator, only: [:show, :update]
 
-      def index
-        @companys = Company.order('created_at DESC')
-        render json:@companys, status: :ok
-      end
+      # def index
+      #   @companies = Company.order('created_at DESC')
+      #   render json: @companies, status: :ok
+      # end
 
       def show
-        @company = Company.find_by(id:params[:id])
-        render json:@company, status: :ok
+        render json: @company, status: :ok
       end
 
       def create
-        @company = Company.new(company_info_params)
-        @company.user = @user
+        @company = Company.new(company_params)
+        @company.creator = @creator
+        #TODO: обсудить
+        @creator.company = @company
+
         if @company.save
-          # TODO: Make mail and sent it on company email (mail will have any template in app settings)
-          # UserMailer.deliver_registration_confirmation(company, @event_message)
+           @creator.save
            render json: @company, status: :created
         else
            render json: @company.errors, status: :unprocessable_entity
         end
       end
-      
-      # пока не нужно
-      # def destroy
-      #   company = Company.find(params[:id])
-      #   company.destroy
-      #   render json:{status:'SUCCESS', messages:'Company removed', data:company}, status: :ok
-      # end
 
       def update
-        if @company.update(company_info_params)
+        if @company.update(company_params)
           render json: @company
         else
           render json: @company.errors, status: :unprocessable_entity
@@ -44,15 +38,20 @@ module Api
 
       private
         def auth
-          @user = Creator.authorize(request.headers['Authorization'])
+          @creator = Creator.authorize(request.headers['Authorization'])
+        end
+
+        def set_company
+          @company = Company.find(params[:id])
         end
 
         def auth_creator
           auth
-          @company = @user.company_info
+          set_company
+          @company.ownership(@creator)
         end
 
-        def company_info_params
+        def company_params
           params.permit(:name, :kpp, :invoice, :inn, :bank, :checking_account, :phone, :web_site, :bic, :legal_entity, :postcode)
         end
     end

@@ -1,12 +1,17 @@
 class Company < ApplicationRecord
-    belongs_to :user
+    belongs_to :creator
 
-    validates :user_id, uniqueness: true
+    has_one :creator
+    has_many :operators
+    has_many :clients
+
+    validates :creator_id, uniqueness: true
     #TODO: validations
 
-    def authenticate(user)
-        if user != self.user
+    def ownership(creator)
+        if creator != self.creator
             raise ApplicationController::Forbidden
         end
     end
+    
 end

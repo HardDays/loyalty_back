@@ -47,7 +47,7 @@ module Api
         # end
 
         def store_info_params
-          params.permit(:name, :kpp, :invoice, :inn, :bank, :checking_account, :phone, :web_site, :bic, :legal_entity, :postcode)
+          params.permit(:name)
         end
     end
   end
