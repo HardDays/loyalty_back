@@ -1,6 +1,6 @@
-class UserConfirmation < ApplicationRecord
+class CreatorConfirmation < ApplicationRecord
 
-    belongs_to :user
+    belongs_to :creator
 
     # в базе хранится как integer, но можно обращаться как к строке или символу,
     # магия рельс

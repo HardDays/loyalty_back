@@ -47,7 +47,7 @@ module Api
       # пока не нужно
       # def destroy
       #   User = User.find(params[:id])
-      #   company_info = CompanyInfo.find_by(company_id:params[:id])
+      #   company_info = Company.find_by(company_id:params[:id])
       #   if company_info
       #     company_info.destroy
       #   end

@@ -9,15 +9,19 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
+      resources :company
+      resources :store
+      resources :clients
 
-      post 'auth/login', action: :login, controller: 'auth'
-      post 'auth/confirm', action: :confirm, controller: 'auth'
+      # TODO: Переделать
+      # post 'auth/login', action: :login, controller: 'auth'
+      # post 'auth/confirm', action: :confirm, controller: 'auth'
 
-      post 'users', action: :create, controller: 'users'
-      put 'users', action: :update, controller: 'users'
+      post 'creator', action: :create, controller: 'creators'
+      put 'creator', action: :update, controller: 'creator'
 
-      post 'company_info', action: :create, controller: 'company_info'
-      put 'company_info', action: :update, controller: 'company_info' 
+      post 'operator', action: :create, controller: 'operators'
+      put 'operator', action: :update, controller: 'operators'
 
     end
   end

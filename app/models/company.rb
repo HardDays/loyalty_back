@@ -1,4 +1,4 @@
-class CompanyInfo < ApplicationRecord
+class Company < ApplicationRecord
     belongs_to :user
 
     validates :user_id, uniqueness: true

@@ -8,7 +8,7 @@ module Api
                     if @user.authenticate(params[:password]) && @user.user_confirmation.confirm_status.to_sym == :confirmed
                         render json: @user, token: true, status: :ok
                     else
-                        render status: :unauthorized
+                        render json:{message:"This user is not confirmed"}, status: :unauthorized
                     end
                 else
                     render status: :not_found
@@ -17,7 +17,7 @@ module Api
 
             # POST /auth/confirm
             def confirm
-                @confirmation = UserConfirmation.find_by(confirm_hash: params[:confirm_hash])
+                @confirmation = CreatorConfirmation.find_by(confirm_hash: params[:confirm_hash])
                 if @confirmation 
                     @confirmation.confirm_status = :confirmed
                     @confirmation.save

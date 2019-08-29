@@ -2,13 +2,13 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_one :user_confirmation
-    has_one :company_info
+    has_one :creator_confirmation
+    has_one :company
 
     # в базе хранится как integer, но можно обращаться как к строке или символу,
     # магия рельс
     # создатель команиии или кассир
-    enum user_type: [:creator, :operator]
+    enum user_type: [:creator, :operator, :client]
 
     validates :email, presence: true, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}
     validates :password, presence: true, confirmation: true, length: {minimum: 7}, if: lambda { |m| m.password.present? }
