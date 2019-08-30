@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level_type: 1
+  min_pirce: 1
+  begin_date: 2019-08-30
+  end_date: 2019-08-30
+  accrual_rule: 1
+  accrual_percent: 1
+  accrual_points: 1
+  accrual_money: 1
+  burning_rule: 1
+  burning_days: 1
+  activation_rule: 1
+  activation_days: 1
+  write_off_rule: 1
+  write_off_percent: 1
+  write_off_points: 1
+  accordance_rule: 1
+  accordance_points: 1
+  accordance_percent: 1
+  accural_on_points: false
+  accural_on_register: false
+  register_points: 1
+  accural_on_first_buy: false
+  first_buy_points: 1
+  accural_on_birthday: false
+  birthday_points: 1
+  rounding_rule: 1
+  sms_on_register: false
+  sms_on_points: false
+  sms_on_write_off: false
+  sms_on_burning: false
+  sms_burning_days: 1
+
+two:
+  level_type: 1
+  min_pirce: 1
+  begin_date: 2019-08-30
+  end_date: 2019-08-30
+  accrual_rule: 1
+  accrual_percent: 1
+  accrual_points: 1
+  accrual_money: 1
+  burning_rule: 1
+  burning_days: 1
+  activation_rule: 1
+  activation_days: 1
+  write_off_rule: 1
+  write_off_percent: 1
+  write_off_points: 1
+  accordance_rule: 1
+  accordance_points: 1
+  accordance_percent: 1
+  accural_on_points: false
+  accural_on_register: false
+  register_points: 1
+  accural_on_first_buy: false
+  first_buy_points: 1
+  accural_on_birthday: false
+  birthday_points: 1
+  rounding_rule: 1
+  sms_on_register: false
+  sms_on_points: false
+  sms_on_write_off: false
+  sms_on_burning: false
+  sms_burning_days: 1

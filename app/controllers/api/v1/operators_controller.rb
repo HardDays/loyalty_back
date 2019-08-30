@@ -2,47 +2,71 @@
 module Api
   module V1
     class OperatorsController < ApplicationController
-
-      def create
-        @user = Operator.new(user_params)
-        if @user.save
-          # создание has_one ассоциации, тоже магия рельс
-          @user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
-
-          render json: @user, status: :created
-        else
-          # используем стандартные ошибки
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
-
-      # аналогично create
-      def update
-        if @user.update(user_params)
-          render json: @user
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
+      before_action :auth_creator, only: [:create, :index]
+      before_action :auth_find, only: [:update, :destroy]
 
       def index
-      #   TODO: Как-то сделать вывод по id компании или магаза
-      # Или вынести в отдельные методы магазина и/или компании
+        @operators = @auth_user.creator.company.operators
+        if params[:store_id]
+          @operators = @operators.where(store_id: params[:store_id])
+        end
+        render json: @operators.collect{|o| o.user}
       end
 
-      def show
-        @user = Operator.find_by(id:params[:id])
-        render json:@user, status: :ok
+      def create
+        @user = User.new(user_params)
+        @user.password = SecureRandom.hex(4)
+        if @user.save
+          @user.create_user_confirmation(confirm_status: :confirmed)
+          @user.create_operator(store_id: params[:store_id], company: @auth_user.creator.company)
+          render json: @user, status: :created
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
+
+      def update
+        if @user.update(user_params)
+          if @user.operator.update(operator_params)
+            render json: @user, status: :created
+          else 
+            render json: @user.errors, status: :unprocessable_entity
+          end
+        else
+          render json: @user.operator.errors, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+         @user.destroy
       end
 
       private
-      
+        def set_user
+          @user = User.find(params[:id])
+        end
+
         def auth
-          @user = Operator.authorize(request.headers['Authorization'])
+          @auth_user = User.authorize(request.headers['Authorization'])
+        end
+
+        def auth_creator
+          auth
+          @auth_user.permission(@auth_user.creator)
+        end
+
+        def auth_find
+          auth_creator
+          set_user
+          @user.creator_check(@auth_user.creator)
+        end
+
+        def operator_params
+          params.permit(:store_id)
         end
 
         def user_params
-          params.permit(:email, :password, :password_confirmation)
+          params.permit(:email, :first_name, :last_name, :second_name)
         end
     end
   end
