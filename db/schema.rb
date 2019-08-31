@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_154432) do
+ActiveRecord::Schema.define(version: 2019_08_31_084639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_154432) do
 
   create_table "loyalty_levels", force: :cascade do |t|
     t.integer "level_type"
-    t.integer "min_pirce"
+    t.integer "min_price"
     t.date "begin_date"
     t.date "end_date"
     t.integer "accrual_rule"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_154432) do
     t.integer "sms_burning_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "loyalty_progam_id"
+    t.integer "loyalty_program_id"
   end
 
   create_table "loyalty_programs", force: :cascade do |t|

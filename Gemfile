@@ -25,7 +25,9 @@
 # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# gem 'date_validator'
 
+# gem 'jwt'
 
 
 
@@ -70,6 +72,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
- gem 'postgresql'
+gem 'postgresql'
 
 gem 'jwt'
+
+gem 'date_validator'
