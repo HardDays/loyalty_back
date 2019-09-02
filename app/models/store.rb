@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
 
-    has_many :operators
+    has_many :operators, dependent: :nullify
+    has_many :orders, dependent: :nullify
 
     belongs_to :company
 
@@ -15,4 +16,8 @@ class Store < ApplicationRecord
             raise ApplicationController::Forbidden
         end
     end
+
+    
+
+    #TODO: Replace in json client_id etc to actual user_id of this client  
 end

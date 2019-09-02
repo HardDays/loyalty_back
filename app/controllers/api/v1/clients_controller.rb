@@ -7,10 +7,11 @@ module Api
 
       def create
         @user = User.new(user_params)
+        # TODO: send to email or phone
         @user.password = SecureRandom.hex(4)
         if @user.save
           @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
-          @user.create_client(company: @auth_user.operator.company)
+          @user.create_client(company: @auth_user.operator.company, loyalty_program_id: params[:loyalty_program_id])
           render json: @user, status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
@@ -19,6 +20,7 @@ module Api
 
       def update
         if @user.update(user_params)
+          @user.client.update(client_params)
           render json: @user
         else
           render json: @user.operator.errors, status: :unprocessable_entity
@@ -41,8 +43,16 @@ module Api
           @user.operator_check(@auth_user.operator)
         end
 
+        def set_user
+          @user.find(params[:id])
+        end
+
         def user_params
           params.permit(:email, :phone, :first_name, :last_name, :second_name)
+        end
+
+        def client_params
+          params.permit(:loyalty_program_id)
         end
     end
   end

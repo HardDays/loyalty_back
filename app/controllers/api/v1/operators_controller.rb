@@ -15,6 +15,7 @@ module Api
 
       def create
         @user = User.new(user_params)
+        # TODO: send to email or phone
         @user.password = SecureRandom.hex(4)
         if @user.save
           @user.create_user_confirmation(confirm_status: :confirmed)

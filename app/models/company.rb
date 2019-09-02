@@ -15,5 +15,7 @@ class Company < ApplicationRecord
             raise ApplicationController::Forbidden
         end
     end
-    
+
+    #TODO: Replace in json creator_id etc to actual user_id of this creator 
+
 end

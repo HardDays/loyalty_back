@@ -4,4 +4,6 @@ class Operator < ApplicationRecord
   belongs_to :company
   belongs_to :user
 
+  has_many :orders, dependent: :nullify
+
 end

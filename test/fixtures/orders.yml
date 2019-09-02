@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_id: 1
+  operator_id: 1
+  store_id: 1
+  loyalty_program_id: 1
+  price: 1
+  use_points: false
+
+two:
+  client_id: 1
+  operator_id: 1
+  store_id: 1
+  loyalty_program_id: 1
+  price: 1
+  use_points: false
