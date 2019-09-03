@@ -52,5 +52,8 @@ class ClientPointsHelper
 
     end
 
+    def self.use_points(client, program, order)
+        #TODO: dopilit
+    end
 
 end

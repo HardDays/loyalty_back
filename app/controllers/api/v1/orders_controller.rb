@@ -13,6 +13,7 @@ module Api
 
           if @order.save
             if params[:use_points]
+              ClientPointsHelper.use_points(@client_user.client, @program, @order)
             end
 
             ClientPointsHelper.create(@client_user.client, @program, @order)
