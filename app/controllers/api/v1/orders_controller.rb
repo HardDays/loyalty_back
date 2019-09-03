@@ -5,21 +5,22 @@ module Api
         before_action :auth_operator, only: [:create]
   
         def create
-            @order = Order.new(order_params)
-            @order.operator = @auth_user.operator
-            @order.client = @client_user.client
-            @order.loyalty_program = @client_user.client.loyalty_program
-            @order.store = @store
+          @order = Order.new(order_params)
+          @order.operator = @auth_user.operator
+          @order.client = @client_user.client
+          @order.loyalty_program = @program
+          @order.store = @store
 
-            if params[:use_points] && @client_user.client.loyalty_program
-                #TODO: add points to user according to level of program
+          if @order.save
+            if params[:use_points]
             end
 
-            if @order.save
-                render json: @order
-            else
-                render json: @order.errors, status: :unprocessable_entity
-            end
+            ClientPointsHelper.create(@client_user.client, @program, @order)
+
+            render json: @order
+          else
+            render json: @order.errors, status: :unprocessable_entity
+          end
         end
   
         private
@@ -37,6 +38,7 @@ module Api
   
           def set_client
             @client_user = User.find(params[:client_id])
+            @program = @client_user.client.loyalty_program
           end
 
           def set_store

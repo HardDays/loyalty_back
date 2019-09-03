@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_145654) do
+ActiveRecord::Schema.define(version: 2019_09_03_095715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2019_09_02_145654) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "client_points", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "points"
+    t.integer "client_id"
+    t.date "activation_date"
+    t.date "burning_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "clients", force: :cascade do |t|
@@ -105,6 +115,25 @@ ActiveRecord::Schema.define(version: 2019_09_02_145654) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.integer "user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "client_id"
+    t.integer "operator_id"
+    t.integer "store_id"
+    t.integer "loyalty_program_id"
+    t.integer "price"
+    t.boolean "use_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sms_notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sms_type"
+    t.integer "client_points_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stores", force: :cascade do |t|

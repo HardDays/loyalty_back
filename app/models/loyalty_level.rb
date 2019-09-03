@@ -20,7 +20,7 @@ class LoyaltyLevel < ApplicationRecord
     validates :begin_date, presence: :true
     validates :end_date, presence: true, date: {after_or_equal_to: :begin_date}
 
-    validates :min_price, inclusion: 1..100000
+    validates :min_price, inclusion: 1..10000000
     validates :accrual_percent, inclusion: 1..100, if: lambda {|m| m.accrual_rule == 'accrual_percent'}
     validates :accrual_points, inclusion: 1..100000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
     validates :accrual_money, inclusion: 1..100000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}

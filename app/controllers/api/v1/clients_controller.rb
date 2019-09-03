@@ -11,7 +11,7 @@ module Api
         @user.password = SecureRandom.hex(4)
         if @user.save
           @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
-          @user.create_client(company: @auth_user.operator.company, loyalty_program_id: params[:loyalty_program_id])
+          @user.create_client(company: @auth_user.operator.company, loyalty_program_id: params[:loyalty_program_id], poins: 0)
           render json: @user, status: :created
         else
           render json: @user.errors, status: :unprocessable_entity

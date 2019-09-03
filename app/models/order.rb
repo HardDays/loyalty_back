@@ -5,7 +5,7 @@ class Order < ApplicationRecord
     belongs_to :store
     belongs_to :operator
 
-    validates :price, inclusion: 1..1000000
+    validates :price, inclusion: 1..100000000
     validates :use_points, inclusion: {in: [true, false]}
 
 
