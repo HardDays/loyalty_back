@@ -43,7 +43,9 @@ Rails.application.routes.draw do
       put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
       delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
 
+      get 'orders/:id/write_off', action: :show_write_off, controller: 'orders'
       post 'orders', action: :create, controller: 'orders'
+      post 'orders/:id/write_off', action: :write_off, controller: 'orders'
 
     end
   end

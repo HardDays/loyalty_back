@@ -21,15 +21,17 @@ class LoyaltyLevel < ApplicationRecord
     validates :end_date, presence: true, date: {after_or_equal_to: :begin_date}
 
     validates :min_price, inclusion: 1..10000000
+    validates :write_off_points, inclusion: 1..1000000
+    validates :write_off_money, inclusion: 1..1000000
     validates :accrual_percent, inclusion: 1..100, if: lambda {|m| m.accrual_rule == 'accrual_percent'}
-    validates :accrual_points, inclusion: 1..100000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
-    validates :accrual_money, inclusion: 1..100000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
+    validates :accrual_points, inclusion: 1..1000000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
+    validates :accrual_money, inclusion: 1..1000000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
     validates :burning_days, inclusion: 1..365, if: lambda {|m| m.burning_rule == 'burning_days'}
     validates :activation_days, inclusion: 1..365, if: lambda {|m| m.activation_rule == 'activation_days'}
-    validates :write_off_percent, inclusion: 1..100, if: lambda {|m| m.write_off_rule == 'write_off_convert'}
-    validates :write_off_points, inclusion: 1..100000, if: lambda {|m| m.write_off_rule == 'write_off_convert'}
+    validates :write_off_rule_percent, inclusion: 1..100, if: lambda {|m| m.write_off_rule == 'write_off_convert'}
+    validates :write_off_rule_points, inclusion: 1..1000000, if: lambda {|m| m.write_off_rule == 'write_off_convert'}
     validates :accordance_percent, inclusion: 1..100, if: lambda {|m| m.accordance_rule == 'accordance_convert'}
-    validates :accordance_points, inclusion: 1..100000, if: lambda {|m| m.accordance_rule == 'accordance_convert'}
+    validates :accordance_points, inclusion: 1..1000000, if: lambda {|m| m.accordance_rule == 'accordance_convert'}
 
     validates :accrual_on_points, inclusion: {in: [true, false]}
     validates :accrual_on_register, inclusion: {in: [true, false]}

@@ -5,7 +5,13 @@ class Client < ApplicationRecord
   belongs_to :loyalty_program, optional: true
 
   has_many :orders, dependent: :nullify
-  
-  validates :points, inclusion: 0..10000000000
+  has_many :client_points, dependent: :nullify
+
+  def valid_points
+    puts json: client_points
+    return client_points.where('activation_date <= ?', DateTime.now).
+                         where('burning_date > ?', DateTime.now).
+                         where('points > 0').order(created_at: :asc)
+  end
 
 end

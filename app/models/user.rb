@@ -49,7 +49,7 @@ class User < ApplicationRecord
     def token
         payload = {
             user_id: id,
-            exp: 24.hours.from_now.to_i
+            exp: 7.days.from_now.to_i
         }
         return JWT.encode(payload, Rails.configuration.token_salt)
     end

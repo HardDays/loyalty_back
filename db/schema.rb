@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_095715) do
+ActiveRecord::Schema.define(version: 2019_09_04_155844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_095715) do
     t.date "burning_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "loyalty_level_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -79,8 +80,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_095715) do
     t.integer "activation_rule"
     t.integer "activation_days"
     t.integer "write_off_rule"
-    t.integer "write_off_percent"
-    t.integer "write_off_points"
+    t.integer "write_off_rule_percent"
+    t.integer "write_off_rule_points"
     t.integer "accordance_rule"
     t.integer "accordance_points"
     t.integer "accordance_percent"
@@ -100,6 +101,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_095715) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "loyalty_program_id"
+    t.integer "write_off_points"
+    t.integer "write_off_money"
   end
 
   create_table "loyalty_programs", force: :cascade do |t|
@@ -126,6 +129,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_095715) do
     t.boolean "use_points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "write_off_status"
   end
 
   create_table "sms_notifications", force: :cascade do |t|
