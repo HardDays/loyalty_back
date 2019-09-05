@@ -1,6 +1,5 @@
-
 module Api
-    module V1
+  module V1
       class OrdersController < ApplicationController
         before_action :auth_create, only: [:create]
         before_action :auth_write_off, only: [:show_write_off, :write_off]
@@ -62,7 +61,6 @@ module Api
           def order_params
             params.permit(:price, :use_points)
           end
-
       end
     end
-  end
+end

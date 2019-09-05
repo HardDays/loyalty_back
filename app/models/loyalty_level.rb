@@ -5,7 +5,7 @@ class LoyaltyLevel < ApplicationRecord
     enum level_type: [:one_buy, :sum_buy]
     enum accrual_rule: [:no_accrual, :accrual_percent, :accrual_convert]
     enum burning_rule: [:no_burning, :burning_days]
-    enum activation_rule: [:accrual_moment, :activation_days]
+    enum activation_rule: [:activation_moment, :activation_days]
     enum write_off_rule: [:no_write_off, :write_off_convert]
     enum accordance_rule: [:no_accordance, :accordance_convert]
     enum rounding_rule: [:no_rounding, :rounding_math, :rounding_small, :rounding_big]

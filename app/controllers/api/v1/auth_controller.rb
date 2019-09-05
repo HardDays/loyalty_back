@@ -1,6 +1,7 @@
 module Api
     module V1
         class AuthController < ApplicationController
+
             # POST /auth/login
             def login
                 if params[:phone]
@@ -23,15 +24,15 @@ module Api
                 end
             end
 
-            # POST /auth/confirm
-            def confirm
-                if params[:confirm_hash]
-                    @user = User.find_by(email: params[:email])
-                    @confirmation = UserConfirmation.find_by(user_id: @user.id, confirm_hash: params[:confirm_hash])
-                else 
-                    @user = User.find_by(phone: params[:phone])
-                    @confirmation = UserConfirmation.find_by(user_id: @user.id, code: params[:code])                
-                end
+            # POST /auth/confirm/phone
+            def confirm_phone
+                # if params[:confirm_hash]
+                #     @user = User.find_by(email: params[:email])
+                #     @confirmation = UserConfirmation.find_by(user_id: @user.id, confirm_hash: params[:confirm_hash])
+                # else 
+                @user = User.find_by(phone: params[:phone])
+                @confirmation = UserConfirmation.find_by(user_id: @user.id, code: params[:code])                
+                #end
                 if @confirmation 
                     @confirmation.confirm_status = :confirmed
                     @confirmation.save

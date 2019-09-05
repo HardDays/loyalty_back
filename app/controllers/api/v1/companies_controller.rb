@@ -1,4 +1,3 @@
-
 module Api
   module V1
     class CompaniesController < ApplicationController
@@ -12,9 +11,9 @@ module Api
         @company = Company.new(company_params)
         @company.creator = @user.creator
         if @company.save
-           render json: @company, status: :created
+          render json: @company, status: :created
         else
-           render json: @company.errors, status: :unprocessable_entity
+          render json: @company.errors, status: :unprocessable_entity
         end
       end
 

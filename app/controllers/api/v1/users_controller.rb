@@ -1,7 +1,6 @@
-
 module Api
-  module V1
-    class UsersController < ApplicationController
+    module V1
+        class UsersController < ApplicationController
+        end
     end
-  end
 end

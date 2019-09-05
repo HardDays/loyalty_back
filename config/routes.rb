@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #apipie
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # namespace 'api' do
   #   namespace 'v1' do
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
       # resources :clients
 
       post 'auth/login', action: :login, controller: 'auth'
-      post 'auth/confirm', action: :confirm, controller: 'auth'
+      post 'auth/confirm/phone', action: :confirm_phone, controller: 'auth'
 
       post 'creators', action: :create, controller: 'creators'
       
