@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+    enum gender: [:male, :female]
+
     has_secure_password
 
     has_one :operator, dependent: :destroy
@@ -54,7 +56,7 @@ class User < ApplicationRecord
         return JWT.encode(payload, Rails.configuration.token_salt)
     end
     
-    def serializable_hash(options = {})
+    def as_json(options = {})
         attrs = super
         
         if options
@@ -62,6 +64,14 @@ class User < ApplicationRecord
                 attrs[:token] = token
             end
         end
-        super.merge(attrs).except('password_digest')
+        if client
+            attrs = attrs.merge(client.as_json(options))
+        elsif creator
+            attrs = attrs.merge(creator.as_json(options))
+        elsif operator
+            attrs = attrs.merge(operator.as_json(options))
+        end
+
+        attrs.except('password_digest')
     end
 end

@@ -5,6 +5,9 @@ class ClientPoint < ApplicationRecord
 
     validates :activation_date, presence: :true
     validates :burning_date, presence: :true
-    validates :points, inclusion: 0..1000000000
+    validates :initial_points, inclusion: 0..10000000000
+    validates :current_points, inclusion: 0..10000000000
+
+    enum points_source: [:ordered, :birthday]
 
 end

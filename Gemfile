@@ -22,7 +22,7 @@
 #   gem 'faker'
 # end
 
-# group :development, :test do
+# group :test do
 #   gem 'rspec-rails'
 #   gem 'rspec_api_documentation'
 # end
@@ -72,7 +72,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :development, :test do
+group :test do
   gem 'rspec-rails'
   gem 'rspec_api_documentation'
 end

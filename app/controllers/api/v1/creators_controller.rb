@@ -3,13 +3,15 @@ module Api
     class CreatorsController < ApplicationController
 
       def create
-        @user = User.new(user_params)
-        if @user.save
-          @user.create_creator
-          @user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
-          render json: @user, status: :created
-        else
-          render json: @user.errors, status: :unprocessable_entity
+        ActiveRecord::Base.transaction do
+          @user = User.new(user_params)
+          if @user.save
+            @user.create_creator
+            @user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
+            render json: @user, status: :created
+          else
+            render json: @user.errors, status: :unprocessable_entity
+          end
         end
       end
 

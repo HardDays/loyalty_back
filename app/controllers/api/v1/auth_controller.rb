@@ -41,6 +41,24 @@ module Api
                     render status: :not_found
                 end
             end
+
+             # POST /auth/confirm/email
+             def confirm_email
+                # if params[:confirm_hash]
+                #     @user = User.find_by(email: params[:email])
+                #     @confirmation = UserConfirmation.find_by(user_id: @user.id, confirm_hash: params[:confirm_hash])
+                # else 
+                @user = User.find_by(email: params[:email])
+                @confirmation = UserConfirmation.find_by(user_id: @user.id, confirm_hash: params[:confirm_hash])                
+                #end
+                if @confirmation 
+                    @confirmation.confirm_status = :confirmed
+                    @confirmation.save
+                    render json: @confirmation.user, token: true, status: :ok
+                else
+                    render status: :not_found
+                end
+            end
         end
     end
 end

@@ -8,10 +8,24 @@ class Client < ApplicationRecord
   has_many :client_points, dependent: :nullify
 
   def valid_points
-    puts json: client_points
     return client_points.where('activation_date <= ?', DateTime.now).
                          where('burning_date > ?', DateTime.now).
-                         where('points > 0').order(created_at: :asc)
+                         where('current_points > 0').order(created_at: :asc)
+  end
+
+  def as_json(options = {})
+    attrs = super.except('user_id').except('id')
+
+    attrs[:user_type] = :client
+
+    if options[:points]
+      attrs[:points] = valid_points.sum{|p| p.current_points}
+    end
+    if options[:loyalty_program]
+      attrs[:loyalty_program] = loyalty_program
+    end
+ 
+    attrs
   end
 
 end

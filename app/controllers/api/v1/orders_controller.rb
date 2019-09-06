@@ -54,7 +54,8 @@ module Api
           end
   
           def set_client
-            @client_user = User.find(params[:client_id])
+            @client_user = User.find(params[:user_id])
+            @client_user.permission(@client_user.client)
             @program = @client_user.client.loyalty_program
           end
   

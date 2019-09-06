@@ -6,4 +6,12 @@ class Operator < ApplicationRecord
 
   has_many :orders, dependent: :nullify
 
+
+  def as_json(options = {})
+    attrs = super.except('user_id').except('id')
+
+    attrs[:user_type] = :operator
+
+    attrs
+  end
 end

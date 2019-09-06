@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
       post 'auth/login', action: :login, controller: 'auth'
       post 'auth/confirm/phone', action: :confirm_phone, controller: 'auth'
+      post 'auth/confirm/email', action: :confirm_email, controller: 'auth'
 
       post 'creators', action: :create, controller: 'creators'
       
+      get 'clients/profile', action: :profile, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'
 
@@ -48,6 +50,7 @@ Rails.application.routes.draw do
       post 'orders', action: :create, controller: 'orders'
       post 'orders/:id/write_off', action: :write_off, controller: 'orders'
 
+      get 'reports/general', action: :general, controller: 'reports'
     end
   end
 
