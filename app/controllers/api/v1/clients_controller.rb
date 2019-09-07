@@ -65,7 +65,7 @@ module Api
         end
 
         def client_params
-          params.permit(:loyalty_program_id)
+          params.permit(:loyalty_program_id, :card_number)
         end
     end
   end

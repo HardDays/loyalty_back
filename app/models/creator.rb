@@ -9,6 +9,6 @@ class Creator < ApplicationRecord
 
     attrs[:user_type] = :creator
 
-    attrs.except('user_id')
+    return attrs.except('user_id')
   end
 end

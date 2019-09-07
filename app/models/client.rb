@@ -25,7 +25,7 @@ class Client < ApplicationRecord
       attrs[:loyalty_program] = loyalty_program
     end
  
-    attrs
+    return attrs
   end
 
 end

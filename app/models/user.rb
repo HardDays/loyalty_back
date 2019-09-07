@@ -72,6 +72,6 @@ class User < ApplicationRecord
             attrs = attrs.merge(operator.as_json(options))
         end
 
-        attrs.except('password_digest')
+        return attrs.except('password_digest')
     end
 end

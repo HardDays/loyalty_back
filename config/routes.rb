@@ -51,6 +51,10 @@ Rails.application.routes.draw do
       post 'orders/:id/write_off', action: :write_off, controller: 'orders'
 
       get 'reports/general', action: :general, controller: 'reports'
+      get 'reports/clients', action: :clients, controller: 'reports'
+      get 'reports/orders', action: :orders, controller: 'reports'
+      get 'reports/sms', action: :sms, controller: 'reports'
+
     end
   end
 

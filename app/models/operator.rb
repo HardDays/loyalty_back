@@ -12,6 +12,6 @@ class Operator < ApplicationRecord
 
     attrs[:user_type] = :operator
 
-    attrs
+    return attrs
   end
 end

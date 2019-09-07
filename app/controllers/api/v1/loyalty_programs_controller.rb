@@ -7,11 +7,11 @@ module Api
 
       def index
         @programs = @auth_user.creator.company.loyalty_programs.order('created_at DESC')
-        render json: @programs
+        render json: @programs, loyalty_levels: true
       end
 
       def show
-        render json: @program
+        render json: @program, loyalty_levels: true
       end
 
       def create
@@ -25,7 +25,7 @@ module Api
         end
 
         if @program.save
-          render json: @program, status: :created
+          render json: @program, loyalty_levels: true, status: :created
         else
           render json: @program.errors, status: :unprocessable_entity
         end
@@ -33,7 +33,7 @@ module Api
 
       def update
         if @program.update(program_params)
-          render json: @program, status: :ok
+          render json: @program, loyalty_levels: true, status: :ok
         else
           render json: @program.errors, status: :unprocessable_entity
         end
