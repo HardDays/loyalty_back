@@ -1,0 +1,108 @@
+{
+  "resource": "Register creator",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/creators",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "password",
+      "description": "Password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "name": "password_confirmation",
+      "description": "Password confirm"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/creators",
+      "request_body": "{\"email\":\"test@test.com\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 438,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-09-09T16:49:34.800Z\",\n  \"updated_at\": \"2019-09-09T16:49:34.800Z\",\n  \"user_type\": \"creator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"3270df4a1257b2762a49bb34d89883c2\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8b3fdf04-4384-40c9-89d5-6f2c44cc1786",
+        "X-Runtime": "0.020658",
+        "Vary": "Origin",
+        "Content-Length": "258"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/creators\" -d '{\"email\":\"test@test.com\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

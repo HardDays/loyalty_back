@@ -1,0 +1,42 @@
+{
+  "resource": "Get company",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/companies",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/companies",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MzcsImV4cCI6MTU2ODY1MjU3NH0.AjG-ZnvaQGDfkxCv7buqQMB8qWf0x4K2LMHfGVRKbBg",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "2aa6a009-7a36-4434-822d-0d529c5e7eb2",
+        "X-Runtime": "0.003454",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/companies\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MzcsImV4cCI6MTU2ODY1MjU3NH0.AjG-ZnvaQGDfkxCv7buqQMB8qWf0x4K2LMHfGVRKbBg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

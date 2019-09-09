@@ -1,4 +1,4 @@
-class ClientPointsHelper
+module ClientPointsHelper
 
     def self.create(client, program, order, use_points)
         if program

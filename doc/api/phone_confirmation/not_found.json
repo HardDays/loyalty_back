@@ -1,0 +1,55 @@
+{
+  "resource": "Phone confirmation",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/auth/confirm/phone",
+  "description": "Not found",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "code",
+      "description": "Code"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/auth/confirm/phone",
+      "request_body": "{\"phone\":\"+9992281489\",\"code\":\"0000\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "b1fcc449-4052-4215-a5e9-0ed47e49c8e6",
+        "X-Runtime": "0.002694",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/auth/confirm/phone\" -d '{\"phone\":\"+9992281489\",\"code\":\"0000\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

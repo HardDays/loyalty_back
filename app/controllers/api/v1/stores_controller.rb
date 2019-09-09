@@ -17,7 +17,7 @@ module Api
         @store = Store.new(store_params)
         @store.company = @auth_user.creator.company
         if @store.save
-          render json: @store, status: :created
+          render json: @store
         else
           render json: @store.errors, status: :unprocessable_entity
         end

@@ -24,7 +24,7 @@
 
 # group :test do
 #   gem 'rspec-rails'
-#   gem 'rspec_api_documentation'
+#   gem 'rspec_api_documentation', '~> 4.9.0'
 # end
 
 # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,7 +74,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'rspec_api_documentation'
+  gem 'rspec_api_documentation', '~> 4.9.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

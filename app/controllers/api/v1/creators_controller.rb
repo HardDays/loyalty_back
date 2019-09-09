@@ -8,7 +8,7 @@ module Api
           if @user.save
             @user.create_creator
             @user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
-            render json: @user, status: :created
+            render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
           end
@@ -17,7 +17,7 @@ module Api
 
       private
         def user_params
-          params.permit(:email, :first_name, :last_name, :second_name, :password, :password_confirmation)
+          params.permit(:email, :first_name, :last_name, :second_name, :gender, :birth_day, :password, :password_confirmation)
         end
     end
   end

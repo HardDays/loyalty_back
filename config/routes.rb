@@ -11,9 +11,6 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
-      # resources :company
-      # resources :store
-      # resources :clients
 
       post 'auth/login', action: :login, controller: 'auth'
       post 'auth/confirm/phone', action: :confirm_phone, controller: 'auth'
@@ -54,8 +51,6 @@ Rails.application.routes.draw do
       get 'reports/clients', action: :clients, controller: 'reports'
       get 'reports/orders', action: :orders, controller: 'reports'
       get 'reports/sms', action: :sms, controller: 'reports'
-
     end
   end
-
 end

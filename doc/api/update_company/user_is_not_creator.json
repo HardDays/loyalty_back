@@ -1,0 +1,50 @@
+{
+  "resource": "Update company",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/companies",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "name",
+      "description": "Name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/companies",
+      "request_body": "{\"name\":\"test\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MzUsImV4cCI6MTU2ODY1MjU3NH0.PdA2QGXF2BjXtWlQucPW0CsZjjajskSfg7-2sB9QuVo",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "db281fad-83e6-4f7b-8c1b-7bc16dacf192",
+        "X-Runtime": "0.003516",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MzUsImV4cCI6MTU2ODY1MjU3NH0.PdA2QGXF2BjXtWlQucPW0CsZjjajskSfg7-2sB9QuVo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

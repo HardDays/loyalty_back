@@ -1,0 +1,227 @@
+{
+  "resources": [
+    {
+      "name": "Login",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "login/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "login/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "Wrong password",
+          "link": "login/wrong_password.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "Email or phone not confirmed",
+          "link": "login/email_or_phone_not_confirmed.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Phone confirmation",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "phone_confirmation/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm/phone",
+          "method": "post"
+        },
+        {
+          "description": "Not found",
+          "link": "phone_confirmation/not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm/phone",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Email confirmation",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "email_confirmation/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm/email",
+          "method": "post"
+        },
+        {
+          "description": "Not found",
+          "link": "email_confirmation/not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm/email",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_company/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_company/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Get company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        },
+        {
+          "description": "User is not creator",
+          "link": "get_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Register creator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "register_creator/success.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "register_creator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_store/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_store/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

@@ -32,7 +32,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: loyalty_lend
+  database: loyalty_lend_test
 
 production:
   <<: *default

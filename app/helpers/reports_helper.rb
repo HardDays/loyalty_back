@@ -1,4 +1,4 @@
-class ReportsHelper
+module ReportsHelper
 
     def self.filter_date(collection, field, begin_date, end_date)
         if begin_date

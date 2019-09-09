@@ -1,5 +1,5 @@
 module Api
-    module V1
+  module V1
       class ReportsController < ApplicationController
         before_action :auth_creator, only: [:general, :clients, :orders, :sms]
   

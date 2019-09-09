@@ -51,13 +51,13 @@ Apitome.setup do |config|
   # You can setup the docs to be loaded from a remote URL if they are
   # not available in the application environment. This defaults to
   # false.
-  config.remote_docs = false
+  #config.remote_docs = false
 
   # If the remote_docs is set to true, this URL is used as the base for
   # the doc location. This should be the root of the doc location, where
   # the readme is located. It uses the doc_path setting to build the
   # URLs for the API documentation. This defaults to nil.
-  config.remote_url = nil
+  #config.remote_url = nil
 
   # If you would like to precompile your own assets, you can disable auto-compilation.
   # This defaults to true

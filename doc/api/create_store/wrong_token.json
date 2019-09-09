@@ -1,0 +1,86 @@
+{
+  "resource": "Create store",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/stores",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "name",
+      "description": "Name"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "city",
+      "description": "City"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "country",
+      "description": "Country"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "street",
+      "description": "Street"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "house",
+      "description": "House"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/stores",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDAsImV4cCI6MTU2ODY1MjU3NH0.A3CjjV4-c7jvUOBfg1LrvGw8Nqmdz_8Z3wE-sg9Kue8",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "0c774528-9d12-417f-8c24-00775f78bf99",
+        "X-Runtime": "0.002278",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/stores\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDAsImV4cCI6MTU2ODY1MjU3NH0.A3CjjV4-c7jvUOBfg1LrvGw8Nqmdz_8Z3wE-sg9Kue8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
