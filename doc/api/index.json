@@ -190,6 +190,135 @@
       ]
     },
     {
+      "name": "Create operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_operator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_operator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_operator/not_found.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_operator/not_found.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not creator",
+          "link": "delete_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "Get operators",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_operators/success.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_operators/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Create store",
       "explanation": null,
       "examples": [
@@ -220,6 +349,101 @@
           "groups": "all",
           "route": "api/v1/stores",
           "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_store/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not owner",
+          "link": "update_store/user_is_not_owner.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_store/not_found.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not owner",
+          "link": "delete_store/user_is_not_owner.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_store/not_found.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "List stores",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "list_stores/success.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "list_stores/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "get"
         }
       ]
     }

@@ -9,7 +9,7 @@ module Api
         if params[:store_id]
           @operators = @operators.where(store_id: params[:store_id])
         end
-        render json: @operators.collect{|o| o.user}
+        render json: @operators.limit(params[:limit]).offset(params[:offset]).collect{|o| o.user}
       end
 
       def create
@@ -20,7 +20,7 @@ module Api
           if @user.save
             @user.create_user_confirmation(confirm_status: :confirmed)
             @user.create_operator(store_id: params[:store_id], company: @auth_user.creator.company)
-            render json: @user, status: :created
+            render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
           end
@@ -31,7 +31,7 @@ module Api
         ActiveRecord::Base.transaction do
           if @user.update(user_params)
             if @user.operator.update(operator_params)
-              render json: @user, status: :created
+              render json: @user
             else 
               render json: @user.errors, status: :unprocessable_entity
             end

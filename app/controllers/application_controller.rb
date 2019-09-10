@@ -10,4 +10,9 @@ class ApplicationController < ActionController::API
     rescue_from ApplicationController::Forbidden do |exception|
         render_to_string(status: 403)
     end
+
+    rescue_from ActiveRecord::RecordNotFound do |exception|
+        render_to_string(status: 404)
+    end
+
 end

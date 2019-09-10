@@ -1,0 +1,51 @@
+{
+  "resource": "List stores",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/stores",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "name": "limit",
+      "description": "Limit"
+    },
+    {
+      "type": "integer",
+      "name": "offset",
+      "description": "Offset"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/stores",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "1dd19a43-be15-446f-9359-5f0591cbe36b",
+        "X-Runtime": "0.001399",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/stores\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

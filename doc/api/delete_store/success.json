@@ -1,0 +1,41 @@
+{
+  "resource": "Delete store",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/stores/:id",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/stores/464",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTUxLCJleHAiOjE1Njg3MjA1MzJ9.lp0qAW-rAIJ4YPc6alLgwQRe1xaSWdKVdH-Gzt1FK1k",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "ad1475ac-1b9d-4a5e-a167-e593fa2da6e9",
+        "X-Runtime": "0.015471",
+        "Vary": "Origin"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000api/v1/stores/464\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTUxLCJleHAiOjE1Njg3MjA1MzJ9.lp0qAW-rAIJ4YPc6alLgwQRe1xaSWdKVdH-Gzt1FK1k\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,12 +1,13 @@
 module Api
   module V1
     class StoresController < ApplicationController
+      
       before_action :auth_creator, only: [:index, :create]
       before_action :auth_find, only: [:show, :update, :destroy]
 
       def index
         @stores = @auth_user.creator.company.stores.order('created_at DESC')
-        render json: @stores
+        render json: @stores.limit(params[:limit]).offset(params[:offset])
       end
 
       def show
@@ -47,8 +48,12 @@ module Api
 
         def auth_find
           auth_creator
-          @store = Store.find(params[:id])
+          set_store
           @store.ownership(@auth_user.creator)
+        end
+
+        def set_store
+          @store = Store.find(params[:id])
         end
 
         def store_params

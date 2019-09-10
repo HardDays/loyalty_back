@@ -1,0 +1,42 @@
+{
+  "resource": "Delete operator",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/operators/:id",
+  "description": "Not found",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/operators/0",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTIxLCJleHAiOjE1Njg3MjA1MzJ9.n3vDik25oaPAKbGQIdf3SFINlRcYySGtY8QXX9TdcnM",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "d37c71b9-913f-4bba-9da7-b3c360f8f4be",
+        "X-Runtime": "0.004684",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/operators/0\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTIxLCJleHAiOjE1Njg3MjA1MzJ9.n3vDik25oaPAKbGQIdf3SFINlRcYySGtY8QXX9TdcnM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "resource": "Get operators",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/operators",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "name": "store_id",
+      "description": "Store id"
+    },
+    {
+      "type": "integer",
+      "name": "limit",
+      "description": "Limit"
+    },
+    {
+      "type": "integer",
+      "name": "offset",
+      "description": "Offset"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/operators?store_id=456&limit=3",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTI4LCJleHAiOjE1Njg3MjA1MzJ9.welYYiLqDFSMT7eRhRzqm7a54JftT_LABGKjQw2YhfU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "store_id": "456",
+        "limit": "3"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1929,\n    \"email\": \"2ebe8ef5c1a87a2a6f477edd3b2aa47d@4acc86741305d52aee58fef285423316.xx\",\n    \"created_at\": \"2019-09-10T11:42:12.289Z\",\n    \"updated_at\": \"2019-09-10T11:42:12.289Z\",\n    \"user_type\": \"operator\",\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": null,\n    \"gender\": null,\n    \"birth_day\": null,\n    \"store_id\": 456,\n    \"company_id\": 839\n  },\n  {\n    \"id\": 1930,\n    \"email\": \"fb35d12770a8f369d9af2de18e0786f9@970cf4ca5f72264a60356671fa6023aa.xx\",\n    \"created_at\": \"2019-09-10T11:42:12.306Z\",\n    \"updated_at\": \"2019-09-10T11:42:12.306Z\",\n    \"user_type\": \"operator\",\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": null,\n    \"gender\": null,\n    \"birth_day\": null,\n    \"store_id\": 456,\n    \"company_id\": 839\n  },\n  {\n    \"id\": 1931,\n    \"email\": \"bae2b3edc62b9b064434a76a4e3ca81e@d2890c01d12e828d207dd834db3fc7e6.xx\",\n    \"created_at\": \"2019-09-10T11:42:12.320Z\",\n    \"updated_at\": \"2019-09-10T11:42:12.320Z\",\n    \"user_type\": \"operator\",\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": null,\n    \"gender\": null,\n    \"birth_day\": null,\n    \"store_id\": 456,\n    \"company_id\": 839\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"fc8091dd7d483954f894b418df5782b8\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "a86be177-e3af-48dc-bf6b-d037d68dc8d1",
+        "X-Runtime": "0.019809",
+        "Vary": "Origin",
+        "Content-Length": "985"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/operators?store_id=456&limit=3\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOTI4LCJleHAiOjE1Njg3MjA1MzJ9.welYYiLqDFSMT7eRhRzqm7a54JftT_LABGKjQw2YhfU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

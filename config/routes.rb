@@ -32,7 +32,6 @@ Rails.application.routes.draw do
       put 'companies', action: :update, controller: 'companies'
 
       get 'stores', action: :index, controller: 'stores'
-      get 'stores/:id', action: :show, controller: 'stores'
       post 'stores', action: :create, controller: 'stores'
       put 'stores/:id', action: :update, controller: 'stores'
       delete 'stores/:id', action: :destroy, controller: 'stores'
