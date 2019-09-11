@@ -1,0 +1,42 @@
+{
+  "resource": "Delete loyalty program",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/loyalty_programs/:id",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/loyalty_programs/2134",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "65a84a86-b32b-4bd1-a8c3-bcc1ad3c15e0",
+        "X-Runtime": "0.001363",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/2134\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

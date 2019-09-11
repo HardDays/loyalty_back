@@ -1,0 +1,42 @@
+{
+  "resource": "Update loyalty program",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/loyalty_programs/:id",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/loyalty_programs/2131",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcxNSwiZXhwIjoxNTY4ODIzODE1fQ.0jrOzIYWrtke0B27XclxDJ0tUnXRGhRwtzLpTth8xjY",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "b9b2b384-a74a-428c-9f5d-9c239f1b17ab",
+        "X-Runtime": "0.003859",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/2131\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcxNSwiZXhwIjoxNTY4ODIzODE1fQ.0jrOzIYWrtke0B27XclxDJ0tUnXRGhRwtzLpTth8xjY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

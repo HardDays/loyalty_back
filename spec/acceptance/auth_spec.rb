@@ -47,31 +47,50 @@ resource "Login" do
   end
 end
 
-resource "Phone confirmation" do
+resource "Confirmation" do
   header 'Content-Type', 'application/json'
 
-  post "api/v1/auth/confirm/phone" do
-    parameter :phone, "Phone", type: :string, in: :body, required: true
+  post "api/v1/auth/confirm" do
+    parameter :email, "Email (required if not phone)", type: :string, in: :body
+    parameter :phone, "Phone (required if not email)", type: :string, in: :body
     parameter :code, "Code", type: :string, in: :body, required: true
     
-    let(:phone) { "+9992281489" }
-    let(:code) { "0000" }
+    context "Phone" do 
+      let(:phone) { "+9992281489" }
+      let(:code) { "0000" }
 
-    let(:raw_post) { params.to_json }
+      let(:raw_post) { params.to_json }
 
-    example "Success" do
-      user = User.new(phone: phone, password: '1234567', first_name: "test", last_name: "test")
-      user.save
-      user.create_user_confirmation(confirm_status: :unconfirmed, code: code)
+      example "Phone success" do
+        user = User.new(phone: "+9992281489", password: '1234567', first_name: "test", last_name: "test")
+        user.save
+        user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
-      do_request
-      expect(status).to eq(200)
+        do_request
+        expect(status).to eq(200)
+      end
+    end
+
+    context "Phone" do 
+      let(:email) { "test@text.xxt" }
+      let(:code) { "0000" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Phone success" do
+        user = User.new(email: "test@text.xxt", password: '1234567', first_name: "test", last_name: "test")
+        user.save
+        user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
+
+        do_request
+        expect(status).to eq(200)
+      end
     end
 
     example "Not found" do
       user = User.new(phone: '+9992281487', password: '1234567', first_name: "test", last_name: "test")
       user.save
-      user.create_user_confirmation(confirm_status: :unconfirmed, code: code)
+      user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
       do_request
       expect(status).to eq(404)
@@ -79,34 +98,93 @@ resource "Phone confirmation" do
   end
 end
 
-resource "Email confirmation" do
+resource "Request code password" do
   header 'Content-Type', 'application/json'
 
-  post "api/v1/auth/confirm/email" do
-    parameter :email, "Email", type: :string, in: :body, required: true
-    parameter :confirm_hash, "Hash", type: :string, in: :body, required: true
+  post "api/v1/auth/password/request" do
+    parameter :email, "Email (need if not phone)", type: :string, in: :body, required: true
+    parameter :phone, "Phone (need if not email)", type: :string, in: :body, required: true
     
-    let(:email) { "tt@tt.tt" }
-    let(:confirm_hash) { "hash" }
-
-    let(:raw_post) { params.to_json }
-
-    example "Success" do
-      user = User.new(email: email, password: '1234567', first_name: "test", last_name: "test")
-      user.save
-      user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: confirm_hash)
-
-      do_request
-      expect(status).to eq(200)
+    before do
+      @user = create_user
     end
 
-    example "Not found" do
-      user = User.new(email: 'tt@tt.tt1', password: '1234567', first_name: "test", last_name: "test")
-      user.save
-      user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: '1111')
+    context "Success" do
+      let(:email) { @user.email }
 
-      do_request
-      expect(status).to eq(404)
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(204)
+      end
+    end
+
+    context "User not found" do
+      let(:email) { "test@test.com" }
+
+      let(:raw_post) { params.to_json }
+
+      example "User not found" do
+        do_request
+        expect(status).to eq(404)
+      end
     end
   end
 end
+
+
+resource "Update password" do
+  header 'Content-Type', 'application/json'
+
+  post "api/v1/auth/password/update" do
+    parameter :code, "Code", type: :string, in: :body, required: true
+    parameter :password, "Password", minmum: 7, maximum: 64, type: :string, in: :body, required: true
+    parameter :password_confirmation, "Password confirm", minmum: 7, maximum: 64, type: :string, in: :body
+
+    before do
+      @user = create_user
+      @confirmation = PasswordReset.new(user_id: @user.id, code: SecureRandom.hex, confirm_status: :unconfirmed)
+      @confirmation.save
+    end
+
+    context "Success" do
+      let(:code) { @confirmation.code }
+      let(:password) { "11111111" }
+      let(:password_confirmation) { "11111111" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+        expect(@user.authenticate("11111111") != nil).to eq(true)
+      end
+    end
+
+    context "Wrong fields" do
+      let(:code) { @confirmation.code }
+      let(:password) { "1" }
+      let(:password_confirmation) { "1" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Wrong fields" do
+        do_request
+        expect(status).to eq(422)
+      end
+    end
+
+    context "Code not found" do
+      let(:code) { "0" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Code not found" do
+        do_request
+        expect(status).to eq(404)
+      end
+    end
+  end
+end
+

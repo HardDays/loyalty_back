@@ -1,0 +1,103 @@
+{
+  "resource": "Update client",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/clients/:id",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Loyalty program"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "card_number",
+      "description": "Card number"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/clients/17653",
+      "request_body": "{\"first_name\":\"\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY1MiwiZXhwIjoxNTY4ODIzODEzfQ.ECxrpsfHMr9pDNLwMFVQC1MxOlJJxvK3b6xK8zkvuQ0",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "261924a1-285d-4b75-9a30-8cf7c8ba3b94",
+        "X-Runtime": "0.011040",
+        "Vary": "Origin",
+        "Content-Length": "28"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/17653\" -d '{\"first_name\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY1MiwiZXhwIjoxNTY4ODIzODEzfQ.ECxrpsfHMr9pDNLwMFVQC1MxOlJJxvK3b6xK8zkvuQ0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

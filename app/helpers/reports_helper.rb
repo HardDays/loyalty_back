@@ -135,7 +135,6 @@ module ReportsHelper
         orders = filter_date(orders, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
         
         return orders.includes(:client)
-
     end
 
 end

@@ -1,0 +1,53 @@
+{
+  "resource": "Request code password",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/auth/password/request",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email (need if not phone)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone (need if not email)"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/auth/password/request",
+      "request_body": "{\"email\":\"6d81e426526140df5dd4a63be4163be2@647cf0d085b8a298791672eb1f6506fd.xx\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "3d1b48ce-8c8f-4881-9dda-5b084402ea66",
+        "X-Runtime": "0.022163",
+        "Vary": "Origin"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/request\" -d '{\"email\":\"6d81e426526140df5dd4a63be4163be2@647cf0d085b8a298791672eb1f6506fd.xx\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

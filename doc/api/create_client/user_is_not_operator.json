@@ -1,0 +1,102 @@
+{
+  "resource": "Create client",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/clients",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Loyalty program"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "card_number",
+      "description": "Card number"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/clients",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY0NywiZXhwIjoxNTY4ODIzODEzfQ.Lqn_qslmgh8QKa01aVyxCkX_nV2AJwhhHT9ys-g4Pmg",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "bbc0760d-602a-4a6a-951b-8839aa5c0577",
+        "X-Runtime": "0.003419",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzY0NywiZXhwIjoxNTY4ODIzODEzfQ.Lqn_qslmgh8QKa01aVyxCkX_nV2AJwhhHT9ys-g4Pmg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

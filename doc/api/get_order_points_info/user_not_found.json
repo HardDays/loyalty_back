@@ -1,0 +1,62 @@
+{
+  "resource": "Get order points info",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/orders/points",
+  "description": "User not found",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "type": "boolean",
+      "required": true,
+      "name": "use_points",
+      "description": "Last name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/orders/points?user_id=0",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc4MywiZXhwIjoxNTY4ODIzODE2fQ.sejJSRgTzXleqIO6Os2pvnX-7nUvcn4gwiRfXqiNSTU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "user_id": "0"
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "eb30a11f-7e62-4554-9055-b8b807aac35f",
+        "X-Runtime": "0.003192",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=0\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc4MywiZXhwIjoxNTY4ODIzODE2fQ.sejJSRgTzXleqIO6Os2pvnX-7nUvcn4gwiRfXqiNSTU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

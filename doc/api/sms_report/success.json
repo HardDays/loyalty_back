@@ -1,0 +1,77 @@
+{
+  "resource": "Sms report",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/reports/sms",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "name": "begin_date",
+      "description": "Begin date (in format 21.09.2019)"
+    },
+    {
+      "type": "string",
+      "name": "end_date",
+      "description": "End date (in format 21.09.2019)"
+    },
+    {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "name": "stores",
+      "description": "Store ids"
+    },
+    {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "name": "loyalty_programs",
+      "description": "Loyalty progams ids"
+    },
+    {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "name": "operators",
+      "description": "Operators ids"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/reports/sms",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzgwOCwiZXhwIjoxNTY4ODIzODE3fQ.V3bjSeBopr1k_XgI9xQ8IVDlbYxwtjsP7hmZawu3ix8",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"kek\": \"poka ne gotovo\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"ab608778180dfce9635566f2e780bc36\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "08bd1a97-c9d6-408c-a341-bad219d47424",
+        "X-Runtime": "0.004233",
+        "Vary": "Origin",
+        "Content-Length": "24"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/reports/sms\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzgwOCwiZXhwIjoxNTY4ODIzODE3fQ.V3bjSeBopr1k_XgI9xQ8IVDlbYxwtjsP7hmZawu3ix8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

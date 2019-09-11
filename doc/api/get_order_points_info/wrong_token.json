@@ -1,0 +1,62 @@
+{
+  "resource": "Get order points info",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/orders/points",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "type": "boolean",
+      "required": true,
+      "name": "use_points",
+      "description": "Last name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/orders/points?user_id=17787",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "user_id": "17787"
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "e2c29538-8240-4394-9d42-2b003ef0e6dd",
+        "X-Runtime": "0.001595",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=17787\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

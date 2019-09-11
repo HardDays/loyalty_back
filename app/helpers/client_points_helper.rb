@@ -45,9 +45,11 @@ module ClientPointsHelper
                                 client: client,
                                 order: order,
                                 loyalty_level: level,
-                                points_source: :order
+                                points_source: :ordered
                             )
-                            client_points.save
+                            if client_points.save && use_points
+                                self.write_off(order)
+                            end
                             return true
                         end
                     end
@@ -57,13 +59,13 @@ module ClientPointsHelper
         return false
     end
 
-    def self.find_write_off_level(client, program, order)
+    def self.find_write_off_level(client, program, price)
         points = client.valid_points
         total = points.sum(:current_points)
-        sum = client.orders.sum(:price) + order.price
+        sum = client.orders.sum(:price) + price
         program.loyalty_levels.order(min_price: :desc).each do |level|
             if DateTime.now > level.begin_date && DateTime.now < level.end_date
-                if (level.level_type.to_sym == :one_buy && order.price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
+                if (level.level_type.to_sym == :one_buy && price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
                     if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
                         return level
                     end
@@ -73,12 +75,11 @@ module ClientPointsHelper
         return nil
     end
 
-    def self.write_off_info(order)
-        program = order.loyalty_program
-        client = order.client
-        level = self.find_write_off_level(client, program, order)
+    def self.points(client, price)
+        program = client.loyalty_program
+        level = self.find_write_off_level(client, program, price)
         if level
-            total = client.valid_points.where('order_id <> ?', order.id).sum(:current_points)
+            total = client.valid_points.sum(:current_points)
             current_money = ((order.price * level.write_off_rule_percent) / 100.0)
             current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min
             current_money = current_points * (level.write_off_money / level.write_off_points.to_f)
@@ -91,9 +92,9 @@ module ClientPointsHelper
         program = order.loyalty_program
         client = order.client
         if program && order.write_off_status.to_sym == :not_written_off
-            level = self.find_write_off_level(client, program, order)
+            level = self.find_write_off_level(client, program, order.price)
             if level
-                points = client.valid_points.where('order_id <> ?', order.id)
+                points = client.valid_points
                 total = points.sum(:current_points)
                 current_money = ((order.price * level.write_off_rule_percent) / 100.0)
                 current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min.to_i

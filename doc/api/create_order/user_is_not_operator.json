@@ -1,0 +1,64 @@
+{
+  "resource": "Create order",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/orders",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "use_points",
+      "description": "Last name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/orders",
+      "request_body": "{\"user_id\":17777}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc3OCwiZXhwIjoxNTY4ODIzODE2fQ.wHztaUmlDNhP7V_lhpdaQ5p2V_mQcZqIA7Cd9iFwpeo",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "72bc67e2-5ea1-4124-8eb5-bf2ab6bfdfd5",
+        "X-Runtime": "0.006530",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders\" -d '{\"user_id\":17777}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc3OCwiZXhwIjoxNTY4ODIzODE2fQ.wHztaUmlDNhP7V_lhpdaQ5p2V_mQcZqIA7Cd9iFwpeo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

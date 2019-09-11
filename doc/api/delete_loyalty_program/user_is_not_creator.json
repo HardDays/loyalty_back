@@ -1,0 +1,42 @@
+{
+  "resource": "Delete loyalty program",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/loyalty_programs/:id",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/loyalty_programs/2135",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcyMCwiZXhwIjoxNTY4ODIzODE1fQ.t7zOxVHKdg_Zpp02LRqzpyUVFpGPZdRnHV7tTdWmzec",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "58bb2652-76a7-4bc6-8f27-e66c3cbbe125",
+        "X-Runtime": "0.003632",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/2135\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcyMCwiZXhwIjoxNTY4ODIzODE1fQ.t7zOxVHKdg_Zpp02LRqzpyUVFpGPZdRnHV7tTdWmzec\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

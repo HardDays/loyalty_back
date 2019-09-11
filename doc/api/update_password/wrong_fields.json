@@ -1,0 +1,65 @@
+{
+  "resource": "Update password",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/auth/password/update",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "code",
+      "description": "Code"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "password",
+      "description": "Password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "name": "password_confirmation",
+      "description": "Password confirm"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/auth/password/update",
+      "request_body": "{\"code\":\"0aa36b894fef4e8634746edbfaba28dd\",\"password\":\"1\",\"password_confirmation\":\"1\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"password\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "6c45c138-1449-476e-90d1-3dec29561594",
+        "X-Runtime": "0.023707",
+        "Vary": "Origin",
+        "Content-Length": "26"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"0aa36b894fef4e8634746edbfaba28dd\",\"password\":\"1\",\"password_confirmation\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

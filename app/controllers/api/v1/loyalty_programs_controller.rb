@@ -7,7 +7,7 @@ module Api
 
       def index
         @programs = @auth_user.creator.company.loyalty_programs.order('created_at DESC')
-        render json: @programs, loyalty_levels: true
+        render json: @programs#, loyalty_levels: true
       end
 
       def show
@@ -25,17 +25,19 @@ module Api
         end
 
         if @program.save
-          render json: @program, loyalty_levels: true, status: :created
+          render json: @program, loyalty_levels: true
         else
           render json: @program.errors, status: :unprocessable_entity
         end
       end
 
       def update
-        if @program.update(program_params)
-          render json: @program, loyalty_levels: true, status: :ok
-        else
-          render json: @program.errors, status: :unprocessable_entity
+        ActiveRecord::Base.transaction do
+          if @program.update(program_params)
+            render json: @program, loyalty_levels: true, status: :ok
+          else
+            render json: @program.errors, status: :unprocessable_entity
+          end
         end
       end
 

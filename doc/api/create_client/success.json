@@ -1,0 +1,104 @@
+{
+  "resource": "Create client",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/clients",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Loyalty program"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "card_number",
+      "description": "Card number"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/clients",
+      "request_body": "{\"phone\":\"+7228228223\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"gender\":\"male\",\"birth_day\":\"12.07.2018\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzYzOSwiZXhwIjoxNTY4ODIzODEzfQ.sTSSyUTJElKOojVmOaE1gjMCoGv091R8vW2Z8UbMDuw",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 17640,\n  \"email\": null,\n  \"created_at\": \"2019-09-11T16:23:33.095Z\",\n  \"updated_at\": \"2019-09-11T16:23:33.095Z\",\n  \"user_type\": \"client\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": \"+7228228223\",\n  \"gender\": \"male\",\n  \"birth_day\": \"2018-07-12\",\n  \"company_id\": 8717,\n  \"loyalty_program_id\": null,\n  \"card_number\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"105a07e860e17d3d1f9f74f20da0945d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "04008c48-ab31-442b-bbb1-45c11e1b6bb2",
+        "X-Runtime": "0.039270",
+        "Vary": "Origin",
+        "Content-Length": "312"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '{\"phone\":\"+7228228223\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"gender\":\"male\",\"birth_day\":\"12.07.2018\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzYzOSwiZXhwIjoxNTY4ODIzODEzfQ.sTSSyUTJElKOojVmOaE1gjMCoGv091R8vW2Z8UbMDuw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

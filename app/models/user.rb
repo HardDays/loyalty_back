@@ -9,8 +9,6 @@ class User < ApplicationRecord
     has_one :client, dependent: :destroy
     has_one :user_confirmation, dependent: :destroy
 
-    #TODO: validations
-
     validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, if: lambda { |m| !m.phone.present? }
     validates :phone, length: {maximum: 32}, uniqueness: {case_sensitive: false}, presence: true, if: lambda { |m| !m.email.present? }
     validates :password, presence: true, confirmation: true, length: {minimum: 7, maximum: 128}, if: lambda { |m| m.password.present? }

@@ -30,7 +30,7 @@ module Api
             @user.client.update(client_params)
             render json: @user
           else
-            render json: @user.operator.errors, status: :unprocessable_entity
+            render json: @user.errors, status: :unprocessable_entity
           end
         end
       end
@@ -57,7 +57,7 @@ module Api
         end
 
         def set_user
-          @user.find(params[:id])
+          @user = User.find(params[:id])
         end
 
         def user_params

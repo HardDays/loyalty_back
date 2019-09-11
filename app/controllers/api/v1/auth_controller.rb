@@ -24,33 +24,58 @@ module Api
                 end
             end
 
-            # POST /auth/confirm/phone
-            def confirm_phone
-                @user = User.find_by(phone: params[:phone])
+            # POST /auth/confirm
+            def confirm
+                if params[:phone]
+                    @user = User.find_by(phone: params[:phone])
+                else
+                    @user = User.find_by(email: params[:email])
+                end
                 if @user
                     @confirmation = UserConfirmation.find_by(user_id: @user.id, code: params[:code])     
-                    validate_confirmation
+                    if @confirmation 
+                        @confirmation.confirm_status = :confirmed
+                        @confirmation.save
+                        render json: @confirmation.user, token: true, status: :ok
+                    else
+                        render status: :not_found
+                    end
                 else
                     render status: :not_found
                 end
             end
 
-             # POST /auth/confirm/email
-             def confirm_email
-                @user = User.find_by(email: params[:email])
+            # POST /auth/password/request
+            def request_password
+                if params[:phone]
+                    @user = User.find_by(phone: params[:phone])
+                else
+                    @user = User.find_by(email: params[:email])
+                end
                 if @user
-                    @confirmation = UserConfirmation.find_by(user_id: @user.id, confirm_hash: params[:confirm_hash])     
-                    validate_confirmation
+                    @confirmation = PasswordReset.new(user_id: @user.id, code: SecureRandom.hex, confirm_status: :unconfirmed)
+                    @confirmation.save
+                    #TODO: send sms
                 else
                     render status: :not_found
                 end
             end
 
-            def validate_confirmation
-                if @confirmation 
+            # POST /auth/password/update
+            def update_password
+                @confirmation = PasswordReset.find_by(code: params[:code], confirm_status: :unconfirmed) 
+                if @confirmation
                     @confirmation.confirm_status = :confirmed
                     @confirmation.save
-                    render json: @confirmation.user, token: true, status: :ok
+
+                    @user = @confirmation.user
+                    @user.password = params[:password]
+                    @user.password_confirmation = params[:password_confirmation]
+                    if @user.save
+                        render json: @user
+                    else
+                        render json: @user.errors, status: :unprocessable_entity
+                    end
                 else
                     render status: :not_found
                 end

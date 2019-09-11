@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     namespace 'v1' do
 
       post 'auth/login', action: :login, controller: 'auth'
-      post 'auth/confirm/phone', action: :confirm_phone, controller: 'auth'
-      post 'auth/confirm/email', action: :confirm_email, controller: 'auth'
+      post 'auth/confirm', action: :confirm, controller: 'auth'
+      post 'auth/password/request', action: :request_password, controller: 'auth'
+      post 'auth/password/update', action: :update_password, controller: 'auth'
 
       post 'creators', action: :create, controller: 'creators'
       
@@ -42,9 +43,12 @@ Rails.application.routes.draw do
       put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
       delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
 
-      get 'orders/:id/write_off', action: :show_write_off, controller: 'orders'
+      post 'loyalty_levels', action: :create, controller: 'loyalty_levels'
+      put 'loyalty_levels/:id', action: :update, controller: 'loyalty_levels'
+      delete 'loyalty_levels/:id', action: :destroy, controller: 'loyalty_levels'
+
+      get 'orders/points', action: :show_points, controller: 'orders'
       post 'orders', action: :create, controller: 'orders'
-      post 'orders/:id/write_off', action: :write_off, controller: 'orders'
 
       get 'reports/general', action: :general, controller: 'reports'
       get 'reports/clients', action: :clients, controller: 'reports'

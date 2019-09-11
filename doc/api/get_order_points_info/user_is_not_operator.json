@@ -1,0 +1,62 @@
+{
+  "resource": "Get order points info",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/orders/points",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "type": "boolean",
+      "required": true,
+      "name": "use_points",
+      "description": "Last name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/orders/points?user_id=17790",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc5MSwiZXhwIjoxNTY4ODIzODE2fQ.cK0APvxE_Yzx1pN3Fzc9KHOr3-gw2e1aXRN5rCvQVVU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "user_id": "17790"
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "cbd32fee-cd05-4e27-9854-6a6be95d91ba",
+        "X-Runtime": "0.006332",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=17790\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzc5MSwiZXhwIjoxNTY4ODIzODE2fQ.cK0APvxE_Yzx1pN3Fzc9KHOr3-gw2e1aXRN5rCvQVVU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "resource": "Delete loyalty level",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/loyalty_levels/:id",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/loyalty_levels/2187",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcwMCwiZXhwIjoxNTY4ODIzODE0fQ.8D6jbM5Z8CyUrp5ErCv6KplQ8R5MZM3xdt0llnG4tfU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "2b7104db-899d-4fc6-afbc-faaa3da59fbd",
+        "X-Runtime": "0.014136",
+        "Vary": "Origin"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/2187\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcwMCwiZXhwIjoxNTY4ODIzODE0fQ.8D6jbM5Z8CyUrp5ErCv6KplQ8R5MZM3xdt0llnG4tfU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

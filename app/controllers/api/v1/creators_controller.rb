@@ -7,7 +7,7 @@ module Api
           @user = User.new(user_params)
           if @user.save
             @user.create_creator
-            @user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
+            @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex)
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
