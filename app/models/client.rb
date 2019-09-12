@@ -11,8 +11,9 @@ class Client < ApplicationRecord
 
   def valid_points
     return client_points.where('activation_date <= ?', DateTime.now).
-                         where('burning_date > ?', DateTime.now).
-                         where('current_points > 0').order(created_at: :asc)
+      where('burning_date > ?', DateTime.now).
+      where('current_points > 0').
+      order(created_at: :asc)
   end
 
   def as_json(options = {})

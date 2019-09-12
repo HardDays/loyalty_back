@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_161601) do
+ActiveRecord::Schema.define(version: 2019_09_12_125810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2019_09_11_161601) do
     t.integer "loyalty_level_id"
     t.integer "initial_points"
     t.integer "points_source"
+  end
+
+  create_table "client_sms", force: :cascade do |t|
+    t.integer "client_id"
+    t.integer "sms_type"
+    t.integer "client_point_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "send_at"
+    t.integer "sms_status"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -139,14 +149,6 @@ ActiveRecord::Schema.define(version: 2019_09_11_161601) do
     t.integer "user_id"
     t.string "code"
     t.integer "confirm_status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sms_notifications", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sms_type"
-    t.integer "client_points_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

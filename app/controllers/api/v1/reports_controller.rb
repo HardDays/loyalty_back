@@ -41,17 +41,14 @@ module Api
       end
 
       def sms
-        # render json: ReportsHelper.sms(
-        #     @auth_user.creator.company,
-        #     params[:begin_date], 
-        #     params[:end_date], 
-        #     params[:stores], 
-        #     params[:loyalty_programs],
-        #     params[:operators]
-        # )
-        render json: {
-          kek: 'poka ne gotovo'
-        }
+        render json: ReportsHelper.sms(
+          @auth_user.creator.company,
+          params[:begin_date], 
+          params[:end_date], 
+          params[:stores], 
+          params[:loyalty_programs],
+          params[:operators]
+        )
       end
 
         private

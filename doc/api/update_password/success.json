@@ -38,7 +38,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/auth/password/update",
-      "request_body": "{\"code\":\"a9cf01f37d5ffb78f0d24b8c8c4350ec\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
+      "request_body": "{\"code\":\"8a3f8846ce48ecbfa0d9e5f386d16b3c\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -49,18 +49,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 17635,\n  \"phone\": null,\n  \"email\": \"e766424a3d8f5d80f5773beb5c671834@f1359ebe29cf28d88e1c40ba1de6cfd1.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2019-09-11T16:23:32.836Z\",\n  \"updated_at\": \"2019-09-11T16:23:32.858Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null\n}",
+      "response_body": "{\n  \"id\": 17838,\n  \"phone\": null,\n  \"email\": \"10b288c48af9ec02d0203d360ff16405@b1562ec50631777bb1a2493b8e8154f9.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2019-09-12T15:18:56.284Z\",\n  \"updated_at\": \"2019-09-12T15:18:56.307Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"ba1da6736873942e85daf3a2aaa94bf5\"",
+        "ETag": "W/\"909278695c4068261ffce2f54db4dc49\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "5b638a91-8d8c-4a45-801c-1349dfd12344",
-        "X-Runtime": "0.017250",
+        "X-Request-Id": "fd941fac-3e13-4d98-ad44-c2f032176035",
+        "X-Runtime": "0.018210",
         "Vary": "Origin",
         "Content-Length": "290"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"a9cf01f37d5ffb78f0d24b8c8c4350ec\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"8a3f8846ce48ecbfa0d9e5f386d16b3c\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

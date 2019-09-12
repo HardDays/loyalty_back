@@ -91,13 +91,13 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 17688,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-09-11T16:23:34.123Z\",\n  \"updated_at\": \"2019-09-11T16:23:34.123Z\",\n  \"user_type\": \"creator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": null\n}",
+      "response_body": "{\n  \"id\": 17891,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-09-12T15:18:57.837Z\",\n  \"updated_at\": \"2019-09-12T15:18:57.837Z\",\n  \"user_type\": \"creator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"e7981510f86fc6b4094bb8ec4788d3fc\"",
+        "ETag": "W/\"10b87e3fda789c6a810424ab9be17d2f\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "8b047edb-e1a5-4061-ba82-03885522e60f",
-        "X-Runtime": "0.021542",
+        "X-Request-Id": "e1891e18-21df-4bd6-b0cb-8ef7eb7d03c6",
+        "X-Runtime": "0.023189",
         "Vary": "Origin",
         "Content-Length": "260"
       },

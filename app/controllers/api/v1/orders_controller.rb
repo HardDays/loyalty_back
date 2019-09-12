@@ -4,7 +4,7 @@ module Api
       before_action :auth_create, only: [:show_points, :create]
       
       def show_points
-        render json: ClientPointsHelper.points(@client_user.client, params[:price].to_i)
+        render json: ClientPointsHelper.points_info(@client_user.client, params[:price].to_i)
       end
       
       def create

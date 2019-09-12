@@ -27,7 +27,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcyMSwiZXhwIjoxNTY4ODIzODE1fQ.6y0kqnMGEZeR-ERPC_VvVib61PI6BzfJWKtc5H3R54M",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzkyNCwiZXhwIjoxNTY4OTA2MzM5fQ.8F7sgpaQzmWlO6HbnNCh26SzRwWTg3UBj9Wnn6AAOkw",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,18 +36,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 2136,\n    \"company_id\": 8763,\n    \"name\": \"test\",\n    \"created_at\": \"2019-09-11T16:23:35.276Z\",\n    \"updated_at\": \"2019-09-11T16:23:35.276Z\"\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 2178,\n    \"company_id\": 8861,\n    \"name\": \"test\",\n    \"created_at\": \"2019-09-12T15:18:59.160Z\",\n    \"updated_at\": \"2019-09-12T15:18:59.160Z\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"a485347bb8be481048d4aa37a37daeec\"",
+        "ETag": "W/\"38c6c582432cec9f53028eb7966278f4\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "90244fc3-75e7-41a1-8baa-b2bc0cd3055a",
-        "X-Runtime": "0.018068",
+        "X-Request-Id": "cc0f6a7f-9435-4d5e-b074-dfc80a245a7c",
+        "X-Runtime": "0.010135",
         "Vary": "Origin",
         "Content-Length": "125"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzcyMSwiZXhwIjoxNTY4ODIzODE1fQ.6y0kqnMGEZeR-ERPC_VvVib61PI6BzfJWKtc5H3R54M\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzkyNCwiZXhwIjoxNTY4OTA2MzM5fQ.8F7sgpaQzmWlO6HbnNCh26SzRwWTg3UBj9Wnn6AAOkw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

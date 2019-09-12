@@ -47,8 +47,34 @@ module ClientPointsHelper
                                 loyalty_level: level,
                                 points_source: :ordered
                             )
-                            if client_points.save && use_points
-                                self.write_off(order)
+                            saved = client_points.save
+                            if saved 
+                                if use_points
+                                    self.write_off(order)
+                                end
+                                if level.sms_on_burning
+                                    if level.burning_rule.to_sym == :burning_days
+                                        notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
+                                        notification.sms_status = :pending
+                                        notification.client_point = client_points
+                                        notification.client = client
+                                        notification.save
+                                    end
+                                end
+
+                                if level.sms_on_points
+                                    notification = ClientSms.new(sms_type: :points_accrued, send_at: activation_date)
+                                    notification.client_point = client_points
+                                    notification.client = client
+                                    if level.activation_rule.to_sym == :activation_days
+                                        notification.sms_status = :pending
+                                    else
+                                        notification.sms_status = :sent
+                                        SmsHelper.send_points_receive(client, points)
+                                    end
+                                    notification.save
+
+                                end
                             end
                             return true
                         end
@@ -75,7 +101,7 @@ module ClientPointsHelper
         return nil
     end
 
-    def self.points(client, price)
+    def self.points_info(client, price)
         program = client.loyalty_program
         level = self.find_write_off_level(client, program, price)
         if level
@@ -99,6 +125,15 @@ module ClientPointsHelper
                 current_money = ((order.price * level.write_off_rule_percent) / 100.0)
                 current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min.to_i
                 current_money = (current_points * (level.write_off_money / level.write_off_points.to_f)).to_i
+                
+                if level.sms_on_write_off
+                    notification = ClientSms.new(sms_type: :points_writen_off, send_at: DateTime.now)
+                    notification.client = client
+                    notification.sms_status = :sent
+                    notification.save
+                    SmsHelper.send_points_write_off(client, current_points)
+                end
+                
                 points.each do |p|
                     if p.current_points >= current_points
                         p.current_points -= current_points

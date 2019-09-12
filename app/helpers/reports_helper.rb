@@ -122,7 +122,6 @@ module ReportsHelper
         active_clients = filter_date(active_clients, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
         
         return User.where(id: active_clients.pluck(:user_id))
-
     end
 
     def self.orders(company, begin_date, end_date, stores, loyalty_programs, operators, limit, offset)
@@ -135,6 +134,25 @@ module ReportsHelper
         orders = filter_date(orders, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
         
         return orders.includes(:client)
+    end
+
+    def self.sms(company, begin_date, end_date, stores, loyalty_programs, operators)
+        sms = ClientSms.joins(:client).where('clients.company_id = ?', company.id)
+        sms = filter_date(sms, 'created_at', begin_date, end_date)
+        
+        total_count = sms.length
+        points_accrued_count = sms.where(sms_type: :points_accrued).length
+        points_written_off_count = sms.where(sms_type: :points_writen_off).length
+        points_burned_count = sms.where(sms_type: :points_burned).length
+        registered_count = sms.where(sms_type: :registered).length
+
+        return {
+            total_count: total_count,
+            points_accrued_count: points_accrued_count,
+            points_written_off_count: points_written_off_count,
+            points_burned_count: points_burned_count,
+            registered_count: registered_count,
+        }
     end
 
 end

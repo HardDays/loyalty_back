@@ -12,11 +12,18 @@ module Api
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
-          # TODO: send to email or phone
-          @user.password = '1234567' #SecureRandom.hex(4)
+          password = '1234567' #SecureRandom.hex(4)
+          @user.password = password
           if @user.save
             @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
             @user.create_client(company: @auth_user.operator.company, loyalty_program_id: params[:loyalty_program_id])
+            
+            notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
+            notification.client = @user.client
+            notification.sms_status = :sent
+            notification.save
+            SmsHelper.send_register(@user.client, password)
+            
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity

@@ -89,3 +89,5 @@ gem 'date_validator'
 gem 'rails_admin'
 
 gem 'apitome', '~> 0.2.1'
+
+gem 'rufus-scheduler'
