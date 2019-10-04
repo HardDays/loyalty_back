@@ -1,13 +1,13 @@
 module Api
   module V1
-    class LoyaltyLevelsController < ApplicationController
+    class LoyaltyPromotionController < ApplicationController
       before_action :auth_create, only: [:create]
       before_action :auth_find, only: [:update, :destroy]
 
       def create
         @level = LoyaltyLevel.new(level_params)
         @level.loyalty_program = @program
-        @level.type = :level
+        @level.type = :promotion
 
         if @level.save
           render json: @level, loyalty_levels: true, status: :ok
@@ -64,7 +64,7 @@ module Api
             :accordance_rule, :accordance_points, :accordance_percent,
             :accrual_on_points, :accrual_on_register, :register_points,
             :accrual_on_first_buy, :first_buy_points, :accrual_on_birthday, :birthday_points,
-            :rounding_rule, :sms_on_register, :sms_on_points, :sms_on_write_off, :sms_on_burning, :sms_burning_days
+            :rounding_rule
           )
         end
       end
