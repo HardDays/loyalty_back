@@ -33,16 +33,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=17984&price=10000&use_points=false",
+      "request_path": "api/v1/orders/points?user_id=24053&price=10000&use_points=false",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzk4MywiZXhwIjoxNTY4OTA2MzQwfQ.Ts5VDjXYyN2DgpIwq3ywXuon5QwJsVQ3EbSArdiA7ac",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA1MiwiZXhwIjoxNTY4OTkyNjU2fQ.oVaNK9Jua2mgzbt7ypnaa-i_nmkV9lD4GSxP-rR8Xcg",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "17984",
+        "user_id": "24053",
         "price": "10000",
         "use_points": "false"
       },
@@ -54,13 +54,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"8553b8bfb483f47163d2404d3e3abf03\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "4b0ca8d0-2fb5-493e-94fa-4b8b0807c192",
-        "X-Runtime": "0.016956",
+        "X-Request-Id": "36cecef8-e884-49e8-a326-7dcc860a6a8b",
+        "X-Runtime": "0.022475",
         "Vary": "Origin",
         "Content-Length": "41"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=17984&price=10000&use_points=false\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzk4MywiZXhwIjoxNTY4OTA2MzQwfQ.Ts5VDjXYyN2DgpIwq3ywXuon5QwJsVQ3EbSArdiA7ac\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=24053&price=10000&use_points=false\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA1MiwiZXhwIjoxNTY4OTkyNjU2fQ.oVaNK9Jua2mgzbt7ypnaa-i_nmkV9lD4GSxP-rR8Xcg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

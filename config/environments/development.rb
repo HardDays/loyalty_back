@@ -36,12 +36,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-      :address=> 'localhost',
-      :port=> 3000,
-      :domain=>'',
-      :authentication=> :email,
-      :user_name=> '',
-      :password=> ''
+      address: 'smtp.gmail.com',
+      port: 587,
+      user_name: 'loyaltysend@gmail.com',
+      password: '123qweasdcf',
+      authentication: 'plain',
+      enable_starttls_auto: true
   }
 
   # Print deprecation notices to the Rails logger.
@@ -54,8 +54,6 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   config.token_salt = 'dfsdfdfs9831723'
-
-
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 

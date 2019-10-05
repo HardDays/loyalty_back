@@ -54,6 +54,11 @@ Rails.application.routes.draw do
       get 'reports/clients', action: :clients, controller: 'reports'
       get 'reports/orders', action: :orders, controller: 'reports'
       get 'reports/sms', action: :sms, controller: 'reports'
+
+      get 'tariff_plans', action: :index, controller: 'tariff_plans'
+      post 'tariff_plans/purchase', action: :purchase, controller: 'tariff_plans'
+
+      post 'sms', action: :create, controller: 'sms'
     end
   end
 end

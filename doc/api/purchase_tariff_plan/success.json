@@ -1,0 +1,50 @@
+{
+  "resource": "Purchase tariff plan",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/tariff_plans/purchase",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "tariff_plan_id",
+      "description": "Tariff plan id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/tariff_plans/purchase",
+      "request_body": "{\"tariff_plan_id\":3978}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDEwOCwiZXhwIjoxNTY4OTkyNjU5fQ.gwra-USlWE9KyN2cVXwtBprXB8fgUlTdyqwGdz2edrk",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "24d30338-b9c5-45cb-9913-918d57ad5429",
+        "X-Runtime": "0.023509",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/tariff_plans/purchase\" -d '{\"tariff_plan_id\":3978}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDEwOCwiZXhwIjoxNTY4OTkyNjU5fQ.gwra-USlWE9KyN2cVXwtBprXB8fgUlTdyqwGdz2edrk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

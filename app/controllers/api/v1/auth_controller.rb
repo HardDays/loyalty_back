@@ -55,7 +55,9 @@ module Api
                 if @user
                     @confirmation = PasswordReset.new(user_id: @user.id, code: SecureRandom.hex, confirm_status: :unconfirmed)
                     @confirmation.save
-                    #TODO: send sms
+                    if params[:email]
+                        PasswordMailer.password_email(@user, @confirmation).deliver
+                    end
                 else
                     render status: :not_found
                 end

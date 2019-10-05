@@ -1,44 +1,23 @@
 {
   "resource": "Sms report",
   "resource_explanation": null,
-  "http_method": "GET",
-  "route": "api/v1/reports/sms",
+  "http_method": "POST",
+  "route": "api/v1/sms",
   "description": "Success",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
-      "name": "begin_date",
-      "description": "Begin date (in format 21.09.2019)"
+      "in": "body",
+      "required": true,
+      "name": "message",
+      "description": "Message"
     },
     {
-      "type": "string",
-      "name": "end_date",
-      "description": "End date (in format 21.09.2019)"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "stores",
-      "description": "Store ids"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "loyalty_programs",
-      "description": "Loyalty progams ids"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "operators",
-      "description": "Operators ids"
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Id of loyalty program"
     }
   ],
   "response_fields": [
@@ -46,12 +25,12 @@
   ],
   "requests": [
     {
-      "request_method": "GET",
-      "request_path": "api/v1/reports/sms",
-      "request_body": null,
+      "request_method": "POST",
+      "request_path": "api/v1/sms",
+      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":3171}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODAxMSwiZXhwIjoxNTY4OTA2MzQxfQ.8-sTHytzeSwK68cHuNYyJux2zerYkSRNo9XaJsOh0lM",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA4NCwiZXhwIjoxNTY4OTkyNjU4fQ.Ii4KB0Vlcii4Vusw1AZv57ledG6CJmBJOAvTckHqsqE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -60,18 +39,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"total_count\": 0,\n  \"points_accrued_count\": 0,\n  \"points_written_off_count\": 0,\n  \"points_burned_count\": 0,\n  \"registered_count\": 0\n}",
+      "response_body": " ",
       "response_headers": {
-        "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"b61a829b89de1ebba70f373b16b27bfb\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "559fc98a-b3b4-4389-8572-050e83754dde",
-        "X-Runtime": "0.012758",
+        "X-Request-Id": "43d7a6db-70e0-41fe-8a52-03fad802fb67",
+        "X-Runtime": "0.044629",
         "Vary": "Origin",
-        "Content-Length": "116"
+        "Content-Length": "1"
       },
-      "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/sms\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODAxMSwiZXhwIjoxNTY4OTA2MzQxfQ.8-sTHytzeSwK68cHuNYyJux2zerYkSRNo9XaJsOh0lM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":3171}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA4NCwiZXhwIjoxNTY4OTkyNjU4fQ.Ii4KB0Vlcii4Vusw1AZv57ledG6CJmBJOAvTckHqsqE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

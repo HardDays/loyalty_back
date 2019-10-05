@@ -4,16 +4,22 @@ module Api
       before_action :auth_creator, only: [:show, :create, :update]
 
       def show
-        render json: @company, status: :ok
+        render json: @company, tariff_plan: true, status: :ok
       end
 
       def create
-        @company = Company.new(company_params)
-        @company.creator = @user.creator
-        if @company.save
-          render json: @company
-        else
-          render json: @company.errors, status: :unprocessable_entity
+        ActiveRecord::Base.transaction do
+          @company = Company.new(company_params)
+          @company.creator = @user.creator
+          #@tariff_plan = TariffPlan.where(tariff_type: :demo).first
+          #@company.create_tariff_plan_purchase(tariff_plan_id: @tariff_plan.id, expired_at: DateTime.now + @tariff_plan.days.days)
+          
+          if @company.save
+            render json: @company
+          else
+            puts json: @company.errors
+            render json: @company.errors, status: :unprocessable_entity
+          end
         end
       end
 

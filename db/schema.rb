@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_125810) do
+ActiveRecord::Schema.define(version: 2019_09_13_141715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_125810) do
     t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tariff_plan_purchase_id"
   end
 
   create_table "creators", force: :cascade do |t|
@@ -162,6 +163,23 @@ ActiveRecord::Schema.define(version: 2019_09_12_125810) do
     t.string "city"
     t.string "street"
     t.string "house"
+  end
+
+  create_table "tariff_plan_purchases", force: :cascade do |t|
+    t.integer "tariff_plan_id"
+    t.date "expired_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tariff_plans", force: :cascade do |t|
+    t.integer "price"
+    t.integer "days"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "tariff_type"
   end
 
   create_table "user_confirmations", force: :cascade do |t|

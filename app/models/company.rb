@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
     belongs_to :creator
+    #belongs_to :tariff_plan_purchase
 
     has_many :operators
     has_many :clients
@@ -16,6 +17,12 @@ class Company < ApplicationRecord
         end
     end
 
-    #TODO: Replace in json creator_id etc to actual user_id of this creator 
+    def as_json(options={})
+        attrs = super
+
+        attrs[:tariff_plan] = tariff_plan_purchase.tariff_plan.as_json.merge({expired_at: tariff_plan_purchase.expired_at})
+
+        return attrs
+    end
 
 end

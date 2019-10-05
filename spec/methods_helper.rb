@@ -1,4 +1,3 @@
-
 def create_user
     user = User.new(email: SecureRandom.hex + "@" + SecureRandom.hex + ".xx", password: "1234567", first_name: "test", last_name: "test")
     user.save
@@ -7,6 +6,9 @@ def create_user
 end
 
 def create_creator(user)
+    t = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
+    t.save
+
     user.create_creator
     return user
 end
@@ -27,7 +29,13 @@ end
 def create_company(user)
     company = Company.new(name: "test")
     company.creator = user.creator
+    
+    tariff_plan = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
+    tariff_plan.save
+    company.create_tariff_plan_purchase(tariff_plan_id: tariff_plan.id, expired_at: DateTime.now + tariff_plan.days.days)
+
     company.save
+
     return company
 end
 
@@ -66,4 +74,10 @@ def create_program(company)
     )
     program.save
     return program
+end
+
+def create_tariff_plan
+    tariff = TariffPlan.new(name: "test", description: "test", days: 30, tariff_type: :paid, price: 100000)
+    tariff.save
+    return tariff
 end

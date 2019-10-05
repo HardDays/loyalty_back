@@ -851,6 +851,20 @@
           "groups": "all",
           "route": "api/v1/reports/sms",
           "method": "get"
+        },
+        {
+          "description": "Success",
+          "link": "sms_report/success.json",
+          "groups": "all",
+          "route": "api/v1/sms",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "sms_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/sms",
+          "method": "post"
         }
       ]
     },
@@ -980,6 +994,53 @@
           "groups": "all",
           "route": "api/v1/stores",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "List tariff plans",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "list_tariff_plans/success.json",
+          "groups": "all",
+          "route": "api/v1/tariff_plans",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Purchase tariff plan",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "purchase_tariff_plan/success.json",
+          "groups": "all",
+          "route": "api/v1/tariff_plans/purchase",
+          "method": "post"
+        },
+        {
+          "description": "Not found",
+          "link": "purchase_tariff_plan/not_found.json",
+          "groups": "all",
+          "route": "api/v1/tariff_plans/purchase",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "purchase_tariff_plan/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/tariff_plans/purchase",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "purchase_tariff_plan/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/tariff_plans/purchase",
+          "method": "post"
         }
       ]
     }

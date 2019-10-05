@@ -1,44 +1,23 @@
 {
   "resource": "Sms report",
   "resource_explanation": null,
-  "http_method": "GET",
-  "route": "api/v1/reports/sms",
+  "http_method": "POST",
+  "route": "api/v1/sms",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
-      "name": "begin_date",
-      "description": "Begin date (in format 21.09.2019)"
+      "in": "body",
+      "required": true,
+      "name": "message",
+      "description": "Message"
     },
     {
-      "type": "string",
-      "name": "end_date",
-      "description": "End date (in format 21.09.2019)"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "stores",
-      "description": "Store ids"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "loyalty_programs",
-      "description": "Loyalty progams ids"
-    },
-    {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "name": "operators",
-      "description": "Operators ids"
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Id of loyalty program"
     }
   ],
   "response_fields": [
@@ -46,9 +25,9 @@
   ],
   "requests": [
     {
-      "request_method": "GET",
-      "request_path": "api/v1/reports/sms",
-      "request_body": null,
+      "request_method": "POST",
+      "request_path": "api/v1/sms",
+      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":3172}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -64,12 +43,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0ed4ada1-4733-45fa-b61e-28084aaf5243",
-        "X-Runtime": "0.001387",
+        "X-Request-Id": "4fe7b67d-a246-4e5e-9af9-598ee1866eee",
+        "X-Runtime": "0.002913",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/sms\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":3172}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -1,13 +1,13 @@
 module Api
   module V1
     class CreatorsController < ApplicationController
-
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
           if @user.save
             @user.create_creator
             @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex)
+            ConfirmationMailer.confirmation_email(@user).deliver
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
