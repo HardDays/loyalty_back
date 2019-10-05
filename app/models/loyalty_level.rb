@@ -11,10 +11,9 @@ class LoyaltyLevel < ApplicationRecord
     enum write_off_rule: [:no_write_off, :write_off_convert]
     enum accordance_rule: [:no_accordance, :accordance_convert]
     enum rounding_rule: [:no_rounding, :rounding_math, :rounding_small, :rounding_big]
-    enum type: [:promotion, :level]
 
     validates :level_type, presence: :true
-    validates :type, presence: :true
+    validates :promotion, presence: :false
     validates :accrual_rule, presence: :true
     validates :burning_rule, presence: :true
     validates :activation_rule, presence: :true

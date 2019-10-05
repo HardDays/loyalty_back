@@ -6,25 +6,46 @@ module Api
 
       def create
         @level = LoyaltyLevel.new(level_params)
-        @level.loyalty_program = @program
-        @level.type = :promotion
+        @promotion = Promotion.new(level_params)
 
-        if @level.save
-          render json: @level, loyalty_levels: true, status: :ok
+        @promotion.title = level_params[:title]
+        @promotion.date_to = level_params[:date_to]
+        @promotion.date_from = level_params[:date_from]
+
+        @level.loyalty_program = @program
+
+        if @promotion.save
+          @level.promotion = @promotion.id
+          if @level.save
+            render json: @promotion, loyalty_levels: true, status: :ok
+          else
+            render json: @level.errors, status: :unprocessable_entity
+          end
         else
-          render json: @level.errors, status: :unprocessable_entity
+          render json: @promotion.errors, status: :unprocessable_entity
         end 
       end
 
       def update
-        if @level.update(level_params)
-          render json: @level, loyalty_levels: true, status: :ok
+        if @promotion.update(level_params)
+          if @level.update(level_params)
+            render json: @promotion, loyalty_levels: true, status: :ok
+          else
+            render json: @level.errors, status: :unprocessable_entity
+          end
         else
-          render json: @level.errors, status: :unprocessable_entity
+          render json: @promotion.errors, status: :unprocessable_entity
         end
       end
 
+      # Надо как-то соотносить с программой лояльности. Пока оставлю так
+      def list
+        @promotion = Promotion.all()
+      end
+
       def destroy
+        @level = LoyaltyLevel.find_by(promotion: params[:id])
+        @promotion.destroy
         @level.destroy
       end
 
@@ -51,13 +72,13 @@ module Api
         end
 
         def set_level
-          @level = LoyaltyLevel.find(params[:id])
+          @level = LoyaltyLevel.find_by(promotion: params[:id])
         end
 
         def level_params
           params.permit(
-            :level_type, :type, :min_price, :begin_date, :end_date,
-            :accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
+            :title,  :date_from, :date_to,
+            :level_type, :min_price,:accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
             :burning_rule, :burning_days, :activation_rule, :activation_days, 
             :write_off_rule, :write_off_rule_percent, :write_off_rule_points, 
             :write_off_points, :write_off_money,

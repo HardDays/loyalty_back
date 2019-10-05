@@ -17,7 +17,7 @@ module Api
           @order.write_off_status = :not_written_off
 
           if @order.save
-            ClientPointsHelper.create(@client_user.client, @program, @order, params[:use_points])
+            ClientPointsHelper.create(@client_user.client, @program, @order, params[:use_points], params[:promotion])
             render json: @order
           else
             render json: @order.errors, status: :unprocessable_entity
@@ -49,7 +49,7 @@ module Api
         end
 
         def order_params
-          params.permit(:price, :use_points)
+          params.permit(:price, :use_points, :promotion)
         end
     end
   end
