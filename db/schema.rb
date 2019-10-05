@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_13_141715) do
+=======
+ActiveRecord::Schema.define(version: 2019_10_04_203535) do
+>>>>>>> be352ac0fc1b41e79ab9fde11fa8359b47155428
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +121,7 @@ ActiveRecord::Schema.define(version: 2019_09_13_141715) do
     t.integer "loyalty_program_id"
     t.integer "write_off_points"
     t.integer "write_off_money"
+    t.integer "type"
   end
 
   create_table "loyalty_programs", force: :cascade do |t|

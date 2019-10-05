@@ -41,9 +41,10 @@ module Api
         end
       end
 
-      def destroy
-        @program.destroy
-      end
+      # TODO: Судя по всему, не нужно.
+      # def destroy
+      #   @program.destroy
+      # end
 
       private
         def auth

@@ -5,7 +5,7 @@ class Company < ApplicationRecord
     has_many :operators
     has_many :clients
     has_many :stores
-    has_many :loyalty_programs
+    has_one :loyalty_programs
 
     validates :creator_id, uniqueness: true
     
