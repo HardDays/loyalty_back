@@ -41,11 +41,16 @@ Rails.application.routes.draw do
       get 'loyalty_programs/:id', action: :show, controller: 'loyalty_programs'
       post 'loyalty_programs', action: :create, controller: 'loyalty_programs'
       put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
-      delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
+      # delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
 
+      get 'loyalty_levels', action: :list, controller: 'loyalty_levels'
       post 'loyalty_levels', action: :create, controller: 'loyalty_levels'
       put 'loyalty_levels/:id', action: :update, controller: 'loyalty_levels'
       delete 'loyalty_levels/:id', action: :destroy, controller: 'loyalty_levels'
+
+      post 'loyalty_promotions', action: :create, controller: 'loyalty_promotion'
+      put 'loyalty_promotions/:id', action: :update, controller: 'loyalty_promotion'
+      delete 'loyalty_promotions/:id', action: :destroy, controller: 'loyalty_promotion'
 
       get 'orders/points', action: :show_points, controller: 'orders'
       post 'orders', action: :create, controller: 'orders'
