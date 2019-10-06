@@ -62,7 +62,7 @@
       "request_body": "{\"name\":\"test\",\"city\":\"test\",\"country\":\"test\",\"street\":\"test\",\"house\":\"1\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA5MCwiZXhwIjoxNTY4OTkyNjU4fQ.PxCQrnXEcJFdT0ANZBReB3ZpkaWGm0FWcETRzoXTxkk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA3MywiZXhwIjoxNTcwOTY0MjUxfQ.MXejy5UcP3878DDgMrslfgDa6Cf878WB6PzqvWGRCEQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -71,18 +71,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 7325,\n  \"name\": \"test\",\n  \"company_id\": 11200,\n  \"created_at\": \"2019-09-13T15:17:38.310Z\",\n  \"updated_at\": \"2019-09-13T15:17:38.310Z\",\n  \"country\": \"test\",\n  \"city\": \"test\",\n  \"street\": \"test\",\n  \"house\": \"1\"\n}",
+      "response_body": "{\n  \"id\": 8751,\n  \"name\": \"test\",\n  \"company_id\": 13553,\n  \"created_at\": \"2019-10-06T10:57:31.528Z\",\n  \"updated_at\": \"2019-10-06T10:57:31.528Z\",\n  \"country\": \"test\",\n  \"city\": \"test\",\n  \"street\": \"test\",\n  \"house\": \"1\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"a2f27a402abd49e23c74bd1d009020c8\"",
+        "ETag": "W/\"296dc2148ab9eaf17b01ceef86790df6\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "70194b83-d3a1-4fd6-acf0-4967e693ce80",
-        "X-Runtime": "0.019369",
+        "X-Request-Id": "b4bb5014-61cb-4bc7-a1a2-f6a731673e4c",
+        "X-Runtime": "0.017980",
         "Vary": "Origin",
         "Content-Length": "183"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores\" -d '{\"name\":\"test\",\"city\":\"test\",\"country\":\"test\",\"street\":\"test\",\"house\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDA5MCwiZXhwIjoxNTY4OTkyNjU4fQ.PxCQrnXEcJFdT0ANZBReB3ZpkaWGm0FWcETRzoXTxkk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores\" -d '{\"name\":\"test\",\"city\":\"test\",\"country\":\"test\",\"street\":\"test\",\"house\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA3MywiZXhwIjoxNTcwOTY0MjUxfQ.MXejy5UcP3878DDgMrslfgDa6Cf878WB6PzqvWGRCEQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

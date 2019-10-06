@@ -1,8 +1,8 @@
 {
-  "resource": "Delete loyalty program",
+  "resource": "Create promotion",
   "resource_explanation": null,
-  "http_method": "DELETE",
-  "route": "api/v1/loyalty_programs/:id",
+  "http_method": "POST",
+  "route": "api/v1/promotions",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
@@ -13,8 +13,8 @@
   ],
   "requests": [
     {
-      "request_method": "DELETE",
-      "request_path": "api/v1/loyalty_programs/3149",
+      "request_method": "POST",
+      "request_path": "api/v1/promotions",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -31,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "eb3909e4-2c3c-4ef0-9cb9-42b30ecdbf28",
-        "X-Runtime": "0.001886",
+        "X-Request-Id": "0c11803a-5f0f-4599-bbb5-a0e8d51a3ffe",
+        "X-Runtime": "0.001767",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/3149\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

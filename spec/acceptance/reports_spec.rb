@@ -67,7 +67,7 @@ resource "Orders report" do
     @order.write_off_status = :not_written_off
     @order.save
 
-    ClientPointsHelper.create(@customer.client, @program, @order, false)
+    ClientPointsHelper.create(@customer.client, @order, @program, false, false)
   end
 
   # let(:stores) { [@store.id] }
@@ -124,7 +124,7 @@ resource "Clients report" do
     @order.write_off_status = :not_written_off
     @order.save
     
-    ClientPointsHelper.create(@customer.client, @program, @order, false)
+    ClientPointsHelper.create(@customer.client, @order, @program, false, false)
   end
 
   let(:authorization) { @creator.token }

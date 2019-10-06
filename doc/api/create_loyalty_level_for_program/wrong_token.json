@@ -33,20 +33,6 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "begin_date",
-      "description": "Begin date (in format dd.mm.yyyy)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "end_date",
-      "description": "End date (in format dd.mm.yyyy)"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -301,7 +287,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":3131}",
+      "request_body": "{\"loyalty_program_id\":3887}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -317,12 +303,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f003ee15-aa06-4ed4-863d-a518c73c8df7",
-        "X-Runtime": "0.002233",
+        "X-Request-Id": "470dc477-3a18-4689-a1c9-f133e3392a7c",
+        "X-Runtime": "0.001868",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":3131}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":3887}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

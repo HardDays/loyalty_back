@@ -1,0 +1,51 @@
+{
+  "resource": "List promotions",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/promotions",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "name": "limit",
+      "description": "Limit"
+    },
+    {
+      "type": "integer",
+      "name": "offset",
+      "description": "Offset"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/promotions",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA0NiwiZXhwIjoxNTcwOTY0MjUwfQ.XgbmURfFfknfJVs4A7IvqU9Gb90i2Z6SQRUuczcD9gs",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "fa5e12c0-6e49-4d42-974a-c33a64cab745",
+        "X-Runtime": "0.005330",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA0NiwiZXhwIjoxNTcwOTY0MjUwfQ.XgbmURfFfknfJVs4A7IvqU9Gb90i2Z6SQRUuczcD9gs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

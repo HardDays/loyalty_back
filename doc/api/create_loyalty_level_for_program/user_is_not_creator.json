@@ -33,20 +33,6 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "begin_date",
-      "description": "Begin date (in format dd.mm.yyyy)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "end_date",
-      "description": "End date (in format dd.mm.yyyy)"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -301,10 +287,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":3132}",
+      "request_body": "{\"loyalty_program_id\":3888}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzk2NSwiZXhwIjoxNTY4OTkyNjUzfQ.kFnWMlixvIUrXhtyFayDwJbj-2RD1-3_vE-WzMWS1YY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODkzOCwiZXhwIjoxNTcwOTY0MjQ2fQ.XR8mm8G4DknvCrFcVFzPj6tZEZk0hhbNvDd1PalrHCM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -317,12 +303,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "54d823db-53d9-4b27-a73f-bd3f14455bcf",
-        "X-Runtime": "0.004348",
+        "X-Request-Id": "1d39d572-09a6-445b-8590-feea44313159",
+        "X-Runtime": "0.004257",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":3132}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzk2NSwiZXhwIjoxNTY4OTkyNjUzfQ.kFnWMlixvIUrXhtyFayDwJbj-2RD1-3_vE-WzMWS1YY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":3888}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODkzOCwiZXhwIjoxNTcwOTY0MjQ2fQ.XR8mm8G4DknvCrFcVFzPj6tZEZk0hhbNvDd1PalrHCM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

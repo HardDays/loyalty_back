@@ -33,7 +33,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=24059",
+      "request_path": "api/v1/orders/points?user_id=29027",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "24059"
+        "user_id": "29027"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -51,12 +51,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "3317fa1a-5898-4b41-826f-d9a4f2c9428b",
-        "X-Runtime": "0.002311",
+        "X-Request-Id": "cc61ed86-59ff-44fa-8ecf-82fd82f4d35b",
+        "X-Runtime": "0.002353",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=24059\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=29027\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

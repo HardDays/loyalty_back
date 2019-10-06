@@ -1,27 +1,21 @@
 {
-  "resource": "Purchase tariff plan",
+  "resource": "Update promotion",
   "resource_explanation": null,
-  "http_method": "POST",
-  "route": "api/v1/tariff_plans/purchase",
+  "http_method": "PUT",
+  "route": "api/v1/promotions/:id",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
-    {
-      "type": "integer",
-      "in": "body",
-      "required": true,
-      "name": "tariff_plan_id",
-      "description": "Tariff plan id"
-    }
+
   ],
   "response_fields": [
 
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "api/v1/tariff_plans/purchase",
-      "request_body": "{\"tariff_plan_id\":3984}",
+      "request_method": "PUT",
+      "request_path": "api/v1/promotions/13",
+      "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -37,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "905ae364-d3bf-4a79-8d3d-5ed1b65ded85",
-        "X-Runtime": "0.003446",
+        "X-Request-Id": "a5f5a6fc-07a2-42ca-9ee7-e4a244cbe523",
+        "X-Runtime": "0.002462",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/tariff_plans/purchase\" -d '{\"tariff_plan_id\":3984}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/13\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

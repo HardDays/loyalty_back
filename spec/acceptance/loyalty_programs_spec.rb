@@ -204,60 +204,60 @@ resource "Update loyalty program" do
   end
 end
 
-resource "Delete loyalty program" do
-  header 'Content-Type', 'application/json'
-  header "Authorization", :authorization
+# resource "Delete loyalty program" do
+#   header 'Content-Type', 'application/json'
+#   header "Authorization", :authorization
 
-  delete "api/v1/loyalty_programs/:id" do
-    before do
-      @user = create_creator(create_user)
-      @company = create_company(@user)
-      @program = create_program(@company)
-    end
+#   delete "api/v1/loyalty_programs/:id" do
+#     before do
+#       @user = create_creator(create_user)
+#       @company = create_company(@user)
+#       @program = create_program(@company)
+#     end
 
-    let (:id) { @program.id }
-    let(:authorization) { @user.token }
+#     let (:id) { @program.id }
+#     let(:authorization) { @user.token }
 
-    context "Success" do
-      example "Success" do
-        do_request
-        expect(status).to eq(204)
-        expect(LoyaltyProgram.where(id: @program.id).first).to eq(nil)
-      end
-    end
+#     context "Success" do
+#       example "Success" do
+#         do_request
+#         expect(status).to eq(204)
+#         expect(LoyaltyProgram.where(id: @program.id).first).to eq(nil)
+#       end
+#     end
 
-    context "Not found" do
-      let(:id) { 0 }
+#     context "Not found" do
+#       let(:id) { 0 }
 
-      example "Not found" do
-        do_request
-        expect(status).to eq(404)
-      end
-    end
+#       example "Not found" do
+#         do_request
+#         expect(status).to eq(404)
+#       end
+#     end
 
-    context "Wrong token" do
-      let(:authorization) { "test" }
+#     context "Wrong token" do
+#       let(:authorization) { "test" }
 
-      example "Wrong token" do
-        do_request
-        expect(status).to eq(401)
-      end
-    end
+#       example "Wrong token" do
+#         do_request
+#         expect(status).to eq(401)
+#       end
+#     end
 
-    context "User is not creator" do
-      before do
-        @wrong_user = create_user
-      end
+#     context "User is not creator" do
+#       before do
+#         @wrong_user = create_user
+#       end
 
-      let(:authorization) { @wrong_user.token }
+#       let(:authorization) { @wrong_user.token }
 
-      example "User is not creator" do
-        do_request
-        expect(status).to eq(403)
-      end
-    end
-  end
-end
+#       example "User is not creator" do
+#         do_request
+#         expect(status).to eq(403)
+#       end
+#     end
+#   end
+# end
 
 resource "List loyalty programs" do
   header 'Content-Type', 'application/json'

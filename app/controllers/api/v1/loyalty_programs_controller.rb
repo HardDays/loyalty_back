@@ -6,7 +6,7 @@ module Api
       before_action :set_program, only: [:show]
 
       def index
-        @programs = @auth_user.creator.company.loyalty_programs.order('created_at DESC')
+        @programs = @auth_user.creator.company.loyalty_program
         render json: @programs#, loyalty_levels: true
       end
 

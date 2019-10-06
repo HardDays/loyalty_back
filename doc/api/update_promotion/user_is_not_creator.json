@@ -1,0 +1,42 @@
+{
+  "resource": "Update promotion",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/promotions/:id",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/promotions/14",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA0MiwiZXhwIjoxNTcwOTY0MjUwfQ.c6SuvkybAvYRQ3JuktJrE26g2S7S8y5mHqT-AQdrNAs",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "2799754b-2c97-433e-97bb-0c2321733e55",
+        "X-Runtime": "0.005489",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/promotions/14\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTA0MiwiZXhwIjoxNTcwOTY0MjUwfQ.c6SuvkybAvYRQ3JuktJrE26g2S7S8y5mHqT-AQdrNAs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

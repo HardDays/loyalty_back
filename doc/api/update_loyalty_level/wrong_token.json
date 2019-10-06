@@ -27,20 +27,6 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "begin_date",
-      "description": "Begin date (in format dd.mm.yyyy)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "end_date",
-      "description": "End date (in format dd.mm.yyyy)"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -294,7 +280,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/3220",
+      "request_path": "api/v1/loyalty_levels/4002",
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -311,12 +297,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "02cd5cfa-6910-43e0-9d37-7a5185902a0f",
-        "X-Runtime": "0.002028",
+        "X-Request-Id": "7fde401b-a06a-44ea-95e2-a416afe14d27",
+        "X-Runtime": "0.002104",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/3220\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/4002\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

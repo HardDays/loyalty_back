@@ -1,6 +1,7 @@
 class LoyaltyLevel < ApplicationRecord
-    
-    belongs_to :loyalty_program
+    #TODO: proverka
+    belongs_to :loyalty_program, optional: true
+    belongs_to :promotion, optional: true
 
     has_many :client_points, dependent: :nullify
 
@@ -13,15 +14,12 @@ class LoyaltyLevel < ApplicationRecord
     enum rounding_rule: [:no_rounding, :rounding_math, :rounding_small, :rounding_big]
 
     validates :level_type, presence: :true
-    validates :promotion, presence: :false
     validates :accrual_rule, presence: :true
     validates :burning_rule, presence: :true
     validates :activation_rule, presence: :true
     validates :write_off_rule, presence: :true
     validates :accordance_rule, presence: :true
     validates :rounding_rule, presence: :true
-    validates :begin_date, presence: :true
-    validates :end_date, presence: true, date: {after_or_equal_to: :begin_date}
 
     validates :min_price, inclusion: 1..10000000
     validates :write_off_points, inclusion: 1..10000000
@@ -45,10 +43,10 @@ class LoyaltyLevel < ApplicationRecord
     validates :first_buy_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_first_buy}
     validates :birthday_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_birthday}
 
-    validates :sms_on_register, inclusion: {in: [true, false]}
-    validates :sms_on_points, inclusion: {in: [true, false]}
-    validates :sms_on_write_off, inclusion: {in: [true, false]}
-    validates :sms_on_burning, inclusion: {in: [true, false]}
+    validates :sms_on_register, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
+    validates :sms_on_points, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
+    validates :sms_on_write_off, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
+    validates :sms_on_burning, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
 
     validates :sms_burning_days, inclusion: 1..365, if: lambda {|m| m.sms_on_burning}
 

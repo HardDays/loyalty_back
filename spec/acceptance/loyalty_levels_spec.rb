@@ -12,8 +12,6 @@ resource "Create loyalty level for program" do
     parameter :loyalty_program_id, "Loyalty program", type: :integer, required: true
     parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
-    parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
-    parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
     parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
@@ -50,8 +48,6 @@ resource "Create loyalty level for program" do
     context "Success" do
       let(:level_type) { "one_buy" }
       let(:min_price) { 100 }
-      let(:begin_date) { "31.08.2019" }
-      let(:end_date) { "02.10.2019" }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
       let(:write_off_rule) { "write_off_convert" }
@@ -131,8 +127,6 @@ resource "Update loyalty level" do
 
     parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
-    parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
-    parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
     parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
@@ -169,8 +163,6 @@ resource "Update loyalty level" do
     context "Success" do
       let(:level_type) { "one_buy" }
       let(:min_price) { 100 }
-      let(:begin_date) { "31.08.2019" }
-      let(:end_date) { "02.10.2019" }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
       let(:write_off_rule) { "write_off_convert" }

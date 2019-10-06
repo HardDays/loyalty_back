@@ -1,0 +1,43 @@
+{
+  "resource": "Create promotion",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/promotions",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/promotions",
+      "request_body": "{}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTAzNCwiZXhwIjoxNTcwOTY0MjQ5fQ.QWmnLaHJUV8W6ypTTmVbLylOf2tST-6G4YrWdtqDSs0",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"name\": [\n    \"TOO_SHORT\"\n  ],\n  \"loyalty_levels\": [\n    \"TOO_SHORT\"\n  ],\n  \"begin_date\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"end_date\": [\n    \"EMPTY_FIELD\",\n    \"is not a date\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "a9701fe9-6358-42b2-b427-3aa3c6107db4",
+        "X-Runtime": "0.014317",
+        "Vary": "Origin",
+        "Content-Length": "125"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTAzNCwiZXhwIjoxNTcwOTY0MjQ5fQ.QWmnLaHJUV8W6ypTTmVbLylOf2tST-6G4YrWdtqDSs0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

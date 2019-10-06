@@ -6,8 +6,8 @@ def create_user
 end
 
 def create_creator(user)
-    t = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
-    t.save
+    # t = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
+    # t.save
 
     user.create_creator
     return user
@@ -30,9 +30,9 @@ def create_company(user)
     company = Company.new(name: "test")
     company.creator = user.creator
     
-    tariff_plan = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
-    tariff_plan.save
-    company.create_tariff_plan_purchase(tariff_plan_id: tariff_plan.id, expired_at: DateTime.now + tariff_plan.days.days)
+    # tariff_plan = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
+    # tariff_plan.save
+    #company.create_tariff_plan_purchase(tariff_plan_id: tariff_plan.id, expired_at: DateTime.now + tariff_plan.days.days)
 
     company.save
 
@@ -76,8 +76,36 @@ def create_program(company)
     return program
 end
 
-def create_tariff_plan
-    tariff = TariffPlan.new(name: "test", description: "test", days: 30, tariff_type: :paid, price: 100000)
-    tariff.save
-    return tariff
+def create_promotion(company)
+    program = Promotion.new(name: "test", company_id: company.id, begin_date: "31.08.2019", end_date: "02.10.2019")
+    program.loyalty_levels.build(
+        "level_type": "one_buy",
+        "min_price": 100,
+        "burning_rule": "no_burning",
+        "activation_rule": "activation_moment",
+        "write_off_rule": "write_off_convert",
+        "rounding_rule": "no_rounding",
+        "accordance_rule": "no_accordance",
+        "accrual_rule": "no_accrual",
+        "write_off_rule_percent": 30,
+        "write_off_rule_points": 100,
+        "write_off_money": 1,
+        "write_off_points": 1,
+        "accrual_on_points": false,
+        "accrual_on_register": false,
+        "accrual_on_first_buy": false,
+        "accrual_on_birthday": false,
+        "sms_on_register": false,
+        "sms_on_points": false,
+        "sms_on_write_off": false,
+        "sms_on_burning": false
+    )
+    program.save
+    return program
 end
+
+# def create_tariff_plan
+#     tariff = TariffPlan.new(name: "test", description: "test", days: 30, tariff_type: :paid, price: 100000)
+#     tariff.save
+#     return tariff
+# end

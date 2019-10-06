@@ -6,7 +6,7 @@ module Api
       def show_points
         render json: ClientPointsHelper.points_info(@client_user.client, params[:price].to_i)
       end
-      
+      #TODO: perepilit nemnogo
       def create
         ActiveRecord::Base.transaction do
           @order = Order.new(order_params)
@@ -17,7 +17,7 @@ module Api
           @order.write_off_status = :not_written_off
 
           if @order.save
-            ClientPointsHelper.create(@client_user.client, @program, @order, params[:use_points], params[:promotion])
+            ClientPointsHelper.create(@client_user.client, @order, @parent, params[:promotion_id] != nil, params[:use_points])
             render json: @order
           else
             render json: @order.errors, status: :unprocessable_entity
@@ -45,7 +45,11 @@ module Api
         def set_client
           @client_user = User.find(params[:user_id])
           @client_user.permission(@client_user.client)
-          @program = @client_user.client.loyalty_program
+          if params[:promotion_id]
+            @parent = Promotion.find(params[:promotion_id])
+          else
+            @parent = @client_user.client.loyalty_program
+          end
         end
 
         def order_params

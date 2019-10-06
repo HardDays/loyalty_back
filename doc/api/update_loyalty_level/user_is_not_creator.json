@@ -27,20 +27,6 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "begin_date",
-      "description": "Begin date (in format dd.mm.yyyy)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "end_date",
-      "description": "End date (in format dd.mm.yyyy)"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -294,11 +280,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/3222",
+      "request_path": "api/v1/loyalty_levels/4004",
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzk3MSwiZXhwIjoxNTY4OTkyNjUzfQ.AEI8PDnIyZ5P9hzybzgs1lVhc6MNRLoHnzMbmkkWWfo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODk0NCwiZXhwIjoxNTcwOTY0MjQ2fQ.oVWGGQHvd_E0ZbYt6QRhpTmDjM8MSXIqekeqn83sf5Y",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -311,12 +297,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f17f2fa1-b3ad-4a3a-b9f0-fa841ffc66c8",
-        "X-Runtime": "0.004645",
+        "X-Request-Id": "c539967d-7eb3-488c-a2dd-ba1d9432bb10",
+        "X-Runtime": "0.004424",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/3222\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzk3MSwiZXhwIjoxNTY4OTkyNjUzfQ.AEI8PDnIyZ5P9hzybzgs1lVhc6MNRLoHnzMbmkkWWfo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/4004\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODk0NCwiZXhwIjoxNTcwOTY0MjQ2fQ.oVWGGQHvd_E0ZbYt6QRhpTmDjM8MSXIqekeqn83sf5Y\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

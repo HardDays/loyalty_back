@@ -7,7 +7,6 @@ module Api
       def create
         @level = LoyaltyLevel.new(level_params)
         @level.loyalty_program = @program
-        @level.type = :level
 
         if @level.save
           render json: @level, loyalty_levels: true, status: :ok

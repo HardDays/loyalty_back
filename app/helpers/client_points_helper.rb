@@ -1,11 +1,10 @@
 module ClientPointsHelper
 
-    def self.create(client, program, order, use_points, promotion)
-        if program
+    def self.create(client, order, parent, is_promotion, use_points)
+        if parent
             sum = client.orders.sum{|o| o.price} + order.price
-            _promotion = Promotion.find(promotion)
-            program.loyalty_levels.order(min_price: :desc).each do |level|
-                if  _promotion.blank || level.promotion.blank || (level.promotion == _promotion.id && DateTime.now > _promotion.date_from && DateTime.now < _promotion.date_to)
+            parent.loyalty_levels.order(min_price: :desc).each do |level|
+                if !is_promotion || (is_promotion && DateTime.now > parent.begin_date && DateTime.now < parent.end_date)
                     if (level.level_type.to_sym == :one_buy && order.price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
                         if (level.accrual_on_points && use_points) || !use_points
                             points = 0
@@ -54,7 +53,7 @@ module ClientPointsHelper
                                     self.write_off(order)
                                 end
 
-                                if level.type.to_sym == :level
+                                if !is_promotion
                                     if level.sms_on_burning
                                         if level.burning_rule.to_sym == :burning_days
                                             notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
@@ -93,11 +92,9 @@ module ClientPointsHelper
         total = points.sum(:current_points)
         sum = client.orders.sum(:price) + price
         program.loyalty_levels.order(min_price: :desc).each do |level|
-            if (level.type.to_sym == :promotion && DateTime.now > level.begin_date && DateTime.now < level.end_date) || level.type.to_sym == :level
-                if (level.level_type.to_sym == :one_buy && price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
-                    if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
-                        return level
-                    end
+            if (level.level_type.to_sym == :one_buy && price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
+                if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
+                    return level
                 end
             end
         end
@@ -129,14 +126,12 @@ module ClientPointsHelper
                 current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min.to_i
                 current_money = (current_points * (level.write_off_money / level.write_off_points.to_f)).to_i
 
-                if level.type.to_sym == :level
-                    if level.sms_on_write_off
-                        notification = ClientSms.new(sms_type: :points_writen_off, send_at: DateTime.now)
-                        notification.client = client
-                        notification.sms_status = :sent
-                        notification.save
-                        SmsHelper.send_points_write_off(client, current_points)
-                    end
+                if level.sms_on_write_off
+                    notification = ClientSms.new(sms_type: :points_writen_off, send_at: DateTime.now)
+                    notification.client = client
+                    notification.sms_status = :sent
+                    notification.save
+                    SmsHelper.send_points_write_off(client, current_points)
                 end
 
                 points.each do |p|
