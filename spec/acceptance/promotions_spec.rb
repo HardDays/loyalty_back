@@ -37,11 +37,11 @@ resource "Create promotion" do
         parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
         parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
         parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-        parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
-        parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
-        parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
-        parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
-        parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
+        # parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
+        # parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
+        # parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
+        # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
+        # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
   
         example "Loyalty level description" do
           
