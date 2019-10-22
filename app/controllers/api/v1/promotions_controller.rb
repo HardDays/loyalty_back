@@ -3,7 +3,7 @@ module Api
     class PromotionsController < ApplicationController
       before_action :auth_creator, only: [:index, :create]
       before_action :auth_find, only: [:update, :destroy]
-      before_action :set_program, only: [:show]
+      before_action :set_promotion, only: [:show]
 
       def index
         @promotions = @auth_user.creator.company.promotions
