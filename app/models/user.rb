@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
     validates :first_name, length: {minimum: 1, maximum: 128}
     validates :last_name, length: {minimum: 1, maximum: 128}
-    validates :second_name, length: {minimum: 1, maximum: 128}, allow_nil: true
+    validates :second_name, length: {minimum: 0, maximum: 128}, allow_nil: true
 
     def self.authorize(token)
         payload = nil

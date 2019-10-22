@@ -6,7 +6,7 @@ class LoyaltyProgram < ApplicationRecord
     has_many :orders, dependent: :nullify
 
     validates :name, length: {minimum: 1, maximum: 128}
-    validates :loyalty_levels, length: {minimum: 1}
+    validates :loyalty_levels
     
     def ownership(creator)
         if creator.company != self.company
