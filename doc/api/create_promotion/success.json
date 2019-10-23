@@ -30,12 +30,166 @@
       "description": "End date (in format dd.mm.yyyy)"
     },
     {
-      "type": "array",
-      "minmum": 1,
+      "type": "string",
       "in": "body",
       "required": true,
-      "name": "loyalty_levels",
-      "description": "Loyalty level"
+      "enum": [
+        "no_accrual",
+        "accrual_percent",
+        "accrual_convert"
+      ],
+      "name": "accrual_rule",
+      "description": "Accrual rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "accrual_percent",
+      "description": "Percent for 'accrual_percent' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accrual_points",
+      "description": "Points for 'accrual_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accrual_money",
+      "description": "Money for 'accrual_convert' rule (IN CENTS)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_burning",
+        "burning_days"
+      ],
+      "name": "burning_rule",
+      "description": "Burning rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 365,
+      "in": "body",
+      "name": "burning_days",
+      "description": "Days for 'burning_days' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "activation_moment",
+        "activation_days"
+      ],
+      "name": "activation_rule",
+      "description": "Activation rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 365,
+      "in": "body",
+      "name": "activation_days",
+      "description": "Days for 'activation_days' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_write_off",
+        "write_off_convert"
+      ],
+      "name": "write_off_rule",
+      "description": "Write off rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "write_off_rule_percent",
+      "description": "Percent for 'write_off_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "write_off_rule_points",
+      "description": "Points for 'write_off_convert' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_accordance",
+        "accordance_convert"
+      ],
+      "name": "accordance_rule",
+      "description": "Accordance rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "accordance_percent",
+      "description": "Percent for 'accordance_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accordance_points",
+      "description": "Points for 'accordance_convert' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_rounding",
+        "rounding_math",
+        "rounding_small",
+        "rounding_big"
+      ],
+      "name": "rounding_rule",
+      "description": "Rounding rule"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "accrual_on_points",
+      "description": "Accrual when points added"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "write_off_limited",
+      "description": "Min price limited"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "write_off_min_price",
+      "description": "Min price for 'write_off_limited'"
     }
   ],
   "response_fields": [
@@ -45,10 +199,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/promotions",
-      "request_body": "{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.08.2020\",\"loyalty_levels\":[{\"level_type\":\"one_buy\",\"min_price\":100,\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"write_off_convert\",\"rounding_rule\":\"no_rounding\",\"accordance_rule\":\"no_accordance\",\"accrual_rule\":\"no_accrual\",\"write_off_rule_percent\":30,\"write_off_rule_points\":100,\"write_off_money\":1,\"write_off_points\":1,\"accrual_on_points\":false,\"accrual_on_register\":false,\"accrual_on_first_buy\":false,\"accrual_on_birthday\":false}]}",
+      "request_body": "{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTAzMywiZXhwIjoxNTcwOTY0MjQ5fQ.rhCqXPKpMGof4Fu6dUIX3w4OPUhCOZJ0eg9VviRFDCc",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk5MSwiZXhwIjoxNTcyNDQ3MjMwfQ.AmDB1T-LeecEbHDsvA7EqrcEr-DeBdkR-bWI_FyCGmc",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -57,18 +211,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 10,\n  \"name\": \"test\",\n  \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n  \"end_date\": \"2020-08-31T00:00:00.000Z\",\n  \"created_at\": \"2019-10-06T10:57:29.959Z\",\n  \"updated_at\": \"2019-10-06T10:57:29.959Z\",\n  \"company_id\": 13532,\n  \"loyalty_levels\": [\n    {\n      \"id\": 4026,\n      \"level_type\": \"one_buy\",\n      \"min_price\": 100,\n      \"begin_date\": null,\n      \"end_date\": null,\n      \"accrual_rule\": \"no_accrual\",\n      \"accrual_percent\": null,\n      \"accrual_points\": null,\n      \"accrual_money\": null,\n      \"burning_rule\": \"no_burning\",\n      \"burning_days\": null,\n      \"activation_rule\": \"activation_moment\",\n      \"activation_days\": null,\n      \"write_off_rule\": \"write_off_convert\",\n      \"write_off_rule_percent\": 30,\n      \"write_off_rule_points\": 100,\n      \"accordance_rule\": \"no_accordance\",\n      \"accordance_points\": null,\n      \"accordance_percent\": null,\n      \"accrual_on_points\": false,\n      \"accrual_on_register\": false,\n      \"register_points\": null,\n      \"accrual_on_first_buy\": false,\n      \"first_buy_points\": null,\n      \"accrual_on_birthday\": false,\n      \"birthday_points\": null,\n      \"rounding_rule\": \"no_rounding\",\n      \"sms_on_register\": null,\n      \"sms_on_points\": null,\n      \"sms_on_write_off\": null,\n      \"sms_on_burning\": null,\n      \"sms_burning_days\": null,\n      \"created_at\": \"2019-10-06T10:57:29.962Z\",\n      \"updated_at\": \"2019-10-06T10:57:29.962Z\",\n      \"loyalty_program_id\": null,\n      \"write_off_points\": 1,\n      \"write_off_money\": 1,\n      \"promotion\": {\n        \"id\": 10,\n        \"name\": \"test\",\n        \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n        \"end_date\": \"2020-08-31T00:00:00.000Z\",\n        \"created_at\": \"2019-10-06T10:57:29.959Z\",\n        \"updated_at\": \"2019-10-06T10:57:29.959Z\",\n        \"company_id\": 13532\n      },\n      \"promotion_id\": 10\n    }\n  ]\n}",
+      "response_body": "{\n  \"id\": 31,\n  \"name\": \"test\",\n  \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n  \"end_date\": \"2019-12-31T00:00:00.000Z\",\n  \"created_at\": \"2019-10-23T14:53:50.433Z\",\n  \"updated_at\": \"2019-10-23T14:53:50.433Z\",\n  \"company_id\": 14495,\n  \"accrual_rule\": \"no_accrual\",\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_rule\": \"no_burning\",\n  \"burning_days\": null,\n  \"activation_rule\": \"activation_moment\",\n  \"activation_days\": null,\n  \"write_off_rule\": \"no_write_off\",\n  \"write_off_rule_percent\": 1,\n  \"write_off_rule_points\": 1,\n  \"accordance_rule\": \"no_accordance\",\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"accrual_on_points\": false,\n  \"write_off_limited\": false,\n  \"write_off_min_price\": null,\n  \"rounding_rule\": \"no_rounding\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"7ef9106dfdcb391b816ec098605d35a0\"",
+        "ETag": "W/\"91c9b6d20ccd1bed1be999b790c9f84d\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "4f1d92ab-312e-4e9a-bfc0-b4c5f3934db1",
-        "X-Runtime": "0.051209",
+        "X-Request-Id": "b4c2a6bb-4bf8-4d37-a4ea-1fc54c531029",
+        "X-Runtime": "0.049453",
         "Vary": "Origin",
-        "Content-Length": "1388"
+        "Content-Length": "682"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.08.2020\",\"loyalty_levels\":[{\"level_type\":\"one_buy\",\"min_price\":100,\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"write_off_convert\",\"rounding_rule\":\"no_rounding\",\"accordance_rule\":\"no_accordance\",\"accrual_rule\":\"no_accrual\",\"write_off_rule_percent\":30,\"write_off_rule_points\":100,\"write_off_money\":1,\"write_off_points\":1,\"accrual_on_points\":false,\"accrual_on_register\":false,\"accrual_on_first_buy\":false,\"accrual_on_birthday\":false}]}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyOTAzMywiZXhwIjoxNTcwOTY0MjQ5fQ.rhCqXPKpMGof4Fu6dUIX3w4OPUhCOZJ0eg9VviRFDCc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk5MSwiZXhwIjoxNTcyNDQ3MjMwfQ.AmDB1T-LeecEbHDsvA7EqrcEr-DeBdkR-bWI_FyCGmc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

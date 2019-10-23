@@ -1,7 +1,8 @@
 class ClientPoint < ApplicationRecord
     belongs_to :client
     belongs_to :order
-    belongs_to :loyalty_level
+    belongs_to :loyalty_level, optional: true
+    belongs_to :promotion, optional: true
 
     validates :activation_date, presence: :true
     validates :burning_date, presence: :true

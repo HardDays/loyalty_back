@@ -287,10 +287,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":3886}",
+      "request_body": "{\"loyalty_program_id\":4273}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODkzNSwiZXhwIjoxNTcwOTY0MjQ2fQ.SPlpRBwHGtHOHoJaeN8uGSmvHQ-RWj-HGFmXs30aum4",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5NCwiZXhwIjoxNTcyNDQ3MjI3fQ.X66p2nuC3DXCUm-hYucxy9bRKjrSexGgD5AwPS6GUIY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -299,17 +299,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"level_type\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accrual_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"burning_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"activation_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"write_off_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accordance_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"min_price\": [\n    \"is not included in the list\"\n  ],\n  \"write_off_points\": [\n    \"is not included in the list\"\n  ],\n  \"write_off_money\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_birthday\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ]\n}",
+      "response_body": "{\n  \"level_type\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accrual_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"burning_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"activation_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"write_off_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accordance_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"min_price\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_birthday\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0e3c72bf-61d6-496e-922a-d4305dfd46e2",
-        "X-Runtime": "0.026715",
+        "X-Request-Id": "d93d4a48-5e08-4d61-9123-12f5e3d11983",
+        "X-Runtime": "0.019543",
         "Vary": "Origin",
-        "Content-Length": "783"
+        "Content-Length": "682"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":3886}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODkzNSwiZXhwIjoxNTcwOTY0MjQ2fQ.SPlpRBwHGtHOHoJaeN8uGSmvHQ-RWj-HGFmXs30aum4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":4273}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5NCwiZXhwIjoxNTcyNDQ3MjI3fQ.X66p2nuC3DXCUm-hYucxy9bRKjrSexGgD5AwPS6GUIY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

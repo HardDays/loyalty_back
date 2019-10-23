@@ -106,12 +106,13 @@ module ClientPointsHelper
         level = self.find_write_off_level(client, program, price)
         if level
             total = client.valid_points.sum(:current_points)
-            current_money = ((order.price * level.write_off_rule_percent) / 100.0)
-            current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min
-            current_money = current_points * (level.write_off_money / level.write_off_points.to_f)
-            return {write_of_money: current_money.to_i, write_off_points: current_points.to_i}
+            money = ((order.price * level.write_off_rule_percent) / 100.0)
+            points = [money, total].min.to_i
+            # current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min
+            # current_money = current_points * (level.write_off_money / level.write_off_points.to_f)
+            return {points: points}
         end
-        return {write_of_money: 0, write_off_points: 0}
+        return {points: 0}
     end
 
     def self.write_off(order)
@@ -121,11 +122,10 @@ module ClientPointsHelper
             level = self.find_write_off_level(client, program, order.price)
             if level
                 points = client.valid_points
-                total = points.sum(:current_points)
-                current_money = ((order.price * level.write_off_rule_percent) / 100.0)
-                current_points = [total, (current_money * level.write_off_points / level.write_off_money.to_f)].min.to_i
-                current_money = (current_points * (level.write_off_money / level.write_off_points.to_f)).to_i
-
+                total = client.valid_points.sum(:current_points)
+                money = ((order.price * level.write_off_rule_percent) / 100.0)
+                current_points = [money, total].min.to_i
+           
                 if level.sms_on_write_off
                     notification = ClientSms.new(sms_type: :points_writen_off, send_at: DateTime.now)
                     notification.client = client

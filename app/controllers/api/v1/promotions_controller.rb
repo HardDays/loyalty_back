@@ -11,7 +11,7 @@ module Api
       end
 
       def show
-        render json: @promotion, loyalty_levels: true
+        render json: @promotion
       end
 
       def create
@@ -24,15 +24,9 @@ module Api
 
         # @level.loyalty_program = @program
 
-        if params[:loyalty_levels]
-          params[:loyalty_levels].each do |level|
-            @promotion.loyalty_levels.build(level_params(level))
-          end
-        end
-
         if @promotion.save
           #@level.promotion = @promotion.id
-          render json: @promotion, loyalty_levels: true, status: :ok
+          render json: @promotion,  status: :ok
         else
           render json: @promotion.errors, status: :unprocessable_entity
         end 
@@ -72,21 +66,15 @@ module Api
         end
 
         def promotion_params
-          params.permit(:name, :begin_date, :end_date,)
-        end 
-
-        def level_params(param)
-          param.permit(
-            :level_type, :min_price,:accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
+          params.permit(:name, :begin_date, :end_date, 
+            :accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
             :burning_rule, :burning_days, :activation_rule, :activation_days, 
             :write_off_rule, :write_off_rule_percent, :write_off_rule_points, 
-            :write_off_points, :write_off_money,
             :accordance_rule, :accordance_points, :accordance_percent,
-            :accrual_on_points, :accrual_on_register, :register_points,
-            :accrual_on_first_buy, :first_buy_points, :accrual_on_birthday, :birthday_points,
-            :rounding_rule
+            :accrual_on_points, :rounding_rule,
+            :write_off_limited, :write_off_min_price
           )
-        end
+        end 
       end
     end
   end

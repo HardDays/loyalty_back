@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_103434) do
+ActiveRecord::Schema.define(version: 2019_10_23_143951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_103434) do
     t.integer "loyalty_level_id"
     t.integer "initial_points"
     t.integer "points_source"
+    t.integer "promotion_id"
   end
 
   create_table "client_sms", force: :cascade do |t|
@@ -118,7 +119,6 @@ ActiveRecord::Schema.define(version: 2019_10_06_103434) do
     t.integer "write_off_points"
     t.integer "write_off_money"
     t.integer "promotion"
-    t.integer "promotion_id"
   end
 
   create_table "loyalty_programs", force: :cascade do |t|
@@ -163,6 +163,24 @@ ActiveRecord::Schema.define(version: 2019_10_06_103434) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
+    t.integer "accrual_rule"
+    t.integer "accrual_percent"
+    t.integer "accrual_points"
+    t.integer "accrual_money"
+    t.integer "burning_rule"
+    t.integer "burning_days"
+    t.integer "activation_rule"
+    t.integer "activation_days"
+    t.integer "write_off_rule"
+    t.integer "write_off_rule_percent"
+    t.integer "write_off_rule_points"
+    t.integer "accordance_rule"
+    t.integer "accordance_points"
+    t.integer "accordance_percent"
+    t.boolean "accrual_on_points"
+    t.boolean "write_off_limited"
+    t.integer "write_off_min_price"
+    t.integer "rounding_rule"
   end
 
   create_table "stores", force: :cascade do |t|

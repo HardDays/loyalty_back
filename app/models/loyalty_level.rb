@@ -1,7 +1,6 @@
 class LoyaltyLevel < ApplicationRecord
     #TODO: proverka
-    belongs_to :loyalty_program, optional: true
-    belongs_to :promotion, optional: true
+    belongs_to :loyalty_program
 
     has_many :client_points, dependent: :nullify
 
@@ -22,8 +21,8 @@ class LoyaltyLevel < ApplicationRecord
     validates :rounding_rule, presence: :true
 
     validates :min_price, inclusion: 1..10000000
-    validates :write_off_points, inclusion: 1..10000000
-    validates :write_off_money, inclusion: 1..10000000
+    # validates :write_off_points, inclusion: 1..10000000
+    # validates :write_off_money, inclusion: 1..10000000
     validates :accrual_percent, inclusion: 1..100, if: lambda {|m| m.accrual_rule == 'accrual_percent'}
     validates :accrual_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
     validates :accrual_money, inclusion: 1..10000000, if: lambda {|m| m.accrual_rule == 'accrual_convert'}
@@ -43,10 +42,10 @@ class LoyaltyLevel < ApplicationRecord
     validates :first_buy_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_first_buy}
     validates :birthday_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_birthday}
 
-    validates :sms_on_register, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
-    validates :sms_on_points, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
-    validates :sms_on_write_off, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
-    validates :sms_on_burning, inclusion: {in: [true, false]}, if: lambda {|m| m.loyalty_program}
+    validates :sms_on_register, inclusion: {in: [true, false]}
+    validates :sms_on_points, inclusion: {in: [true, false]}
+    validates :sms_on_write_off, inclusion: {in: [true, false]}
+    validates :sms_on_burning, inclusion: {in: [true, false]}
 
     validates :sms_burning_days, inclusion: 1..365, if: lambda {|m| m.sms_on_burning}
 

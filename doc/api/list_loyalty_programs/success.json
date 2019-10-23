@@ -27,7 +27,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODk2MSwiZXhwIjoxNTcwOTY0MjQ3fQ.7NBsa9gIBL0sw5ShinLLzxZa6cQKzNHMbksmclx4kOs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDkyMCwiZXhwIjoxNTcyNDQ3MjI4fQ.uTFA4uenwSvA1bkcwfdQhofpR9RdpN8Q3g9yktkqk0Y",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,18 +36,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 3903,\n  \"company_id\": 13504,\n  \"name\": \"test\",\n  \"created_at\": \"2019-10-06T10:57:27.650Z\",\n  \"updated_at\": \"2019-10-06T10:57:27.650Z\"\n}",
+      "response_body": "{\n  \"id\": 4290,\n  \"company_id\": 14468,\n  \"name\": \"test\",\n  \"created_at\": \"2019-10-23T14:53:48.717Z\",\n  \"updated_at\": \"2019-10-23T14:53:48.717Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"72a513d0d6ae3c38d79933d3a9422c46\"",
+        "ETag": "W/\"2a1804d2c8f7a2c050251a2a07de1fb7\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "681f60b6-02e6-4391-9ea8-2d7d5acc4764",
-        "X-Runtime": "0.009429",
+        "X-Request-Id": "ac046d63-04a8-4390-a26e-13a19d6e81e6",
+        "X-Runtime": "0.008192",
         "Vary": "Origin",
         "Content-Length": "124"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyODk2MSwiZXhwIjoxNTcwOTY0MjQ3fQ.7NBsa9gIBL0sw5ShinLLzxZa6cQKzNHMbksmclx4kOs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDkyMCwiZXhwIjoxNTcyNDQ3MjI4fQ.uTFA4uenwSvA1bkcwfdQhofpR9RdpN8Q3g9yktkqk0Y\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

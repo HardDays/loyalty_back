@@ -41,24 +41,6 @@
       "description": "End date (in format dd.mm.yyyy)"
     },
     {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "required": true,
-      "name": "write_off_points",
-      "description": "How much points to write off (money * (write_off_points / write_off_money))"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "required": true,
-      "name": "write_off_money",
-      "description": "How much money to write off (IN CENTS)"
-    },
-    {
       "type": "string",
       "in": "body",
       "required": true,

@@ -15,8 +15,8 @@ resource "Create loyalty program" do
       parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
       parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
       parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
-      parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
-      parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
+      # parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
+      # parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
       parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
       parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 1, maximum: 100, in: :body
       parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
@@ -70,8 +70,6 @@ resource "Create loyalty program" do
             "accrual_rule": "no_accrual",
             "write_off_rule_percent": 30,
             "write_off_rule_points": 100,
-            "write_off_money": 1,
-            "write_off_points": 1,
             "accrual_on_points": false,
             "accrual_on_register": false,
             "accrual_on_first_buy": false,

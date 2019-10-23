@@ -10,11 +10,10 @@ resource "Create promotion" do
   
       let(:authorization) { @user.token }
   
-      context "Loyalty level description" do
-        parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
-        parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
-        parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
-        parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
+      context "Success" do
+        parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
+        parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
+        parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
         parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
         parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 1, maximum: 100, in: :body
         parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
@@ -31,55 +30,23 @@ resource "Create promotion" do
         parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
         parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
         parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
-        parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
-        parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
-        parameter :accrual_on_birthday, "Accrual on birthday", type: :boolean, in: :body, required: true
-        parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-        parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-        parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-        # parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
-        # parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
-        # parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
-        # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
-        # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
-  
-        example "Loyalty level description" do
-          
-        end
-      end
-  
-      context "Success" do
-        parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
-        parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
-        parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
-        parameter :loyalty_levels, "Loyalty level", type: :array, minmum: 1, in: :body, required: true
-    
+        parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
+        parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
+
         let(:name) { "test" }
         let(:begin_date) { "31.08.2019"}
-        let(:end_date) { "31.08.2020"}
-        let(:loyalty_levels) do
-          [
-            {
-              "level_type": "one_buy",
-              "min_price": 100,
-              "burning_rule": "no_burning",
-              "activation_rule": "activation_moment",
-              "write_off_rule": "write_off_convert",
-              "rounding_rule": "no_rounding",
-              "accordance_rule": "no_accordance",
-              "accrual_rule": "no_accrual",
-              "write_off_rule_percent": 30,
-              "write_off_rule_points": 100,
-              "write_off_money": 1,
-              "write_off_points": 1,
-              "accrual_on_points": false,
-              "accrual_on_register": false,
-              "accrual_on_first_buy": false,
-              "accrual_on_birthday": false
-            }
-          ]
-        end
-  
+        let(:end_date) { "31.12.2019"}
+        let(:accrual_rule) { "no_accrual"}
+        let(:burning_rule) { "no_burning"}
+        let(:activation_rule) { "activation_moment"}
+        let(:accordance_rule) { "no_accordance"}
+        let(:rounding_rule) { "no_rounding"}
+        let(:write_off_rule) { "no_write_off"}
+        let(:write_off_rule_percent) { 1 }
+        let(:write_off_rule_points) { 1 }
+        let(:accrual_on_points) { false }
+        let(:write_off_limited) { false }
+
         let(:raw_post) { params.to_json }
   
         example "Success" do
@@ -92,22 +59,7 @@ resource "Create promotion" do
         let(:name) { "" }
   
         let(:raw_post) { params.to_json }
-        let(:loyalty_levels) do
-          [
-            {
-              "level_type": "one_buy",
-              "min_price": 100,
-              "burning_rule": "no_burning",
-              "write_off_rule_points": 100,
-              "write_off_money": 1,
-              "write_off_points": 1,
-              "accrual_on_points": false,
-              "accrual_on_register": false,
-              "accrual_on_first_buy": false
-            }
-          ]
-        end
-  
+
         example "Wrong fields" do
           do_request
           expect(status).to eq(422)
@@ -163,7 +115,6 @@ resource "Create promotion" do
           do_request
           body = JSON.parse(response_body)
           expect(status).to eq(200)
-          expect(body["loyalty_levels"].length).to eq(1)
         end
       end
   

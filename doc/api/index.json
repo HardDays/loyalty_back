@@ -745,13 +745,6 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Loyalty level description",
-          "link": "create_promotion/loyalty_level_description.json",
-          "groups": "all",
-          "route": "api/v1/promotions",
-          "method": "post"
-        },
-        {
           "description": "Success",
           "link": "create_promotion/success.json",
           "groups": "all",
