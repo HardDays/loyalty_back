@@ -7,7 +7,10 @@ module Api
           if @user.save
             @user.create_creator
             @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex)
-            ConfirmationMailer.confirmation_email(@user).deliver
+            begin
+              ConfirmationMailer.confirmation_email(@user).deliver
+            rescue => ex
+            end
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity

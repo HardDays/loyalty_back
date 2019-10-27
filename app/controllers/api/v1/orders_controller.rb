@@ -6,7 +6,8 @@ module Api
       def show_points
         render json: ClientPointsHelper.points_info(@client_user.client, params[:price].to_i)
       end
-      #TODO: perepilit nemnogo
+
+      #TODO: peredelat
       def create
         ActiveRecord::Base.transaction do
           @order = Order.new(order_params)
@@ -17,7 +18,7 @@ module Api
           @order.write_off_status = :not_written_off
 
           if @order.save
-            ClientPointsHelper.create(@client_user.client, @order, @parent, params[:promotion_id] != nil, params[:use_points])
+            #ClientPointsHelper.create(@client_user.client, @order, @parent, params[:promotion_id] != nil, params[:use_points])
             render json: @order
           else
             render json: @order.errors, status: :unprocessable_entity

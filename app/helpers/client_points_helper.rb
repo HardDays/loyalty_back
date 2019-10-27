@@ -1,85 +1,87 @@
 module ClientPointsHelper
 
-    def self.create(client, order, parent, is_promotion, use_points)
+    def self.create_promotion(client, order, promotion, use_points)
+        #TODO: for promo
+    end
+
+    def self.create_program(client, order, program, use_points)
         if parent
             sum = client.orders.sum{|o| o.price} + order.price
-            parent.loyalty_levels.order(min_price: :desc).each do |level|
-                if !is_promotion || (is_promotion && DateTime.now > parent.begin_date && DateTime.now < parent.end_date)
-                    if (level.level_type.to_sym == :one_buy && order.price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
-                        if (level.accrual_on_points && use_points) || !use_points
-                            points = 0
-                            if level.accrual_rule.to_sym == :accrual_percent
-                                points = (order.price * level.accrual_percent) / 100.0
-                            elsif level.accrual_rule.to_sym == :accrual_convert
-                                points = order.price * (level.accrual_points / level.accrual_money.to_f)
+            program.loyalty_levels.order(min_price: :desc).each do |level|
+                if (level.level_type.to_sym == :one_buy && order.price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
+                    if (level.accrual_on_points && use_points) || !use_points
+                        points = 0
+                        if level.accrual_rule.to_sym == :accrual_percent
+                            points = (order.price * level.accrual_percent) / 100.0
+                        elsif level.accrual_rule.to_sym == :accrual_convert
+                            points = order.price * (level.accrual_points / level.accrual_money.to_f)
+                        end
+                        points = points.to_i
+
+                        activation_date = DateTime.now
+                        if level.activation_rule.to_sym == :activation_days
+                            activation_date += level.activation_days.days
+                        end
+
+                        burning_date = DateTime.now + 100.years
+                        if level.burning_rule.to_sym == :burning_days
+                            burning_date = DateTime.now + level.burning_days.days
+                        end
+
+                        rest = points % 100
+                        if level.rounding_rule.to_sym == :rounding_math
+                            points = points - rest
+                            if rest >= 50
+                                points += 100
                             end
-                            points = points.to_i
-
-                            activation_date = DateTime.now
-                            if level.activation_rule.to_sym == :activation_days
-                                activation_date += level.activation_days.days
+                        elsif level.rounding_rule.to_sym == :rounding_small
+                            points = points - rest
+                        elsif level.rounding_rule.to_sym == :rounding_big 
+                            points = (points - rest) + 100
+                        end
+                        
+                        client_points = ClientPoint.new(
+                            current_points: points,
+                            initial_points: points,
+                            burning_date: burning_date,
+                            activation_date: activation_date,
+                            client: client,
+                            order: order,
+                            loyalty_level: level,
+                            points_source: :ordered
+                        )
+                        saved = client_points.save
+                        if saved 
+                            if use_points
+                                self.write_off(order)
                             end
 
-                            burning_date = DateTime.now + 100.years
-                            if level.burning_rule.to_sym == :burning_days
-                                burning_date = DateTime.now + level.burning_days.days
-                            end
-
-                            rest = points % 100
-                            if level.rounding_rule.to_sym == :rounding_math
-                                points = points - rest
-                                if rest >= 50
-                                    points += 100
-                                end
-                            elsif level.rounding_rule.to_sym == :rounding_small
-                                points = points - rest
-                            elsif level.rounding_rule.to_sym == :rounding_big 
-                                points = (points - rest) + 100
-                            end
-                            
-                            client_points = ClientPoint.new(
-                                current_points: points,
-                                initial_points: points,
-                                burning_date: burning_date,
-                                activation_date: activation_date,
-                                client: client,
-                                order: order,
-                                loyalty_level: level,
-                                points_source: :ordered
-                            )
-                            saved = client_points.save
-                            if saved 
-                                if use_points
-                                    self.write_off(order)
-                                end
-
-                                if !is_promotion
-                                    if level.sms_on_burning
-                                        if level.burning_rule.to_sym == :burning_days
-                                            notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
-                                            notification.sms_status = :pending
-                                            notification.client_point = client_points
-                                            notification.client = client
-                                            notification.save
-                                        end
-                                    end
-
-                                    if level.sms_on_points
-                                        notification = ClientSms.new(sms_type: :points_accrued, send_at: activation_date)
+                            if !is_promotion
+                                if level.sms_on_burning
+                                    if level.burning_rule.to_sym == :burning_days
+                                        notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
+                                        notification.sms_status = :pending
                                         notification.client_point = client_points
                                         notification.client = client
-                                        if level.activation_rule.to_sym == :activation_days
-                                            notification.sms_status = :pending
-                                        else
-                                            notification.sms_status = :sent
-                                            SmsHelper.send_points_receive(client, points)
-                                        end
                                         notification.save
                                     end
                                 end
+
+                                if level.sms_on_points
+                                    notification = ClientSms.new(sms_type: :points_accrued, send_at: activation_date)
+                                    notification.client_point = client_points
+                                    notification.client = client
+                                    if level.activation_rule.to_sym == :activation_days
+                                        notification.sms_status = :pending
+                                    else
+                                        notification.sms_status = :sent
+                                        SmsHelper.send_points_receive(client, points)
+                                    end
+                                    notification.save
+                                end
                             end
-                            return true
                         end
+                        return true
                     end
                 end
             end
