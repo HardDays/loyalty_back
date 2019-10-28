@@ -1,76 +1,15 @@
 {
   "resource": "Register creator",
   "resource_explanation": null,
-  "http_method": "POST",
+  "http_method": "GET",
   "route": "api/v1/creators",
   "description": "Success",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
-      "in": "body",
-      "required": true,
       "name": "email",
       "description": "Email"
-    },
-    {
-      "minmum": 7,
-      "maximum": 64,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "password",
-      "description": "Password"
-    },
-    {
-      "minmum": 7,
-      "maximum": 64,
-      "type": "string",
-      "in": "body",
-      "name": "password_confirmation",
-      "description": "Password confirm"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "first_name",
-      "description": "First name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "last_name",
-      "description": "Last name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "name": "second_name",
-      "description": "Second name"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "enum": [
-        "male",
-        "female"
-      ],
-      "name": "gender",
-      "description": "Gender"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "birth_day",
-      "description": "Date of birth (format: dd.mm.yyyy)"
     }
   ],
   "response_fields": [
@@ -78,31 +17,32 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "api/v1/creators",
-      "request_body": "{\"email\":\"test@test.com\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}",
+      "request_method": "GET",
+      "request_path": "api/v1/creators?email=test%40test.com",
+      "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "email": "test@test.com"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 30892,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-10-23T14:53:47.568Z\",\n  \"updated_at\": \"2019-10-23T14:53:47.568Z\",\n  \"user_type\": \"creator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": null\n}",
+      "response_body": "{\n  \"status\": false\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9571db4010a7b5ed511c3fb0317d2251\"",
+        "ETag": "W/\"c462d460eab61de19f36cc384c99666e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "eb0559ff-40b0-4f89-ae93-815bdebefa18",
-        "X-Runtime": "0.107921",
+        "X-Request-Id": "ecbd5cd5-874c-46b4-96a5-ccbe06c70dc1",
+        "X-Runtime": "0.003345",
         "Vary": "Origin",
-        "Content-Length": "260"
+        "Content-Length": "16"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/creators\" -d '{\"email\":\"test@test.com\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/creators?email=test%40test.com\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

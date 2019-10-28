@@ -206,8 +206,38 @@
       "type": "boolean",
       "in": "body",
       "required": true,
-      "name": "accrual_on_birthday",
-      "description": "Accrual on birthday"
+      "name": "accrual_on_recommend",
+      "description": "Accrual on recommend"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_recommendator_points",
+      "description": "Points for recommendator"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_registered_points",
+      "description": "Points for registered"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "write_off_limited",
+      "description": "Min price limited"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "write_off_min_price",
+      "description": "Min price for 'write_off_limited'"
     },
     {
       "type": "integer",
@@ -224,14 +254,6 @@
       "in": "body",
       "name": "first_buy_points",
       "description": "Points for 'accrual_on_first_buy'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "birthday_points",
-      "description": "Points for 'accrual_on_birthday'"
     },
     {
       "type": "boolean",
@@ -268,6 +290,13 @@
       "in": "body",
       "name": "sms_burning_days",
       "description": "Days for 'sms_on_burning'"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_birthday",
+      "description": "Sms on birthday"
     }
   ],
   "response_fields": [

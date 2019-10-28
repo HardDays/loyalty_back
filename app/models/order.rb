@@ -1,17 +1,17 @@
 class Order < ApplicationRecord
 
-    belongs_to :loyalty_program, optional: true
     belongs_to :client
     belongs_to :store
     belongs_to :operator
+    belongs_to :loyalty_program, optional: true
+    belongs_to :promotion, optional: true
 
     has_one :client_point
 
     enum write_off_status: [:not_written_off, :written_off]
 
     validates :price, inclusion: 1..100000000
-    validates :use_points, inclusion: {in: [true, false]}
-    validates :write_off_status, presence: true
+    validates :write_off_points, inclusion: 1..100000000, allow_nil: true
 
     def ownership(operator)
         if self.operator != operator

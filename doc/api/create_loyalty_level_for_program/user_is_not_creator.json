@@ -33,22 +33,18 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
+      "type": "string",
       "in": "body",
       "required": true,
-      "name": "write_off_points",
-      "description": "How much points to write off (money * (write_off_points / write_off_money))"
+      "name": "begin_date",
+      "description": "Begin date (in format dd.mm.yyyy)"
     },
     {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
+      "type": "string",
       "in": "body",
       "required": true,
-      "name": "write_off_money",
-      "description": "How much money to write off (IN CENTS)"
+      "name": "end_date",
+      "description": "End date (in format dd.mm.yyyy)"
     },
     {
       "type": "string",
@@ -216,8 +212,38 @@
       "type": "boolean",
       "in": "body",
       "required": true,
-      "name": "accrual_on_birthday",
-      "description": "Accrual on birthday"
+      "name": "accrual_on_recommend",
+      "description": "Accrual on recommend"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_recommendator_points",
+      "description": "Points for recommendator"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_registered_points",
+      "description": "Points for registered"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "write_off_limited",
+      "description": "Min price limited"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "write_off_min_price",
+      "description": "Min price for 'write_off_limited'"
     },
     {
       "type": "integer",
@@ -234,14 +260,6 @@
       "in": "body",
       "name": "first_buy_points",
       "description": "Points for 'accrual_on_first_buy'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "birthday_points",
-      "description": "Points for 'accrual_on_birthday'"
     },
     {
       "type": "boolean",
@@ -278,6 +296,13 @@
       "in": "body",
       "name": "sms_burning_days",
       "description": "Days for 'sms_on_burning'"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_birthday",
+      "description": "Sms on birthday"
     }
   ],
   "response_fields": [
@@ -287,10 +312,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":4275}",
+      "request_body": "{\"loyalty_program_id\":5439}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5NywiZXhwIjoxNTcyNDQ3MjI3fQ.cPWEDyuMsAuIoMFi8jtvMQojvARytpEEjkn_uajotc8",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEwMSwiZXhwIjoxNTcyODg0Mzk0fQ.wZXh4S1J-xURy4OFlWx9mReAhCVuFqN3xn07uy9YeXA",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -303,12 +328,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "058eaf8f-f50b-4540-b278-fb35b1d6f966",
-        "X-Runtime": "0.003451",
+        "X-Request-Id": "66dd11b9-ef74-4067-a631-b6ae4a729969",
+        "X-Runtime": "0.003633",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":4275}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5NywiZXhwIjoxNTcyNDQ3MjI3fQ.cPWEDyuMsAuIoMFi8jtvMQojvARytpEEjkn_uajotc8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":5439}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEwMSwiZXhwIjoxNTcyODg0Mzk0fQ.wZXh4S1J-xURy4OFlWx9mReAhCVuFqN3xn07uy9YeXA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

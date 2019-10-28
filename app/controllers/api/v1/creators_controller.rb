@@ -1,12 +1,21 @@
 module Api
   module V1
     class CreatorsController < ApplicationController
+
+      # GET /creators
+      def show
+        render json: {
+          status: User.find_by(phone: params[:phone]) != nil
+        }
+      end
+      
+      # POST /creators
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
           if @user.save
             @user.create_creator
-            @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex)
+            @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
             begin
               ConfirmationMailer.confirmation_email(@user).deliver
             rescue => ex

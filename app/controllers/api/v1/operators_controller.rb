@@ -19,7 +19,7 @@ module Api
           @user.password = '1234567' #SecureRandom.hex(4)
           if @user.save
             @user.create_user_confirmation(confirm_status: :confirmed)
-            @user.create_operator(store_id: params[:store_id], company: @auth_user.creator.company)
+            @user.create_operator(store_id: params[:store_id], company: @auth_user.creator.company, operator_status: :active)
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
@@ -42,7 +42,12 @@ module Api
       end
 
       def destroy
-         @user.destroy
+         @user.operator.operator_status = :deleted
+         if @user.operator.save
+          render json: @user
+        else 
+          render json: @user.errors, status: :unprocessable_entity
+        end
       end
 
       private
@@ -56,13 +61,13 @@ module Api
 
         def auth_creator
           auth
-          @auth_user.permission(@auth_user.creator)
+          @auth_user.role(@auth_user.creator)
         end
 
         def auth_find
           auth_creator
           set_user
-          @user.creator_check(@auth_user.creator)
+          @auth_user.creator_permission(@user.operator)
         end
 
         def operator_params

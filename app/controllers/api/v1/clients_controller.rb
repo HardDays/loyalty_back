@@ -49,18 +49,18 @@ module Api
 
         def auth_operator
           auth
-          @auth_user.permission(@auth_user.operator)
+          @auth_user.role(@auth_user.operator)
         end
 
         def auth_client
           auth
-          @auth_user.permission(@auth_user.client)
+          @auth_user.role(@auth_user.client)
         end
 
         def auth_find
           auth_operator
           set_user
-          @user.operator_check(@auth_user.operator)
+          @auth_user.operator_permission(@user.client)
         end
 
         def set_user

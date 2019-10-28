@@ -28,20 +28,20 @@ class User < ApplicationRecord
         end
     end
 
-    def permission(value)
+    def role(value)
         if value == nil
             raise ApplicationController::Forbidden
         end
     end
 
-    def creator_check(creator)
-        if !(self.operator && self.operator.company == creator.company)
+    def creator_permission(value)
+        if !(value && value.company == self.creator.company)
             raise ApplicationController::Forbidden
         end
     end
 
-    def operator_check(operator)
-        if !(self.client && self.client.company == operator.company)
+    def operator_permission(value)
+        if !(value && value.company == self.operator.company && self.operator.operator_status != 'deleted')
             raise ApplicationController::Forbidden
         end
     end

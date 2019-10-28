@@ -38,7 +38,7 @@ module Api
 
         def auth_creator
           auth
-          @user.permission(@user.creator)
+          @user.role(@user.creator)
           @company = @user.creator.company
         end
 

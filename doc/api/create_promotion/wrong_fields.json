@@ -18,7 +18,7 @@
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk5MiwiZXhwIjoxNTcyNDQ3MjMwfQ.sQSGJ100zGJLLks12qEmS4i9iN4X5F2RDx-iQcTDmtk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxMywiZXhwIjoxNTcyODg0Mzk3fQ.GjwMxfeoYENJXGo8iOSl7ZUuNMPKQKsuB39eFJVzkXE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -31,13 +31,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "2600cc30-6ba6-477c-86d1-e80d60e7b589",
-        "X-Runtime": "0.014226",
+        "X-Request-Id": "b941c861-7fa8-4f23-add9-535acec47acf",
+        "X-Runtime": "0.016950",
         "Vary": "Origin",
         "Content-Length": "393"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk5MiwiZXhwIjoxNTcyNDQ3MjMwfQ.sQSGJ100zGJLLks12qEmS4i9iN4X5F2RDx-iQcTDmtk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxMywiZXhwIjoxNTcyODg0Mzk3fQ.GjwMxfeoYENJXGo8iOSl7ZUuNMPKQKsuB39eFJVzkXE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -21,10 +21,13 @@
       "description": "Price in cents"
     },
     {
-      "type": "boolean",
-      "required": true,
-      "name": "use_points",
-      "description": "Last name"
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": false,
+      "name": "write_off_points",
+      "description": "How much points to write off"
     }
   ],
   "response_fields": [
@@ -33,7 +36,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=30986",
+      "request_path": "api/v1/orders/points?user_id=37207",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -42,7 +45,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "30986"
+        "user_id": "37207"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -51,12 +54,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5afe8411-af3a-446a-a9f2-f7b09f7ea3d3",
-        "X-Runtime": "0.001419",
+        "X-Request-Id": "f22bfcf1-121f-4bc7-8776-b28b88f37b24",
+        "X-Runtime": "0.001554",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=30986\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37207\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

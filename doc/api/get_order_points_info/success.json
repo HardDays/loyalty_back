@@ -21,10 +21,13 @@
       "description": "Price in cents"
     },
     {
-      "type": "boolean",
-      "required": true,
-      "name": "use_points",
-      "description": "Last name"
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": false,
+      "name": "write_off_points",
+      "description": "How much points to write off"
     }
   ],
   "response_fields": [
@@ -33,18 +36,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=30980&price=10000&use_points=false",
+      "request_path": "api/v1/orders/points?user_id=37201&price=10000&write_off_points",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk3OSwiZXhwIjoxNTcyNDQ3MjMwfQ.uJsKb3Jjo9x-nvXB6J62zg2DG9NcUxjFTbjJdEi_X6s",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIwMCwiZXhwIjoxNTcyODg0Mzk2fQ._RvvdqgEB3FRAzVlm-gN4-jUN-XNZzxuIaSTaAoE9S4",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "30980",
+        "user_id": "37201",
         "price": "10000",
-        "use_points": "false"
+        "write_off_points": null
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -54,13 +57,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "15375412-1091-4e66-a201-72054fcfeeb1",
-        "X-Runtime": "0.015952",
+        "X-Request-Id": "1fa2969f-24fe-45cc-a65a-b1bf29a231af",
+        "X-Runtime": "0.017447",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=30980&price=10000&use_points=false\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDk3OSwiZXhwIjoxNTcyNDQ3MjMwfQ.uJsKb3Jjo9x-nvXB6J62zg2DG9NcUxjFTbjJdEi_X6s\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37201&price=10000&write_off_points\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIwMCwiZXhwIjoxNTcyODg0Mzk2fQ._RvvdqgEB3FRAzVlm-gN4-jUN-XNZzxuIaSTaAoE9S4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

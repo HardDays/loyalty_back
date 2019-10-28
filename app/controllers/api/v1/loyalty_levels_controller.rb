@@ -34,19 +34,19 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.permission(@auth_user.creator)
+          @auth_user.role(@auth_user.creator)
         end
 
         def auth_create
           auth_creator
           @program = LoyaltyProgram.find(params[:loyalty_program_id])
-          @program.ownership(@auth_user.creator)
+          @auth_user.creator_permission(@program)
         end
 
         def auth_find
           auth_creator
           set_level
-          @level.loyalty_program.ownership(@auth_user.creator)
+          @auth_user.creator_permission(@level.loyalty_program)
         end
 
         def set_level
@@ -55,15 +55,17 @@ module Api
 
         def level_params
           params.permit(
-            :level_type, :type, :min_price, :begin_date, :end_date,
+            :level_type, :min_price, :begin_date, :end_date, 
             :accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
             :burning_rule, :burning_days, :activation_rule, :activation_days, 
             :write_off_rule, :write_off_rule_percent, :write_off_rule_points, 
             :write_off_points, :write_off_money,
+            :write_off_limited, :write_off_min_price,
             :accordance_rule, :accordance_points, :accordance_percent,
+            :accrual_on_recommend, :recommend_recommendator_points, :recommend_registered_points,
             :accrual_on_points, :accrual_on_register, :register_points,
             :accrual_on_first_buy, :first_buy_points, :accrual_on_birthday, :birthday_points,
-            :rounding_rule, :sms_on_register, :sms_on_points, :sms_on_write_off, :sms_on_burning, :sms_burning_days
+            :rounding_rule, :sms_on_register, :sms_on_points, :sms_on_write_off, :sms_on_burning, :sms_burning_days, :sms_on_birthday
           )
         end
       end

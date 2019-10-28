@@ -6,6 +6,7 @@ class Operator < ApplicationRecord
 
   has_many :orders, dependent: :nullify
 
+  enum operator_status: [:active, :deleted]
 
   def as_json(options = {})
     attrs = super.except('user_id').except('id')

@@ -63,17 +63,20 @@ def create_program(company)
         "accrual_on_register": false,
         "accrual_on_first_buy": false,
         "accrual_on_birthday": false,
+        "accrual_on_recommend": false,
+        "write_off_limited": false,
         "sms_on_register": false,
         "sms_on_points": false,
         "sms_on_write_off": false,
-        "sms_on_burning": false
+        "sms_on_burning": false,
+        "sms_on_birthday": false,
     )
     program.save
     return program
 end
 
 def create_promotion(company)
-    program = Promotion.new(
+    promo = Promotion.new(
         name: "test", 
         company_id: company.id, 
         begin_date: "31.08.2019", 
@@ -89,8 +92,8 @@ def create_promotion(company)
         accrual_on_points: false,
         write_off_limited: false
     )
-    program.save
-    return program
+    promo.save
+    return promo
 end
 
 # def create_tariff_plan

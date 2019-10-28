@@ -322,6 +322,13 @@
           "groups": "all",
           "route": "api/v1/creators",
           "method": "post"
+        },
+        {
+          "description": "Success",
+          "link": "register_creator/success.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "get"
         }
       ]
     },
@@ -510,6 +517,19 @@
       ]
     },
     {
+      "name": "Get loyalty program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_loyalty_program/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "List loyalty programs",
       "explanation": null,
       "examples": [
@@ -666,42 +686,83 @@
       ]
     },
     {
-      "name": "Create order",
+      "name": "Create order for loyalty program",
       "explanation": null,
       "examples": [
         {
           "description": "Success",
-          "link": "create_order/success.json",
+          "link": "create_order_for_loyalty_program/success.json",
           "groups": "all",
-          "route": "api/v1/orders",
+          "route": "api/v1/orders/program",
           "method": "post"
         },
         {
           "description": "Wrong fields",
-          "link": "create_order/wrong_fields.json",
+          "link": "create_order_for_loyalty_program/wrong_fields.json",
           "groups": "all",
-          "route": "api/v1/orders",
+          "route": "api/v1/orders/program",
           "method": "post"
         },
         {
           "description": "User not found",
-          "link": "create_order/user_not_found.json",
+          "link": "create_order_for_loyalty_program/user_not_found.json",
           "groups": "all",
-          "route": "api/v1/orders",
+          "route": "api/v1/orders/program",
           "method": "post"
         },
         {
           "description": "Wrong token",
-          "link": "create_order/wrong_token.json",
+          "link": "create_order_for_loyalty_program/wrong_token.json",
           "groups": "all",
-          "route": "api/v1/orders",
+          "route": "api/v1/orders/program",
           "method": "post"
         },
         {
           "description": "User is not operator",
-          "link": "create_order/user_is_not_operator.json",
+          "link": "create_order_for_loyalty_program/user_is_not_operator.json",
           "groups": "all",
-          "route": "api/v1/orders",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create order for promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_order_for_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_order_for_promotion/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "create_order_for_promotion/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_order_for_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_order_for_promotion/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
           "method": "post"
         }
       ]
@@ -805,6 +866,40 @@
           "groups": "all",
           "route": "api/v1/promotions/:id",
           "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_promotion/not_found.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not creator",
+          "link": "delete_promotion/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
         }
       ]
     },

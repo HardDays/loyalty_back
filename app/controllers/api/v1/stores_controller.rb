@@ -43,13 +43,13 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.permission(@auth_user.creator)
+          @auth_user.role(@auth_user.creator)
         end
 
         def auth_find
           auth_creator
           set_store
-          @store.ownership(@auth_user.creator)
+          @auth_user.creator_permission(@store)
         end
 
         def set_store

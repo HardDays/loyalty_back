@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post 'auth/password/request', action: :request_password, controller: 'auth'
       post 'auth/password/update', action: :update_password, controller: 'auth'
 
+      get 'creators', action: :show, controller: 'creators'
       post 'creators', action: :create, controller: 'creators'
       
       get 'clients/profile', action: :profile, controller: 'clients'
@@ -55,7 +56,8 @@ Rails.application.routes.draw do
       delete 'promotions/:id', action: :destroy, controller: 'promotions'
 
       get 'orders/points', action: :show_points, controller: 'orders'
-      post 'orders', action: :create, controller: 'orders'
+      post 'orders/program', action: :create_program, controller: 'orders'
+      post 'orders/promotion', action: :create_promotion, controller: 'orders'
 
       get 'reports/general', action: :general, controller: 'reports'
       get 'reports/clients', action: :clients, controller: 'reports'

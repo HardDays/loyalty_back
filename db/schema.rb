@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_143951) do
+ActiveRecord::Schema.define(version: 2019_10_28_160816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,12 @@ ActiveRecord::Schema.define(version: 2019_10_23_143951) do
     t.integer "write_off_points"
     t.integer "write_off_money"
     t.integer "promotion"
+    t.boolean "sms_on_birthday"
+    t.boolean "write_off_limited"
+    t.integer "write_off_min_price"
+    t.boolean "accrual_on_recommend"
+    t.integer "recommend_recommendator_points"
+    t.integer "recommend_registered_points"
   end
 
   create_table "loyalty_programs", force: :cascade do |t|
@@ -134,6 +140,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_143951) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.integer "user_id"
+    t.integer "operator_status"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -146,6 +153,8 @@ ActiveRecord::Schema.define(version: 2019_10_23_143951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "write_off_status"
+    t.integer "write_off_points"
+    t.integer "promotion_id"
   end
 
   create_table "password_resets", force: :cascade do |t|

@@ -1,0 +1,74 @@
+{
+  "resource": "Create order for promotion",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/orders/promotion",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "promotion_id",
+      "description": "Id of promotion"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": false,
+      "name": "write_off_points",
+      "description": "How much points to write off"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/orders/promotion",
+      "request_body": "{\"user_id\":37188,\"promotion_id\":216}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzE4NywiZXhwIjoxNTcyODg0Mzk2fQ.0Ti0MYwU468s6LJ3aiYhcN36KtBjpUm24F6tu3_rKcg",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"price\": [\n    \"is not included in the list\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "5c0d4f5e-f751-474a-9576-e6f51974ffb0",
+        "X-Runtime": "0.014714",
+        "Vary": "Origin",
+        "Content-Length": "41"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":37188,\"promotion_id\":216}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzE4NywiZXhwIjoxNTcyODg0Mzk2fQ.0Ti0MYwU468s6LJ3aiYhcN36KtBjpUm24F6tu3_rKcg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

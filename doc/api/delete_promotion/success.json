@@ -1,0 +1,41 @@
+{
+  "resource": "Delete promotion",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/promotions/:id",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/promotions/225",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIyMiwiZXhwIjoxNTcyODg0Mzk3fQ.8JdvUma7RxJP117NuPKsyf5S6yk3-mdwiZZhHXgCca4",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "41447346-5032-4fcb-9d7e-eba72de15548",
+        "X-Runtime": "0.008954",
+        "Vary": "Origin"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000api/v1/promotions/225\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIyMiwiZXhwIjoxNTcyODg0Mzk3fQ.8JdvUma7RxJP117NuPKsyf5S6yk3-mdwiZZhHXgCca4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

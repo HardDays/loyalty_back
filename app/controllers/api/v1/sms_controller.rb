@@ -23,7 +23,7 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.permission(@auth_user.creator)
+          @auth_user.role(@auth_user.creator)
         end
     end
   end

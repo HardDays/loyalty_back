@@ -181,8 +181,8 @@ resource "Delete operator" do
     context "Success" do
       example "Success" do
         do_request
-        expect(status).to eq(204)
-        expect(User.where(id: @operator.id).first).to eq(nil)
+        expect(status).to eq(200)
+        expect(User.find(@operator.id).operator.operator_status).to eq('deleted')
       end
     end
 

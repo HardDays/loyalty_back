@@ -35,15 +35,21 @@ resource "Create loyalty program" do
       parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
       parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
       parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
-      parameter :accrual_on_birthday, "Accrual on birthday", type: :boolean, in: :body, required: true
+      parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
+      parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
+      parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
+      #parameter :accrual_on_birthday, "Accrual on birthday", type: :boolean, in: :body, required: true
       parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
       parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-      parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      #parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
       parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
       parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
       parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
       parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
       parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
+      parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
 
       example "Loyalty level description" do
         
@@ -60,8 +66,6 @@ resource "Create loyalty program" do
           {
             "level_type": "one_buy",
             "min_price": 100,
-            "begin_date": "31.08.2019",
-            "end_date": "02.10.2019",
             "burning_rule": "no_burning",
             "activation_rule": "activation_moment",
             "write_off_rule": "write_off_convert",
@@ -70,14 +74,18 @@ resource "Create loyalty program" do
             "accrual_rule": "no_accrual",
             "write_off_rule_percent": 30,
             "write_off_rule_points": 100,
+            "write_off_money": 1,
+            "write_off_points": 1,
             "accrual_on_points": false,
             "accrual_on_register": false,
             "accrual_on_first_buy": false,
-            "accrual_on_birthday": false,
+            "accrual_on_recommend": false,
+            "write_off_limited": false,
             "sms_on_register": false,
             "sms_on_points": false,
             "sms_on_write_off": false,
-            "sms_on_burning": false
+            "sms_on_burning": false,
+            "sms_on_birthday": false,
           }
         ]
       end
@@ -256,6 +264,31 @@ end
 #     end
 #   end
 # end
+
+resource "Get loyalty program" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  parameter :id, "Id", type: :integer, required: true
+
+  get "api/v1/loyalty_programs/:id" do
+    before do
+      @user = create_creator(create_user)
+      @company = create_company(@user)
+      @porgram = create_program(@company)
+    end
+
+    let(:authorization) { @user.token }
+    let(:id) { @porgram.id }
+
+    context "Success" do
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+      end
+    end
+  end
+end
 
 resource "List loyalty programs" do
   header 'Content-Type', 'application/json'

@@ -40,10 +40,9 @@ module Api
         end
       end
 
-      # def destroy
-      #   @level = LoyaltyLevel.find_by(promotion: params[:id])
-      #   @promotion.destroy
-      # end
+      def destroy
+        @promotion.destroy
+      end
 
       private
         def auth
@@ -52,13 +51,13 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.permission(@auth_user.creator)
+          @auth_user.role(@auth_user.creator)
         end
 
         def auth_find
           auth_creator
           set_promotion
-          @promotion.ownership(@auth_user.creator)
+          @auth_user.creator_permission(@promotion)
         end
 
         def set_promotion

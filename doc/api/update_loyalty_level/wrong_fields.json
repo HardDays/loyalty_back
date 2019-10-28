@@ -27,22 +27,18 @@
       "description": "Min price or sum for activate bonus (IN CENTS)"
     },
     {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
+      "type": "string",
       "in": "body",
       "required": true,
-      "name": "write_off_points",
-      "description": "How much points to write off (money * (write_off_points / write_off_money))"
+      "name": "begin_date",
+      "description": "Begin date (in format dd.mm.yyyy)"
     },
     {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
+      "type": "string",
       "in": "body",
       "required": true,
-      "name": "write_off_money",
-      "description": "How much money to write off (IN CENTS)"
+      "name": "end_date",
+      "description": "End date (in format dd.mm.yyyy)"
     },
     {
       "type": "string",
@@ -210,8 +206,38 @@
       "type": "boolean",
       "in": "body",
       "required": true,
-      "name": "accrual_on_birthday",
-      "description": "Accrual on birthday"
+      "name": "accrual_on_recommend",
+      "description": "Accrual on recommend"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_recommendator_points",
+      "description": "Points for recommendator"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_registered_points",
+      "description": "Points for registered"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "write_off_limited",
+      "description": "Min price limited"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "write_off_min_price",
+      "description": "Min price for 'write_off_limited'"
     },
     {
       "type": "integer",
@@ -228,14 +254,6 @@
       "in": "body",
       "name": "first_buy_points",
       "description": "Points for 'accrual_on_first_buy'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "birthday_points",
-      "description": "Points for 'accrual_on_birthday'"
     },
     {
       "type": "boolean",
@@ -272,6 +290,13 @@
       "in": "body",
       "name": "sms_burning_days",
       "description": "Days for 'sms_on_burning'"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_birthday",
+      "description": "Sms on birthday"
     }
   ],
   "response_fields": [
@@ -280,11 +305,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/4402",
-      "request_body": "{\"write_off_points\":null,\"write_off_money\":null,\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"accrual_on_birthday\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}",
+      "request_path": "api/v1/loyalty_levels/5589",
+      "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5OSwiZXhwIjoxNTcyNDQ3MjI3fQ.3647YeQgcEHKtWgihf1NFocTM_X8ZCz7egSX9u5pS-g",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEwMywiZXhwIjoxNTcyODg0Mzk0fQ.qh_xXyr_Xluan-Ert9P8DMT-2Nbnf0G6r4q8FxPeC1Y",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -293,17 +318,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"accrual_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"write_off_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accordance_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accrual_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_birthday\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ]\n}",
+      "response_body": "{\n  \"accrual_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"write_off_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accordance_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accrual_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "978fb38e-ec2f-46b6-a75f-a771f92fdf26",
-        "X-Runtime": "0.019307",
+        "X-Request-Id": "950c3f2d-15a6-4191-8fcd-fbf57c73887a",
+        "X-Runtime": "0.019195",
         "Vary": "Origin",
-        "Content-Length": "544"
+        "Content-Length": "490"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/4402\" -d '{\"write_off_points\":null,\"write_off_money\":null,\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"accrual_on_birthday\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDg5OSwiZXhwIjoxNTcyNDQ3MjI3fQ.3647YeQgcEHKtWgihf1NFocTM_X8ZCz7egSX9u5pS-g\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/5589\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEwMywiZXhwIjoxNTcyODg0Mzk0fQ.qh_xXyr_Xluan-Ert9P8DMT-2Nbnf0G6r4q8FxPeC1Y\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

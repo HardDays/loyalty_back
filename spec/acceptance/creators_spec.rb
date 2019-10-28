@@ -43,5 +43,18 @@ resource "Register creator" do
       end
     end
   end
+
+  get "api/v1/creators" do
+    parameter :email, "Email", type: :string
+
+    context "Success" do
+      let(:email) { "test@test.com" }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+      end
+    end
+  end
 end
 

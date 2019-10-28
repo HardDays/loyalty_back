@@ -1,0 +1,66 @@
+{
+  "resource": "Create order for loyalty program",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/orders/program",
+  "description": "User not found",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": false,
+      "name": "write_off_points",
+      "description": "How much points to write off"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/orders/program",
+      "request_body": "{\"user_id\":0}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzE3NCwiZXhwIjoxNTcyODg0Mzk2fQ.jPeSI9yJ5b8Ptz1i3pcvmshuZwiavYQXhui9fsqZ7rU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "441691a3-767d-4999-850f-b04066fcec7b",
+        "X-Runtime": "0.003560",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/program\" -d '{\"user_id\":0}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzE3NCwiZXhwIjoxNTcyODg0Mzk2fQ.jPeSI9yJ5b8Ptz1i3pcvmshuZwiavYQXhui9fsqZ7rU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
