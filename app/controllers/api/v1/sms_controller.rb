@@ -3,6 +3,7 @@ module Api
     class SmsController < ApplicationController
       before_action :auth_creator, only: [:create]
 
+      # POST /sms
       def create
         if params[:message] && params[:message].length > 0
           @clients = @auth_user.creator.company.clients

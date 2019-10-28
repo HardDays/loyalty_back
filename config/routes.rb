@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get 'creators', action: :show, controller: 'creators'
       post 'creators', action: :create, controller: 'creators'
       
+      get 'clients', action: :index, controller: 'clients'
       get 'clients/profile', action: :profile, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'

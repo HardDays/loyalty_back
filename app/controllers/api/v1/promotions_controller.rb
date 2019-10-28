@@ -7,7 +7,7 @@ module Api
 
       def index
         @promotions = @auth_user.creator.company.promotions
-        render json: @promotions#, loyalty_levels: true
+        render json: @promotions
       end
 
       def show
@@ -15,17 +15,10 @@ module Api
       end
 
       def create
-        #@level = LoyaltyLevel.new(level_params)
         @promotion = Promotion.new(promotion_params)
         @promotion.company = @auth_user.creator.company
-        # @promotion.title = level_params[:title]
-        # @promotion.date_to = level_params[:date_to]
-        # @promotion.date_from = level_params[:date_from]
-
-        # @level.loyalty_program = @program
 
         if @promotion.save
-          #@level.promotion = @promotion.id
           render json: @promotion,  status: :ok
         else
           render json: @promotion.errors, status: :unprocessable_entity

@@ -5,10 +5,16 @@ module Api
       before_action :auth_operator, only: [:create]
       before_action :auth_client, only: [:profile]
 
+      def index
+        #TODO: search by name
+      end
+
+      # GET /clients/profile
       def profile
         render json: @auth_user, points: true, loyalty_program: true
       end
 
+      # POST /clients
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
@@ -31,6 +37,7 @@ module Api
         end
       end
 
+      # PUT /clients
       def update
         ActiveRecord::Base.transaction do
           if @user.update(user_params)
