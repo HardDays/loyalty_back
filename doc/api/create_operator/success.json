@@ -69,10 +69,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/operators",
-      "request_body": "{\"email\":\"test@test.com\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":11031}",
+      "request_body": "{\"email\":\"test@test.com\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":11098}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEyOSwiZXhwIjoxNTcyODg0Mzk1fQ.y7hj0UnOARuWIgZBNAo3qYKU--OyyyG-PqSijLgTb8g",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzM2OSwiZXhwIjoxNTcyOTUyNjczfQ.tveTLY6l3-1HfKaXfrdOF2qeIQKG4Qd-mXHL_nK0Fe4",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -81,18 +81,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 37130,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-10-28T16:19:55.167Z\",\n  \"updated_at\": \"2019-10-28T16:19:55.167Z\",\n  \"user_type\": \"operator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"store_id\": 11031,\n  \"company_id\": 17517,\n  \"operator_status\": \"active\"\n}",
+      "response_body": "{\n  \"id\": 37370,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-10-29T11:17:53.142Z\",\n  \"updated_at\": \"2019-10-29T11:17:53.142Z\",\n  \"user_type\": \"operator\",\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"store_id\": 11098,\n  \"company_id\": 17634,\n  \"operator_status\": \"active\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"c0a355b87b679dbf47fa5cfb6ff54797\"",
+        "ETag": "W/\"8e3db671f65eefc254a8748d9c28e8e6\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "2cc01fee-fbbb-4835-b165-df2dd46b0197",
-        "X-Runtime": "0.027127",
+        "X-Request-Id": "3d27e5ff-fa6c-4e17-aadd-b8b48758fde9",
+        "X-Runtime": "0.026192",
         "Vary": "Origin",
         "Content-Length": "306"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '{\"email\":\"test@test.com\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":11031}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzEyOSwiZXhwIjoxNTcyODg0Mzk1fQ.y7hj0UnOARuWIgZBNAo3qYKU--OyyyG-PqSijLgTb8g\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '{\"email\":\"test@test.com\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":11098}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzM2OSwiZXhwIjoxNTcyOTUyNjczfQ.tveTLY6l3-1HfKaXfrdOF2qeIQKG4Qd-mXHL_nK0Fe4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
