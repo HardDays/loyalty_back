@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #apipie
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # namespace 'api' do
   #   namespace 'v1' do
   #     resources :company
@@ -12,14 +14,61 @@ Rails.application.routes.draw do
 
       post 'auth/login', action: :login, controller: 'auth'
       post 'auth/confirm', action: :confirm, controller: 'auth'
+      post 'auth/password/request', action: :request_password, controller: 'auth'
+      post 'auth/password/update', action: :update_password, controller: 'auth'
 
-      post 'users', action: :create, controller: 'users'
-      put 'users', action: :update, controller: 'users'
+      get 'creators', action: :show, controller: 'creators'
+      post 'creators', action: :create, controller: 'creators'
+      
+      get 'clients', action: :index, controller: 'clients'
+      get 'clients/profile', action: :profile, controller: 'clients'
+      post 'clients', action: :create, controller: 'clients'
+      put 'clients/:id', action: :update, controller: 'clients'
 
-      post 'company_info', action: :create, controller: 'company_info'
-      put 'company_info', action: :update, controller: 'company_info' 
+      get 'operators', action: :index, controller: 'operators'
+      post 'operators', action: :create, controller: 'operators'
+      put 'operators/:id', action: :update, controller: 'operators'
+      delete 'operators/:id', action: :destroy, controller: 'operators'
 
+      get 'companies', action: :show, controller: 'companies'
+      post 'companies', action: :create, controller: 'companies'
+      put 'companies', action: :update, controller: 'companies'
+
+      get 'stores', action: :index, controller: 'stores'
+      post 'stores', action: :create, controller: 'stores'
+      put 'stores/:id', action: :update, controller: 'stores'
+      delete 'stores/:id', action: :destroy, controller: 'stores'
+
+      get 'loyalty_programs', action: :index, controller: 'loyalty_programs'
+      get 'loyalty_programs/:id', action: :show, controller: 'loyalty_programs'
+      post 'loyalty_programs', action: :create, controller: 'loyalty_programs'
+      put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
+      # delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
+
+      get 'loyalty_levels', action: :list, controller: 'loyalty_levels'
+      post 'loyalty_levels', action: :create, controller: 'loyalty_levels'
+      put 'loyalty_levels/:id', action: :update, controller: 'loyalty_levels'
+      delete 'loyalty_levels/:id', action: :destroy, controller: 'loyalty_levels'
+
+      get 'promotions', action: :index, controller: 'promotions'
+      get 'promotions/:id', action: :show, controller: 'promotions'
+      post 'promotions', action: :create, controller: 'promotions'
+      put 'promotions/:id', action: :update, controller: 'promotions'
+      delete 'promotions/:id', action: :destroy, controller: 'promotions'
+
+      get 'orders/points', action: :show_points, controller: 'orders'
+      post 'orders/program', action: :create_program, controller: 'orders'
+      post 'orders/promotion', action: :create_promotion, controller: 'orders'
+
+      get 'reports/general', action: :general, controller: 'reports'
+      get 'reports/clients', action: :clients, controller: 'reports'
+      get 'reports/orders', action: :orders, controller: 'reports'
+      get 'reports/sms', action: :sms, controller: 'reports'
+
+      get 'tariff_plans', action: :index, controller: 'tariff_plans'
+      post 'tariff_plans/purchase', action: :purchase, controller: 'tariff_plans'
+
+      post 'sms', action: :create, controller: 'sms'
     end
   end
-
 end

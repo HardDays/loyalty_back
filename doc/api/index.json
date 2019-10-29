@@ -1,0 +1,1157 @@
+{
+  "resources": [
+    {
+      "name": "Login",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "login/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "login/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "Wrong password",
+          "link": "login/wrong_password.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        },
+        {
+          "description": "Email or phone not confirmed",
+          "link": "login/email_or_phone_not_confirmed.json",
+          "groups": "all",
+          "route": "api/v1/auth/login",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Confirmation",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Not found",
+          "link": "confirmation/not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm",
+          "method": "post"
+        },
+        {
+          "description": "Phone success",
+          "link": "confirmation/phone_success.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm",
+          "method": "post"
+        },
+        {
+          "description": "Phone success",
+          "link": "confirmation/phone_success.json",
+          "groups": "all",
+          "route": "api/v1/auth/confirm",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Request code password",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "request_code_password/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/password/request",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "request_code_password/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/password/request",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update password",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_password/success.json",
+          "groups": "all",
+          "route": "api/v1/auth/password/update",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_password/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/auth/password/update",
+          "method": "post"
+        },
+        {
+          "description": "Code not found",
+          "link": "update_password/code_not_found.json",
+          "groups": "all",
+          "route": "api/v1/auth/password/update",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create client",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_client/success.json",
+          "groups": "all",
+          "route": "api/v1/clients",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_client/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/clients",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_client/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_client/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/clients",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update client",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_client/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_client/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_client/not_found.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_client/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not operator",
+          "link": "update_client/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Client profile",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "client_profile/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "client_profile/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile",
+          "method": "get"
+        },
+        {
+          "description": "User is not client",
+          "link": "client_profile/user_is_not_client.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_company/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_company/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Get company",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_company/success.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_company/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        },
+        {
+          "description": "User is not creator",
+          "link": "get_company/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/companies",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Register creator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "register_creator/success.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "register_creator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "post"
+        },
+        {
+          "description": "Success",
+          "link": "register_creator/success.json",
+          "groups": "all",
+          "route": "api/v1/creators",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create loyalty level for program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_loyalty_level_for_program/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_loyalty_level_for_program/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_loyalty_level_for_program/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_loyalty_level_for_program/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update loyalty level",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_loyalty_level/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_loyalty_level/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_loyalty_level/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_loyalty_level/not_found.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_loyalty_level/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete loyalty level",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_loyalty_level/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_loyalty_level/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_loyalty_level/not_found.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not creator",
+          "link": "delete_loyalty_level/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "Create loyalty program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Loyalty level description",
+          "link": "create_loyalty_program/loyalty_level_description.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "post"
+        },
+        {
+          "description": "Success",
+          "link": "create_loyalty_program/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_loyalty_program/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_loyalty_program/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_loyalty_program/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update loyalty program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_loyalty_program/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_loyalty_program/not_found.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_loyalty_program/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_loyalty_program/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Get loyalty program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_loyalty_program/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "List loyalty programs",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "list_loyalty_programs/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "list_loyalty_programs/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "get"
+        },
+        {
+          "description": "User is not creator",
+          "link": "list_loyalty_programs/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_programs",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_operator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_operator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_operator/not_found.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_operator/not_found.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not creator",
+          "link": "delete_operator/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "Get operators",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_operators/success.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_operators/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create order for loyalty program",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_order_for_loyalty_program/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_order_for_loyalty_program/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "create_order_for_loyalty_program/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_order_for_loyalty_program/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_order_for_loyalty_program/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/program",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create order for promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_order_for_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_order_for_promotion/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "create_order_for_promotion/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_order_for_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_order_for_promotion/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Get order points info",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_order_points_info/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/points",
+          "method": "get"
+        },
+        {
+          "description": "User not found",
+          "link": "get_order_points_info/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/points",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_order_points_info/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/points",
+          "method": "get"
+        },
+        {
+          "description": "User is not operator",
+          "link": "get_order_points_info/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/points",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_promotion/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_promotion/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_promotion/not_found.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not creator",
+          "link": "update_promotion/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete promotion",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_promotion/success.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_promotion/not_found.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_promotion/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not creator",
+          "link": "delete_promotion/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/promotions/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "List promotions",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "list_promotions/success.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "list_promotions/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "get"
+        },
+        {
+          "description": "User is not creator",
+          "link": "list_promotions/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/promotions",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "General report",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "general_report/success.json",
+          "groups": "all",
+          "route": "api/v1/reports/general",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "general_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/reports/general",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Orders report",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "orders_report/success.json",
+          "groups": "all",
+          "route": "api/v1/reports/orders",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "orders_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/reports/orders",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Clients report",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "clients_report/success.json",
+          "groups": "all",
+          "route": "api/v1/reports/clients",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "clients_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/reports/clients",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Sms report",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "sms_report/success.json",
+          "groups": "all",
+          "route": "api/v1/reports/sms",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "sms_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/reports/sms",
+          "method": "get"
+        },
+        {
+          "description": "Success",
+          "link": "sms_report/success.json",
+          "groups": "all",
+          "route": "api/v1/sms",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "sms_report/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/sms",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Create store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_store/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_store/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_store/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "User is not owner",
+          "link": "update_store/user_is_not_owner.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        },
+        {
+          "description": "Not found",
+          "link": "update_store/not_found.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Delete store",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "delete_store/success.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "delete_store/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User is not owner",
+          "link": "delete_store/user_is_not_owner.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Not found",
+          "link": "delete_store/not_found.json",
+          "groups": "all",
+          "route": "api/v1/stores/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "List stores",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "list_stores/success.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "list_stores/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/stores",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

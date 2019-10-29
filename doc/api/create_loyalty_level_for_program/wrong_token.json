@@ -1,0 +1,339 @@
+{
+  "resource": "Create loyalty level for program",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/loyalty_levels",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "loyalty_program_id",
+      "description": "Loyalty program"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "one_buy",
+        "sum_buy"
+      ],
+      "name": "level_type",
+      "description": "Level type"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "min_price",
+      "description": "Min price or sum for activate bonus (IN CENTS)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "begin_date",
+      "description": "Begin date (in format dd.mm.yyyy)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "end_date",
+      "description": "End date (in format dd.mm.yyyy)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_accrual",
+        "accrual_percent",
+        "accrual_convert"
+      ],
+      "name": "accrual_rule",
+      "description": "Accrual rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "accrual_percent",
+      "description": "Percent for 'accrual_percent' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accrual_points",
+      "description": "Points for 'accrual_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accrual_money",
+      "description": "Money for 'accrual_convert' rule (IN CENTS)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_burning",
+        "burning_days"
+      ],
+      "name": "burning_rule",
+      "description": "Burning rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 365,
+      "in": "body",
+      "name": "burning_days",
+      "description": "Days for 'burning_days' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "activation_moment",
+        "activation_days"
+      ],
+      "name": "activation_rule",
+      "description": "Activation rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 365,
+      "in": "body",
+      "name": "activation_days",
+      "description": "Days for 'activation_days' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_write_off",
+        "write_off_convert"
+      ],
+      "name": "write_off_rule",
+      "description": "Write off rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "write_off_rule_percent",
+      "description": "Percent for 'write_off_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "write_off_rule_points",
+      "description": "Points for 'write_off_convert' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_accordance",
+        "accordance_convert"
+      ],
+      "name": "accordance_rule",
+      "description": "Accordance rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 100,
+      "in": "body",
+      "name": "accordance_percent",
+      "description": "Percent for 'accordance_convert' rule"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "accordance_points",
+      "description": "Points for 'accordance_convert' rule"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "enum": [
+        "no_rounding",
+        "rounding_math",
+        "rounding_small",
+        "rounding_big"
+      ],
+      "name": "rounding_rule",
+      "description": "Rounding rule"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "accrual_on_points",
+      "description": "Accrual when points added"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "accrual_on_register",
+      "description": "Accrual when registered"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "accrual_on_first_buy",
+      "description": "Accrual on first purchase"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "accrual_on_recommend",
+      "description": "Accrual on recommend"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_recommendator_points",
+      "description": "Points for recommendator"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "recommend_registered_points",
+      "description": "Points for registered"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "write_off_limited",
+      "description": "Min price limited"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "write_off_min_price",
+      "description": "Min price for 'write_off_limited'"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "register_points",
+      "description": "Points for 'accrual_on_register'"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 10000000000,
+      "in": "body",
+      "name": "first_buy_points",
+      "description": "Points for 'accrual_on_first_buy'"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_register",
+      "description": "Sms on register"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_points",
+      "description": "Sms on points"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_write_off",
+      "description": "Sms on write off"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_burning",
+      "description": "Sms on burning"
+    },
+    {
+      "type": "integer",
+      "minmum": 1,
+      "maximum": 365,
+      "in": "body",
+      "name": "sms_burning_days",
+      "description": "Days for 'sms_on_burning'"
+    },
+    {
+      "type": "boolean",
+      "in": "body",
+      "required": true,
+      "name": "sms_on_birthday",
+      "description": "Sms on birthday"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/loyalty_levels",
+      "request_body": "{\"loyalty_program_id\":5438}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "4a73ddd4-429c-423c-82ea-8fb17519cf6d",
+        "X-Runtime": "0.001479",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":5438}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

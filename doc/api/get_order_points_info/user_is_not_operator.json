@@ -1,0 +1,65 @@
+{
+  "resource": "Get order points info",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/orders/points",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": false,
+      "name": "write_off_points",
+      "description": "How much points to write off"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/orders/points?user_id=37210",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxMSwiZXhwIjoxNTcyODg0Mzk3fQ.vmvvjJpFSVICxoAkh40UN43-MVWxKHkWQ4_AOSFUFo8",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "user_id": "37210"
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "29079b22-2e4e-4108-af38-8c7e3f3c710b",
+        "X-Runtime": "0.004603",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37210\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxMSwiZXhwIjoxNTcyODg0Mzk3fQ.vmvvjJpFSVICxoAkh40UN43-MVWxKHkWQ4_AOSFUFo8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

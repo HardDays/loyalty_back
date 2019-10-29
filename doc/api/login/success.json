@@ -1,0 +1,63 @@
+{
+  "resource": "Login",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/auth/login",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email (need if not phone)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone (need if not email)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "password",
+      "description": "Password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/auth/login",
+      "request_body": "{\"email\":\"test@test.com\",\"password\":\"1234567\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 37035,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2019-10-28T16:19:51.206Z\",\n  \"updated_at\": \"2019-10-28T16:19:51.206Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzAzNSwiZXhwIjoxNTcyODg0MzkxfQ.mfAVPMqc7F_JcxqtfmiLJyJfS-DY59kCJp_ivRu8GNw\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e743a28314ca90dacff5495666458748\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d22d0830-d2e9-4895-98bc-c8f3d4f8a770",
+        "X-Runtime": "0.087026",
+        "Vary": "Origin",
+        "Content-Length": "357"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/auth/login\" -d '{\"email\":\"test@test.com\",\"password\":\"1234567\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

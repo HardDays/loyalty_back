@@ -1,0 +1,48 @@
+{
+  "resource": "Register creator",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/creators",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "name": "email",
+      "description": "Email"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/creators?email=test%40test.com",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "email": "test@test.com"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"status\": false\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c462d460eab61de19f36cc384c99666e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "ecbd5cd5-874c-46b4-96a5-ccbe06c70dc1",
+        "X-Runtime": "0.003345",
+        "Vary": "Origin",
+        "Content-Length": "16"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/creators?email=test%40test.com\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

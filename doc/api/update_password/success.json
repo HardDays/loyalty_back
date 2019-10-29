@@ -1,0 +1,66 @@
+{
+  "resource": "Update password",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/auth/password/update",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "code",
+      "description": "Code"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "password",
+      "description": "Password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "name": "password_confirmation",
+      "description": "Password confirm"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/auth/password/update",
+      "request_body": "{\"code\":\"4d43381616ba9ed72c597ae1c49fff74\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 37043,\n  \"phone\": null,\n  \"email\": \"7c8adcf59a4bfa37fafdbc8a18d383a3@6f27422fc24678652da98691e0e43e90.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2019-10-28T16:19:52.498Z\",\n  \"updated_at\": \"2019-10-28T16:19:52.523Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"991fedba8229e155ddb6c7645cf4bf25\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "a9dc6944-520a-4da3-a6e7-91bae2531075",
+        "X-Runtime": "0.020814",
+        "Vary": "Origin",
+        "Content-Length": "290"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"4d43381616ba9ed72c597ae1c49fff74\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

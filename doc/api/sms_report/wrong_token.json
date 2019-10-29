@@ -1,0 +1,54 @@
+{
+  "resource": "Sms report",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/sms",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "message",
+      "description": "Message"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "name": "loyalty_program_id",
+      "description": "Id of loyalty program"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/sms",
+      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":5479}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "a8bea44d-a6f5-400b-84cc-e17176aa3f64",
+        "X-Runtime": "0.001570",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":5479}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

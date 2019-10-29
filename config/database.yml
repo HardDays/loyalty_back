@@ -19,7 +19,7 @@ default: &default
 #   encoding: unicode
 #   username: postgres
 #   password: root
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5   } %>
 #   timeout: 5000
 
 # рекомендую сделать новую базу, т.к. миграциии с той ветки пойдут по п
@@ -30,7 +30,7 @@ development:
 
 test:
   <<: *default
-  database: loyalty_lend
+  database: loyalty_lend_test
 
 production:
   <<: *default

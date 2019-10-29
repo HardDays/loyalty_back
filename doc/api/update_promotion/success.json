@@ -1,0 +1,52 @@
+{
+  "resource": "Update promotion",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/promotions/:id",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "name",
+      "description": "Name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/promotions/221",
+      "request_body": "{\"name\":\"test\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxNywiZXhwIjoxNTcyODg0Mzk3fQ.5F_4vWHhOgWw8-5m_n0q4ZQSU2ZT0wOfFU2UPeYt_OM",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"company_id\": 17550,\n  \"id\": 221,\n  \"name\": \"test\",\n  \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n  \"end_date\": \"2019-10-02T00:00:00.000Z\",\n  \"accrual_rule\": \"no_accrual\",\n  \"burning_rule\": \"no_burning\",\n  \"activation_rule\": \"activation_moment\",\n  \"write_off_rule\": \"write_off_convert\",\n  \"accordance_rule\": \"no_accordance\",\n  \"rounding_rule\": \"no_rounding\",\n  \"write_off_rule_percent\": 30,\n  \"write_off_rule_points\": 100,\n  \"accrual_on_points\": false,\n  \"write_off_limited\": false,\n  \"created_at\": \"2019-10-28T16:19:57.374Z\",\n  \"updated_at\": \"2019-10-28T16:19:57.374Z\",\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_days\": null,\n  \"activation_days\": null,\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"write_off_min_price\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"d7923c19cb7fb2b6791ab93695c7fd00\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "39ed8b8b-55a8-48b3-9189-4c54c3cb69e8",
+        "X-Runtime": "0.012794",
+        "Vary": "Origin",
+        "Content-Length": "691"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/promotions/221\" -d '{\"name\":\"test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxNywiZXhwIjoxNTcyODg0Mzk3fQ.5F_4vWHhOgWw8-5m_n0q4ZQSU2ZT0wOfFU2UPeYt_OM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "resource": "Update store",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/stores/:id",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "name",
+      "description": "Name"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "city",
+      "description": "City"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "country",
+      "description": "Country"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 128,
+      "in": "body",
+      "required": true,
+      "name": "street",
+      "description": "Street"
+    },
+    {
+      "type": "string",
+      "minmum": 1,
+      "maximum": 64,
+      "in": "body",
+      "required": true,
+      "name": "house",
+      "description": "House"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/stores/11072",
+      "request_body": "{\"name\":\"\",\"city\":\"\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzI2MywiZXhwIjoxNTcyODg0Mzk4fQ.JGUVAuIVbiRZH7R5BAz9kirrrdWzkqMiOP48zzYNLYM",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"name\": [\n    \"TOO_SHORT\"\n  ],\n  \"city\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "463e1017-d448-43be-829f-84a61cfa7d84",
+        "X-Runtime": "0.009836",
+        "Vary": "Origin",
+        "Content-Length": "43"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/stores/11072\" -d '{\"name\":\"\",\"city\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzI2MywiZXhwIjoxNTcyODg0Mzk4fQ.JGUVAuIVbiRZH7R5BAz9kirrrdWzkqMiOP48zzYNLYM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

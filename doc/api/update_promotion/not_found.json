@@ -1,0 +1,42 @@
+{
+  "resource": "Update promotion",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/promotions/:id",
+  "description": "Not found",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/promotions/0",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxOCwiZXhwIjoxNTcyODg0Mzk3fQ.iQLIJzdBQzFh4QWqXc4e328liXUyfgx8f3pzNUt0b_w",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "8707e6f0-f1ee-426e-9dad-6e01ecefc96e",
+        "X-Runtime": "0.005031",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/promotions/0\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzIxOCwiZXhwIjoxNTcyODg0Mzk3fQ.iQLIJzdBQzFh4QWqXc4e328liXUyfgx8f3pzNUt0b_w\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
