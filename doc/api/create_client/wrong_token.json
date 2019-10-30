@@ -56,12 +56,6 @@
       "description": "Date of birth (format: dd.mm.yyyy)"
     },
     {
-      "type": "integer",
-      "in": "body",
-      "name": "loyalty_program_id",
-      "description": "Loyalty program"
-    },
-    {
       "type": "string",
       "in": "body",
       "name": "card_number",
@@ -91,8 +85,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "507e8e52-57a6-423f-8028-95eb34232d49",
-        "X-Runtime": "0.001321",
+        "X-Request-Id": "06400fa2-69b4-4a52-a6ed-1645468f6a5d",
+        "X-Runtime": "0.003094",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

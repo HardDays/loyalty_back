@@ -56,12 +56,6 @@
       "description": "Date of birth (format: dd.mm.yyyy)"
     },
     {
-      "type": "integer",
-      "in": "body",
-      "name": "loyalty_program_id",
-      "description": "Loyalty program"
-    },
-    {
       "type": "string",
       "in": "body",
       "name": "card_number",
@@ -74,11 +68,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/clients/37298",
+      "request_path": "api/v1/clients/37538",
       "request_body": "{\"phone\":\"+7228228223\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzI5NywiZXhwIjoxNTcyOTUyNjcwfQ.HL_YnVHeEQFfuTeklwnkUV6UYFTmXCECaQ6P4hhBYbo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzUzNywiZXhwIjoxNTczMDU5Mjk1fQ.xEkyiwnas7QikPpXuyrZMRKOtzhW5eLht9SSVRx1SUE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -87,18 +81,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 37298,\n  \"phone\": \"+7228228223\",\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"email\": null,\n  \"created_at\": \"2019-10-29T11:17:50.911Z\",\n  \"updated_at\": \"2019-10-29T11:17:50.911Z\",\n  \"user_type\": \"client\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": 17592,\n  \"card_number\": null,\n  \"loyalty_program_id\": null\n}",
+      "response_body": "{\n  \"id\": 37538,\n  \"phone\": \"+7228228223\",\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"email\": null,\n  \"created_at\": \"2019-10-30T16:54:55.331Z\",\n  \"updated_at\": \"2019-10-30T16:54:55.331Z\",\n  \"user_type\": \"client\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": 17709,\n  \"card_number\": null,\n  \"loyalty_program_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"b79ed3f1b00e9d149e07471371987202\"",
+        "ETag": "W/\"eec5ec1c1787e0e4df59182b935d50ca\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "8cd97256-e729-485c-958e-f5c53b3e3d53",
-        "X-Runtime": "0.014159",
+        "X-Request-Id": "070534b3-57a8-4efc-a071-fd4375b83b61",
+        "X-Runtime": "0.013381",
         "Vary": "Origin",
         "Content-Length": "315"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/37298\" -d '{\"phone\":\"+7228228223\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzI5NywiZXhwIjoxNTcyOTUyNjcwfQ.HL_YnVHeEQFfuTeklwnkUV6UYFTmXCECaQ6P4hhBYbo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/37538\" -d '{\"phone\":\"+7228228223\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzUzNywiZXhwIjoxNTczMDU5Mjk1fQ.xEkyiwnas7QikPpXuyrZMRKOtzhW5eLht9SSVRx1SUE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

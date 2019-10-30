@@ -22,7 +22,7 @@ module Api
           @user.password = password
           if @user.save
             @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
-            @user.create_client(company: @auth_user.operator.company, loyalty_program_id: params[:loyalty_program_id])
+            @user.create_client(company: @auth_user.operator.company, loyalty_program: @auth_user.operator.company.loyalty_program)
             
             notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
             notification.client = @user.client
