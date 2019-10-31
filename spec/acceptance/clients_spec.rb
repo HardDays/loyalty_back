@@ -21,8 +21,8 @@ resource "Get clients" do
     let(:authorization) { @operator.token }
 
     context "Success" do
-      let(:phone) { @client_user.first_name }
-      let(:name) { @client_user.phone }
+      let(:phone) { @client_user.phone }
+      let(:name) { @client_user.first_name }
 
       let(:raw_post) { params.to_json }
 
