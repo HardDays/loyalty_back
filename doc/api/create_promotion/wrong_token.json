@@ -31,8 +31,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "64249768-f38f-4b22-8233-453ed473e66c",
-        "X-Runtime": "0.001599",
+        "X-Request-Id": "87bfb466-c917-4eca-94f8-7e5894832411",
+        "X-Runtime": "0.001345",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

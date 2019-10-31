@@ -34,6 +34,20 @@ class User < ApplicationRecord
         end
     end
 
+    def roles(value)
+        if value.all?{|v| v == nil}
+            raise ApplicationController::Forbidden
+        end
+    end
+
+    def company
+        if creator
+            return creator.company
+        else
+            return operator.company
+        end
+    end
+
     def creator_permission(value)
         if !(value && value.company == self.creator.company)
             raise ApplicationController::Forbidden

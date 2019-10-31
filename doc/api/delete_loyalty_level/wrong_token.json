@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/loyalty_levels/5684",
+      "request_path": "api/v1/loyalty_levels/5729",
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -31,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "c44b0330-7959-4fae-a7dd-b41a5a25a09b",
-        "X-Runtime": "0.001602",
+        "X-Request-Id": "a194b5b1-d886-44b9-9310-fa797dcc9eca",
+        "X-Runtime": "0.001676",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/5684\" -d '{}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/5729\" -d '{}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

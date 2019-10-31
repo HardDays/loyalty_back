@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/promotions/251",
+      "request_path": "api/v1/promotions/265",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -31,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "612f9c28-6a41-480f-9a9f-3dc294abc8c8",
-        "X-Runtime": "0.001366",
+        "X-Request-Id": "83db4b2c-7b76-46f5-801e-e79973dad20f",
+        "X-Runtime": "0.001435",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions/251\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/265\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

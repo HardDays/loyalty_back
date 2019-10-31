@@ -36,16 +36,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=37681&price=10000&write_off_points",
+      "request_path": "api/v1/orders/points?user_id=37931&price=10000&write_off_points",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzY4MCwiZXhwIjoxNTczMDU5Mjk5fQ.67eIOHtgAMKonwDXGe-6kQMtAU9_bdXUPBdgy9Yc47U",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzkzMCwiZXhwIjoxNTczMTIzOTk1fQ.rk4kie3UU_EYV2X9nPfefTC0fLEaW9or245KDONazXY",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "37681",
+        "user_id": "37931",
         "price": "10000",
         "write_off_points": null
       },
@@ -57,13 +57,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "b7e59720-0bba-4e79-af0a-502119223ead",
-        "X-Runtime": "0.015688",
+        "X-Request-Id": "70393347-9434-4c8e-bd98-b2c0be943ac6",
+        "X-Runtime": "0.015142",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37681&price=10000&write_off_points\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzY4MCwiZXhwIjoxNTczMDU5Mjk5fQ.67eIOHtgAMKonwDXGe-6kQMtAU9_bdXUPBdgy9Yc47U\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37931&price=10000&write_off_points\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzkzMCwiZXhwIjoxNTczMTIzOTk1fQ.rk4kie3UU_EYV2X9nPfefTC0fLEaW9or245KDONazXY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

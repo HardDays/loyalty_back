@@ -1,33 +1,36 @@
 {
-  "resource": "Get order points info",
+  "resource": "Get clients",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "api/v1/orders/points",
+  "route": "api/v1/clients",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
     {
-      "type": "integer",
-      "required": true,
-      "name": "user_id",
-      "description": "Id of client"
-    },
-    {
-      "minmum": 1,
-      "maximum": 100000000,
-      "type": "integer",
-      "required": true,
-      "name": "price",
-      "description": "Price in cents"
-    },
-    {
-      "minmum": 1,
-      "maximum": 100000000,
-      "type": "integer",
-      "in": "body",
+      "type": "string",
       "required": false,
-      "name": "write_off_points",
-      "description": "How much points to write off"
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
+    {
+      "type": "integer",
+      "required": false,
+      "name": "limit",
+      "description": "Limit"
+    },
+    {
+      "type": "integer",
+      "required": false,
+      "name": "offset",
+      "description": "Offset"
     }
   ],
   "response_fields": [
@@ -36,7 +39,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=37937",
+      "request_path": "api/v1/clients",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -45,7 +48,6 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "37937"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -54,12 +56,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "1a6feb99-7ac0-4b52-a478-2bcc8c91b5ee",
-        "X-Runtime": "0.001685",
+        "X-Request-Id": "02e8735a-3101-4a16-b998-7db9f3df8849",
+        "X-Runtime": "0.001384",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=37937\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

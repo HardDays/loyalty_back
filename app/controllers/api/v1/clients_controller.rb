@@ -2,11 +2,18 @@ module Api
   module V1
     class ClientsController < ApplicationController
       before_action :auth_find, only: [:update]
-      before_action :auth_operator, only: [:create]
+      before_action :auth_operator, only: [:create, :index]
       before_action :auth_client, only: [:profile]
 
       def index
-        #TODO: search by name
+        @users = User.joins(:client)
+        if params[:name]
+          @users = @users.where('concat(users.first_name, \' \', users.last_name) LIKE ?', "%#{params[:name]}%").or(@users.where('concat(users.last_name, \' \', users.first_name) LIKE ?', "%#{params[:name]}%"))
+        end
+        if params[:phone]
+          @users = @users.where('phone LIKE ?', "%#{params[:phone]}%")
+        end
+        render json: @users.limit(params[:limit]).offset(params[:offset])
       end
 
       # GET /clients/profile

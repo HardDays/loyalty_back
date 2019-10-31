@@ -26,7 +26,7 @@
       "request_body": "{\"name\":\"new name\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzU2NywiZXhwIjoxNTczMDU5Mjk2fQ.eI0eVUqPobmMZ8_6NEIUlfr6SFmGhqzwEvBR7TQuYTo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzgxNywiZXhwIjoxNTczMTIzOTkxfQ.dvwnooo0oOexFsWkA_N9B-4XpdtkxXOYtye3u73MG-A",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -35,18 +35,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"creator_id\": 19405,\n  \"id\": 17718,\n  \"name\": \"new name\",\n  \"legal_entity\": null,\n  \"postcode\": null,\n  \"inn\": null,\n  \"bic\": null,\n  \"bank\": null,\n  \"invoice\": null,\n  \"kpp\": null,\n  \"checking_account\": null,\n  \"phone\": null,\n  \"web_site\": null,\n  \"created_at\": \"2019-10-30T16:54:56.009Z\",\n  \"updated_at\": \"2019-10-30T16:54:56.019Z\",\n  \"tariff_plan_purchase_id\": null\n}",
+      "response_body": "{\n  \"creator_id\": 19529,\n  \"id\": 17838,\n  \"name\": \"new name\",\n  \"legal_entity\": null,\n  \"postcode\": null,\n  \"inn\": null,\n  \"bic\": null,\n  \"bank\": null,\n  \"invoice\": null,\n  \"kpp\": null,\n  \"checking_account\": null,\n  \"phone\": null,\n  \"web_site\": null,\n  \"created_at\": \"2019-10-31T10:53:11.921Z\",\n  \"updated_at\": \"2019-10-31T10:53:11.931Z\",\n  \"tariff_plan_purchase_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"5067435373beb0e3a977084c96f70b72\"",
+        "ETag": "W/\"656138785fe8651cb09058e0080bef1b\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "2da8d7a3-345a-4410-9436-c3d5a54348fb",
-        "X-Runtime": "0.010396",
+        "X-Request-Id": "42fa06af-5f99-4839-90e8-7e1a724a3ca7",
+        "X-Runtime": "0.010781",
         "Vary": "Origin",
         "Content-Length": "309"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"new name\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzU2NywiZXhwIjoxNTczMDU5Mjk2fQ.eI0eVUqPobmMZ8_6NEIUlfr6SFmGhqzwEvBR7TQuYTo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"new name\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzgxNywiZXhwIjoxNTczMTIzOTkxfQ.dvwnooo0oOexFsWkA_N9B-4XpdtkxXOYtye3u73MG-A\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

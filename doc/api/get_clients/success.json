@@ -1,18 +1,34 @@
 {
-  "resource": "List promotions",
+  "resource": "Get clients",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "api/v1/promotions",
+  "route": "api/v1/clients",
   "description": "Success",
   "explanation": null,
   "parameters": [
     {
+      "type": "string",
+      "required": false,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
+    {
       "type": "integer",
+      "required": false,
       "name": "limit",
       "description": "Limit"
     },
     {
       "type": "integer",
+      "required": false,
       "name": "offset",
       "description": "Offset"
     }
@@ -23,15 +39,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/promotions",
+      "request_path": "api/v1/clients?phone=test&name=%2B69621956",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzk1NywiZXhwIjoxNTczMTIzOTk2fQ.gfzAjuogJDYof4D2Ys2TK3LZpqOAa6scjMKWwuO6dLI",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzc2NywiZXhwIjoxNTczMTIzOTkwfQ._d7Sgz5tNVNdc_KZ424TGQxYI9ASdkEJCAZxYk8P6L4",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "phone": "test",
+        "name": "+69621956"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -41,13 +59,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a6a9fab7-2299-46e3-81cb-ae4af209a740",
-        "X-Runtime": "0.010087",
+        "X-Request-Id": "5074f88a-2681-45f8-beaa-ca6edeee1558",
+        "X-Runtime": "0.025490",
         "Vary": "Origin",
         "Content-Length": "2"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzk1NywiZXhwIjoxNTczMTIzOTk2fQ.gfzAjuogJDYof4D2Ys2TK3LZpqOAa6scjMKWwuO6dLI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients?phone=test&name=%2B69621956\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzc2NywiZXhwIjoxNTczMTIzOTkwfQ._d7Sgz5tNVNdc_KZ424TGQxYI9ASdkEJCAZxYk8P6L4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

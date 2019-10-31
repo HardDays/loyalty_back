@@ -95,8 +95,8 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "cb8691ec-facb-41bd-a649-a07e96a5a179",
-        "X-Runtime": "0.011077",
+        "X-Request-Id": "22f481f5-6a6b-4f94-89a6-3b829c62c99d",
+        "X-Runtime": "0.010817",
         "Vary": "Origin",
         "Content-Length": "153"
       },
