@@ -109,28 +109,55 @@
       ]
     },
     {
-      "name": "Get clients",
+      "name": "List clients",
       "explanation": null,
       "examples": [
         {
           "description": "Success",
-          "link": "get_clients/success.json",
+          "link": "list_clients/success.json",
           "groups": "all",
           "route": "api/v1/clients",
           "method": "get"
         },
         {
           "description": "Wrong token",
-          "link": "get_clients/wrong_token.json",
+          "link": "list_clients/wrong_token.json",
           "groups": "all",
           "route": "api/v1/clients",
           "method": "get"
         },
         {
           "description": "User is not operator",
-          "link": "get_clients/user_is_not_operator.json",
+          "link": "list_clients/user_is_not_operator.json",
           "groups": "all",
           "route": "api/v1/clients",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Check client phone",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "check_client_phone/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/phone",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "check_client_phone/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/phone",
+          "method": "get"
+        },
+        {
+          "description": "User is not operator",
+          "link": "check_client_phone/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/clients/phone",
           "method": "get"
         }
       ]

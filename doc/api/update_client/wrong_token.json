@@ -11,7 +11,7 @@
       "in": "body",
       "required": true,
       "name": "phone",
-      "description": "Phone"
+      "description": "Phone (format: 7xxxxxxxxxx)"
     },
     {
       "minmum": 1,
@@ -68,7 +68,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/clients/37797",
+      "request_path": "api/v1/clients/39824",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -85,12 +85,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "fdd288e4-6733-4e6b-b47c-29d46637a19d",
-        "X-Runtime": "0.001328",
+        "X-Request-Id": "b40e2729-548f-4d49-aa5e-89955760067d",
+        "X-Runtime": "0.002748",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/37797\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/39824\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

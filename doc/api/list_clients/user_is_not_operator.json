@@ -1,0 +1,67 @@
+{
+  "resource": "List clients",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/clients",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "required": false,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
+    {
+      "type": "integer",
+      "required": false,
+      "name": "limit",
+      "description": "Limit"
+    },
+    {
+      "type": "integer",
+      "required": false,
+      "name": "offset",
+      "description": "Offset"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/clients",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTc5MiwiZXhwIjoxNTczMjA5NDQxfQ.P3WzmoBVm8T_ORkEgfSB4THoM9F62tL0XhIYFM2iiao",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "94afa2a9-30d3-423d-8b57-7ee0e4c733b0",
+        "X-Runtime": "0.003360",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTc5MiwiZXhwIjoxNTczMjA5NDQxfQ.P3WzmoBVm8T_ORkEgfSB4THoM9F62tL0XhIYFM2iiao\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

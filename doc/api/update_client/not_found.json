@@ -11,7 +11,7 @@
       "in": "body",
       "required": true,
       "name": "phone",
-      "description": "Phone"
+      "description": "Phone (format: 7xxxxxxxxxx)"
     },
     {
       "minmum": 1,
@@ -72,7 +72,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzc5MywiZXhwIjoxNTczMTIzOTkxfQ.sROZQOxCuYYTCNxeE3Nr21Sym2SEGQaF2KCQ42jWLBo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgyMCwiZXhwIjoxNTczMjA5NDQyfQ.lUBNh9FBNFuet4An_JJOMBYwM2b7UUK9jn3llDpsOYY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -85,12 +85,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "dac2bfa2-a4b9-4232-ab2b-0161b8905a1c",
-        "X-Runtime": "0.005374",
+        "X-Request-Id": "d205566d-1815-4baf-a3a6-d264f787babf",
+        "X-Runtime": "0.005123",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/0\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzc5MywiZXhwIjoxNTczMTIzOTkxfQ.sROZQOxCuYYTCNxeE3Nr21Sym2SEGQaF2KCQ42jWLBo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/0\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgyMCwiZXhwIjoxNTczMjA5NDQyfQ.lUBNh9FBNFuet4An_JJOMBYwM2b7UUK9jn3llDpsOYY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

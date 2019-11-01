@@ -2,7 +2,7 @@ module Api
   module V1
     class ClientsController < ApplicationController
       before_action :auth_find, only: [:update]
-      before_action :auth_operator, only: [:create, :index]
+      before_action :auth_operator, only: [:create, :index, :phone]
       before_action :auth_client, only: [:profile]
 
       def index
@@ -19,6 +19,13 @@ module Api
       # GET /clients/profile
       def profile
         render json: @auth_user, points: true, loyalty_program: true
+      end
+
+      # GET /clients/phone
+      def phone
+        render json: {
+          status: User.joins(:client).where(phone: params[:phone]).count > 0
+        }
       end
 
       # POST /clients
@@ -82,7 +89,7 @@ module Api
         end
 
         def user_params
-          params.permit(:email, :phone, :first_name, :last_name, :second_name, :gender, :birth_day)
+          params.permit(:phone, :first_name, :last_name, :second_name, :gender, :birth_day)
         end
 
         def client_params

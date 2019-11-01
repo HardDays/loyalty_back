@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       post 'creators', action: :create, controller: 'creators'
       
       get 'clients', action: :index, controller: 'clients'
+      get 'clients/phone', action: :phone, controller: 'clients'
       get 'clients/profile', action: :profile, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'

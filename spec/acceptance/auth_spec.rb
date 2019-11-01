@@ -56,13 +56,13 @@ resource "Confirmation" do
     parameter :code, "Code", type: :string, in: :body, required: true
     
     context "Phone" do 
-      let(:phone) { "+9992281489" }
+      let(:phone) { "79992281489" }
       let(:code) { "0000" }
 
       let(:raw_post) { params.to_json }
 
       example "Phone success" do
-        user = User.new(phone: "+9992281489", password: '1234567', first_name: "test", last_name: "test")
+        user = User.new(phone: "79992281489", password: '1234567', first_name: "test", last_name: "test")
         user.save
         user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
@@ -88,7 +88,7 @@ resource "Confirmation" do
     end
 
     example "Not found" do
-      user = User.new(phone: '+9992281487', password: '1234567', first_name: "test", last_name: "test")
+      user = User.new(phone: '79992281487', password: '1234567', first_name: "test", last_name: "test")
       user.save
       user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 

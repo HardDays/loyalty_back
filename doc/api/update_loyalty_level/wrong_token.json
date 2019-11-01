@@ -305,7 +305,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/5725",
+      "request_path": "api/v1/loyalty_levels/6085",
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -322,12 +322,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "251cabc0-20cd-4f8b-805c-498a40258201",
-        "X-Runtime": "0.001415",
+        "X-Request-Id": "6f15dbb0-8bd1-4cd5-a13c-6905922eda06",
+        "X-Runtime": "0.001420",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/5725\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/6085\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

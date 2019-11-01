@@ -305,11 +305,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/5724",
+      "request_path": "api/v1/loyalty_levels/6084",
       "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzgzMywiZXhwIjoxNTczMTIzOTkyfQ.VaRuNsV0cZUlvpDFIU3qj788UIECWwPdpIRwq427CcA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTg2MCwiZXhwIjoxNTczMjA5NDQzfQ.N76MiWWYuKC_zO7DOMwwCN6a3kf3WmOsWUA44wiF-IM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -322,13 +322,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "2091cca1-6d01-4324-8e01-679e8fd3bf36",
-        "X-Runtime": "0.019547",
+        "X-Request-Id": "2bcdc949-659a-4b76-9b46-3bc3d1dfbfc3",
+        "X-Runtime": "0.018654",
         "Vary": "Origin",
         "Content-Length": "490"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/5724\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNzgzMywiZXhwIjoxNTczMTIzOTkyfQ.VaRuNsV0cZUlvpDFIU3qj788UIECWwPdpIRwq427CcA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/6084\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"rounding_rule\":null,\"accrual_on_points\":null,\"accrual_on_register\":null,\"accrual_on_first_buy\":null,\"sms_on_register\":null,\"sms_on_points\":null,\"sms_on_write_off\":null,\"sms_on_burning\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTg2MCwiZXhwIjoxNTczMjA5NDQzfQ.N76MiWWYuKC_zO7DOMwwCN6a3kf3WmOsWUA44wiF-IM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

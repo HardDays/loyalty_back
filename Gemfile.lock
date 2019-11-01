@@ -114,6 +114,7 @@ GEM
     nokogiri (1.10.4-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     pg (1.1.4-x86-mingw32)
+    phonelib (0.6.38)
     postgresql (1.0.0)
       pg
     puma (3.12.1)
@@ -227,6 +228,7 @@ DEPENDENCIES
   byebug
   date_validator
   jwt
+  phonelib
   postgresql
   puma (~> 3.11)
   rack-cors
