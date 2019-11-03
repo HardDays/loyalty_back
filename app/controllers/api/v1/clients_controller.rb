@@ -16,7 +16,7 @@ module Api
         if params[:card_number]
           @users = @users.where(clients: {card_number: params[:card_number]})
         end
-        render json: @users.limit(params[:limit]).offset(params[:offset])
+        render json: @users.limit(params[:limit]).offset(params[:offset]), points: true
       end
 
       # GET /clients/profile
