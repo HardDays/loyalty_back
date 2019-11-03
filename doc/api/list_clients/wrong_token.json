@@ -21,6 +21,14 @@
       "description": "Name"
     },
     {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "required": false,
+      "name": "card_number",
+      "description": "Name"
+    },
+    {
       "type": "integer",
       "required": false,
       "name": "limit",
@@ -56,8 +64,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "cc13160c-5f47-4620-950f-95fe3c24d23c",
-        "X-Runtime": "0.001356",
+        "X-Request-Id": "55d51f32-4862-4958-975f-9c1e160e01e3",
+        "X-Runtime": "0.001360",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

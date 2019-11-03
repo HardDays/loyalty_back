@@ -11,7 +11,10 @@ module Api
           @users = @users.where('concat(users.first_name, \' \', users.last_name) LIKE ?', "%#{params[:name]}%").or(@users.where('concat(users.last_name, \' \', users.first_name) LIKE ?', "%#{params[:name]}%"))
         end
         if params[:phone]
-          @users = @users.where('phone LIKE ?', "%#{params[:phone]}%")
+          @users = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:phone]).sanitized}%")
+        end
+        if params[:card_number]
+          @users = @users.where(client: {card_number: params[:card_number]})
         end
         render json: @users.limit(params[:limit]).offset(params[:offset])
       end
@@ -24,7 +27,7 @@ module Api
       # GET /clients/phone
       def phone
         render json: {
-          status: User.joins(:client).where(phone: params[:phone]).count > 0
+          status: User.joins(:client).where(phone: Phonelib.parse(params[:phone]).sanitized).count > 0
         }
       end
 
@@ -89,7 +92,7 @@ module Api
         end
 
         def user_params
-          params.permit(:phone, :first_name, :last_name, :second_name, :gender, :birth_day)
+          params.permit(:phone, :email, :first_name, :last_name, :second_name, :gender, :birth_day)
         end
 
         def client_params

@@ -36,16 +36,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=39967",
+      "request_path": "api/v1/orders/points?user_id=40227",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTk2OCwiZXhwIjoxNTczMjA5NDQ2fQ.PI8RpHOT06yXk9uhR-A-kDJxP6xwm-swvDORIxDbIjw",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDIyOCwiZXhwIjoxNTczMzgyODExfQ.RshBePh7M-cL5q_B_MPsYrLBsHX60QdmGxCn2GsiC0w",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "39967"
+        "user_id": "40227"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -54,12 +54,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5a8d2015-056a-4266-a47b-6c530565bcf8",
-        "X-Runtime": "0.005333",
+        "X-Request-Id": "3e6bda40-e4ce-4610-a801-17226bf1f75f",
+        "X-Runtime": "0.004509",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=39967\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTk2OCwiZXhwIjoxNTczMjA5NDQ2fQ.PI8RpHOT06yXk9uhR-A-kDJxP6xwm-swvDORIxDbIjw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=40227\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDIyOCwiZXhwIjoxNTczMzgyODExfQ.RshBePh7M-cL5q_B_MPsYrLBsHX60QdmGxCn2GsiC0w\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

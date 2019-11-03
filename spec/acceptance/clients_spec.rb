@@ -7,6 +7,7 @@ resource "List clients" do
   get "api/v1/clients" do
     parameter :phone, "Phone", type: :string,  required: false
     parameter :name, "Name", minmum: 1, maximum: 128, type: :string, required: false
+    parameter :card_number, "Name", minmum: 1, maximum: 128, type: :string, required: false
     parameter :limit, "Limit", type: :integer, required: false
     parameter :offset, "Offset", type: :integer, required: false
 
@@ -114,6 +115,7 @@ resource "Create client" do
 
   post "api/v1/clients" do
     parameter :phone, "Phone", type: :string, in: :body, required: true
+    parameter :email, "Email", type: :string, in: :body, required: true
     parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
@@ -133,6 +135,7 @@ resource "Create client" do
 
     context "Success" do
       let(:phone) { "79992238223" }
+      let(:email) { "abcd@abcd.abc" }
       let(:first_name) { "test" }
       let(:last_name) { "test" }
       let(:second_name) { "test" }
@@ -189,6 +192,7 @@ resource "Update client" do
 
   put "api/v1/clients/:id" do
     parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
+    parameter :email, "Email", type: :string, in: :body, required: true
     parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
@@ -280,15 +284,6 @@ resource "Client profile" do
   header "Authorization", :authorization
 
   get "api/v1/clients/profile" do
-    parameter :phone, "Phone", type: :string, in: :body, required: true
-    parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
-    parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
-    parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
-    parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
-    parameter :card_number, "Card number", type: :string, in: :body
-
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)

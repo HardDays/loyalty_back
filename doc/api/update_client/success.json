@@ -14,6 +14,13 @@
       "description": "Phone (format: 7xxxxxxxxxx)"
     },
     {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email"
+    },
+    {
       "minmum": 1,
       "maximum": 128,
       "type": "string",
@@ -68,11 +75,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/clients/39815",
+      "request_path": "api/v1/clients/40075",
       "request_body": "{\"phone\":\"380501009533\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgxNCwiZXhwIjoxNTczMjA5NDQyfQ.r8D1NyiacOvvYCuUPwwhouijkiS7mp9wv5vwq-YMblk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA3NCwiZXhwIjoxNTczMzgyODA3fQ.V6gifbKDgYoSwCXZYaTvnUju2uw9zyVZlWeksAON8P4",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -81,18 +88,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 39815,\n  \"phone\": \"380501009533\",\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"email\": null,\n  \"created_at\": \"2019-11-01T10:37:22.041Z\",\n  \"updated_at\": \"2019-11-01T10:37:22.041Z\",\n  \"user_type\": \"client\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": 18813,\n  \"card_number\": null,\n  \"loyalty_program_id\": null\n}",
+      "response_body": "{\n  \"id\": 40075,\n  \"phone\": \"380501009533\",\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"email\": null,\n  \"created_at\": \"2019-11-03T10:46:47.268Z\",\n  \"updated_at\": \"2019-11-03T10:46:47.268Z\",\n  \"user_type\": \"client\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": 18936,\n  \"card_number\": null,\n  \"loyalty_program_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"8dcc8ba5c7ad9522d196f81e1933548f\"",
+        "ETag": "W/\"2e73c1eb4b643e5b57572d7c812fbde7\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9d282bf5-fcc3-4067-8718-6a2a3214aed2",
-        "X-Runtime": "0.019346",
+        "X-Request-Id": "a2f588a9-5ea5-4d0d-9481-869633a2c622",
+        "X-Runtime": "0.016448",
         "Vary": "Origin",
         "Content-Length": "316"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/39815\" -d '{\"phone\":\"380501009533\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgxNCwiZXhwIjoxNTczMjA5NDQyfQ.r8D1NyiacOvvYCuUPwwhouijkiS7mp9wv5vwq-YMblk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/40075\" -d '{\"phone\":\"380501009533\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA3NCwiZXhwIjoxNTczMzgyODA3fQ.V6gifbKDgYoSwCXZYaTvnUju2uw9zyVZlWeksAON8P4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -6,67 +6,7 @@
   "description": "User is not client",
   "explanation": null,
   "parameters": [
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "phone",
-      "description": "Phone"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "first_name",
-      "description": "First name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "last_name",
-      "description": "Last name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "name": "second_name",
-      "description": "Second name"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "enum": [
-        "male",
-        "female"
-      ],
-      "name": "gender",
-      "description": "Gender"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "birth_day",
-      "description": "Date of birth (format: dd.mm.yyyy)"
-    },
-    {
-      "type": "integer",
-      "in": "body",
-      "name": "loyalty_program_id",
-      "description": "Loyalty program"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "card_number",
-      "description": "Card number"
-    }
+
   ],
   "response_fields": [
 
@@ -78,7 +18,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgzOCwiZXhwIjoxNTczMjA5NDQyfQ.ick_n8LLN-RotyVpYMVtocBGzduGDSftAoFtfoDyzqs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA5OCwiZXhwIjoxNTczMzgyODA3fQ.7-RziSsgnvOQSdtWW3cpRuxOwjm_a9m7eC8sMDOVv0E",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -91,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f1eb17e2-0d02-4745-ad03-76229d1f333a",
-        "X-Runtime": "0.003891",
+        "X-Request-Id": "2cc9c95d-2559-4d50-aa3b-1014162d532f",
+        "X-Runtime": "0.003259",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozOTgzOCwiZXhwIjoxNTczMjA5NDQyfQ.ick_n8LLN-RotyVpYMVtocBGzduGDSftAoFtfoDyzqs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA5OCwiZXhwIjoxNTczMzgyODA3fQ.7-RziSsgnvOQSdtWW3cpRuxOwjm_a9m7eC8sMDOVv0E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

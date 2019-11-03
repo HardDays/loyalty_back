@@ -14,6 +14,13 @@
       "description": "Phone"
     },
     {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email"
+    },
+    {
       "minmum": 1,
       "maximum": 128,
       "type": "string",
@@ -85,8 +92,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "28105b4f-b1d0-4612-bbf0-7274c49a1f53",
-        "X-Runtime": "0.001296",
+        "X-Request-Id": "0477f37a-f4c5-4aac-9275-f969fefb6621",
+        "X-Runtime": "0.001343",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
