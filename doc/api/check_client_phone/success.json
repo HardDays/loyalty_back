@@ -19,16 +19,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/phone?phone=79965018334",
+      "request_path": "api/v1/clients/phone?phone=79912241482",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA1NCwiZXhwIjoxNTczMzgyODA2fQ.Whb-PR8IDiEepDUeJAXgq0BLpH-4vBUgApJp8e3Y_BU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDU3NCwiZXhwIjoxNTczMzgzMDIwfQ.pa9GP-UK9G-fRy9QKYj8nwq2zvJ5DnNKRh2dWDY7yuU",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79965018334"
+        "phone": "79912241482"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -38,13 +38,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"edc48cd3b0bc4fa7ba23aad40b8508a1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d153ba9c-7549-4c51-828c-9d113b632b94",
-        "X-Runtime": "0.027084",
+        "X-Request-Id": "8e4364b7-04f5-4cba-abac-8bbf794e0f54",
+        "X-Runtime": "0.006813",
         "Vary": "Origin",
         "Content-Length": "15"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79965018334\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDA1NCwiZXhwIjoxNTczMzgyODA2fQ.Whb-PR8IDiEepDUeJAXgq0BLpH-4vBUgApJp8e3Y_BU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79912241482\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDU3NCwiZXhwIjoxNTczMzgzMDIwfQ.pa9GP-UK9G-fRy9QKYj8nwq2zvJ5DnNKRh2dWDY7yuU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

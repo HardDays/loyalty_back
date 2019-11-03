@@ -22,7 +22,7 @@ def create_client(company)
     user = User.new(phone: "+799" + rand(10000000..100000000).to_s, password: "1234567", first_name: "test", last_name: "test")
     user.save
     user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
-    user.create_client(company_id: company.id)
+    user.create_client(company_id: company.id, card_number: '12345')
     return user
 end
 

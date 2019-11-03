@@ -24,6 +24,7 @@ resource "List clients" do
     context "Success" do
       let(:phone) { @client_user.phone }
       let(:name) { @client_user.first_name }
+      let(:card_number) { @client_user.client.card_number }
 
       let(:raw_post) { params.to_json }
 

@@ -8,13 +8,13 @@ module Api
       def index
         @users = User.joins(:client)
         if params[:name]
-          @users = @users.where('concat(users.first_name, \' \', users.last_name) LIKE ?', "%#{params[:name]}%").or(@users.where('concat(users.last_name, \' \', users.first_name) LIKE ?', "%#{params[:name]}%"))
+          @users = @users.where('lower(concat(users.first_name, \' \', users.last_name)) LIKE ?', "%#{params[:name].downcase}%").or(@users.where('lower(concat(users.last_name, \' \', users.first_name)) LIKE ?', "%#{params[:name].downcase}%"))
         end
         if params[:phone]
           @users = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:phone]).sanitized}%")
         end
         if params[:card_number]
-          @users = @users.where(client: {card_number: params[:card_number]})
+          @users = @users.where(clients: {card_number: params[:card_number]})
         end
         render json: @users.limit(params[:limit]).offset(params[:offset])
       end
