@@ -27,7 +27,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDgxMCwiZXhwIjoxNTczMzgzMDI2fQ.ysMyhabSPspxYOtoDi3QgJTpJCIFDONYIa00FwKdbfg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTMzMCwiZXhwIjoxNTczNDgyNzczfQ.BLH-QS41CWVdOdhV713VlFF7j_5pdfrr8dm0rFqU9B8",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,18 +36,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 12089,\n    \"name\": \"test\",\n    \"company_id\": 19293,\n    \"created_at\": \"2019-11-03T10:50:26.749Z\",\n    \"updated_at\": \"2019-11-03T10:50:26.749Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 12088,\n    \"name\": \"test\",\n    \"company_id\": 19293,\n    \"created_at\": \"2019-11-03T10:50:26.746Z\",\n    \"updated_at\": \"2019-11-03T10:50:26.746Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 12087,\n    \"name\": \"test\",\n    \"company_id\": 19293,\n    \"created_at\": \"2019-11-03T10:50:26.744Z\",\n    \"updated_at\": \"2019-11-03T10:50:26.744Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 12235,\n    \"name\": \"test\",\n    \"company_id\": 19539,\n    \"created_at\": \"2019-11-04T14:32:53.995Z\",\n    \"updated_at\": \"2019-11-04T14:32:53.995Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 12234,\n    \"name\": \"test\",\n    \"company_id\": 19539,\n    \"created_at\": \"2019-11-04T14:32:53.992Z\",\n    \"updated_at\": \"2019-11-04T14:32:53.992Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 12233,\n    \"name\": \"test\",\n    \"company_id\": 19539,\n    \"created_at\": \"2019-11-04T14:32:53.990Z\",\n    \"updated_at\": \"2019-11-04T14:32:53.990Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"2860979a4b08145814575539df560a46\"",
+        "ETag": "W/\"15ef637353f7339ee525a69ab1a41f68\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a7373de6-fd6d-45dd-8404-f3fcf22cdc9a",
-        "X-Runtime": "0.009396",
+        "X-Request-Id": "7281d5ce-f43c-4a43-a041-1c8108701eb3",
+        "X-Runtime": "0.012561",
         "Vary": "Origin",
         "Content-Length": "556"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDgxMCwiZXhwIjoxNTczMzgzMDI2fQ.ysMyhabSPspxYOtoDi3QgJTpJCIFDONYIa00FwKdbfg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTMzMCwiZXhwIjoxNTczNDgyNzczfQ.BLH-QS41CWVdOdhV713VlFF7j_5pdfrr8dm0rFqU9B8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

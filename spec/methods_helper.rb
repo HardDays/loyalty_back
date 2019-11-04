@@ -47,9 +47,8 @@ def create_store(user)
 end
 
 def create_program(company)
-    program = LoyaltyProgram.new(name: "test", company_id: company.id)
+    program = LoyaltyProgram.new(name: "test", sum_type: :one_buy, company_id: company.id)
     program.loyalty_levels.build(
-        "level_type": "one_buy",
         "min_price": 100,
         "burning_rule": "no_burning",
         "activation_rule": "activation_moment",

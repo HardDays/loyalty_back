@@ -10,7 +10,7 @@ resource "Create loyalty level for program" do
     end
 
     parameter :loyalty_program_id, "Loyalty program", type: :integer, required: true
-    parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
+    #parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
     parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
@@ -54,7 +54,7 @@ resource "Create loyalty level for program" do
     let(:authorization) { @user.token }
 
     context "Success" do
-      let(:level_type) { "one_buy" }
+      #let(:level_type) { "one_buy" }
       let(:min_price) { 100 }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
@@ -135,7 +135,7 @@ resource "Update loyalty level" do
       @program = create_program(@company)
     end
 
-    parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
+    #parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
     parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
@@ -179,7 +179,7 @@ resource "Update loyalty level" do
     let(:authorization) { @user.token }
 
     context "Success" do
-      let(:level_type) { "one_buy" }
+      #let(:level_type) { "one_buy" }
       let(:min_price) { 100 }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }

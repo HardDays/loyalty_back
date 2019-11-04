@@ -7,17 +7,6 @@
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "one_buy",
-        "sum_buy"
-      ],
-      "name": "level_type",
-      "description": "Level type"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -305,11 +294,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/6222",
+      "request_path": "api/v1/loyalty_levels/6311",
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDY0NCwiZXhwIjoxNTczMzgzMDIyfQ.bIiN_Xis6Uy8xqA9GQMAhI9rDTBrVh_KbPjG-h8QxmU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE2NCwiZXhwIjoxNTczNDgyNzY5fQ.wI6S7O6YXMLhyMhSHDZbUYKHTBkm_xvC1SFKq1re4KQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -322,12 +311,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "4576cc30-c5b4-4282-92fd-79b9cfb01533",
-        "X-Runtime": "0.003734",
+        "X-Request-Id": "d2b1c1d8-7a8e-4adb-9150-e3e493a864d9",
+        "X-Runtime": "0.003630",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/6222\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDY0NCwiZXhwIjoxNTczMzgzMDIyfQ.bIiN_Xis6Uy8xqA9GQMAhI9rDTBrVh_KbPjG-h8QxmU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/6311\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE2NCwiZXhwIjoxNTczNDgyNzY5fQ.wI6S7O6YXMLhyMhSHDZbUYKHTBkm_xvC1SFKq1re4KQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

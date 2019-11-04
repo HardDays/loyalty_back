@@ -36,16 +36,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=40738&price=10000&write_off_points",
+      "request_path": "api/v1/orders/points?user_id=41258&price=10000&write_off_points",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDczNywiZXhwIjoxNTczMzgzMDI0fQ.sHUJ4EgSfMzbDrqaSVf-HCayKCCYkkWI9bgu8bL6OQU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTI1NywiZXhwIjoxNTczNDgyNzcxfQ.cWh6zrOORfLaGo2f3zDB7NcJS6Yy0KbLFweYRx-772E",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "40738",
+        "user_id": "41258",
         "price": "10000",
         "write_off_points": null
       },
@@ -57,13 +57,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "25b60bc8-a342-42f4-ae0f-1c865f34d953",
-        "X-Runtime": "0.014393",
+        "X-Request-Id": "5dac9767-ff0b-4316-ac09-ba9cbce3242d",
+        "X-Runtime": "0.015725",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=40738&price=10000&write_off_points\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDczNywiZXhwIjoxNTczMzgzMDI0fQ.sHUJ4EgSfMzbDrqaSVf-HCayKCCYkkWI9bgu8bL6OQU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=41258&price=10000&write_off_points\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTI1NywiZXhwIjoxNTczNDgyNzcxfQ.cWh6zrOORfLaGo2f3zDB7NcJS6Yy0KbLFweYRx-772E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -5,7 +5,10 @@ class LoyaltyProgram < ApplicationRecord
     has_many :loyalty_levels, dependent: :destroy
     has_many :orders, dependent: :nullify
 
+    enum sum_type: [:one_buy, :sum_buy]
+
     validates :name, length: {minimum: 1, maximum: 128}
+    validates :sum_type, presence: :true
     
     def ownership(creator)
         if creator.company != self.company

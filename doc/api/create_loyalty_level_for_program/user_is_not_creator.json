@@ -13,17 +13,6 @@
       "description": "Loyalty program"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "one_buy",
-        "sum_buy"
-      ],
-      "name": "level_type",
-      "description": "Level type"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -312,10 +301,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":6055}",
+      "request_body": "{\"loyalty_program_id\":6142}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDYzOCwiZXhwIjoxNTczMzgzMDIyfQ.t9lB2OMrN_5lOMM_qyF29gBnMDEM9eJf7v3Kn1OYLmM",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE1OCwiZXhwIjoxNTczNDgyNzY5fQ.c18g5d0zMqWrjsZ11vsqH8azzEd4Oee-PpQeGL490iA",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -328,12 +317,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "d32f7cf5-82ac-4ccf-a1e4-908b19cbdc90",
-        "X-Runtime": "0.003410",
+        "X-Request-Id": "8cc486ff-dc8e-4b49-a49e-2fd02344e973",
+        "X-Runtime": "0.004633",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6055}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDYzOCwiZXhwIjoxNTczMzgzMDIyfQ.t9lB2OMrN_5lOMM_qyF29gBnMDEM9eJf7v3Kn1OYLmM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6142}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE1OCwiZXhwIjoxNTczNDgyNzY5fQ.c18g5d0zMqWrjsZ11vsqH8azzEd4Oee-PpQeGL490iA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

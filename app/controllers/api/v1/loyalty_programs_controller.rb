@@ -73,12 +73,12 @@ module Api
         end
 
         def program_params
-          params.permit(:name)
+          params.permit(:name, :sum_type)
         end
 
         def level_params(param)
           param.permit(
-            :level_type, :min_price, :begin_date, :end_date, 
+            :min_price, :begin_date, :end_date, 
             :accrual_rule, :accrual_percent, :accrual_points, :accrual_money,
             :burning_rule, :burning_days, :activation_rule, :activation_days, 
             :write_off_rule, :write_off_rule_percent, :write_off_rule_points, 

@@ -7,17 +7,6 @@
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "one_buy",
-        "sum_buy"
-      ],
-      "name": "level_type",
-      "description": "Level type"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,
@@ -309,7 +298,7 @@
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDY0MiwiZXhwIjoxNTczMzgzMDIyfQ.ZigLnZGIDBqZH6ibk8vMuQXJqIzH73uJ9Y-mOf2UoCY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE2MiwiZXhwIjoxNTczNDgyNzY5fQ.Wy6Q6bs_Au0TvBSKVezwBnK4eL1H0AalXCAMDZr7clM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -322,12 +311,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "dcdbb255-e9c7-404f-b913-f72b908545ad",
-        "X-Runtime": "0.004590",
+        "X-Request-Id": "a287c987-dbb9-4d8b-b682-887e6da3d004",
+        "X-Runtime": "0.004756",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/0\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MDY0MiwiZXhwIjoxNTczMzgzMDIyfQ.ZigLnZGIDBqZH6ibk8vMuQXJqIzH73uJ9Y-mOf2UoCY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/0\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTE2MiwiZXhwIjoxNTczNDgyNzY5fQ.Wy6Q6bs_Au0TvBSKVezwBnK4eL1H0AalXCAMDZr7clM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

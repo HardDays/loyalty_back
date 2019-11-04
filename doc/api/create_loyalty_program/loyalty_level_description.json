@@ -7,17 +7,6 @@
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "one_buy",
-        "sum_buy"
-      ],
-      "name": "level_type",
-      "description": "Level type"
-    },
-    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,

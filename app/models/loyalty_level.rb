@@ -4,7 +4,7 @@ class LoyaltyLevel < ApplicationRecord
 
     has_many :client_points, dependent: :nullify
 
-    enum level_type: [:one_buy, :sum_buy]
+    #enum level_type: [:one_buy, :sum_buy]
     enum accrual_rule: [:no_accrual, :accrual_percent, :accrual_convert]
     enum burning_rule: [:no_burning, :burning_days]
     enum activation_rule: [:activation_moment, :activation_days]
@@ -12,7 +12,7 @@ class LoyaltyLevel < ApplicationRecord
     enum accordance_rule: [:no_accordance, :accordance_convert]
     enum rounding_rule: [:no_rounding, :rounding_math, :rounding_small, :rounding_big]
 
-    validates :level_type, presence: :true
+    #validates :level_type, presence: :true
     validates :accrual_rule, presence: :true
     validates :burning_rule, presence: :true
     validates :activation_rule, presence: :true

@@ -10,7 +10,7 @@ module ClientPointsHelper
         if program
             sum = client.orders.sum{|o| o.price} + order.price
             program.loyalty_levels.order(min_price: :desc).each do |level|
-                if (level.level_type.to_sym == :one_buy && order.price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
+                if (program.sum_type.to_sym == :one_buy && order.price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
                     client_points = create(client, order, level, write_off_points, false)
                     if client_points
                         if level.sms_on_burning
@@ -106,7 +106,7 @@ module ClientPointsHelper
         total = points.sum(:current_points)
         sum = client.orders.sum(:price) + price
         program.loyalty_levels.order(min_price: :desc).each do |level|
-            if (level.level_type.to_sym == :one_buy && price >= level.min_price) || (level.level_type.to_sym == :sum_buy && sum >= level.min_price)
+            if (program.sum_type.to_sym == :one_buy && price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
                 if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
                     return level
                 end
