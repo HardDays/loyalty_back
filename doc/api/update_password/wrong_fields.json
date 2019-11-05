@@ -38,7 +38,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/auth/password/update",
-      "request_body": "{\"code\":\"04edba1fc7392d86456d24920f9f411b\",\"password\":\"1\",\"password_confirmation\":\"1\"}",
+      "request_body": "{\"code\":\"ed53dc255f40bf7038affa60d286fd5e\",\"password\":\"1\",\"password_confirmation\":\"1\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -53,13 +53,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "a1f48673-bd16-4684-ba57-fc187fc765f8",
-        "X-Runtime": "0.025940",
+        "X-Request-Id": "5e7db57a-0ee0-41be-bf7a-898bbe512996",
+        "X-Runtime": "0.078163",
         "Vary": "Origin",
         "Content-Length": "26"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"04edba1fc7392d86456d24920f9f411b\",\"password\":\"1\",\"password_confirmation\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"ed53dc255f40bf7038affa60d286fd5e\",\"password\":\"1\",\"password_confirmation\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -124,6 +124,7 @@ resource "Create client" do
     parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
     parameter :card_number, "Card number", type: :string, in: :body
+    parameter :recommendator_phone, "Recommendator phone", type: :string, in: :body, required: false
 
     before do
       @user = create_creator(create_user)

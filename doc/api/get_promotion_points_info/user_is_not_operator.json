@@ -1,8 +1,8 @@
 {
-  "resource": "Get order points info",
+  "resource": "Get promotion points info",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "api/v1/orders/points",
+  "route": "api/v1/orders/promotion/points",
   "description": "User is not operator",
   "explanation": null,
   "parameters": [
@@ -21,13 +21,10 @@
       "description": "Price in cents"
     },
     {
-      "minmum": 1,
-      "maximum": 100000000,
       "type": "integer",
-      "in": "body",
-      "required": false,
-      "name": "write_off_points",
-      "description": "How much points to write off"
+      "required": true,
+      "name": "promotion_id",
+      "description": "Promotion id"
     }
   ],
   "response_fields": [
@@ -36,16 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=41267",
+      "request_path": "api/v1/orders/promotion/points?user_id=42600&promotion_id=528",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTI2OCwiZXhwIjoxNTczNDgyNzcyfQ.xs7SkhXURTfvM5l6ejnvoCDdNbS--fdxXaB5jR6NXxs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwMSwiZXhwIjoxNTczNTY3NjY0fQ.8Tyy9lDiCIYfTXUm9_MHUg8Vq6TIx0UJMbwE43QhwR8",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "41267"
+        "user_id": "42600",
+        "promotion_id": "528"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -54,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "cd5b64ba-29f8-43ca-9140-6eb26e855c09",
-        "X-Runtime": "0.004543",
+        "X-Request-Id": "e549330b-e656-4473-91ec-d98de3815eaf",
+        "X-Runtime": "0.005172",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=41267\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MTI2OCwiZXhwIjoxNTczNDgyNzcyfQ.xs7SkhXURTfvM5l6ejnvoCDdNbS--fdxXaB5jR6NXxs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=42600&promotion_id=528\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwMSwiZXhwIjoxNTczNTY3NjY0fQ.8Tyy9lDiCIYfTXUm9_MHUg8Vq6TIx0UJMbwE43QhwR8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_140650) do
+ActiveRecord::Schema.define(version: 2019_11_05_141224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_04_140650) do
     t.integer "user_id"
     t.integer "loyalty_program_id"
     t.string "card_number"
+    t.integer "recommendator_id"
   end
 
   create_table "companies", force: :cascade do |t|

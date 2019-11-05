@@ -1,9 +1,9 @@
 {
-  "resource": "Get order points info",
+  "resource": "Get program points info",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "api/v1/orders/points",
-  "description": "Wrong token",
+  "route": "api/v1/orders/loyalty_program/points",
+  "description": "User is not operator",
   "explanation": null,
   "parameters": [
     {
@@ -19,15 +19,6 @@
       "required": true,
       "name": "price",
       "description": "Price in cents"
-    },
-    {
-      "minmum": 1,
-      "maximum": 100000000,
-      "type": "integer",
-      "in": "body",
-      "required": false,
-      "name": "write_off_points",
-      "description": "How much points to write off"
     }
   ],
   "response_fields": [
@@ -36,30 +27,30 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/points?user_id=41264",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=42587",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "test",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjU4OCwiZXhwIjoxNTczNTY3NjYzfQ.ZDZ_TOMd7s4KYT0ihRYrffEY6ug1UP-IIlQKPPPC8Fw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "41264"
+        "user_id": "42587"
       },
       "request_content_type": "application/json",
-      "response_status": 401,
-      "response_status_text": "Unauthorized",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
       "response_body": null,
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "406d977b-5828-47d4-941d-f6eb16e9ab09",
-        "X-Runtime": "0.002571",
+        "X-Request-Id": "0fa47b37-274a-4cc9-8663-d68abc47311f",
+        "X-Runtime": "0.004445",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/points?user_id=41264\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=42587\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjU4OCwiZXhwIjoxNTczNTY3NjYzfQ.ZDZ_TOMd7s4KYT0ihRYrffEY6ug1UP-IIlQKPPPC8Fw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -740,6 +740,74 @@
       ]
     },
     {
+      "name": "Get program points info",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_program_points_info/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/loyalty_program/points",
+          "method": "get"
+        },
+        {
+          "description": "User not found",
+          "link": "get_program_points_info/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/loyalty_program/points",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_program_points_info/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/loyalty_program/points",
+          "method": "get"
+        },
+        {
+          "description": "User is not operator",
+          "link": "get_program_points_info/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/loyalty_program/points",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Get promotion points info",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_promotion_points_info/success.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion/points",
+          "method": "get"
+        },
+        {
+          "description": "User not found",
+          "link": "get_promotion_points_info/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion/points",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_promotion_points_info/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion/points",
+          "method": "get"
+        },
+        {
+          "description": "User is not operator",
+          "link": "get_promotion_points_info/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/orders/promotion/points",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Create order for loyalty program",
       "explanation": null,
       "examples": [
@@ -818,40 +886,6 @@
           "groups": "all",
           "route": "api/v1/orders/promotion",
           "method": "post"
-        }
-      ]
-    },
-    {
-      "name": "Get order points info",
-      "explanation": null,
-      "examples": [
-        {
-          "description": "Success",
-          "link": "get_order_points_info/success.json",
-          "groups": "all",
-          "route": "api/v1/orders/points",
-          "method": "get"
-        },
-        {
-          "description": "User not found",
-          "link": "get_order_points_info/user_not_found.json",
-          "groups": "all",
-          "route": "api/v1/orders/points",
-          "method": "get"
-        },
-        {
-          "description": "Wrong token",
-          "link": "get_order_points_info/wrong_token.json",
-          "groups": "all",
-          "route": "api/v1/orders/points",
-          "method": "get"
-        },
-        {
-          "description": "User is not operator",
-          "link": "get_order_points_info/user_is_not_operator.json",
-          "groups": "all",
-          "route": "api/v1/orders/points",
-          "method": "get"
         }
       ]
     },

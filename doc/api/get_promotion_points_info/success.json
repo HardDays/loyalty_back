@@ -1,0 +1,66 @@
+{
+  "resource": "Get promotion points info",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/orders/promotion/points",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Id of client"
+    },
+    {
+      "minmum": 1,
+      "maximum": 100000000,
+      "type": "integer",
+      "required": true,
+      "name": "price",
+      "description": "Price in cents"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "promotion_id",
+      "description": "Promotion id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/orders/promotion/points?user_id=42591&price=10000&promotion_id=525",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjU5MCwiZXhwIjoxNTczNTY3NjYzfQ.Dyo1fL_3KORZn8dUIDnzxNxagai3FtzPCRLNdVBGepg",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "user_id": "42591",
+        "price": "10000",
+        "promotion_id": "525"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"points\": 0\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "55419615-2d6b-4547-8c97-02f76df902f0",
+        "X-Runtime": "0.012818",
+        "Vary": "Origin",
+        "Content-Length": "12"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=42591&price=10000&promotion_id=525\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjU5MCwiZXhwIjoxNTczNTY3NjYzfQ.Dyo1fL_3KORZn8dUIDnzxNxagai3FtzPCRLNdVBGepg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

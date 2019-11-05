@@ -9,6 +9,6 @@ class ClientPoint < ApplicationRecord
     validates :initial_points, inclusion: 0..10000000000
     validates :current_points, inclusion: 0..10000000000
 
-    enum points_source: [:ordered, :birthday]
+    enum points_source: [:ordered, :birthday, :recommend_register, :recommend_recommendator]
 
 end

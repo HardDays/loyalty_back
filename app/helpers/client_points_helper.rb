@@ -93,31 +93,34 @@ module ClientPointsHelper
             saved = client_points.save
             if saved 
                 if write_off_points
-                    self.write_off(order, write_off_points)
+                    if is_promotion
+                        self.write_off_promotion(order, write_off_points, level)
+                    else
+                        self.write_off_program(order, write_off_points)
+                    end
                 end         
             end
             return client_points
         end
     end
 
-
-    def self.find_write_off_level(client, program, price)
-        points = client.valid_points
-        total = points.sum(:current_points)
-        sum = client.orders.sum(:price) + price
-        program.loyalty_levels.order(min_price: :desc).each do |level|
-            if (program.sum_type.to_sym == :one_buy && price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
-                if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
-                    return level
+    def self.points_info_promotion(client, price, promotion)
+        total = client.valid_points.sum(:current_points)
+        if promotion
+            if !promotion.write_off_limited || (promotion.write_off_limited && promotion.write_off_min_price <= price)
+                if promotion.write_off_rule.to_sym == :write_off_convert && total >= promotion.write_off_rule_points
+                    money = (price * promotion.write_off_rule_percent) / 100.0
+                    points = [money, total].min.to_i
+                    return {points: points}
                 end
             end
         end
-        return nil
+        return {points: 0}
     end
 
-    def self.points_info(client, price)
+    def self.points_info_program(client, price)
         program = client.loyalty_program
-        level = self.find_write_off_level(client, program, price)
+        level = self.find_level(client, program, price)
         if level
             total = client.valid_points.sum(:current_points)
             money = ((order.price * level.write_off_rule_percent) / 100.0)
@@ -127,48 +130,85 @@ module ClientPointsHelper
         return {points: 0}
     end
 
-    def self.write_off(order, write_off_points)
+    def self.write_off_promotion(order, write_off_points, promotion)
+        total = client.valid_points.sum(:current_points)
+        if promotion
+            if !promotion.write_off_limited || (promotion.write_off_limited && promotion.write_off_min_price <= order.price)
+                if promotion.write_off_rule.to_sym == :write_off_convert && total >= promotion.write_off_rule_points
+                    if order.write_off_status.to_sym == :not_written_off
+                        return self.write_off(order, write_off_points, promotion)
+                    end
+                end
+            end
+        end
+    end
+
+    def self.write_off_program(order, write_off_points)
         program = order.loyalty_program
         client = order.client
         if program && order.write_off_status.to_sym == :not_written_off
-            level = self.find_write_off_level(client, program, order.price)
-            if level
-                points = client.valid_points
-                total = client.valid_points.sum(:current_points)
-                money = ((order.price * level.write_off_rule_percent) / 100.0)
-                current_points = [0, [write_off_points, money, total].min.to_i].max.to_i
-           
+            level = self.find_level(client, program, order.price)
+            if self.write_off(order, write_off_points, level)
                 if level.sms_on_write_off
+                    points = client.valid_points
+                    total = client.valid_points.sum(:current_points)
+                    money = ((order.price * level.write_off_rule_percent) / 100.0)
+                    current_points = [0, [write_off_points, money, total].min.to_i].max.to_i
+
                     notification = ClientSms.new(sms_type: :points_writen_off, send_at: DateTime.now)
                     notification.client = client
                     notification.sms_status = :sent
                     notification.save
                     SmsHelper.send_points_write_off(client, current_points)
+                    return true
                 end
-
-                points.each do |p|
-                    if p.current_points >= current_points
-                        p.current_points -= current_points
-                        current_points = 0
-                        p.save
-                    else 
-                        current_points -= p.current_points
-                        p.current_points = 0
-                        p.save
-                    end
-                    if current_points <= 0
-                        break
-                    end
-                end
-                order.write_off_status = :written_off
-                order.write_off_points = [0, [write_off_points, money, total].min.to_i].max.to_i
-                order.save
-                return true
             end
         end
         return false
     end
 
+    def self.write_off(order, write_off_points, level)
+        client = order.client
+        points = client.valid_points
+        total = client.valid_points.sum(:current_points)
+        money = ((order.price * level.write_off_rule_percent) / 100.0)
+        current_points = [0, [write_off_points, money, total].min.to_i].max.to_i
+    
+        points.each do |p|
+            if p.current_points >= current_points
+                p.current_points -= current_points
+                current_points = 0
+                p.save
+            else 
+                current_points -= p.current_points
+                p.current_points = 0
+                p.save
+            end
+            if current_points <= 0
+                break
+            end
+        end
+        order.write_off_status = :written_off
+        order.write_off_points = [0, [write_off_points, money, total].min.to_i].max.to_i
+        order.save
+        return true
+    end
+
+    def self.find_level(client, program, price)
+        points = client.valid_points
+        total = points.sum(:current_points)
+        sum = client.orders.sum(:price) + price
+        program.loyalty_levels.order(write_off_min_price: :desc).each do |level|
+            if !level.write_off_limited || (level.write_off_limited && level.write_off_min_price <= sum)
+                if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
+                    return level
+                end
+            end
+        end
+        return nil
+    end
+
     def burn
+        #TODO: finish
     end
 end

@@ -57,7 +57,8 @@ Rails.application.routes.draw do
       put 'promotions/:id', action: :update, controller: 'promotions'
       delete 'promotions/:id', action: :destroy, controller: 'promotions'
 
-      get 'orders/points', action: :show_points, controller: 'orders'
+      get 'orders/loyalty_program/points', action: :show_program_points, controller: 'orders'
+      get 'orders/promotion/points', action: :show_promotion_points, controller: 'orders'
       post 'orders/program', action: :create_program, controller: 'orders'
       post 'orders/promotion', action: :create_promotion, controller: 'orders'
 

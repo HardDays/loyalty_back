@@ -38,14 +38,22 @@ module Api
           password = '1234567' #SecureRandom.hex(4)
           @user.password = password
           if @user.save
+            program = @auth_user.operator.company.loyalty_program
             @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
-            @user.create_client(company: @auth_user.operator.company, loyalty_program: @auth_user.operator.company.loyalty_program)
+            @user.create_client(company: @auth_user.operator.company, loyalty_program: program)
             
             notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
             notification.client = @user.client
             notification.sms_status = :sent
             notification.save
             SmsHelper.send_register(@user.client, password)
+
+            if params[:recommendator_phone] 
+              rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
+              if rec_user
+                #todo: client_point.new ...
+              end
+            end
             
             render json: @user
           else

@@ -67,6 +67,13 @@
       "in": "body",
       "name": "card_number",
       "description": "Card number"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "recommendator_phone",
+      "description": "Recommendator phone"
     }
   ],
   "response_fields": [
@@ -92,8 +99,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "db0579e3-7328-4c10-8099-a24d45e958ee",
-        "X-Runtime": "0.001583",
+        "X-Request-Id": "093838bb-638d-42ab-8042-cb919ebefa72",
+        "X-Runtime": "0.001443",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

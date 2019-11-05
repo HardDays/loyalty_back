@@ -1,14 +1,19 @@
 module Api
   module V1
     class OrdersController < ApplicationController
-      before_action :auth_program, only: [:create_program]
-      before_action :auth_promotion, only: [:create_promotion]
+      before_action :auth_program, only: [:create_program, :show_program_points]
+      before_action :auth_promotion, only: [:create_promotion, :show_promotion_points]
 
       before_action :auth, only: [:show_points]
 
-      # GET /orders/points
-      def show_points
-        render json: ClientPointsHelper.points_info(@user.client, params[:price].to_i)
+      # GET /orders/program/points
+      def show_program_points
+        render json: ClientPointsHelper.points_info_program(@user.client, params[:price].to_i)
+      end
+
+       # GET /orders/loyalty_program/points
+       def show_promotion_points
+        render json: ClientPointsHelper.points_info_promotion(@user.client, params[:price].to_i, @promotion)
       end
 
       # POST /orders/program

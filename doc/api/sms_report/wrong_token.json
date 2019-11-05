@@ -27,7 +27,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/sms",
-      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":6182}",
+      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":6402}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -43,12 +43,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "e57930de-8793-4dd2-ad9e-50643e792362",
-        "X-Runtime": "0.001690",
+        "X-Request-Id": "e8257cc7-a5da-47f3-a5e7-33084488ee60",
+        "X-Runtime": "0.001880",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":6182}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":6402}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
