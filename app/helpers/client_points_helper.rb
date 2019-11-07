@@ -2,6 +2,9 @@ module ClientPointsHelper
 
     def self.create_from_promotion(client, order, promotion, write_off_points)
         if promotion.begin_date <= DateTime.now && promotion.end_date >= DateTime.now
+            if write_off_points
+                write_off_promotion(order, write_off_points, promotion)
+            end
             return create(client, order, promotion, write_off_points, true) != nil
         end
     end
@@ -12,6 +15,9 @@ module ClientPointsHelper
             program.loyalty_levels.order(min_price: :desc).each do |level|
                 if (program.sum_type.to_sym == :one_buy && order.price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
                     client_points = create(client, order, level, write_off_points, false)
+                    if write_off_points
+                        write_off_program(order, write_off_points)
+                    end
                     if client_points
                         if level.sms_on_burning
                             if level.burning_rule.to_sym == :burning_days
@@ -91,15 +97,6 @@ module ClientPointsHelper
                 client_points.loyalty_level = level
             end
             saved = client_points.save
-            if saved 
-                if write_off_points
-                    if is_promotion
-                        self.write_off_promotion(order, write_off_points, level)
-                    else
-                        self.write_off_program(order, write_off_points)
-                    end
-                end         
-            end
             return client_points
         end
     end
