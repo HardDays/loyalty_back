@@ -131,6 +131,7 @@ module ClientPointsHelper
     end
 
     def self.write_off_promotion(order, write_off_points, promotion)
+        client = order.client
         total = client.valid_points.sum(:current_points)
         if promotion
             if !promotion.write_off_limited || (promotion.write_off_limited && promotion.write_off_min_price <= order.price)

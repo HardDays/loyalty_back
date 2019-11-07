@@ -59,8 +59,8 @@ Rails.application.routes.draw do
 
       get 'orders/loyalty_program/points', action: :show_program_points, controller: 'orders'
       get 'orders/promotion/points', action: :show_promotion_points, controller: 'orders'
-      post 'orders/program', action: :create_program, controller: 'orders'
-      post 'orders/promotion', action: :create_promotion, controller: 'orders'
+      post 'orders/program', action: :create_program_order, controller: 'orders'
+      post 'orders/promotion', action: :create_promotion_order, controller: 'orders'
 
       get 'reports/general', action: :general, controller: 'reports'
       get 'reports/clients', action: :clients, controller: 'reports'
