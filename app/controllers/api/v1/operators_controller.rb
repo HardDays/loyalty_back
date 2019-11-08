@@ -1,7 +1,7 @@
 module Api
   module V1
     class OperatorsController < ApplicationController
-      before_action :auth_creator, only: [:create, :index]
+      before_action :auth_creator, only: [:create, :index, :show]
       before_action :auth_find, only: [:update, :destroy]
 
       def index
@@ -10,6 +10,15 @@ module Api
           @operators = @operators.where(store_id: params[:store_id])
         end
         render json: @operators.limit(params[:limit]).offset(params[:offset]).collect{|o| o.user}
+      end
+
+      def show
+        @operators = @auth_user.creator.company.operators.where(id: params[:id])
+        if @operators.empty?
+          render status: :not_found
+        else
+          render json: @operators.first.user
+        end  
       end
 
       def create

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       put 'clients/:id', action: :update, controller: 'clients'
 
       get 'operators', action: :index, controller: 'operators'
+      get 'operators/:id', action: :show, controller: 'operators'
       post 'operators', action: :create, controller: 'operators'
       put 'operators/:id', action: :update, controller: 'operators'
       delete 'operators/:id', action: :destroy, controller: 'operators'

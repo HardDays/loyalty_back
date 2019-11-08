@@ -264,4 +264,49 @@ resource "Get operators" do
     end
   end
 end
-  
+
+resource "Get operator" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  get "api/v1/operators/:id" do
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+    end
+
+    let(:authorization) { @creator.token }
+    let(:id) { @operator.id }
+      
+    # context "Success" do
+      
+    #   example "Success" do
+    #     do_request
+    #     expect(status).to eq(200)
+
+    #     body = JSON.parse(response_body)
+    #     expect(body["store_id"]).to eq(@store.id)
+    #   end
+    # end
+
+    context "Not found" do
+      let(:id) { 0 }
+
+      example "Not found" do
+        do_request
+        expect(status).to eq(404)
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
+      end
+    end
+  end
+end

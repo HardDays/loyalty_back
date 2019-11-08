@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_112910) do
     t.integer "company_id"
     t.string "phone"
     t.integer "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "client_points", force: :cascade do |t|
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_112910) do
     t.string "web_site"
     t.string "name"
     t.integer "creator_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "tariff_plan_purchase_id"
   end
 
@@ -233,8 +233,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_112910) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_type"
     t.string "first_name"
     t.string "second_name"
