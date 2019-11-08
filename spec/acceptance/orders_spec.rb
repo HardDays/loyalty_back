@@ -149,7 +149,7 @@ resource "Create order for loyalty program" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
-  post "api/v1/orders/program" do
+  post "api/v1/orders/loyalty_program" do
     parameter :user_id, "Id of client", type: :integer, in: :body, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :write_off_points, "How much points to write off", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: false

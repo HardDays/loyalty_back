@@ -46,6 +46,13 @@ def create_store(user)
     return store
 end
 
+def create_order(user, operator, store, promotion)
+    order = Order.new(price: 10000, promotion: promotion, client: user.client, write_off_status: :not_written_off, store: store, operator: operator.operator)
+    order.save
+    return order
+end
+
+
 def create_program(company)
     program = LoyaltyProgram.new(name: "test", sum_type: :one_buy, company_id: company.id)
     program.loyalty_levels.build(

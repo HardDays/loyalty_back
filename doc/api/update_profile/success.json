@@ -1,0 +1,105 @@
+{
+  "resource": "Update profile",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/clients/profile",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone (format: 7xxxxxxxxxx)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "email",
+      "description": "Email"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "card_number",
+      "description": "Card number"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/clients/profile",
+      "request_body": "{\"phone\":\"380501009533\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDQ5MCwiZXhwIjoxNTczODE5MzI2fQ.vmQXwNH2mXZBiH29XhsWyxtn6JmzoKy7GM1x6OobtAw",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 44490,\n  \"phone\": \"380501009533\",\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"email\": null,\n  \"created_at\": \"2019-11-08T12:02:06.932Z\",\n  \"updated_at\": \"2019-11-08T12:02:06.932Z\",\n  \"user_type\": \"client\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"company_id\": 20987,\n  \"card_number\": \"12345\",\n  \"loyalty_program_id\": null,\n  \"recommendator_id\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"525e9ec8b96b06be96bdda248a9ccc05\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "b90bfb6b-b28b-4cf3-8053-db4dcffd2579",
+        "X-Runtime": "0.014755",
+        "Vary": "Origin",
+        "Content-Length": "343"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -d '{\"phone\":\"380501009533\",\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDQ5MCwiZXhwIjoxNTczODE5MzI2fQ.vmQXwNH2mXZBiH29XhsWyxtn6JmzoKy7GM1x6OobtAw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

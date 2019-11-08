@@ -1,0 +1,44 @@
+{
+  "resource": "Client orders",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/clients/profile/orders",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/clients/profile/orders",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDQ4NCwiZXhwIjoxNTczODE5MzI2fQ.iBaZaf_RK5Emu20oirPEUW4mXxvRsdmKS-_2sp_lsPs",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 700,\n    \"operator_id\": 10176,\n    \"store_id\": 13133,\n    \"loyalty_program_id\": null,\n    \"price\": 10000,\n    \"created_at\": \"2019-11-08T12:02:06.796Z\",\n    \"updated_at\": \"2019-11-08T12:02:06.796Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": 663,\n    \"user_id\": 44484,\n    \"store\": {\n      \"id\": 13133,\n      \"name\": \"test\"\n    },\n    \"promotion\": {\n      \"id\": 663,\n      \"name\": \"test\"\n    }\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"37dce1abb2e1526a1b00c32ad055d846\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "bba495f7-76c0-4ae7-b30b-d7eaadf412be",
+        "X-Runtime": "0.014062",
+        "Vary": "Origin",
+        "Content-Length": "337"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDQ4NCwiZXhwIjoxNTczODE5MzI2fQ.iBaZaf_RK5Emu20oirPEUW4mXxvRsdmKS-_2sp_lsPs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

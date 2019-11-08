@@ -19,8 +19,10 @@ class LoyaltyProgram < ApplicationRecord
     def serializable_hash(options = {})
         attrs = super
 
-        if options[:loyalty_levels]
-            attrs[:loyalty_levels] = loyalty_levels
+        if options
+            if options[:loyalty_levels]
+                attrs[:loyalty_levels] = loyalty_levels
+            end
         end
 
         return attrs

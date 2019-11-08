@@ -312,17 +312,110 @@ resource "Client profile" do
         expect(status).to eq(401)
       end
     end
+  end
+end
 
-    context "User is not operator" do
-      before do
-        @wrong_operator = create_user
-      end
+resource "Client orders" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
 
-      let(:authorization) { @wrong_operator.token }
+  get "api/v1/clients/profile/orders" do
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+      @client_user = create_client(@company)
+      @promotion = create_promotion(@company)
+      @order = create_order(@client_user, @operator, @store, @promotion)
+    end
 
-      example "User is not client" do
+    let(:authorization) { @client_user.token }
+
+    context "Success" do
+ 
+      example "Success" do
         do_request
-        expect(status).to eq(403)
+        expect(status).to eq(200)
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
+      end
+    end
+  end
+end
+
+resource "Update profile" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  put "api/v1/clients/profile" do
+    parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
+    parameter :email, "Email", type: :string, in: :body, required: true
+    parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
+    parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
+    parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
+    #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
+    parameter :card_number, "Card number", type: :string, in: :body
+
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+      @client_user = create_client(@company)
+    end
+
+    let(:authorization) { @client_user.token }
+
+    context "Success" do
+      let(:phone) { "380501009533" }
+      let(:first_name) { "new test" }
+      let(:last_name) { "new test" }
+      let(:second_name) { "new test" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+
+        body = JSON.parse(response_body)
+        expect(status).to eq(200)
+        expect(body["phone"]).to eq("380501009533")
+        expect(body["first_name"]).to eq("new test")
+        expect(body["last_name"]).to eq("new test")
+        expect(body["second_name"]).to eq("new test")
+      end
+    end
+
+    context "Wrong fields" do
+      let(:email) { "f" }
+      let(:first_name) { "" }
+      let(:store_id) { 0 }
+
+      let(:raw_post) { params.to_json }
+
+      example "Wrong fields" do
+        do_request
+        expect(status).to eq(422)
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
       end
     end
   end

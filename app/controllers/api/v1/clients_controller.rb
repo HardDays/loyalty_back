@@ -3,8 +3,25 @@ module Api
     class ClientsController < ApplicationController
       before_action :auth_find, only: [:update]
       before_action :auth_operator, only: [:create, :index, :phone]
-      before_action :auth_client, only: [:profile]
+      before_action :auth_client, only: [:profile, :profile_orders, :update_profile]
 
+      # GET /clients/profile
+      def profile
+        render json: @auth_user, points: true, loyalty_program: true
+      end
+
+      # PUT /clients/profile
+      def update_profile
+        @user = @auth_user
+        update
+      end
+
+      # GET /clients/profile/orders
+      def profile_orders
+        render json: @auth_user.client.orders, store: true, loyalty_program: true, promotion: true
+      end
+
+      # GET /clients
       def index
         @users = User.joins(:client)
         if params[:name]
@@ -17,11 +34,6 @@ module Api
           @users = @users.where(clients: {card_number: params[:card_number]})
         end
         render json: @users.limit(params[:limit]).offset(params[:offset]), points: true
-      end
-
-      # GET /clients/profile
-      def profile
-        render json: @auth_user, points: true, loyalty_program: true
       end
 
       # GET /clients/phone

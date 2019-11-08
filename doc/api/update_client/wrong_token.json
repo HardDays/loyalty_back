@@ -75,7 +75,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/clients/42476",
+      "request_path": "api/v1/clients/44471",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -92,12 +92,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6a99fb12-2b2d-4ff9-8b5e-093cc2b2ca7d",
-        "X-Runtime": "0.001328",
+        "X-Request-Id": "2acc78e2-61bd-462b-8c3b-880ad94d84d8",
+        "X-Runtime": "0.001300",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/42476\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/44471\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

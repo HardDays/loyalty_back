@@ -2,7 +2,7 @@
   "resource": "Create order for loyalty program",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "api/v1/orders/program",
+  "route": "api/v1/orders/loyalty_program",
   "description": "User is not operator",
   "explanation": null,
   "parameters": [
@@ -38,11 +38,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/orders/program",
-      "request_body": "{\"user_id\":42616}",
+      "request_path": "api/v1/orders/loyalty_program",
+      "request_body": "{\"user_id\":44622}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYxNywiZXhwIjoxNTczNTY3NjY0fQ.JEV7iLwGvaXRi-LfSAgwbTFmmhSZpXKU2t-9KntN9_w",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYyMywiZXhwIjoxNTczODE5MzMwfQ.rr_KGMFz8xn_b8tpvtSSs0vPtkNqujsJM56t28BAEjg",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -55,12 +55,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "fac97b91-f43f-4dde-bffb-f213c8aef6ca",
-        "X-Runtime": "0.005615",
+        "X-Request-Id": "31f2d1b7-1c8a-4e72-bd27-c226365150a6",
+        "X-Runtime": "0.004234",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/program\" -d '{\"user_id\":42616}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYxNywiZXhwIjoxNTczNTY3NjY0fQ.JEV7iLwGvaXRi-LfSAgwbTFmmhSZpXKU2t-9KntN9_w\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":44622}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYyMywiZXhwIjoxNTczODE5MzMwfQ.rr_KGMFz8xn_b8tpvtSSs0vPtkNqujsJM56t28BAEjg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

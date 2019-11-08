@@ -23,7 +23,9 @@ Rails.application.routes.draw do
       get 'clients', action: :index, controller: 'clients'
       get 'clients/phone', action: :phone, controller: 'clients'
       get 'clients/profile', action: :profile, controller: 'clients'
+      get 'clients/profile/orders', action: :profile_orders, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
+      put 'clients/profile', action: :update_profile, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'
 
       get 'operators', action: :index, controller: 'operators'
@@ -59,7 +61,7 @@ Rails.application.routes.draw do
 
       get 'orders/loyalty_program/points', action: :show_program_points, controller: 'orders'
       get 'orders/promotion/points', action: :show_promotion_points, controller: 'orders'
-      post 'orders/program', action: :create_program_order, controller: 'orders'
+      post 'orders/loyalty_program', action: :create_program_order, controller: 'orders'
       post 'orders/promotion', action: :create_promotion_order, controller: 'orders'
 
       get 'reports/general', action: :general, controller: 'reports'

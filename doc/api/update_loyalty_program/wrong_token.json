@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_programs/6375",
+      "request_path": "api/v1/loyalty_programs/6683",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -31,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "1e263fbb-7329-4bc9-81e7-e827c79cdca5",
-        "X-Runtime": "0.001399",
+        "X-Request-Id": "bc3a2887-9ab6-4d3f-b66f-19ca720f1de7",
+        "X-Runtime": "0.001347",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/6375\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/6683\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

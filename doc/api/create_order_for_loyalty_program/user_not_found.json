@@ -2,7 +2,7 @@
   "resource": "Create order for loyalty program",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "api/v1/orders/program",
+  "route": "api/v1/orders/loyalty_program",
   "description": "User not found",
   "explanation": null,
   "parameters": [
@@ -38,11 +38,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/orders/program",
+      "request_path": "api/v1/orders/loyalty_program",
       "request_body": "{\"user_id\":0}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwOSwiZXhwIjoxNTczNTY3NjY0fQ.DwabYJvrDk2btdggueB5w-gpW7YQaLLgYe8wZO91uDg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYxNSwiZXhwIjoxNTczODE5MzMwfQ.UT_MKptTtyROTM9HyZzmsNpZVBXCGHcKWwv0wC_6KAw",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -55,12 +55,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "35d2e334-9780-428b-a76a-7298aec7e4de",
-        "X-Runtime": "0.003640",
+        "X-Request-Id": "4303ad19-f1c6-498f-b968-6b5f1b5771dd",
+        "X-Runtime": "0.003300",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/program\" -d '{\"user_id\":0}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwOSwiZXhwIjoxNTczNTY3NjY0fQ.DwabYJvrDk2btdggueB5w-gpW7YQaLLgYe8wZO91uDg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":0}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYxNSwiZXhwIjoxNTczODE5MzMwfQ.UT_MKptTtyROTM9HyZzmsNpZVBXCGHcKWwv0wC_6KAw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

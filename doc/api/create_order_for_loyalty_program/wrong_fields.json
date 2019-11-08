@@ -2,7 +2,7 @@
   "resource": "Create order for loyalty program",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "api/v1/orders/program",
+  "route": "api/v1/orders/loyalty_program",
   "description": "Wrong fields",
   "explanation": null,
   "parameters": [
@@ -38,11 +38,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/orders/program",
-      "request_body": "{\"user_id\":42607}",
+      "request_path": "api/v1/orders/loyalty_program",
+      "request_body": "{\"user_id\":44613}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwNiwiZXhwIjoxNTczNTY3NjY0fQ.FPbUXDishNe5zDpSnUkvEzTimP4tgeGpRSeVnUZuiQw",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYxMiwiZXhwIjoxNTczODE5MzMwfQ.m6jz_cttF6NdIIrJhfw7Y_ap9jq_OorOfjyNkAezhSU",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -55,13 +55,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0d334551-3cea-4adf-918e-bbfc2cee7046",
-        "X-Runtime": "0.018396",
+        "X-Request-Id": "a232fa98-e8f0-4e17-a750-8e11443ce65c",
+        "X-Runtime": "0.012663",
         "Vary": "Origin",
         "Content-Length": "41"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/program\" -d '{\"user_id\":42607}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjYwNiwiZXhwIjoxNTczNTY3NjY0fQ.FPbUXDishNe5zDpSnUkvEzTimP4tgeGpRSeVnUZuiQw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":44613}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDYxMiwiZXhwIjoxNTczODE5MzMwfQ.m6jz_cttF6NdIIrJhfw7Y_ap9jq_OorOfjyNkAezhSU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

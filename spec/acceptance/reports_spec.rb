@@ -59,7 +59,7 @@ resource "Orders report" do
     @customer.client.loyalty_program = @program
     @customer.client.save
 
-    @order = Order.new(price: 5000, use_points: false)
+    @order = Order.new(price: 5000)
     @order.operator = @operator.operator
     @order.client = @customer.client
     @order.loyalty_program = @program
@@ -116,7 +116,7 @@ resource "Clients report" do
     @customer.client.loyalty_program = @program
     @customer.client.save
 
-    @order = Order.new(price: 5000, use_points: false)
+    @order = Order.new(price: 5000)
     @order.operator = @operator.operator
     @order.client = @customer.client
     @order.loyalty_program = @program

@@ -21,11 +21,13 @@ class Client < ApplicationRecord
 
     attrs[:user_type] = :client
 
-    if options[:points]
-      attrs[:points] = valid_points.sum{|p| p.current_points}
-    end
-    if options[:loyalty_program]
-      attrs[:loyalty_program] = loyalty_program
+    if options
+      if options[:points]
+        attrs[:points] = valid_points.sum{|p| p.current_points}
+      end
+      if options[:loyalty_program]
+        attrs[:loyalty_program] = loyalty_program
+      end
     end
  
     return attrs

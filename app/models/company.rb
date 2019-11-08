@@ -19,7 +19,7 @@ class Company < ApplicationRecord
     end
 
     def as_json(options={})
-        attrs = super
+        attrs = super.except('creator_id')
 
         #attrs[:tariff_plan] = tariff_plan_purchase.tariff_plan.as_json.merge({expired_at: tariff_plan_purchase.expired_at})
 

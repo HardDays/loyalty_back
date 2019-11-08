@@ -25,10 +25,19 @@ class Order < ApplicationRecord
 
         attrs[:user_id] = client.user_id
         
-        if options[:statistics]
-            attrs[:user] = client.user
-            attrs[:store] = store.as_json(only: [:id, :name])
-            attrs[:loyalty_program] = loyalty_program.as_json(only: [:id, :name])            
+        if options
+            if options[:user]
+                attrs[:user] = client.user       
+            end
+            if options[:store]
+                attrs[:store] = store.as_json(only: [:id, :name])
+            end
+            if options[:loyalty_program] && loyalty_program
+                attrs[:loyalty_program] = loyalty_program.as_json(only: [:id, :name])            
+            end
+            if options[:promotion] && promotion
+                attrs[:promotion] = promotion.as_json(only: [:id, :name])            
+            end
         end
 
         return attrs

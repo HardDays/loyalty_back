@@ -44,13 +44,13 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 42429,\n  \"email\": \"test@text.xxt\",\n  \"created_at\": \"2019-11-05T14:07:37.106Z\",\n  \"updated_at\": \"2019-11-05T14:07:37.106Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MjQyOSwiZXhwIjoxNTczNTY3NjU3fQ.rVD8pWL6Nwj6lz6nsvUd3WzR_XPfCdGEA4hViRetqfw\"\n}",
+      "response_body": "{\n  \"id\": 44424,\n  \"email\": \"test@text.xxt\",\n  \"created_at\": \"2019-11-08T12:02:04.591Z\",\n  \"updated_at\": \"2019-11-08T12:02:04.591Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDQyNCwiZXhwIjoxNTczODE5MzI0fQ.oz5vZYapoM3iKDSkxjUBqtDPjoED_ovc5E2lUsLsV1s\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"2843cf4a97d0597e908a1d5ba15057b2\"",
+        "ETag": "W/\"99d3094dff052b93e76111d781309c47\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "7d105f2b-4645-40ae-9376-956b37081a54",
-        "X-Runtime": "0.011371",
+        "X-Request-Id": "33794805-4a4b-45ed-b144-21a3f80639d6",
+        "X-Runtime": "0.011979",
         "Vary": "Origin",
         "Content-Length": "357"
       },

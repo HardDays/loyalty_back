@@ -2,7 +2,7 @@
   "resource": "Create order for loyalty program",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "api/v1/orders/program",
+  "route": "api/v1/orders/loyalty_program",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
@@ -38,8 +38,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/orders/program",
-      "request_body": "{\"user_id\":42613}",
+      "request_path": "api/v1/orders/loyalty_program",
+      "request_body": "{\"user_id\":44619}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -55,12 +55,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "197a7d8e-7ebd-4978-abb4-f05eb4662753",
-        "X-Runtime": "0.003326",
+        "X-Request-Id": "b8043acf-d7d6-46e0-8c2d-d34a3e3303ec",
+        "X-Runtime": "0.001429",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/program\" -d '{\"user_id\":42613}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":44619}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

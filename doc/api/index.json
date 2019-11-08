@@ -254,13 +254,53 @@
           "groups": "all",
           "route": "api/v1/clients/profile",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Client orders",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "client_orders/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/orders",
+          "method": "get"
         },
         {
-          "description": "User is not client",
-          "link": "client_profile/user_is_not_client.json",
+          "description": "Wrong token",
+          "link": "client_orders/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/orders",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Update profile",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_profile/success.json",
           "groups": "all",
           "route": "api/v1/clients/profile",
-          "method": "get"
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_profile/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile",
+          "method": "put"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_profile/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile",
+          "method": "put"
         }
       ]
     },
@@ -815,35 +855,35 @@
           "description": "Success",
           "link": "create_order_for_loyalty_program/success.json",
           "groups": "all",
-          "route": "api/v1/orders/program",
+          "route": "api/v1/orders/loyalty_program",
           "method": "post"
         },
         {
           "description": "Wrong fields",
           "link": "create_order_for_loyalty_program/wrong_fields.json",
           "groups": "all",
-          "route": "api/v1/orders/program",
+          "route": "api/v1/orders/loyalty_program",
           "method": "post"
         },
         {
           "description": "User not found",
           "link": "create_order_for_loyalty_program/user_not_found.json",
           "groups": "all",
-          "route": "api/v1/orders/program",
+          "route": "api/v1/orders/loyalty_program",
           "method": "post"
         },
         {
           "description": "Wrong token",
           "link": "create_order_for_loyalty_program/wrong_token.json",
           "groups": "all",
-          "route": "api/v1/orders/program",
+          "route": "api/v1/orders/loyalty_program",
           "method": "post"
         },
         {
           "description": "User is not operator",
           "link": "create_order_for_loyalty_program/user_is_not_operator.json",
           "groups": "all",
-          "route": "api/v1/orders/program",
+          "route": "api/v1/orders/loyalty_program",
           "method": "post"
         }
       ]

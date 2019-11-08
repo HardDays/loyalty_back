@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/promotions/541",
+      "request_path": "api/v1/promotions/681",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -31,12 +31,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "9fe8be0d-f7c4-40aa-accd-e1f0f90255f0",
-        "X-Runtime": "0.001551",
+        "X-Request-Id": "62728ff2-dbd2-4500-974d-4be5c4db414f",
+        "X-Runtime": "0.001568",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions/541\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/681\" -d '' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -74,8 +74,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "b63f07b7-fced-45af-948d-cf5bd35beffb",
-        "X-Runtime": "0.001422",
+        "X-Request-Id": "1307cba5-cd7e-46f4-aa77-86fc20c974af",
+        "X-Runtime": "0.001406",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
