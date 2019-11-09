@@ -7,6 +7,13 @@
   "explanation": null,
   "parameters": [
     {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
+    {
       "type": "integer",
       "minmum": 1,
       "maximum": 10000000000,

@@ -1,11 +1,18 @@
 {
-  "resource": "Create loyalty level for program",
+  "resource": "Get loyalty level ",
   "resource_explanation": null,
   "http_method": "POST",
   "route": "api/v1/loyalty_levels",
-  "description": "Wrong token",
+  "description": "Wrong fields",
   "explanation": null,
   "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
     {
       "type": "integer",
       "required": true,
@@ -301,28 +308,29 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":6669}",
+      "request_body": "{\"loyalty_program_id\":6764}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "test",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5NSwiZXhwIjoxNTczODk4MTY0fQ.fRe7roagkPv2eVxdQc-rBzPUU1G0N0UVtpX4v7o1Hyk",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 401,
-      "response_status_text": "Unauthorized",
-      "response_body": null,
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"accrual_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"burning_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"activation_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"write_off_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accordance_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"min_price\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"write_off_limited\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_recommend\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_birthday\": [\n    \"is not included in the list\"\n  ]\n}",
       "response_headers": {
-        "Content-Type": "text/html; charset=utf-8",
+        "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "a1650b6a-cb39-40bd-8d0f-ea064f027d3c",
-        "X-Runtime": "0.001534",
-        "Vary": "Origin"
+        "X-Request-Id": "5e78286f-daa2-453f-a342-d84fbbd7f369",
+        "X-Runtime": "0.023850",
+        "Vary": "Origin",
+        "Content-Length": "756"
       },
-      "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6669}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6764}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5NSwiZXhwIjoxNTczODk4MTY0fQ.fRe7roagkPv2eVxdQc-rBzPUU1G0N0UVtpX4v7o1Hyk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

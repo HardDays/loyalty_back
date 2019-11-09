@@ -1,0 +1,43 @@
+{
+  "resource": "Get loyalty level",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/loyalty_levels/:id",
+  "description": "User is not creator",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/loyalty_levels/6939",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5MywiZXhwIjoxNTczODk4MTY0fQ.ci3AF-eSLdC2Y_KDU2F5nR_SmEatvTAhFuFaHgBcJ80",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "{}": null
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "8adbd237-1eb3-4ee2-901f-931921ce3032",
+        "X-Runtime": "0.003563",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/6939\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5MywiZXhwIjoxNTczODk4MTY0fQ.ci3AF-eSLdC2Y_KDU2F5nR_SmEatvTAhFuFaHgBcJ80\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

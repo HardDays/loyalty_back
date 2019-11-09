@@ -46,7 +46,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/orders/promotion",
-      "request_body": "{\"user_id\":44635,\"promotion_id\":672}",
+      "request_body": "{\"user_id\":45221,\"promotion_id\":712}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -62,12 +62,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "ce396852-d7ed-4c31-a586-5a983ded5495",
-        "X-Runtime": "0.001507",
+        "X-Request-Id": "03a3d568-b19b-4f1d-b741-a53962097875",
+        "X-Runtime": "0.001694",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":44635,\"promotion_id\":672}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":45221,\"promotion_id\":712}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

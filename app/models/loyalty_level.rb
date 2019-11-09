@@ -12,6 +12,8 @@ class LoyaltyLevel < ApplicationRecord
     enum accordance_rule: [:no_accordance, :accordance_convert]
     enum rounding_rule: [:no_rounding, :rounding_math, :rounding_small, :rounding_big]
 
+    validates :name, length: {minimum: 0, maximum: 128}, allow_nil: true
+
     #validates :level_type, presence: :true
     validates :accrual_rule, presence: :true
     validates :burning_rule, presence: :true

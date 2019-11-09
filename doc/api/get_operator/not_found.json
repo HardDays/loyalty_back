@@ -1,0 +1,43 @@
+{
+  "resource": "Get operator",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/operators/:id",
+  "description": "Not found",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/operators/0",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE2NCwiZXhwIjoxNTczODk4MTY2fQ.MtJI2sFHXSREc9ZRNFUnTbWs4r58JvMh6MGr4C7oz0g",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "9f388a74-11f7-437b-b32e-deb05257fdb6",
+        "X-Runtime": "0.006666",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/operators/0\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE2NCwiZXhwIjoxNTczODk4MTY2fQ.MtJI2sFHXSREc9ZRNFUnTbWs4r58JvMh6MGr4C7oz0g\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

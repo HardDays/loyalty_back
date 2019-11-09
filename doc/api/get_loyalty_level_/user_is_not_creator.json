@@ -1,11 +1,18 @@
 {
-  "resource": "Create loyalty level for program",
+  "resource": "Get loyalty level ",
   "resource_explanation": null,
   "http_method": "POST",
   "route": "api/v1/loyalty_levels",
   "description": "User is not creator",
   "explanation": null,
   "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "name",
+      "description": "Name"
+    },
     {
       "type": "integer",
       "required": true,
@@ -301,10 +308,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":6670}",
+      "request_body": "{\"loyalty_program_id\":6766}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDUxNiwiZXhwIjoxNTczODE5MzI3fQ.BRfmyIhnA25MwD4U2M95VaRY0rKRJ9Zt67VCmvIBtaA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5OCwiZXhwIjoxNTczODk4MTY0fQ.G0H77abpA0E-s7Qs3xwH6VLwxxCuIA0PvHiX6QPkwJo",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -317,12 +324,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "3602e94e-7efa-4925-905e-217cd88dff83",
-        "X-Runtime": "0.003596",
+        "X-Request-Id": "7250ce25-e58f-47d6-b3cd-3f5988a4d8bc",
+        "X-Runtime": "0.003623",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6670}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NDUxNiwiZXhwIjoxNTczODE5MzI3fQ.BRfmyIhnA25MwD4U2M95VaRY0rKRJ9Zt67VCmvIBtaA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":6766}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA5OCwiZXhwIjoxNTczODk4MTY0fQ.G0H77abpA0E-s7Qs3xwH6VLwxxCuIA0PvHiX6QPkwJo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

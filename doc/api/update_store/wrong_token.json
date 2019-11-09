@@ -58,7 +58,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/stores/13184",
+      "request_path": "api/v1/stores/13350",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -75,12 +75,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f3092e38-6501-4cab-b799-fbf245533d55",
-        "X-Runtime": "0.002076",
+        "X-Request-Id": "bea9ffd4-426b-4075-be31-d931b77de524",
+        "X-Runtime": "0.001331",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores/13184\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores/13350\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

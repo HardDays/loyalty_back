@@ -1,6 +1,66 @@
-resource "Create loyalty level for program" do
+resource "Get loyalty level " do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
+
+  resource "Get loyalty level" do
+    header 'Content-Type', 'application/json'
+    header "Authorization", :authorization
+  
+    get "api/v1/loyalty_levels/:id" do
+      before do
+        @user = create_creator(create_user)
+        @company = create_company(@user)
+        @program = create_program(@company)
+      end
+  
+      let(:id) { @program.loyalty_levels.first.id }
+      let(:authorization) { @user.token }
+  
+      context "Success" do
+        example "Success" do
+          do_request
+          expect(status).to eq(200)
+        end
+      end
+  
+      context "Wrong token" do
+        let(:authorization) { "test" }
+  
+        let(:raw_post) { params.to_json }
+  
+        example "Wrong token" do
+          do_request
+          expect(status).to eq(401)
+        end
+      end
+  
+      context "Not found" do
+        let(:id) { 0 }
+        
+        let(:raw_post) { params.to_json }
+  
+        example "Not found" do
+          do_request
+          expect(status).to eq(404)
+        end
+      end
+  
+      context "User is not creator" do
+        before do
+          @wrong_user = create_user
+        end
+  
+        let(:authorization) { @wrong_user.token }
+        
+        let(:raw_post) { params.to_json }
+  
+        example "User is not creator" do
+          do_request
+          expect(status).to eq(403)
+        end
+      end
+    end
+  end
 
   post "api/v1/loyalty_levels" do
     before do
@@ -9,6 +69,7 @@ resource "Create loyalty level for program" do
       @program = create_program(@company)
     end
 
+    parameter :name, "Name", type: :string, in: :body, required: false
     parameter :loyalty_program_id, "Loyalty program", type: :integer, required: true
     #parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
@@ -54,7 +115,7 @@ resource "Create loyalty level for program" do
     let(:authorization) { @user.token }
 
     context "Success" do
-      #let(:level_type) { "one_buy" }
+      let(:name) { "name" }
       let(:min_price) { 100 }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
@@ -135,6 +196,7 @@ resource "Update loyalty level" do
       @program = create_program(@company)
     end
 
+    parameter :name, "Name", type: :string, in: :body, required: false
     #parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
     parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
     parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
@@ -179,7 +241,7 @@ resource "Update loyalty level" do
     let(:authorization) { @user.token }
 
     context "Success" do
-      #let(:level_type) { "one_buy" }
+      let(:name) { "name" }
       let(:min_price) { 100 }
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }

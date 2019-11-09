@@ -11,7 +11,7 @@ resource "Create loyalty program" do
     let(:authorization) { @user.token }
 
     context "Loyalty level description" do
-      #parameter :level_type, "Level type", type: :string, in: :body, required: true, enum: ["one_buy", "sum_buy"]
+      parameter :name, "Name", type: :string, in: :body, required: false
       parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
       parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
       parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
@@ -66,6 +66,7 @@ resource "Create loyalty program" do
       let(:loyalty_levels) do
         [
           {
+            "name": "test",
             "min_price": 100,
             "burning_rule": "no_burning",
             "activation_rule": "activation_moment",

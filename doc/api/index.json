@@ -427,33 +427,67 @@
       ]
     },
     {
-      "name": "Create loyalty level for program",
+      "name": "Get loyalty level",
       "explanation": null,
       "examples": [
         {
           "description": "Success",
-          "link": "create_loyalty_level_for_program/success.json",
+          "link": "get_loyalty_level/success.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_loyalty_level/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "get"
+        },
+        {
+          "description": "Not found",
+          "link": "get_loyalty_level/not_found.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "get"
+        },
+        {
+          "description": "User is not creator",
+          "link": "get_loyalty_level/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/loyalty_levels/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Get loyalty level ",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_loyalty_level_/success.json",
           "groups": "all",
           "route": "api/v1/loyalty_levels",
           "method": "post"
         },
         {
           "description": "Wrong fields",
-          "link": "create_loyalty_level_for_program/wrong_fields.json",
+          "link": "get_loyalty_level_/wrong_fields.json",
           "groups": "all",
           "route": "api/v1/loyalty_levels",
           "method": "post"
         },
         {
           "description": "Wrong token",
-          "link": "create_loyalty_level_for_program/wrong_token.json",
+          "link": "get_loyalty_level_/wrong_token.json",
           "groups": "all",
           "route": "api/v1/loyalty_levels",
           "method": "post"
         },
         {
           "description": "User is not creator",
-          "link": "create_loyalty_level_for_program/user_is_not_creator.json",
+          "link": "get_loyalty_level_/user_is_not_creator.json",
           "groups": "all",
           "route": "api/v1/loyalty_levels",
           "method": "post"
@@ -775,6 +809,26 @@
           "link": "get_operators/wrong_token.json",
           "groups": "all",
           "route": "api/v1/operators",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Get operator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Not found",
+          "link": "get_operator/not_found.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_operator/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
           "method": "get"
         }
       ]

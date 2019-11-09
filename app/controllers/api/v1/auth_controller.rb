@@ -5,7 +5,7 @@ module Api
             # POST /auth/login
             def login
                 if params[:phone]
-                    @user = User.find_by(phone: params[:phone])
+                    @user = User.find_by(phone: Phonelib.parse(params[:phone]).sanitized)
                 else
                     @user = User.find_by(email: params[:email]) 
                 end
@@ -27,7 +27,7 @@ module Api
             # POST /auth/confirm
             def confirm
                 if params[:phone]
-                    @user = User.find_by(phone: params[:phone])
+                    @user = User.find_by(phone: Phonelib.parse(params[:phone]).sanitized)
                 else
                     @user = User.find_by(email: params[:email])
                 end
@@ -48,7 +48,7 @@ module Api
             # POST /auth/password/request
             def request_password
                 if params[:phone]
-                    @user = User.find_by(phone: params[:phone])
+                    @user = User.find_by(phone: Phonelib.parse(params[:phone]).sanitized)
                 else
                     @user = User.find_by(email: params[:email])
                 end
