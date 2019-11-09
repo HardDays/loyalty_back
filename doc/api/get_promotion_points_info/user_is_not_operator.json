@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=45192&promotion_id=708",
+      "request_path": "api/v1/orders/promotion/points?user_id=48081&promotion_id=905",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE5MywiZXhwIjoxNTczODk4MTY2fQ.MwLlPnYmg4ft0w-kmx0D9DENpNDn2iCfWC9cUQi2EcI",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODA4MiwiZXhwIjoxNTczOTE5NDY0fQ.V8Png32sSmOkBw8lanzcp3R0PtZbSdWsnomwbqyLvhI",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "45192",
-        "promotion_id": "708"
+        "user_id": "48081",
+        "promotion_id": "905"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "14af1005-ae2b-4884-b690-52ae5edfe247",
-        "X-Runtime": "0.006614",
+        "X-Request-Id": "c27241d3-1194-45bd-9cf9-8d6cf2458ea6",
+        "X-Runtime": "0.004794",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=45192&promotion_id=708\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE5MywiZXhwIjoxNTczODk4MTY2fQ.MwLlPnYmg4ft0w-kmx0D9DENpNDn2iCfWC9cUQi2EcI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=48081&promotion_id=905\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODA4MiwiZXhwIjoxNTczOTE5NDY0fQ.V8Png32sSmOkBw8lanzcp3R0PtZbSdWsnomwbqyLvhI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

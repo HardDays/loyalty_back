@@ -60,6 +60,12 @@
       "in": "body",
       "name": "store_id",
       "description": "Store"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "operator_status",
+      "description": "Status (deleted or active)"
     }
   ],
   "response_fields": [
@@ -68,11 +74,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/operators/45141",
+      "request_path": "api/v1/operators/48039",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE0MiwiZXhwIjoxNTczODk4MTY1fQ.rGUdKvuqOezhwa02UuZ52Ki2zvaDJjxjJGWFfulDVfg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODA0MCwiZXhwIjoxNTczOTE5NDYzfQ.HzouCuUigF-xDmban1KN2RfN6Ibg_15CVPj1654vLpI",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -85,12 +91,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "4dbe9d90-703e-47ea-9c76-d79b5a4bf9a0",
-        "X-Runtime": "0.004662",
+        "X-Request-Id": "ca192181-c2bd-4e2f-bcb9-5f7623d0069f",
+        "X-Runtime": "0.003467",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators/45141\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTE0MiwiZXhwIjoxNTczODk4MTY1fQ.rGUdKvuqOezhwa02UuZ52Ki2zvaDJjxjJGWFfulDVfg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators/48039\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODA0MCwiZXhwIjoxNTczOTE5NDYzfQ.HzouCuUigF-xDmban1KN2RfN6Ibg_15CVPj1654vLpI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

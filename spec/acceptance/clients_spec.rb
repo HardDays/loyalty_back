@@ -289,8 +289,7 @@ resource "Client profile" do
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)
-      @store = create_store(@creator)
-      @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
       @client_user = create_client(@company)
     end
 
@@ -333,7 +332,6 @@ resource "Client orders" do
     let(:authorization) { @client_user.token }
 
     context "Success" do
- 
       example "Success" do
         do_request
         expect(status).to eq(200)
@@ -356,15 +354,15 @@ resource "Update profile" do
   header "Authorization", :authorization
 
   put "api/v1/clients/profile" do
-    parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
-    parameter :email, "Email", type: :string, in: :body, required: true
+    #parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
+    #parameter :email, "Email", type: :string, in: :body, required: true
     parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
     parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
-    parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
+    #parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
-    parameter :card_number, "Card number", type: :string, in: :body
+    #parameter :card_number, "Card number", type: :string, in: :body
 
     before do
       @creator = create_creator(create_user)
@@ -377,7 +375,6 @@ resource "Update profile" do
     let(:authorization) { @client_user.token }
 
     context "Success" do
-      let(:phone) { "380501009533" }
       let(:first_name) { "new test" }
       let(:last_name) { "new test" }
       let(:second_name) { "new test" }
@@ -390,7 +387,6 @@ resource "Update profile" do
 
         body = JSON.parse(response_body)
         expect(status).to eq(200)
-        expect(body["phone"]).to eq("380501009533")
         expect(body["first_name"]).to eq("new test")
         expect(body["last_name"]).to eq("new test")
         expect(body["second_name"]).to eq("new test")
@@ -398,7 +394,6 @@ resource "Update profile" do
     end
 
     context "Wrong fields" do
-      let(:email) { "f" }
       let(:first_name) { "" }
       let(:store_id) { 0 }
 

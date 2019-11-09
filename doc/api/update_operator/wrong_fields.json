@@ -60,6 +60,12 @@
       "in": "body",
       "name": "store_id",
       "description": "Store"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "operator_status",
+      "description": "Status (deleted or active)"
     }
   ],
   "response_fields": [
@@ -68,11 +74,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/operators/45135",
+      "request_path": "api/v1/operators/48033",
       "request_body": "{\"email\":\"f\",\"first_name\":\"\",\"store_id\":0}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTEzNCwiZXhwIjoxNTczODk4MTY1fQ.sYPllBDNSOxgeFqN6nuOpft8TWDDHn8OnvjN_xgBLzQ",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAzMiwiZXhwIjoxNTczOTE5NDYzfQ.EFU_u4n0UsU6qrCxFlycFP-LrxbFy8P6onFuaXbBlUs",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -85,13 +91,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "69ddc85c-dd0a-4098-8a63-8c6d7a983d92",
-        "X-Runtime": "0.011414",
+        "X-Request-Id": "46b527b6-c941-4059-a7b5-5515ff58f68a",
+        "X-Runtime": "0.012704",
         "Vary": "Origin",
         "Content-Length": "2"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators/45135\" -d '{\"email\":\"f\",\"first_name\":\"\",\"store_id\":0}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTEzNCwiZXhwIjoxNTczODk4MTY1fQ.sYPllBDNSOxgeFqN6nuOpft8TWDDHn8OnvjN_xgBLzQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators/48033\" -d '{\"email\":\"f\",\"first_name\":\"\",\"store_id\":0}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAzMiwiZXhwIjoxNTczOTE5NDYzfQ.EFU_u4n0UsU6qrCxFlycFP-LrxbFy8P6onFuaXbBlUs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -75,11 +75,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/clients/45042",
+      "request_path": "api/v1/clients/47939",
       "request_body": "{\"email\":\"f\",\"first_name\":\"\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA0MSwiZXhwIjoxNTczODk4MTYyfQ.gW1sEGjsYsi0GgKWDDDIamlQPYVoU7zfETorG4ACsi0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NzkzOCwiZXhwIjoxNTczOTE5NDYwfQ.9uC5Na8ldJvQbr211XgjrIGpbTIqP5peQrdVDm33LcQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -88,17 +88,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_body": "{\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "07e8dbd1-3ce0-4486-9088-4f3e2e1a8f9f",
-        "X-Runtime": "0.010420",
+        "X-Request-Id": "2db3e65a-3023-498c-a624-dd42edc51b86",
+        "X-Runtime": "0.016028",
         "Vary": "Origin",
-        "Content-Length": "28"
+        "Content-Length": "48"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/45042\" -d '{\"email\":\"f\",\"first_name\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NTA0MSwiZXhwIjoxNTczODk4MTYyfQ.gW1sEGjsYsi0GgKWDDDIamlQPYVoU7zfETorG4ACsi0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/47939\" -d '{\"email\":\"f\",\"first_name\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NzkzOCwiZXhwIjoxNTczOTE5NDYwfQ.9uC5Na8ldJvQbr211XgjrIGpbTIqP5peQrdVDm33LcQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

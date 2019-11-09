@@ -1,15 +1,15 @@
 {
-  "resource": "Register creator",
+  "resource": "Update creator",
   "resource_explanation": null,
-  "http_method": "POST",
-  "route": "api/v1/creators",
+  "http_method": "PUT",
+  "route": "api/v1/creators/profile",
   "description": "Wrong fields",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
       "in": "body",
-      "required": true,
+      "required": false,
       "name": "email",
       "description": "Email"
     },
@@ -18,7 +18,16 @@
       "maximum": 64,
       "type": "string",
       "in": "body",
-      "required": true,
+      "required": false,
+      "name": "current_password",
+      "description": "Current password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": false,
       "name": "password",
       "description": "Password"
     },
@@ -27,6 +36,7 @@
       "maximum": 64,
       "type": "string",
       "in": "body",
+      "required": false,
       "name": "password_confirmation",
       "description": "Password confirm"
     },
@@ -35,7 +45,7 @@
       "maximum": 128,
       "type": "string",
       "in": "body",
-      "required": true,
+      "required": false,
       "name": "first_name",
       "description": "First name"
     },
@@ -44,7 +54,7 @@
       "maximum": 128,
       "type": "string",
       "in": "body",
-      "required": true,
+      "required": false,
       "name": "last_name",
       "description": "Last name"
     },
@@ -53,6 +63,7 @@
       "maximum": 128,
       "type": "string",
       "in": "body",
+      "required": false,
       "name": "second_name",
       "description": "Second name"
     },
@@ -63,12 +74,14 @@
         "male",
         "female"
       ],
+      "required": false,
       "name": "gender",
       "description": "Gender"
     },
     {
       "type": "string",
       "in": "body",
+      "required": false,
       "name": "birth_day",
       "description": "Date of birth (format: dd.mm.yyyy)"
     }
@@ -78,11 +91,12 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "api/v1/creators",
-      "request_body": "{\"email\":\"test\",\"password\":\"123456\",\"password_confirmation\":\"1234567\",\"last_name\":\"\"}",
+      "request_method": "PUT",
+      "request_path": "api/v1/creators/profile",
+      "request_body": "{\"email\":\"test\",\"last_name\":\"\"}",
       "request_headers": {
         "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NiwiZXhwIjoxNTczOTE5NDYxfQ.4iwwFwauussY7CIY-0qv6boK8V1xArt5JhU_HTfG8J8",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -91,17 +105,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"password_confirmation\": [\n    \"NOT_MATCHED\",\n    \"NOT_MATCHED\"\n  ],\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"password\": [\n    \"TOO_SHORT\"\n  ],\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ],\n  \"last_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_body": "{\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"last_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "c87a5848-c773-40d3-8f07-8a54ef0965f7",
-        "X-Runtime": "0.010622",
+        "X-Request-Id": "06bb8974-45e6-4062-8b6f-f8d5c0e4cb1a",
+        "X-Runtime": "0.008895",
         "Vary": "Origin",
-        "Content-Length": "153"
+        "Content-Length": "47"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/creators\" -d '{\"email\":\"test\",\"password\":\"123456\",\"password_confirmation\":\"1234567\",\"last_name\":\"\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/creators/profile\" -d '{\"email\":\"test\",\"last_name\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NiwiZXhwIjoxNTczOTE5NDYxfQ.4iwwFwauussY7CIY-0qv6boK8V1xArt5JhU_HTfG8J8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

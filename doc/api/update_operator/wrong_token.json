@@ -60,6 +60,12 @@
       "in": "body",
       "name": "store_id",
       "description": "Store"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "name": "operator_status",
+      "description": "Status (deleted or active)"
     }
   ],
   "response_fields": [
@@ -68,7 +74,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/operators/45139",
+      "request_path": "api/v1/operators/48037",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -85,12 +91,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "d640f89a-6935-4c50-bca8-8390907ea805",
-        "X-Runtime": "0.001579",
+        "X-Request-Id": "1786f2c0-3779-42f9-8e85-4269ae204e91",
+        "X-Runtime": "0.001430",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators/45139\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators/48037\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

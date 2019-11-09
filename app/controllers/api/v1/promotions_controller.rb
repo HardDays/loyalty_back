@@ -45,18 +45,18 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.role(@auth_user.creator)
+          @auth_user.role(@auth_user.creator_role)
         end
 
         def auth_index
           auth
-          @auth_user.roles([@auth_user.creator, @auth_user.operator])
+          @auth_user.roles([@auth_user.creator_role, @auth_user.operator_role])
         end
 
         def auth_find
           auth_creator
           set_promotion
-          @auth_user.creator_permission(@promotion)
+          @auth_user.permission(@auth_user.creator, @promotion)
         end
 
         def set_promotion

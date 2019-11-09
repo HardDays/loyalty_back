@@ -13,7 +13,15 @@ module Api
       # PUT /clients/profile
       def update_profile
         @user = @auth_user
-        update
+        if params[:password] && !@user.authenticate(params[:current_password]) 
+          render status: :forbidden
+        else
+          if @user.update(profile_params)
+            render json: @user
+          else
+            render json: @user.errors, status: :unprocessable_entity
+          end
+        end
       end
 
       # GET /clients/profile/orders
@@ -51,7 +59,7 @@ module Api
           @user.password = password
           if @user.save
             program = @auth_user.operator.company.loyalty_program
-            @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex(2))
+            @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
             @user.create_client(company: @auth_user.operator.company, loyalty_program: program)
             
             notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
@@ -93,18 +101,18 @@ module Api
 
         def auth_operator
           auth
-          @auth_user.role(@auth_user.operator)
+          @auth_user.role(@auth_user.operator_role)
         end
 
         def auth_client
           auth
-          @auth_user.role(@auth_user.client)
+          @auth_user.role(@auth_user.client_role)
         end
 
         def auth_find
           auth_operator
           set_user
-          @auth_user.operator_permission(@user.client)
+          @auth_user.permission(@user.client, @auth_user.operator)
         end
 
         def set_user
@@ -112,7 +120,11 @@ module Api
         end
 
         def user_params
-          params.permit(:phone, :email, :first_name, :last_name, :second_name, :gender, :birth_day)
+          params.permit(:phone, :email, :first_name, :last_name, :second_name, :gender)
+        end
+
+        def profile_params
+          params.permit(:first_name, :last_name, :second_name, :gender)
         end
 
         def client_params

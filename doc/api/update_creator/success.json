@@ -1,0 +1,122 @@
+{
+  "resource": "Update creator",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/creators/profile",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "email",
+      "description": "Email"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "current_password",
+      "description": "Current password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "password",
+      "description": "Password"
+    },
+    {
+      "minmum": 7,
+      "maximum": 64,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "password_confirmation",
+      "description": "Password confirm"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "first_name",
+      "description": "First name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "last_name",
+      "description": "Last name"
+    },
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "second_name",
+      "description": "Second name"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "required": false,
+      "name": "gender",
+      "description": "Gender"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": false,
+      "name": "birth_day",
+      "description": "Date of birth (format: dd.mm.yyyy)"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/creators/profile",
+      "request_body": "{\"email\":\"test@test.com\",\"current_password\":\"1234567\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NCwiZXhwIjoxNTczOTE5NDYxfQ.Jspn8Ie4BDPzWnQrCD11CVoAXtbcXP8r71D6tYrjVV4",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 47984,\n  \"email\": \"test@test.com\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": \"test\",\n  \"phone\": null,\n  \"created_at\": \"2019-11-09T15:51:01.695Z\",\n  \"updated_at\": \"2019-11-09T15:51:01.695Z\",\n  \"user_type\": \"creator\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n    \"creator\"\n  ],\n  \"company_id\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0dcce6024d52cf2cbbf2a6ada41bc816\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9c503843-ae02-42b1-a6f8-ca06102b96c4",
+        "X-Runtime": "0.015813",
+        "Vary": "Origin",
+        "Content-Length": "285"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/creators/profile\" -d '{\"email\":\"test@test.com\",\"current_password\":\"1234567\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NCwiZXhwIjoxNTczOTE5NDYxfQ.Jspn8Ie4BDPzWnQrCD11CVoAXtbcXP8r71D6tYrjVV4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

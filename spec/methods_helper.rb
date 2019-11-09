@@ -22,7 +22,7 @@ def create_client(company)
     user = User.new(phone: "+799" + rand(10000000..100000000).to_s, password: "1234567", first_name: "test", last_name: "test")
     user.save
     user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
-    user.create_client(company_id: company.id, card_number: '12345')
+    user.create_client(company_id: company.id, card_number: '12345', loyalty_program: company.loyalty_program)
     return user
 end
 
@@ -35,7 +35,6 @@ def create_company(user)
     #company.create_tariff_plan_purchase(tariff_plan_id: tariff_plan.id, expired_at: DateTime.now + tariff_plan.days.days)
 
     company.save
-
     return company
 end
 

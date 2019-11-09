@@ -59,8 +59,8 @@ module Api
         def auth
           @auth_user = User.authorize(request.headers['Authorization'])
           set_client
-          @auth_user.role(@auth_user.operator)
-          @auth_user.operator_permission(@user.client)
+          @auth_user.role(@auth_user.operator_role)
+          @auth_user.permission(@auth_user.operator, @user.client)
         end
 
         def auth_program
@@ -70,7 +70,7 @@ module Api
         def auth_promotion
           auth
           set_promotion
-          @auth_user.operator_permission(@promotion)
+          @auth_user.permission(@auth_user.operator, @promotion)
         end
 
         def set_client

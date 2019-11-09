@@ -27,7 +27,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=45176",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=48065",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "45176"
+        "user_id": "48065"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -45,12 +45,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6f0fdb4d-80e4-48e1-aa21-ac2213422631",
-        "X-Runtime": "0.001590",
+        "X-Request-Id": "75c3a227-f44c-4088-90ae-3831b358e85d",
+        "X-Runtime": "0.001561",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=45176\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=48065\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

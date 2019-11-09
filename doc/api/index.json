@@ -427,6 +427,33 @@
       ]
     },
     {
+      "name": "Update creator",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_creator/success.json",
+          "groups": "all",
+          "route": "api/v1/creators/profile",
+          "method": "put"
+        },
+        {
+          "description": "Wrong password",
+          "link": "update_creator/wrong_password.json",
+          "groups": "all",
+          "route": "api/v1/creators/profile",
+          "method": "put"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "update_creator/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/creators/profile",
+          "method": "put"
+        }
+      ]
+    },
+    {
       "name": "Get loyalty level",
       "explanation": null,
       "examples": [
@@ -756,40 +783,6 @@
           "groups": "all",
           "route": "api/v1/operators/:id",
           "method": "put"
-        }
-      ]
-    },
-    {
-      "name": "Delete operator",
-      "explanation": null,
-      "examples": [
-        {
-          "description": "Success",
-          "link": "delete_operator/success.json",
-          "groups": "all",
-          "route": "api/v1/operators/:id",
-          "method": "delete"
-        },
-        {
-          "description": "Not found",
-          "link": "delete_operator/not_found.json",
-          "groups": "all",
-          "route": "api/v1/operators/:id",
-          "method": "delete"
-        },
-        {
-          "description": "Wrong token",
-          "link": "delete_operator/wrong_token.json",
-          "groups": "all",
-          "route": "api/v1/operators/:id",
-          "method": "delete"
-        },
-        {
-          "description": "User is not creator",
-          "link": "delete_operator/user_is_not_creator.json",
-          "groups": "all",
-          "route": "api/v1/operators/:id",
-          "method": "delete"
         }
       ]
     },

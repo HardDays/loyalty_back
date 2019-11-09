@@ -10,7 +10,7 @@ module Api
       def create
         ActiveRecord::Base.transaction do
           @company = Company.new(company_params)
-          @company.creator = @user.creator
+          @company.creator = @auth_user.creator
           #@tariff_plan = TariffPlan.where(tariff_type: :demo).first
           #@company.create_tariff_plan_purchase(tariff_plan_id: @tariff_plan.id, expired_at: DateTime.now + @tariff_plan.days.days)
           
@@ -33,13 +33,13 @@ module Api
 
       private
         def auth
-          @user = User.authorize(request.headers['Authorization'])
+          @auth_user = User.authorize(request.headers['Authorization'])
         end
 
         def auth_creator
           auth
-          @user.role(@user.creator)
-          @company = @user.creator.company
+          @auth_user.role(@auth_user.creator_role)
+          @company = @auth_user.creator.company
         end
 
         def company_params

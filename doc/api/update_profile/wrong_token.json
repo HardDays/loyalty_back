@@ -7,20 +7,6 @@
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "phone",
-      "description": "Phone (format: 7xxxxxxxxxx)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "email",
-      "description": "Email"
-    },
-    {
       "minmum": 1,
       "maximum": 128,
       "type": "string",
@@ -55,18 +41,6 @@
       ],
       "name": "gender",
       "description": "Gender"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "birth_day",
-      "description": "Date of birth (format: dd.mm.yyyy)"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "card_number",
-      "description": "Card number"
     }
   ],
   "response_fields": [
@@ -92,8 +66,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "814e6c3a-d794-49e0-aee9-d0a1fb6adccc",
-        "X-Runtime": "0.001410",
+        "X-Request-Id": "bfcb6ee4-49e9-4440-9e6c-5b104b2b86d2",
+        "X-Runtime": "0.001404",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

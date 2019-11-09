@@ -41,19 +41,19 @@ module Api
         
         def auth_creator
           auth
-          @auth_user.role(@auth_user.creator)
+          @auth_user.role(@auth_user.creator_role)
         end
 
         def auth_create
           auth_creator
           @program = LoyaltyProgram.find(params[:loyalty_program_id])
-          @auth_user.creator_permission(@program)
+          @auth_user.permission(@auth_user.creator, @program)
         end
 
         def auth_find
           auth_creator
           set_level
-          @auth_user.creator_permission(@level.loyalty_program)
+          @auth_user.permission(@auth_user.creator, @level.loyalty_program)
         end
 
         def set_level

@@ -40,8 +40,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "186a6d29-ce35-49b2-81d1-678d98801e51",
-        "X-Runtime": "0.002215",
+        "X-Request-Id": "65acfd25-d50f-4a1f-bf87-cc00084356b7",
+        "X-Runtime": "0.001502",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
