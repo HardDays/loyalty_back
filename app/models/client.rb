@@ -26,7 +26,7 @@ class Client < ApplicationRecord
         attrs[:points] = valid_points.sum{|p| p.current_points}
       end
       if options[:loyalty_program]
-        attrs[:loyalty_program] = loyalty_program
+        attrs[:loyalty_program] = loyalty_program.as_json(loyalty_levels: true)
       end
     end
  
