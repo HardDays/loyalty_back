@@ -53,28 +53,30 @@ end
 
 
 def create_program(company)
-    program = LoyaltyProgram.new(name: "test", sum_type: :one_buy, company_id: company.id)
+    program = LoyaltyProgram.new(name: "test", 
+        sum_type: :one_buy, 
+        company_id: company.id,
+        accrual_on_register: false,
+        accrual_on_first_buy: false,
+        accrual_on_recommend: false,
+        write_off_limited: false,
+        sms_on_register: false,
+        sms_on_points: false,
+        sms_on_write_off: false,
+        sms_on_burning: false,
+        sms_on_birthday: false,
+        rounding_rule: :no_rounding,
+    )
     program.loyalty_levels.build(
         "min_price": 100,
         "burning_rule": "no_burning",
         "activation_rule": "activation_moment",
         "write_off_rule": "write_off_convert",
-        "rounding_rule": "no_rounding",
         "accordance_rule": "no_accordance",
         "accrual_rule": "no_accrual",
         "write_off_rule_percent": 30,
         "write_off_rule_points": 100,
         "accrual_on_points": false,
-        "accrual_on_register": false,
-        "accrual_on_first_buy": false,
-        "accrual_on_birthday": false,
-        "accrual_on_recommend": false,
-        "write_off_limited": false,
-        "sms_on_register": false,
-        "sms_on_points": false,
-        "sms_on_write_off": false,
-        "sms_on_burning": false,
-        "sms_on_birthday": false,
     )
     program.save
     return program

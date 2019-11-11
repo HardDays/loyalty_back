@@ -91,25 +91,25 @@ resource "Get loyalty level " do
     parameter :accordance_rule, "Accordance rule", type: :string, in: :body, required: true, enum: ["no_accordance", "accordance_convert"]
     parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
     parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
     parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
-    parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
-    parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
-    parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
-    parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
-    parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
+    # parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
+    # parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
+    # parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
+    # parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
+    # parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
+    # parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
     #parameter :accrual_on_birthday, "Accrual on birthday", type: :boolean, in: :body, required: true
-    parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
     #parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
-    parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
-    parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
-    parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
-    parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
-    parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
+    # parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
+    # parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
+    # parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
+    # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
+    # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
+    # parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
 
     let(:loyalty_program_id) { @program.id }
     let(:authorization) { @user.token }
@@ -120,7 +120,6 @@ resource "Get loyalty level " do
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
       let(:write_off_rule) { "write_off_convert" }
-      let(:rounding_rule) { "no_rounding" }
       let(:accordance_rule) { "no_accordance" }
       let(:accrual_rule) { "no_accrual" }
       let(:write_off_rule_percent) { 30 }
@@ -128,15 +127,6 @@ resource "Get loyalty level " do
       let(:write_off_money) { 1 }
       let(:write_off_points) { 1 }
       let(:accrual_on_points) { false }
-      let(:accrual_on_register) { false }
-      let(:accrual_on_first_buy) { false }
-      let(:accrual_on_recommend) { false }
-      let(:write_off_limited) { false }
-      let(:sms_on_register) { false }
-      let(:sms_on_points) { false }
-      let(:sms_on_write_off) { false }
-      let(:sms_on_burning) { false }
-      let(:sms_on_birthday) { false }
 
       let(:raw_post) { params.to_json }
 
@@ -217,25 +207,25 @@ resource "Update loyalty level" do
     parameter :accordance_rule, "Accordance rule", type: :string, in: :body, required: true, enum: ["no_accordance", "accordance_convert"]
     parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
     parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
+    # parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
     parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
-    parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
-    parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
-    parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
-    parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
-    parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
+    # parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
+    # parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
+    # parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
+    # parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
+    # parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
     #parameter :accrual_on_birthday, "Accrual on birthday", type: :boolean, in: :body, required: true
-    parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+    # parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
     #parameter :birthday_points, "Points for 'accrual_on_birthday'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-    parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
-    parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
-    parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
-    parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
-    parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
-    parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
+    # parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
+    # parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
+    # parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
+    # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
+    # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
+    # parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
 
     let(:id) { @program.loyalty_levels.first.id }
     let(:authorization) { @user.token }
@@ -246,7 +236,6 @@ resource "Update loyalty level" do
       let(:burning_rule) { "no_burning" }
       let(:activation_rule) { "activation_moment" }
       let(:write_off_rule) { "write_off_convert" }
-      let(:rounding_rule) { "no_rounding" }
       let(:accordance_rule) { "no_accordance" }
       let(:accrual_rule) { "no_accrual" }
       let(:write_off_rule_percent) { 30 }
@@ -254,15 +243,6 @@ resource "Update loyalty level" do
       let(:write_off_money) { 1 }
       let(:write_off_points) { 1 }
       let(:accrual_on_points) { false }
-      let(:accrual_on_register) { false }
-      let(:accrual_on_first_buy) { false }
-      let(:accrual_on_recommend) { false }
-      let(:write_off_limited) { false }
-      let(:sms_on_register) { false }
-      let(:sms_on_points) { false }
-      let(:sms_on_write_off) { false }
-      let(:sms_on_burning) { false }
-      let(:sms_on_birthday) { false }
 
       let(:raw_post) { params.to_json }
 

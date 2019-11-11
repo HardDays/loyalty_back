@@ -427,26 +427,26 @@
       ]
     },
     {
-      "name": "Update creator",
+      "name": "Update creator profile",
       "explanation": null,
       "examples": [
         {
           "description": "Success",
-          "link": "update_creator/success.json",
+          "link": "update_creator_profile/success.json",
           "groups": "all",
           "route": "api/v1/creators/profile",
           "method": "put"
         },
         {
           "description": "Wrong password",
-          "link": "update_creator/wrong_password.json",
+          "link": "update_creator_profile/wrong_password.json",
           "groups": "all",
           "route": "api/v1/creators/profile",
           "method": "put"
         },
         {
           "description": "Wrong fields",
-          "link": "update_creator/wrong_fields.json",
+          "link": "update_creator_profile/wrong_fields.json",
           "groups": "all",
           "route": "api/v1/creators/profile",
           "method": "put"

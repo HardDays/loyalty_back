@@ -61,7 +61,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODEzOCwiZXhwIjoxNTczOTE5NDY1fQ.3deCcrhrYMTiC6nOuzSGSFz54oF4IE7oMw-jEc0F0qA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTUxMSwiZXhwIjoxNTc0MDc0MDY5fQ.KBwxQqrcnTX1S_cSW5j0h4Vq44BYZs3A_JJa3yR9kkI",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -70,18 +70,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 800,\n    \"operator_id\": 11056,\n    \"store_id\": 14140,\n    \"loyalty_program_id\": 7278,\n    \"price\": 5000,\n    \"created_at\": \"2019-11-09T15:51:05.844Z\",\n    \"updated_at\": \"2019-11-09T15:51:05.844Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"user_id\": 48140,\n    \"user\": {\n      \"id\": 48140,\n      \"email\": null,\n      \"created_at\": \"2019-11-09T15:51:05.838Z\",\n      \"updated_at\": \"2019-11-09T15:51:05.838Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79957854273\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 22690,\n      \"loyalty_program_id\": 7278,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null\n    },\n    \"store\": {\n      \"id\": 14140,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 7278,\n      \"name\": \"test\"\n    }\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 830,\n    \"operator_id\": 11386,\n    \"store_id\": 14525,\n    \"loyalty_program_id\": 7428,\n    \"price\": 5000,\n    \"created_at\": \"2019-11-11T10:47:49.063Z\",\n    \"updated_at\": \"2019-11-11T10:47:49.063Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"user_id\": 49513,\n    \"user\": {\n      \"id\": 49513,\n      \"email\": null,\n      \"created_at\": \"2019-11-11T10:47:49.057Z\",\n      \"updated_at\": \"2019-11-11T10:47:49.057Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79961159897\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 23355,\n      \"loyalty_program_id\": 7428,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null\n    },\n    \"store\": {\n      \"id\": 14525,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 7428,\n      \"name\": \"test\"\n    }\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"1395b3391d0b6f69dc08e1b832cb7b13\"",
+        "ETag": "W/\"afee9593ba66de348b7cdea32f3e60c1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "6beabbf8-16cc-4d1d-bce4-80e5d34603ce",
-        "X-Runtime": "0.016990",
+        "X-Request-Id": "ed205292-9442-459b-854e-ab65ba5b5e06",
+        "X-Runtime": "0.016941",
         "Vary": "Origin",
         "Content-Length": "704"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODEzOCwiZXhwIjoxNTczOTE5NDY1fQ.3deCcrhrYMTiC6nOuzSGSFz54oF4IE7oMw-jEc0F0qA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTUxMSwiZXhwIjoxNTc0MDc0MDY5fQ.KBwxQqrcnTX1S_cSW5j0h4Vq44BYZs3A_JJa3yR9kkI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

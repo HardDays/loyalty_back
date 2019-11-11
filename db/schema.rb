@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_092206) do
+ActiveRecord::Schema.define(version: 2019_11_11_104305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,30 +102,14 @@ ActiveRecord::Schema.define(version: 2019_11_09_092206) do
     t.integer "accordance_points"
     t.integer "accordance_percent"
     t.boolean "accrual_on_points"
-    t.boolean "accrual_on_register"
-    t.integer "register_points"
-    t.boolean "accrual_on_first_buy"
-    t.integer "first_buy_points"
     t.boolean "accrual_on_birthday"
     t.integer "birthday_points"
-    t.integer "rounding_rule"
-    t.boolean "sms_on_register"
-    t.boolean "sms_on_points"
-    t.boolean "sms_on_write_off"
-    t.boolean "sms_on_burning"
-    t.integer "sms_burning_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "loyalty_program_id"
     t.integer "write_off_points"
     t.integer "write_off_money"
     t.integer "promotion"
-    t.boolean "sms_on_birthday"
-    t.boolean "write_off_limited"
-    t.integer "write_off_min_price"
-    t.boolean "accrual_on_recommend"
-    t.integer "recommend_recommendator_points"
-    t.integer "recommend_registered_points"
     t.string "name"
   end
 
@@ -135,6 +119,22 @@ ActiveRecord::Schema.define(version: 2019_11_09_092206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "sum_type"
+    t.integer "rounding_rule"
+    t.integer "register_points"
+    t.integer "first_buy_points"
+    t.integer "write_off_min_price"
+    t.integer "recommend_recommendator_points"
+    t.integer "recommend_registered_points"
+    t.integer "sms_burning_days"
+    t.boolean "accrual_on_register"
+    t.boolean "accrual_on_first_buy"
+    t.boolean "write_off_limited"
+    t.boolean "sms_on_register"
+    t.boolean "sms_on_points"
+    t.boolean "sms_on_write_off"
+    t.boolean "sms_on_burning"
+    t.boolean "sms_on_birthday"
+    t.boolean "accrual_on_recommend"
   end
 
   create_table "operators", force: :cascade do |t|

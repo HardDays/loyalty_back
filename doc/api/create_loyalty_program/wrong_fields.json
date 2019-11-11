@@ -18,7 +18,7 @@
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAxMCwiZXhwIjoxNTczOTE5NDYyfQ.iGkC1fKv5UhnyfOklyrOHsRcndZUWhCajpP9LJnt9PM",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM4MywiZXhwIjoxNTc0MDc0MDY1fQ.6P9OuXfLifjnd5NmIMBJanqSHwQ3kWdnOutA3P0G2mM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -27,17 +27,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"name\": [\n    \"TOO_SHORT\"\n  ],\n  \"sum_type\": [\n    \"EMPTY_FIELD\"\n  ]\n}",
+      "response_body": "{\n  \"name\": [\n    \"TOO_SHORT\"\n  ],\n  \"sum_type\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"rounding_rule\": [\n    \"EMPTY_FIELD\"\n  ],\n  \"accrual_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_first_buy\": [\n    \"is not included in the list\"\n  ],\n  \"write_off_limited\": [\n    \"is not included in the list\"\n  ],\n  \"accrual_on_recommend\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_register\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_points\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_write_off\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_burning\": [\n    \"is not included in the list\"\n  ],\n  \"sms_on_birthday\": [\n    \"is not included in the list\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "7a5511e3-df28-4203-bdab-962049ab1def",
-        "X-Runtime": "0.008305",
+        "X-Request-Id": "911f27d1-3fa9-4bff-88d5-2821d0204363",
+        "X-Runtime": "0.014420",
         "Vary": "Origin",
-        "Content-Length": "49"
+        "Content-Length": "545"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAxMCwiZXhwIjoxNTczOTE5NDYyfQ.iGkC1fKv5UhnyfOklyrOHsRcndZUWhCajpP9LJnt9PM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '{}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM4MywiZXhwIjoxNTc0MDc0MDY1fQ.6P9OuXfLifjnd5NmIMBJanqSHwQ3kWdnOutA3P0G2mM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

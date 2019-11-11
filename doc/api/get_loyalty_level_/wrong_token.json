@@ -171,134 +171,11 @@
       "description": "Points for 'accordance_convert' rule"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "no_rounding",
-        "rounding_math",
-        "rounding_small",
-        "rounding_big"
-      ],
-      "name": "rounding_rule",
-      "description": "Rounding rule"
-    },
-    {
       "type": "boolean",
       "in": "body",
       "required": true,
       "name": "accrual_on_points",
       "description": "Accrual when points added"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_register",
-      "description": "Accrual when registered"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_first_buy",
-      "description": "Accrual on first purchase"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_recommend",
-      "description": "Accrual on recommend"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "recommend_recommendator_points",
-      "description": "Points for recommendator"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "recommend_registered_points",
-      "description": "Points for registered"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "write_off_limited",
-      "description": "Min price limited"
-    },
-    {
-      "type": "integer",
-      "in": "body",
-      "required": true,
-      "name": "write_off_min_price",
-      "description": "Min price for 'write_off_limited'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "register_points",
-      "description": "Points for 'accrual_on_register'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "first_buy_points",
-      "description": "Points for 'accrual_on_first_buy'"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_register",
-      "description": "Sms on register"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_points",
-      "description": "Sms on points"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_write_off",
-      "description": "Sms on write off"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_burning",
-      "description": "Sms on burning"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 365,
-      "in": "body",
-      "name": "sms_burning_days",
-      "description": "Days for 'sms_on_burning'"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_birthday",
-      "description": "Sms on birthday"
     }
   ],
   "response_fields": [
@@ -308,7 +185,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":7244}",
+      "request_body": "{\"loyalty_program_id\":7394}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -324,12 +201,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "857fa62a-b494-4fc4-a45c-e65df7d709d4",
-        "X-Runtime": "0.001490",
+        "X-Request-Id": "52867456-8ba3-4604-b3b4-744405d4e88b",
+        "X-Runtime": "0.001458",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":7244}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":7394}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

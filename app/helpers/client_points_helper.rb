@@ -2,10 +2,54 @@ module ClientPointsHelper
 
     def self.create_from_promotion(client, order, promotion, write_off_points)
         if promotion.begin_date <= DateTime.now && promotion.end_date >= DateTime.now
-            if write_off_points
-                write_off_promotion(order, write_off_points, promotion)
+            if (promotion.accrual_on_points && write_off_points) || !write_off_points
+                points = 0
+                if promotion.accrual_rule.to_sym == :accrual_percent
+                    points = (order.price * promotion.accrual_percent) / 100.0
+                elsif promotion.accrual_rule.to_sym == :accrual_convert
+                    promotion = order.price * (promotion.accrual_points / promotion.accrual_money.to_f)
+                end
+                points = points.to_i
+    
+                activation_date = DateTime.now
+                if promotion.activation_rule.to_sym == :activation_days
+                    activation_date += promotion.activation_days.days
+                end
+    
+                burning_date = DateTime.now + 100.years
+                if promotion.burning_rule.to_sym == :burning_days
+                    burning_date = DateTime.now + promotion.burning_days.days
+                end
+    
+                rest = points % 100
+                if promotion.rounding_rule.to_sym == :rounding_math
+                    points = points - rest
+                    if rest >= 50
+                        points += 100
+                    end
+                elsif promotion.rounding_rule.to_sym == :rounding_small
+                    points = points - rest
+                elsif promotion.rounding_rule.to_sym == :rounding_big 
+                    points = (points - rest) + 100
+                end
+                
+                client_points = ClientPoint.new(
+                    current_points: points,
+                    initial_points: points,
+                    burning_date: burning_date,
+                    activation_date: activation_date,
+                    client: client,
+                    order: order,
+                    promotion: promotion,
+                    points_source: :ordered
+                )
+                if client_points.save
+                    if write_off_points
+                        write_off_promotion(order, write_off_points, promotion)
+                    end
+                    return true
+                end
             end
-            return create(client, order, promotion, write_off_points, true) != nil
         end
     end
 
@@ -14,91 +58,81 @@ module ClientPointsHelper
             sum = client.orders.sum{|o| o.price} + order.price
             program.loyalty_levels.order(min_price: :desc).each do |level|
                 if (program.sum_type.to_sym == :one_buy && order.price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
-                    client_points = create(client, order, level, write_off_points, false)
-                    if write_off_points
-                        write_off_program(order, write_off_points)
-                    end
-                    if client_points
-                        if level.sms_on_burning
-                            if level.burning_rule.to_sym == :burning_days
-                                burning_date = DateTime.now + level.burning_days.days
-                                notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
-                                notification.sms_status = :pending
-                                notification.client_point = client_points
-                                notification.client = client
-                                notification.save
-                            end
+                    if (level.accrual_on_points && write_off_points) || !write_off_points
+                        points = 0
+                        if level.accrual_rule.to_sym == :accrual_percent
+                            points = (order.price * level.accrual_percent) / 100.0
+                        elsif level.accrual_rule.to_sym == :accrual_convert
+                            points = order.price * (level.accrual_points / level.accrual_money.to_f)
+                        end
+                        points = points.to_i
+
+                        activation_date = DateTime.now
+                        if level.activation_rule.to_sym == :activation_days
+                            activation_date += level.activation_days.days
                         end
 
-                        if level.sms_on_points
-                            notification = ClientSms.new(sms_type: :points_accrued, send_at: client_points.activation_date)
-                            notification.client_point = client_points
-                            notification.client = client
-                            if level.activation_rule.to_sym == :activation_days
-                                notification.sms_status = :pending
-                            else
-                                notification.sms_status = :sent
-                                SmsHelper.send_points_receive(client, points)
-                            end
-                            notification.save
+                        burning_date = DateTime.now + 100.years
+                        if level.burning_rule.to_sym == :burning_days
+                            burning_date = DateTime.now + level.burning_days.days
                         end
-                        return true
+
+                        rest = points % 100
+                        if program.rounding_rule.to_sym == :rounding_math
+                            points = points - rest
+                            if rest >= 50
+                                points += 100
+                            end
+                        elsif program.rounding_rule.to_sym == :rounding_small
+                            points = points - rest
+                        elsif program.rounding_rule.to_sym == :rounding_big 
+                            points = (points - rest) + 100
+                        end
+                        
+                        client_points = ClientPoint.new(
+                            current_points: points,
+                            initial_points: points,
+                            burning_date: burning_date,
+                            activation_date: activation_date,
+                            client: client,
+                            order: order,
+                            loyalty_level: level,
+                            points_source: :ordered
+                        )
+                        if client_points.save
+                            if write_off_points
+                                write_off_program(order, write_off_points)
+                            end
+                            if program.sms_on_burning
+                                if program.burning_rule.to_sym == :burning_days
+                                    burning_date = DateTime.now + program.burning_days.days
+                                    notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - program.sms_burning_days.days)
+                                    notification.sms_status = :pending
+                                    notification.client_point = client_points
+                                    notification.client = client
+                                    notification.save
+                                end
+                            end
+
+                            if program.sms_on_points
+                                notification = ClientSms.new(sms_type: :points_accrued, send_at: client_points.activation_date)
+                                notification.client_point = client_points
+                                notification.client = client
+                                if program.activation_rule.to_sym == :activation_days
+                                    notification.sms_status = :pending
+                                else
+                                    notification.sms_status = :sent
+                                    SmsHelper.send_points_receive(client, points)
+                                end
+                                notification.save
+                            end
+                            return true
+                        end
                     end
                 end
             end
         end
         return false
-    end
-
-    def self.create(client, order, level, write_off_points, is_promotion)
-        if (level.accrual_on_points && write_off_points) || !write_off_points
-            points = 0
-            if level.accrual_rule.to_sym == :accrual_percent
-                points = (order.price * level.accrual_percent) / 100.0
-            elsif level.accrual_rule.to_sym == :accrual_convert
-                points = order.price * (level.accrual_points / level.accrual_money.to_f)
-            end
-            points = points.to_i
-
-            activation_date = DateTime.now
-            if level.activation_rule.to_sym == :activation_days
-                activation_date += level.activation_days.days
-            end
-
-            burning_date = DateTime.now + 100.years
-            if level.burning_rule.to_sym == :burning_days
-                burning_date = DateTime.now + level.burning_days.days
-            end
-
-            rest = points % 100
-            if level.rounding_rule.to_sym == :rounding_math
-                points = points - rest
-                if rest >= 50
-                    points += 100
-                end
-            elsif level.rounding_rule.to_sym == :rounding_small
-                points = points - rest
-            elsif level.rounding_rule.to_sym == :rounding_big 
-                points = (points - rest) + 100
-            end
-            
-            client_points = ClientPoint.new(
-                current_points: points,
-                initial_points: points,
-                burning_date: burning_date,
-                activation_date: activation_date,
-                client: client,
-                order: order,
-                points_source: :ordered
-            )
-            if is_promotion
-                client_points.promotion = level
-            else
-                client_points.loyalty_level = level
-            end
-            saved = client_points.save
-            return client_points
-        end
     end
 
     def self.points_info_promotion(client, price, promotion)
@@ -147,7 +181,7 @@ module ClientPointsHelper
         if program && order.write_off_status.to_sym == :not_written_off
             level = self.find_level(client, program, order.price)
             if self.write_off(order, write_off_points, level)
-                if level.sms_on_write_off
+                if program.sms_on_write_off
                     points = client.valid_points
                     total = client.valid_points.sum(:current_points)
                     money = ((order.price * level.write_off_rule_percent) / 100.0)
@@ -196,10 +230,12 @@ module ClientPointsHelper
         points = client.valid_points
         total = points.sum(:current_points)
         sum = client.orders.sum(:price) + price
-        program.loyalty_levels.order(write_off_min_price: :desc).each do |level|
-            if !level.write_off_limited || (level.write_off_limited && level.write_off_min_price <= sum)
-                if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
-                    return level
+        if !program.write_off_limited || (program.write_off_limited && program.write_off_min_price <= order.price)
+            program.loyalty_levels.order(min_price: :desc).each do |level|
+                if (program.sum_type.to_sym == :one_buy && price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
+                    if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
+                        return level
+                    end
                 end
             end
         end

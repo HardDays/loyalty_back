@@ -47,34 +47,34 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients?phone=79984456242&name=test&card_number=12345",
+      "request_path": "api/v1/clients?phone=79916633784&name=test&card_number=12345",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NzkwNSwiZXhwIjoxNTczOTE5NDU5fQ.0jYltNakPUoqBbknkSKB9nlkr29chIoZ3VG14YIn6kM",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTI3OCwiZXhwIjoxNTc0MDc0MDYyfQ.2NqxzmF5WpGV5HhcZp1X1sVuLdUXLapFRM_EBK4NLE0",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79984456242",
+        "phone": "79916633784",
         "name": "test",
         "card_number": "12345"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 47906,\n    \"email\": null,\n    \"created_at\": \"2019-11-09T15:50:59.632Z\",\n    \"updated_at\": \"2019-11-09T15:50:59.632Z\",\n    \"user_type\": \"client\",\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79984456242\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"user_types\": [\n      \"client\"\n    ],\n    \"company_id\": 22582,\n    \"loyalty_program_id\": null,\n    \"card_number\": \"12345\",\n    \"recommendator_id\": null,\n    \"points\": 0\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 49279,\n    \"email\": null,\n    \"created_at\": \"2019-11-11T10:47:42.685Z\",\n    \"updated_at\": \"2019-11-11T10:47:42.685Z\",\n    \"user_type\": \"client\",\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79916633784\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"user_types\": [\n      \"client\"\n    ],\n    \"company_id\": 23247,\n    \"loyalty_program_id\": null,\n    \"card_number\": \"12345\",\n    \"recommendator_id\": null,\n    \"points\": 0\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9c2c1cce9a6b3e01e985feb5751029e9\"",
+        "ETag": "W/\"0e02439ffc1c6389b619bc70384695da\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "74692351-4b53-496b-b34f-65678b3b15f8",
-        "X-Runtime": "0.052300",
+        "X-Request-Id": "ddb8518b-39d5-4e1f-8e96-7efc207c140d",
+        "X-Runtime": "0.051536",
         "Vary": "Origin",
         "Content-Length": "365"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79984456242&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0NzkwNSwiZXhwIjoxNTczOTE5NDU5fQ.0jYltNakPUoqBbknkSKB9nlkr29chIoZ3VG14YIn6kM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79916633784&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTI3OCwiZXhwIjoxNTc0MDc0MDYyfQ.2NqxzmF5WpGV5HhcZp1X1sVuLdUXLapFRM_EBK4NLE0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

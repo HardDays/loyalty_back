@@ -165,134 +165,11 @@
       "description": "Points for 'accordance_convert' rule"
     },
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "enum": [
-        "no_rounding",
-        "rounding_math",
-        "rounding_small",
-        "rounding_big"
-      ],
-      "name": "rounding_rule",
-      "description": "Rounding rule"
-    },
-    {
       "type": "boolean",
       "in": "body",
       "required": true,
       "name": "accrual_on_points",
       "description": "Accrual when points added"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_register",
-      "description": "Accrual when registered"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_first_buy",
-      "description": "Accrual on first purchase"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "accrual_on_recommend",
-      "description": "Accrual on recommend"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "recommend_recommendator_points",
-      "description": "Points for recommendator"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "recommend_registered_points",
-      "description": "Points for registered"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "write_off_limited",
-      "description": "Min price limited"
-    },
-    {
-      "type": "integer",
-      "in": "body",
-      "required": true,
-      "name": "write_off_min_price",
-      "description": "Min price for 'write_off_limited'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "register_points",
-      "description": "Points for 'accrual_on_register'"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 10000000000,
-      "in": "body",
-      "name": "first_buy_points",
-      "description": "Points for 'accrual_on_first_buy'"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_register",
-      "description": "Sms on register"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_points",
-      "description": "Sms on points"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_write_off",
-      "description": "Sms on write off"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_burning",
-      "description": "Sms on burning"
-    },
-    {
-      "type": "integer",
-      "minmum": 1,
-      "maximum": 365,
-      "in": "body",
-      "name": "sms_burning_days",
-      "description": "Days for 'sms_on_burning'"
-    },
-    {
-      "type": "boolean",
-      "in": "body",
-      "required": true,
-      "name": "sms_on_birthday",
-      "description": "Sms on birthday"
     }
   ],
   "response_fields": [
@@ -305,7 +182,7 @@
       "request_body": "{}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAwMCwiZXhwIjoxNTczOTE5NDYyfQ.JqqDriLl6nodQD9WzVrln3__u4RTwcZTtUu_GrS_2EI",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM3MywiZXhwIjoxNTc0MDc0MDY1fQ.SsscMoLj-6Ka4c4em8H68ueGoTdUF8LhoMR8Mz6KCK8",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -318,12 +195,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "8ab87caf-552d-4418-9664-a7f3c91b4e4c",
-        "X-Runtime": "0.005888",
+        "X-Request-Id": "b1b3929e-3553-49d0-966a-78917e2a7b46",
+        "X-Runtime": "0.004643",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/0\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODAwMCwiZXhwIjoxNTczOTE5NDYyfQ.JqqDriLl6nodQD9WzVrln3__u4RTwcZTtUu_GrS_2EI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/0\" -d '{}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM3MywiZXhwIjoxNTc0MDc0MDY1fQ.SsscMoLj-6Ka4c4em8H68ueGoTdUF8LhoMR8Mz6KCK8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

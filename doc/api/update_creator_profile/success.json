@@ -1,9 +1,9 @@
 {
-  "resource": "Update creator",
+  "resource": "Update creator profile",
   "resource_explanation": null,
   "http_method": "PUT",
   "route": "api/v1/creators/profile",
-  "description": "Wrong fields",
+  "description": "Success",
   "explanation": null,
   "parameters": [
     {
@@ -93,29 +93,30 @@
     {
       "request_method": "PUT",
       "request_path": "api/v1/creators/profile",
-      "request_body": "{\"email\":\"test\",\"last_name\":\"\"}",
+      "request_body": "{\"email\":\"test@test.com\",\"current_password\":\"1234567\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NiwiZXhwIjoxNTczOTE5NDYxfQ.4iwwFwauussY7CIY-0qv6boK8V1xArt5JhU_HTfG8J8",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM1NywiZXhwIjoxNTc0MDc0MDY0fQ.rt-MLm6OQT11ms-Xw7nb3D7t7odivq-OBYOB2y-Zun4",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 422,
-      "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"last_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 49357,\n  \"email\": \"test@test.com\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": \"test\",\n  \"phone\": null,\n  \"created_at\": \"2019-11-11T10:47:44.808Z\",\n  \"updated_at\": \"2019-11-11T10:47:44.808Z\",\n  \"user_type\": \"creator\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n    \"creator\"\n  ],\n  \"company_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "no-cache",
-        "X-Request-Id": "06bb8974-45e6-4062-8b6f-f8d5c0e4cb1a",
-        "X-Runtime": "0.008895",
+        "ETag": "W/\"d9e2a101ba5bb17baaa17d7d4fcb9a7f\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8e644046-c47d-4d9a-a636-ba111fe37604",
+        "X-Runtime": "0.016037",
         "Vary": "Origin",
-        "Content-Length": "47"
+        "Content-Length": "285"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/creators/profile\" -d '{\"email\":\"test\",\"last_name\":\"\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0Nzk4NiwiZXhwIjoxNTczOTE5NDYxfQ.4iwwFwauussY7CIY-0qv6boK8V1xArt5JhU_HTfG8J8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/creators/profile\" -d '{\"email\":\"test@test.com\",\"current_password\":\"1234567\",\"password\":\"1234567\",\"password_confirmation\":\"1234567\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM1NywiZXhwIjoxNTc0MDc0MDY0fQ.rt-MLm6OQT11ms-Xw7nb3D7t7odivq-OBYOB2y-Zun4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
