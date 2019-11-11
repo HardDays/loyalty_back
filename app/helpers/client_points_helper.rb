@@ -97,6 +97,7 @@ module ClientPointsHelper
                             client: client,
                             order: order,
                             loyalty_level: level,
+                            loyalty_program: program,
                             points_source: :ordered
                         )
                         if client_points.save
