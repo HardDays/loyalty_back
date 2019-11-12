@@ -29,9 +29,9 @@ module Api
           @user = User.new(user_params)
           # TODO: send to email or phone
           @user.password = '1234567' #SecureRandom.hex(4)
-          if @user.save
+          operator = @user.build_operator(store_id: params[:store_id], company: @auth_user.creator.company, operator_status: :active)
+          if @user.save && operator.save
             @user.create_user_confirmation(confirm_status: :confirmed)
-            @user.create_operator(store_id: params[:store_id], company: @auth_user.creator.company, operator_status: :active)
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity

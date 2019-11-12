@@ -57,45 +57,51 @@ module Api
           @user = User.new(user_params)
           password = '1234567' #SecureRandom.hex(4)
           @user.password = password
+
           if @user.save
             program = @auth_user.operator.company.loyalty_program
-            @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
-            @user.create_client(company: @auth_user.operator.company, loyalty_program: program)
-            
-            notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
-            notification.client = @user.client
-            notification.sms_status = :sent
-            notification.save
-            SmsHelper.send_register(@user.client, password)
+            client = @user.build_client(company: @auth_user.operator.company, loyalty_program: program)
+            if client.save
+              @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
 
-            if params[:recommendator_phone] && program && program.accrual_on_recommend
-              rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
-              if rec_user && rec_user.client
-                points1 = ClientPoint.new(
-                  current_points: program.recommend_registered_points,
-                  initial_points: program.recommend_registered_points,
-                  burning_date: DateTime.now + 100.years,
-                  activation_date: DateTime.now,
-                  client: @user.client,
-                  loyalty_program: program,
-                  points_source: :recommend_register
-                )
-                points1.save
+              notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
+              notification.client = @user.client
+              notification.sms_status = :sent
+              notification.save
+              SmsHelper.send_register(@user.client, password)
 
-                points2 = ClientPoint.new(
-                  current_points: program.recommend_recommendator_points,
-                  initial_points: program.recommend_recommendator_points,
-                  burning_date: DateTime.now + 100.years,
-                  activation_date: DateTime.now,
-                  client: rec_user.client,
-                  loyalty_program: program,
-                  points_source: :recommend_recommendator
-                )
-                points2.save
+              if params[:recommendator_phone] && program && program.accrual_on_recommend
+                rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
+                if rec_user && rec_user.client
+                  points1 = ClientPoint.new(
+                    current_points: program.recommend_registered_points,
+                    initial_points: program.recommend_registered_points,
+                    burning_date: DateTime.now + 100.years,
+                    activation_date: DateTime.now,
+                    client: @user.client,
+                    loyalty_program: program,
+                    points_source: :recommend_register
+                  )
+                  points1.save
+
+                  points2 = ClientPoint.new(
+                    current_points: program.recommend_recommendator_points,
+                    initial_points: program.recommend_recommendator_points,
+                    burning_date: DateTime.now + 100.years,
+                    activation_date: DateTime.now,
+                    client: rec_user.client,
+                    loyalty_program: program,
+                    points_source: :recommend_recommendator
+                  )
+                  points2.save
+                end
               end
+              
+              render json: @user
+            else
+              puts json: client.errors
+              render json: client.errors, status: :unprocessable_entity
             end
-            
-            render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
           end

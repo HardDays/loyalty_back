@@ -70,6 +70,7 @@ resource "Check client phone" do
       @company = create_company(@creator)
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
       @client_user = create_client(@company)
     end
 
@@ -130,6 +131,7 @@ resource "Create client" do
       @user = create_creator(create_user)
       @company = create_company(@user)
       @store = create_store(@user)
+      @program = create_program(@company)
       @operator = create_operator(create_user, @store, @company)
     end
 
@@ -208,6 +210,7 @@ resource "Update client" do
       @company = create_company(@creator)
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
       @client_user = create_client(@company)
     end
 
@@ -324,6 +327,7 @@ resource "Client orders" do
       @company = create_company(@creator)
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
       @client_user = create_client(@company)
       @promotion = create_promotion(@company)
       @order = create_order(@client_user, @operator, @store, @promotion)
@@ -369,6 +373,7 @@ resource "Update profile" do
       @company = create_company(@creator)
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
       @client_user = create_client(@company)
     end
 

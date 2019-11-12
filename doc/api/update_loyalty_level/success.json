@@ -178,11 +178,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/7584",
+      "request_path": "api/v1/loyalty_levels/8666",
       "request_body": "{\"name\":\"name\",\"min_price\":100,\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"write_off_convert\",\"write_off_rule_percent\":30,\"write_off_rule_points\":100,\"accordance_rule\":\"no_accordance\",\"accrual_on_points\":false}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM3MCwiZXhwIjoxNTc0MDc0MDY1fQ.KqWbqOuo5SZZcvqeZGMuH49YxA4C2wAlLpMZTuV2KHA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MzkyOCwiZXhwIjoxNTc0MTczMzc0fQ.IxuShug3FGfWEA2JtKjTJUn-MzmgiT6LchbGaP40nRQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -191,18 +191,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"loyalty_program_id\": 7396,\n  \"id\": 7584,\n  \"name\": \"name\",\n  \"min_price\": 100,\n  \"accrual_rule\": \"no_accrual\",\n  \"burning_rule\": \"no_burning\",\n  \"activation_rule\": \"activation_moment\",\n  \"write_off_rule\": \"write_off_convert\",\n  \"write_off_rule_percent\": 30,\n  \"write_off_rule_points\": 100,\n  \"accordance_rule\": \"no_accordance\",\n  \"accrual_on_points\": false,\n  \"level_type\": null,\n  \"begin_date\": null,\n  \"end_date\": null,\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_days\": null,\n  \"activation_days\": null,\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"accrual_on_birthday\": null,\n  \"birthday_points\": null,\n  \"created_at\": \"2019-11-11T10:47:45.254Z\",\n  \"updated_at\": \"2019-11-11T10:47:45.270Z\",\n  \"write_off_points\": null,\n  \"write_off_money\": null,\n  \"promotion\": null\n}",
+      "response_body": "{\n  \"loyalty_program_id\": 8462,\n  \"id\": 8666,\n  \"name\": \"name\",\n  \"min_price\": 100,\n  \"accrual_rule\": \"no_accrual\",\n  \"burning_rule\": \"no_burning\",\n  \"activation_rule\": \"activation_moment\",\n  \"write_off_rule\": \"write_off_convert\",\n  \"write_off_rule_percent\": 30,\n  \"write_off_rule_points\": 100,\n  \"accordance_rule\": \"no_accordance\",\n  \"accrual_on_points\": false,\n  \"level_type\": null,\n  \"begin_date\": null,\n  \"end_date\": null,\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_days\": null,\n  \"activation_days\": null,\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"accrual_on_birthday\": null,\n  \"birthday_points\": null,\n  \"created_at\": \"2019-11-12T14:22:54.848Z\",\n  \"updated_at\": \"2019-11-12T14:22:54.870Z\",\n  \"write_off_points\": null,\n  \"write_off_money\": null,\n  \"promotion\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"ede7f141ccce0fe0af22ee28f18297f3\"",
+        "ETag": "W/\"a48d57968b1f2d075d282cc464440a5f\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9d8ba8fe-fa6c-4a3d-8ce3-496a8a811099",
-        "X-Runtime": "0.015206",
+        "X-Request-Id": "328387b1-45e5-44ae-961c-e560eea9312f",
+        "X-Runtime": "0.020057",
         "Vary": "Origin",
         "Content-Length": "720"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/7584\" -d '{\"name\":\"name\",\"min_price\":100,\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"write_off_convert\",\"write_off_rule_percent\":30,\"write_off_rule_points\":100,\"accordance_rule\":\"no_accordance\",\"accrual_on_points\":false}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTM3MCwiZXhwIjoxNTc0MDc0MDY1fQ.KqWbqOuo5SZZcvqeZGMuH49YxA4C2wAlLpMZTuV2KHA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/8666\" -d '{\"name\":\"name\",\"min_price\":100,\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"write_off_convert\",\"write_off_rule_percent\":30,\"write_off_rule_points\":100,\"accordance_rule\":\"no_accordance\",\"accrual_on_points\":false}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MzkyOCwiZXhwIjoxNTc0MTczMzc0fQ.IxuShug3FGfWEA2JtKjTJUn-MzmgiT6LchbGaP40nRQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

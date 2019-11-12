@@ -87,6 +87,7 @@ resource "Get promotion points info" do
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
       @promotion = create_promotion(@company)
+      @program = create_program(@company)
       @customer = create_client(@company)
     end
 
@@ -244,6 +245,7 @@ resource "Create order for promotion" do
       @store = create_store(@creator)
       @operator = create_operator(create_user, @store, @company)
       @promotion = create_promotion(@company)
+      @program = create_program(@company)
       @customer = create_client(@company)
     end
 
