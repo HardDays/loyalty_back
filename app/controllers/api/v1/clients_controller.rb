@@ -68,7 +68,7 @@ module Api
             notification.save
             SmsHelper.send_register(@user.client, password)
 
-            if params[:recommendator_phone] && program.accrual_on_recommend
+            if params[:recommendator_phone] && program && program.accrual_on_recommend
               rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
               if rec_user && rec_user.client
                 points1 = ClientPoint.new(

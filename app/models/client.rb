@@ -2,8 +2,8 @@ class Client < ApplicationRecord
 
   belongs_to :company
   belongs_to :user
-  belongs_to :loyalty_program, optional: true
-
+  belongs_to :loyalty_program
+  
   has_many :orders, dependent: :nullify
   has_many :client_points, dependent: :nullify
 
