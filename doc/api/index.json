@@ -1189,17 +1189,23 @@
           "groups": "all",
           "route": "api/v1/reports/sms",
           "method": "get"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Sms",
+      "explanation": null,
+      "examples": [
         {
           "description": "Success",
-          "link": "sms_report/success.json",
+          "link": "sms/success.json",
           "groups": "all",
           "route": "api/v1/sms",
           "method": "post"
         },
         {
           "description": "Wrong token",
-          "link": "sms_report/wrong_token.json",
+          "link": "sms/wrong_token.json",
           "groups": "all",
           "route": "api/v1/sms",
           "method": "post"

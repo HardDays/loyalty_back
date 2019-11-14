@@ -41,6 +41,14 @@
       "description": "Operators ids"
     },
     {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "name": "promotions",
+      "description": "Promotions ids"
+    },
+    {
       "type": "integer",
       "name": "limit",
       "description": "Limit"
@@ -61,7 +69,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDkyOCwiZXhwIjoxNTc0MzI4MjAzfQ.etISGgQw-Mpa6QS5NSLm8a3vzZiSn5mhzWvt_rxN_zY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjM2MywiZXhwIjoxNTc0MzQxNzEwfQ._9lKKvKopyeDdqeofzFE0qdevFcHFNMz6n10viASNI4",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -70,18 +78,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 978,\n    \"operator_id\": 12642,\n    \"store_id\": 15990,\n    \"loyalty_program_id\": 8731,\n    \"price\": 5000,\n    \"created_at\": \"2019-11-14T09:23:23.860Z\",\n    \"updated_at\": \"2019-11-14T09:23:23.860Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"user_id\": 54930,\n    \"user\": {\n      \"id\": 54930,\n      \"email\": null,\n      \"created_at\": \"2019-11-14T09:23:23.854Z\",\n      \"updated_at\": \"2019-11-14T09:23:23.854Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79923637295\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 25884,\n      \"loyalty_program_id\": 8731,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null\n    },\n    \"store\": {\n      \"id\": 15990,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 8731,\n      \"name\": \"test\"\n    }\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 1018,\n    \"operator_id\": 12977,\n    \"store_id\": 16380,\n    \"loyalty_program_id\": 9111,\n    \"price\": 5000,\n    \"created_at\": \"2019-11-14T13:08:30.297Z\",\n    \"updated_at\": \"2019-11-14T13:08:30.297Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"user_id\": 56365,\n    \"user\": {\n      \"id\": 56365,\n      \"email\": null,\n      \"created_at\": \"2019-11-14T13:08:30.292Z\",\n      \"updated_at\": \"2019-11-14T13:08:30.292Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79918958776\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 26554,\n      \"loyalty_program_id\": 9111,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null\n    },\n    \"store\": {\n      \"id\": 16380,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 9111,\n      \"name\": \"test\"\n    }\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"247d79c74aa1f0a285b1c2af73b871d0\"",
+        "ETag": "W/\"8d2faa5c26729a2314dd6b66fddf1e16\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "0e07acc2-ed72-43a6-8074-cd25cde792ed",
-        "X-Runtime": "0.018666",
+        "X-Request-Id": "4901f1b9-8a1a-4637-961f-f2039883947e",
+        "X-Runtime": "0.016884",
         "Vary": "Origin",
-        "Content-Length": "704"
+        "Content-Length": "705"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDkyOCwiZXhwIjoxNTc0MzI4MjAzfQ.etISGgQw-Mpa6QS5NSLm8a3vzZiSn5mhzWvt_rxN_zY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjM2MywiZXhwIjoxNTc0MzQxNzEwfQ._9lKKvKopyeDdqeofzFE0qdevFcHFNMz6n10viASNI4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -20,6 +20,7 @@ class Client < ApplicationRecord
     attrs = super.except('user_id').except('id')
 
     attrs[:user_type] = :client
+    attrs[:card_number] = card_number
 
     if options
       if options[:points]

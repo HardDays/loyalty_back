@@ -37,6 +37,14 @@
       "items": {
         "type": "integer"
       },
+      "name": "promotions",
+      "description": "Promotions ids"
+    },
+    {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
       "name": "operators",
       "description": "Operators ids"
     }
@@ -64,8 +72,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f185e4ff-aae1-462a-9678-04fab70902e5",
-        "X-Runtime": "0.001601",
+        "X-Request-Id": "fd4e70fc-1ffd-4b63-b677-d679495c4ed2",
+        "X-Runtime": "0.001458",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

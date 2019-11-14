@@ -1,4 +1,4 @@
-resource "Sms report" do
+resource "Sms" do
     header 'Content-Type', 'application/json'
     header "Authorization", :authorization
     

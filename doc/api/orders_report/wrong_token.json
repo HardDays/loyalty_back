@@ -41,6 +41,14 @@
       "description": "Operators ids"
     },
     {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "name": "promotions",
+      "description": "Promotions ids"
+    },
+    {
       "type": "integer",
       "name": "limit",
       "description": "Limit"
@@ -74,8 +82,8 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6f4a2cb0-9e5b-44fe-a272-8a54638ac42a",
-        "X-Runtime": "0.002079",
+        "X-Request-Id": "cb6e31f1-114d-4872-92ee-897a97a17de2",
+        "X-Runtime": "0.001378",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",

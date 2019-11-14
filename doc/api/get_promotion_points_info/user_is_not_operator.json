@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=54871&promotion_id=1385",
+      "request_path": "api/v1/orders/promotion/points?user_id=56306&promotion_id=1485",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg3MiwiZXhwIjoxNTc0MzI4MjAyfQ.jKVHWYEJvnR12GKEyk7uqJt4hQ-NzaREPLjuadhJGsc",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjMwNywiZXhwIjoxNTc0MzQxNzA4fQ.plmopu8qQsQspIt4oyQmX5-cCJeEHVXolzZKuhqfGE0",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "54871",
-        "promotion_id": "1385"
+        "user_id": "56306",
+        "promotion_id": "1485"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "ff46fd03-00be-4247-94e9-48b070a01d97",
-        "X-Runtime": "0.004844",
+        "X-Request-Id": "e6086e5c-4d9a-4191-8051-27fbebfb4097",
+        "X-Runtime": "0.004349",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=54871&promotion_id=1385\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg3MiwiZXhwIjoxNTc0MzI4MjAyfQ.jKVHWYEJvnR12GKEyk7uqJt4hQ-NzaREPLjuadhJGsc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=56306&promotion_id=1485\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjMwNywiZXhwIjoxNTc0MzQxNzA4fQ.plmopu8qQsQspIt4oyQmX5-cCJeEHVXolzZKuhqfGE0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -6,6 +6,7 @@ resource "General report" do
   parameter :end_date, "End date (in format 21.09.2019)", type: :string
   parameter :stores, "Store ids", type: :array, items: {type: :integer}
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
+  parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
 
   before do
@@ -46,6 +47,7 @@ resource "Orders report" do
   parameter :stores, "Store ids", type: :array, items: {type: :integer}
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
+  parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
   
@@ -102,6 +104,7 @@ resource "Clients report" do
   parameter :end_date, "End date (in format 21.09.2019)", type: :string
   parameter :stores, "Store ids", type: :array, items: {type: :integer}
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
+  parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
@@ -156,6 +159,7 @@ resource "Sms report" do
   parameter :end_date, "End date (in format 21.09.2019)", type: :string
   parameter :stores, "Store ids", type: :array, items: {type: :integer}
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
+  parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
 
   before do

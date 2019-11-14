@@ -10,6 +10,7 @@ module Api
                 params[:end_date], 
                 params[:stores], 
                 params[:loyalty_programs],
+                params[:promotions],
                 params[:operators]
             )
         end
@@ -21,6 +22,7 @@ module Api
               params[:end_date], 
               params[:stores], 
               params[:loyalty_programs],
+              params[:promotions],
               params[:operators],
               params[:limit],
               params[:offset]
@@ -34,6 +36,7 @@ module Api
             params[:end_date], 
             params[:stores], 
             params[:loyalty_programs],
+            params[:promotions],
             params[:operators],
             params[:limit],
             params[:offset]
@@ -47,6 +50,7 @@ module Api
           params[:end_date], 
           params[:stores], 
           params[:loyalty_programs],
+          params[:promotions],
           params[:operators]
         )
       end

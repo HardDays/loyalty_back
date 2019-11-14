@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=1383",
+      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=1483",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg2NCwiZXhwIjoxNTc0MzI4MjAyfQ.zODD3h08F-4QFbcrn0QI5iSZG9U7AxewVKfReD--_BA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjI5OSwiZXhwIjoxNTc0MzQxNzA4fQ.wXrKVR84D1ZIxy8VaXQ71V5l1IQNv0BIyjiG8u3vifk",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
         "user_id": "0",
-        "promotion_id": "1383"
+        "promotion_id": "1483"
       },
       "request_content_type": "application/json",
       "response_status": 404,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "ddfb1886-cda7-49e8-8b55-85e0ed518cf4",
-        "X-Runtime": "0.004202",
+        "X-Request-Id": "796e6f78-ff22-400a-9a55-5ce17054c8f9",
+        "X-Runtime": "0.003312",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=1383\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg2NCwiZXhwIjoxNTc0MzI4MjAyfQ.zODD3h08F-4QFbcrn0QI5iSZG9U7AxewVKfReD--_BA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=1483\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjI5OSwiZXhwIjoxNTc0MzQxNzA4fQ.wXrKVR84D1ZIxy8VaXQ71V5l1IQNv0BIyjiG8u3vifk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

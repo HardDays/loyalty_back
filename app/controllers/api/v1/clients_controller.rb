@@ -69,31 +69,45 @@ module Api
               notification.sms_status = :sent
               notification.save
               SmsHelper.send_register(@user.client, password)
-
-              if params[:recommendator_phone] && program && program.accrual_on_recommend
-                rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
-                if rec_user && rec_user.client
-                  points1 = ClientPoint.new(
-                    current_points: program.recommend_registered_points,
-                    initial_points: program.recommend_registered_points,
+              if program
+                if program.accrual_on_register
+                  points = ClientPoint.new(
+                    current_points: program.register_points,
+                    initial_points: program.register_points,
                     burning_date: DateTime.now + 100.years,
                     activation_date: DateTime.now,
                     client: @user.client,
                     loyalty_program: program,
-                    points_source: :recommend_register
+                    points_source: :registered
                   )
-                  points1.save
+                  points.save
+                end
 
-                  points2 = ClientPoint.new(
-                    current_points: program.recommend_recommendator_points,
-                    initial_points: program.recommend_recommendator_points,
-                    burning_date: DateTime.now + 100.years,
-                    activation_date: DateTime.now,
-                    client: rec_user.client,
-                    loyalty_program: program,
-                    points_source: :recommend_recommendator
-                  )
-                  points2.save
+                if params[:recommendator_phone] && program.accrual_on_recommend
+                  rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
+                  if rec_user && rec_user.client
+                    points1 = ClientPoint.new(
+                      current_points: program.recommend_registered_points,
+                      initial_points: program.recommend_registered_points,
+                      burning_date: DateTime.now + 100.years,
+                      activation_date: DateTime.now,
+                      client: @user.client,
+                      loyalty_program: program,
+                      points_source: :recommend_register
+                    )
+                    points1.save
+
+                    points2 = ClientPoint.new(
+                      current_points: program.recommend_recommendator_points,
+                      initial_points: program.recommend_recommendator_points,
+                      burning_date: DateTime.now + 100.years,
+                      activation_date: DateTime.now,
+                      client: rec_user.client,
+                      loyalty_program: program,
+                      points_source: :recommend_recommendator
+                    )
+                    points2.save
+                  end
                 end
               end
               

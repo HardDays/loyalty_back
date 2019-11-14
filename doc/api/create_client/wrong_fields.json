@@ -86,7 +86,7 @@
       "request_body": "{\"email\":\"f\",\"first_name\":\"\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDcxNiwiZXhwIjoxNTc0MzI4MTk3fQ.NFDlRW9F67_CpK4a1fae_1vUw-Djee5IOgrpGALohe4",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjE1MSwiZXhwIjoxNTc0MzQxNzA0fQ.cQyAnqDBGEcF5BszkWOUR-YP7MO0FFkeQTjVngR-1J0",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -99,13 +99,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "b47d5364-a2a8-4b4b-9c3f-9b805cffffa7",
-        "X-Runtime": "0.015461",
+        "X-Request-Id": "3a4d9fff-b1bf-4e7d-b9d4-f8a5f08b369b",
+        "X-Runtime": "0.009765",
         "Vary": "Origin",
         "Content-Length": "74"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '{\"email\":\"f\",\"first_name\":\"\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDcxNiwiZXhwIjoxNTc0MzI4MTk3fQ.NFDlRW9F67_CpK4a1fae_1vUw-Djee5IOgrpGALohe4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '{\"email\":\"f\",\"first_name\":\"\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjE1MSwiZXhwIjoxNTc0MzQxNzA0fQ.cQyAnqDBGEcF5BszkWOUR-YP7MO0FFkeQTjVngR-1J0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
