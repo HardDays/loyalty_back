@@ -231,7 +231,7 @@ module ClientPointsHelper
         points = client.valid_points
         total = points.sum(:current_points)
         sum = client.orders.sum(:price) + price
-        if !program.write_off_limited || (program.write_off_limited && program.write_off_min_price <= order.price)
+        if !program.write_off_limited || (program.write_off_limited && program.write_off_min_price <= price)
             program.loyalty_levels.order(min_price: :desc).each do |level|
                 if (program.sum_type.to_sym == :one_buy && price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
                     if level.write_off_rule.to_sym == :write_off_convert && total >= level.write_off_rule_points
