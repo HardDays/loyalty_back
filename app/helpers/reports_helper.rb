@@ -174,14 +174,14 @@ module ReportsHelper
 
     def self.sms(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         sms = ClientSms.joins(:client).where('clients.company_id = ?', company.id)
-        sms = filter_date(sms, 'created_at', begin_date, end_date)
+        sms = filter_date(sms, 'created_at', begin_date, end_date).limit(limit).offset(offset)
         
         total_count = sms.length
         points_accrued_count = sms.where(sms_type: :points_accrued).length
         points_written_off_count = sms.where(sms_type: :points_writen_off).length
         points_burned_count = sms.where(sms_type: :points_burned).length
         registered_count = sms.where(sms_type: :registered).length
-        recommend_count = sms.where(sms_type: :recommend).length
+        recommended_count = sms.where(sms_type: :points_recommended).length
 
         return {
             total_count: total_count,
@@ -189,7 +189,7 @@ module ReportsHelper
             points_written_off_count: points_written_off_count,
             points_burned_count: points_burned_count,
             registered_count: registered_count,
-            recommend_count: recommend_count
+            recommended_count: recommended_count
         }
     end
 

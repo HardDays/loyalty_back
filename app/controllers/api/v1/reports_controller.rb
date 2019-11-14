@@ -27,7 +27,7 @@ module Api
               params[:limit],
               params[:offset]
           )
-      end
+        end
 
       def orders
         render json: ReportsHelper.orders(
@@ -41,6 +41,7 @@ module Api
             params[:limit],
             params[:offset]
         ), user: true, store: true, loyalty_program: true, promotion: true
+
       end
 
       def sms
