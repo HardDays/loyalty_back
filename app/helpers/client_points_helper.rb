@@ -155,7 +155,7 @@ module ClientPointsHelper
         level = self.find_level(client, program, price)
         if level
             total = client.valid_points.sum(:current_points)
-            money = ((order.price * level.write_off_rule_percent) / 100.0)
+            money = ((price * level.write_off_rule_percent) / 100.0)
             points = [money, total].min.to_i
             return {points: points}
         end
