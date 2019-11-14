@@ -178,11 +178,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/8667",
+      "request_path": "api/v1/loyalty_levels/8898",
       "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MzkyOSwiZXhwIjoxNTc0MTczMzc0fQ.V7G3Hgl0IPVdgW435RGpJlrllKeyFGzz4VTCocXJoGA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDc4NiwiZXhwIjoxNTc0MzI4MTk5fQ.fV36bKBBEAnBMILHhwdQ8fKjaHoo6zQpXcTmyrVBhao",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -195,13 +195,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6425b504-fba6-4559-9678-0b6a2318a6ff",
-        "X-Runtime": "0.014585",
+        "X-Request-Id": "a79787ef-e4df-43e6-9f50-916435fd0f6d",
+        "X-Runtime": "0.015102",
         "Vary": "Origin",
         "Content-Length": "151"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/8667\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MzkyOSwiZXhwIjoxNTc0MTczMzc0fQ.V7G3Hgl0IPVdgW435RGpJlrllKeyFGzz4VTCocXJoGA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/8898\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDc4NiwiZXhwIjoxNTc0MzI4MTk5fQ.fV36bKBBEAnBMILHhwdQ8fKjaHoo6zQpXcTmyrVBhao\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

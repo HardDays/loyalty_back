@@ -14,7 +14,7 @@ def create_creator(user)
 end
 
 def create_operator(user, store, company)
-    user.create_operator(store_id: store.id, company_id: company.id)
+    user.create_operator(store_id: store.id, company_id: company.id, operator_status: :active)
     return user
 end
 

@@ -811,6 +811,13 @@
       "explanation": null,
       "examples": [
         {
+          "description": "Success",
+          "link": "get_operator/success.json",
+          "groups": "all",
+          "route": "api/v1/operators/:id",
+          "method": "get"
+        },
+        {
           "description": "Not found",
           "link": "get_operator/not_found.json",
           "groups": "all",

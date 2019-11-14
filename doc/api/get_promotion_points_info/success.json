@@ -33,18 +33,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=54003&price=10000&promotion_id=1322",
+      "request_path": "api/v1/orders/promotion/points?user_id=54862&price=10000&promotion_id=1382",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDAwMiwiZXhwIjoxNTc0MTczMzc3fQ.QEc3gLoSgEVzrS-8zze2AWv8FnT8Xc3B_U_DFAYVPbo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg2MSwiZXhwIjoxNTc0MzI4MjAxfQ.wHj4yjUXvIAStsztv6UQjsCXTlv-ilmdHw1ymXB1Fr4",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "54003",
+        "user_id": "54862",
         "price": "10000",
-        "promotion_id": "1322"
+        "promotion_id": "1382"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -54,13 +54,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "954a3ef4-9222-4af8-8a3d-0ae1f21ae214",
-        "X-Runtime": "0.015376",
+        "X-Request-Id": "589e8aa7-8784-4023-a850-e1d4a9c6e7b0",
+        "X-Runtime": "0.013212",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=54003&price=10000&promotion_id=1322\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDAwMiwiZXhwIjoxNTc0MTczMzc3fQ.QEc3gLoSgEVzrS-8zze2AWv8FnT8Xc3B_U_DFAYVPbo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=54862&price=10000&promotion_id=1382\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg2MSwiZXhwIjoxNTc0MzI4MjAxfQ.wHj4yjUXvIAStsztv6UQjsCXTlv-ilmdHw1ymXB1Fr4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

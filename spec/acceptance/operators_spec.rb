@@ -281,16 +281,13 @@ resource "Get operator" do
     let(:authorization) { @creator.token }
     let(:id) { @operator.id }
       
-    # context "Success" do
+    context "Success" do
       
-    #   example "Success" do
-    #     do_request
-    #     expect(status).to eq(200)
-
-    #     body = JSON.parse(response_body)
-    #     expect(body["store_id"]).to eq(@store.id)
-    #   end
-    # end
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+      end
+    end
 
     context "Not found" do
       let(:id) { 0 }

@@ -1,0 +1,44 @@
+{
+  "resource": "Get operator",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/operators/:id",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/operators/54842",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg0MSwiZXhwIjoxNTc0MzI4MjAxfQ.7RQtlKcMQfPUQjA2AQ9BrazxJJLziNaDY0x1WvBk8i4",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 54842,\n  \"email\": \"8acf9a98232a3a52af2cbb1105d93405@370d9be59dc868e4ec04f7e30979b497.xx\",\n  \"created_at\": \"2019-11-14T09:23:21.350Z\",\n  \"updated_at\": \"2019-11-14T09:23:21.350Z\",\n  \"user_type\": \"operator\",\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n    \"operator\"\n  ],\n  \"store_id\": 15967,\n  \"company_id\": 25846,\n  \"operator_status\": \"active\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"f1b3fa1480b6a13fd92bf6d25cc0a50a\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9f70528f-2c4e-43b2-9325-8427b498028a",
+        "X-Runtime": "0.015787",
+        "Vary": "Origin",
+        "Content-Length": "385"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/operators/54842\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NDg0MSwiZXhwIjoxNTc0MzI4MjAxfQ.7RQtlKcMQfPUQjA2AQ9BrazxJJLziNaDY0x1WvBk8i4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

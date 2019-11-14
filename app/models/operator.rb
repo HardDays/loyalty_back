@@ -12,6 +12,7 @@ class Operator < ApplicationRecord
     attrs = super.except('user_id').except('id')
 
     attrs[:user_type] = :operator
+    attrs[:operator_status] = operator_status
 
     return attrs
   end

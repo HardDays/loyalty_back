@@ -129,6 +129,8 @@ module ClientPointsHelper
                             end
                             return true
                         end
+                    else
+                        return false
                     end
                 end
             end

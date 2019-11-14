@@ -1,8 +1,8 @@
 module Api
   module V1
     class OperatorsController < ApplicationController
-      before_action :auth_creator, only: [:create, :index, :show]
-      before_action :auth_find, only: [:update, :destroy]
+      before_action :auth_creator, only: [:create, :index]
+      before_action :auth_find, only: [:update, :destroy, :show]
 
       # GET /operators 
       def index
@@ -15,12 +15,7 @@ module Api
 
       # GET /operators/:id
       def show
-        @operators = @auth_user.creator.company.operators.where(id: params[:id])
-        if @operators.empty?
-          render status: :not_found
-        else
-          render json: @operators.first.user
-        end  
+        render json: @user
       end
 
       # POST /operators 
