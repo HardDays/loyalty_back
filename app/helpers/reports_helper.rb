@@ -174,7 +174,7 @@ module ReportsHelper
 
     def self.sms(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         sms = ClientSms.joins(:client).where('clients.company_id = ?', company.id)
-        sms = filter_date(sms, 'created_at', begin_date, end_date).limit(limit).offset(offset)
+        sms = filter_date(sms, 'created_at', begin_date, end_date)
         
         total_count = sms.length
         points_accrued_count = sms.where(sms_type: :points_accrued).length
