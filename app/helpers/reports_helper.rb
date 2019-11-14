@@ -31,7 +31,7 @@ module ReportsHelper
         return collection
     end
 
-    def self.general(company, begin_date, end_date, stores, loyalty_programs, operators)
+    def self.general(company, begin_date, end_date, stores, loyalty_programs, operators, limit, offset)
         clients = Client.where(company_id: company.id)
         clients = filter_programs(clients, loyalty_programs)
         clients_count = filter_date(clients, 'created_at', begin_date, end_date).count
@@ -96,19 +96,19 @@ module ReportsHelper
             current_points: current_points,
             accrued_points: accrued_points,
             written_off_points: written_off_points,
-            active_clients_count: active_clients_count,
-            active_total_price: active_total_price,
-            active_average_price: active_average_price,
-            repeat_clients_count: repeat_clients_count,
-            repeat_total_price: repeat_total_price,
-            repeat_average_price: repeat_average_price,
-            birthdays_count: birthdays_count,
-            birthday_points: birthday_points,
-            used_clients_count: used_clients_count,
-            used_total_price: used_total_price,
+            #active_clients_count: active_clients_count,
+            #active_total_price: active_total_price,
+            #active_average_price: active_average_price,
+            #repeat_clients_count: repeat_clients_count,
+            #repeat_total_price: repeat_total_price,
+            #repeat_average_price: repeat_average_price,
+            #birthdays_count: birthdays_count,
+            #birthday_points: birthday_points,
+            #used_clients_count: used_clients_count,
+            #used_total_price: used_total_price,
             used_average_price: used_average_price,
-            unactive_clients_count: unactive_clients_count,
-            unactive_clients_points: unactive_clients_points
+            #unactive_clients_count: unactive_clients_count,
+            #unactive_clients_points: unactive_clients_points
         }
     end
 
@@ -122,13 +122,16 @@ module ReportsHelper
         active_clients = filter_date(active_clients, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
         
         return User.where(id: active_clients.pluck(:user_id))
+                    # or maybe not?            
+                    pluck(:id, :last_name, :first_name, :second_name, :phone, :card_number, :birth_day, :gender)
+                    
     end
 
     def self.orders(company, begin_date, end_date, stores, loyalty_programs, operators, limit, offset)
         clients = Client.where(company_id: company.id)
         clients = filter_programs(clients, loyalty_programs)
 
-        orders = Order.joins(:client).where(client_id: clients)
+        orders = Order.joins(:client).where(client_id: clients) # ? .joins(:operator).where(operator)
         orders = filter_operators(orders, operators)
         orders = filter_stores(orders, stores)
         orders = filter_date(orders, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
@@ -136,15 +139,16 @@ module ReportsHelper
         return orders.includes(:client)
     end
 
-    def self.sms(company, begin_date, end_date, stores, loyalty_programs, operators)
+    def self.sms(company, begin_date, end_date, stores, loyalty_programs, operators, limit, offset)
         sms = ClientSms.joins(:client).where('clients.company_id = ?', company.id)
-        sms = filter_date(sms, 'created_at', begin_date, end_date)
+        sms = filter_date(sms, 'created_at', begin_date, end_date).limit(limit).offset(offset)
         
         total_count = sms.length
         points_accrued_count = sms.where(sms_type: :points_accrued).length
         points_written_off_count = sms.where(sms_type: :points_writen_off).length
         points_burned_count = sms.where(sms_type: :points_burned).length
         registered_count = sms.where(sms_type: :registered).length
+        recommended_count = sms.where(sms_type: :points_recommended).length
 
         return {
             total_count: total_count,
@@ -152,6 +156,7 @@ module ReportsHelper
             points_written_off_count: points_written_off_count,
             points_burned_count: points_burned_count,
             registered_count: registered_count,
+            recommended_count: recommended_count
         }
     end
 

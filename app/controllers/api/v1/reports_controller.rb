@@ -10,7 +10,9 @@ module Api
                 params[:end_date], 
                 params[:stores], 
                 params[:loyalty_programs],
-                params[:operators]
+                params[:operators],
+                params[:limit],
+                params[:offset]
             )
         end
 
@@ -25,7 +27,7 @@ module Api
               params[:limit],
               params[:offset]
           )
-      end
+        end
 
       def orders
         render json: ReportsHelper.orders(
@@ -38,6 +40,7 @@ module Api
             params[:limit],
             params[:offset]
         ), user: true, store: true, loyalty_program: true, promotion: true
+
       end
 
       def sms
@@ -47,7 +50,9 @@ module Api
           params[:end_date], 
           params[:stores], 
           params[:loyalty_programs],
-          params[:operators]
+          params[:operators],
+          params[:limit],
+          params[:offset]
         )
       end
 
