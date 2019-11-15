@@ -58,11 +58,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/stores/16392",
+      "request_path": "api/v1/stores/16548",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjM5NCwiZXhwIjoxNTc0MzQxNzExfQ.XLYOsLN0QJyc1DZJ336aZ36tsrYLHXuOZDL_-ayPIDs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Njk2OCwiZXhwIjoxNTc0NDI2ODk2fQ.xsrejpAH2lCXhUPLVUREGT6oxuoSHl_vUSbMEo1EjGE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -75,12 +75,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "65822691-9750-4f72-b9fc-ec6793ebf921",
-        "X-Runtime": "0.006915",
+        "X-Request-Id": "64f8d650-2246-427a-911f-66944fcfd8c8",
+        "X-Runtime": "0.006286",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores/16392\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjM5NCwiZXhwIjoxNTc0MzQxNzExfQ.XLYOsLN0QJyc1DZJ336aZ36tsrYLHXuOZDL_-ayPIDs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores/16548\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Njk2OCwiZXhwIjoxNTc0NDI2ODk2fQ.xsrejpAH2lCXhUPLVUREGT6oxuoSHl_vUSbMEo1EjGE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -55,18 +55,6 @@ module ClientPointsHelper
 
     def self.create_from_program(client, order, program, write_off_points)
         if program
-            if program.accrual_on_first_buy && client.orders.count == 0
-                first = ClientPoint.new(
-                    current_points: program.first_buy_points,
-                    initial_points: program.first_buy_points,
-                    burning_date: DateTime.now + 100.years,
-                    activation_date: DateTime.now,
-                    client: client,
-                    loyalty_program: program,
-                    points_source: :first_buy
-                )
-                first.save
-            end
             sum = client.orders.sum{|o| o.price} + order.price
             program.loyalty_levels.order(min_price: :desc).each do |level|
                 if (program.sum_type.to_sym == :one_buy && order.price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)

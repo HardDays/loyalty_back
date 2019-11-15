@@ -20,6 +20,8 @@ module Api
       def create_program_order
         ActiveRecord::Base.transaction do
           create
+          create_first_points
+
           @order.loyalty_program = @user.client.loyalty_program
 
           if @order.save
@@ -35,6 +37,8 @@ module Api
       def create_promotion_order
         ActiveRecord::Base.transaction do
           create
+          create_first_points
+          
           @order.promotion = @promotion
 
           if @order.save
@@ -54,6 +58,22 @@ module Api
           @order.client = @user.client
           @order.store = @auth_user.operator.store
           @order.write_off_status = :not_written_off
+        end
+
+        def create_first_points
+          program = @user.client.loyalty_program
+          if program.accrual_on_first_buy && @user.client.orders.count == 0
+            first = ClientPoint.new(
+                current_points: program.first_buy_points,
+                initial_points: program.first_buy_points,
+                burning_date: DateTime.now + 100.years,
+                activation_date: DateTime.now,
+                client: @user.client,
+                loyalty_program: program,
+                points_source: :first_buy
+            )
+            first.save
+          end
         end
 
         def auth

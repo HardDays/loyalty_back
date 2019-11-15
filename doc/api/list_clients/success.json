@@ -47,16 +47,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients?phone=79994806372&name=test&card_number=12345",
+      "request_path": "api/v1/clients?phone=79934947721&name=test&card_number=12345",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjEyOCwiZXhwIjoxNTc0MzQxNzAzfQ.Tm-Q0iP9zz0vHsD11E_UwHf-wNps_EfW4SBrQJCa43I",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjcwMiwiZXhwIjoxNTc0NDI2ODg3fQ.QdmIWUSZtXCLf3dY2gAbUZuOUVwAC3gt85vPXS8lVbM",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79994806372",
+        "phone": "79934947721",
         "name": "test",
         "card_number": "12345"
       },
@@ -68,13 +68,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "634acc9d-5f2b-4fd3-bf3f-8ef1a7a01dd9",
-        "X-Runtime": "0.028037",
+        "X-Request-Id": "b01ae1da-4515-48f7-b059-8101e2fdc0ba",
+        "X-Runtime": "0.026947",
         "Vary": "Origin",
         "Content-Length": "2"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79994806372&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjEyOCwiZXhwIjoxNTc0MzQxNzAzfQ.Tm-Q0iP9zz0vHsD11E_UwHf-wNps_EfW4SBrQJCa43I\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79934947721&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjcwMiwiZXhwIjoxNTc0NDI2ODg3fQ.QdmIWUSZtXCLf3dY2gAbUZuOUVwAC3gt85vPXS8lVbM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

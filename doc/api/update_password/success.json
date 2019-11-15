@@ -38,7 +38,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/auth/password/update",
-      "request_body": "{\"code\":\"716ca5f8bd511694790dc31480bd7d0b\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
+      "request_body": "{\"code\":\"2574ec4514288c9767b01f43ac8b15c8\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -49,18 +49,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 56124,\n  \"phone\": null,\n  \"email\": \"a45278b13332c4d33e0027c1b72ea8fe@5a5ef8dbe0c1e887ad3c99a953092df4.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2019-11-14T13:08:23.634Z\",\n  \"updated_at\": \"2019-11-14T13:08:23.656Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 56698,\n  \"phone\": null,\n  \"email\": \"532a6c8477fc5b02c70f5f6c0757377d@2e45a2c1d5efeba089272b319ae15be1.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2019-11-15T12:48:07.261Z\",\n  \"updated_at\": \"2019-11-15T12:48:07.291Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"be8a0e32b4f9a6e1d77795ff5c8847c4\"",
+        "ETag": "W/\"fd98f5081a0d09f8afebbd415afa0983\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "cc341349-3ee6-4a5f-a5f0-2fe028233677",
-        "X-Runtime": "0.017324",
+        "X-Request-Id": "e74cc0ab-3e84-49ea-9108-e8195e13ff85",
+        "X-Runtime": "0.030929",
         "Vary": "Origin",
         "Content-Length": "306"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"716ca5f8bd511694790dc31480bd7d0b\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"2574ec4514288c9767b01f43ac8b15c8\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

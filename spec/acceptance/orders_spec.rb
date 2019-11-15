@@ -177,6 +177,7 @@ resource "Create order for loyalty program" do
 
       example "Success" do
         do_request
+        puts json: @customer.client.client_points
         expect(status).to eq(200)
       end
     end

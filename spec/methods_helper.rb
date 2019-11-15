@@ -57,7 +57,7 @@ def create_program(company)
         sum_type: :one_buy, 
         company_id: company.id,
         accrual_on_register: false,
-        accrual_on_first_buy: false,
+        accrual_on_first_buy: true,
         accrual_on_recommend: false,
         write_off_limited: false,
         sms_on_register: false,
@@ -66,6 +66,7 @@ def create_program(company)
         sms_on_burning: false,
         sms_on_birthday: false,
         rounding_rule: :no_rounding,
+        first_buy_points: 1000
     )
     program.loyalty_levels.build(
         "min_price": 100,
