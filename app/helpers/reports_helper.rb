@@ -2,10 +2,10 @@ module ReportsHelper
 
     def self.filter_date(collection, field, begin_date, end_date)
         if begin_date
-            collection = collection.where("#{field} > ?", begin_date)
+            collection = collection.where("#{field} > ?", DateTime.parse(begin_date))
         end
         if end_date
-            collection = collection.where("#{field} <= ?", end_date)
+            collection = collection.where("#{field} <= ?", DateTime.parse(end_date))
         end
         return collection
     end
