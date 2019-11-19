@@ -26,7 +26,7 @@ module ReportsHelper
 
     def self.filter_promotions(collection, promotions)
         if promotions
-            collection = collection.where(clients: {promotion_id: promotions})
+            collection = collection.where(promotion_id: promotions)
         end
         return collection
     end
@@ -169,12 +169,14 @@ module ReportsHelper
         orders = filter_stores(orders, stores)
         orders = filter_date(orders, 'orders.created_at', begin_date, end_date).limit(limit).offset(offset)
         
-        return orders.includes(:client)
+        #orders = Order.joins(:client).where(client_id: clients)
+
+        return orders
     end
 
     def self.sms(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         sms = ClientSms.joins(:client).where('clients.company_id = ?', company.id)
-        sms = filter_date(sms, 'created_at', begin_date, end_date)
+        sms = filter_date(sms, 'client_sms.created_at', begin_date, end_date)
         #limit offset ne nado
         total_count = sms.length
         points_accrued_count = sms.where(sms_type: :points_accrued).length

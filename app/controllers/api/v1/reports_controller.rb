@@ -29,8 +29,8 @@ module Api
           )
         end
 
-      def orders
-        render json: ReportsHelper.orders(
+        def orders
+          render json: ReportsHelper.orders(
             @auth_user.creator.company,
             params[:begin_date], 
             params[:end_date], 
@@ -40,8 +40,7 @@ module Api
             params[:operators],
             params[:limit],
             params[:offset]
-        ), user: true, store: true, loyalty_program: true, promotion: true
-
+        ), client: true, operator: true, store: true, loyalty_program: true, promotion: true
       end
 
       def sms

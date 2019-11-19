@@ -23,13 +23,17 @@ class Order < ApplicationRecord
     def as_json(options = {})
         attrs = super.except('client_id')
 
-        attrs[:user_id] = client.user_id
-        
+        attrs[:client_id] = client.user_id
+        attrs[:operator_id] = operator.user_id
+
         if options
-            if options[:user]
-                attrs[:user] = client.user       
+            if options[:client]
+                attrs[:client] = client.user    
             end
-            if options[:store]
+            if options[:operator]
+                attrs[:operator] = operator.user
+            end
+            if options[:store] && store
                 attrs[:store] = store.as_json(only: [:id, :name])
             end
             if options[:loyalty_program] && loyalty_program
