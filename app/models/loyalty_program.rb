@@ -17,11 +17,11 @@ class LoyaltyProgram < ApplicationRecord
     validates :write_off_limited, inclusion: {in: [true, false]}
     validates :accrual_on_recommend, inclusion: {in: [true, false]}
 
-    validates :register_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_register}
-    validates :first_buy_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_first_buy}
-    validates :write_off_min_price, inclusion: 1..10000000, if: lambda {|m| m.write_off_limited}
-    validates :recommend_recommendator_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_recommend}
-    validates :recommend_registered_points, inclusion: 1..10000000, if: lambda {|m| m.accrual_on_recommend}
+    validates :register_points, inclusion: 0..10000000, if: lambda {|m| m.accrual_on_register}
+    validates :first_buy_points, inclusion: 0..10000000, if: lambda {|m| m.accrual_on_first_buy}
+    validates :write_off_min_price, inclusion: 0..10000000, if: lambda {|m| m.write_off_limited}
+    validates :recommend_recommendator_points, inclusion: 0..10000000, if: lambda {|m| m.accrual_on_recommend}
+    validates :recommend_registered_points, inclusion: 0..10000000, if: lambda {|m| m.accrual_on_recommend}
 
     validates :sms_on_register, inclusion: {in: [true, false]}
     validates :sms_on_points, inclusion: {in: [true, false]}

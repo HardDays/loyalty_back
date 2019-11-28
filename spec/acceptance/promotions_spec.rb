@@ -15,19 +15,19 @@ resource "Create promotion" do
         parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
         parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
         parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
-        parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-        parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-        parameter :accrual_money, "Money for 'accrual_convert' rule (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+        parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+        parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
+        parameter :accrual_money, "Money for 'accrual_convert' rule (IN CENTS)", type: :integer, minmum: 0, maximum: 10000000000, in: :body
         parameter :burning_rule, "Burning rule", type: :string, in: :body, required: true, enum: ["no_burning", "burning_days"]
         parameter :burning_days, "Days for 'burning_days' rule", type: :integer, minmum: 1, maximum: 365, in: :body
         parameter :activation_rule, "Activation rule", type: :string, in: :body, required: true, enum: ["activation_moment", "activation_days"]
         parameter :activation_days, "Days for 'activation_days' rule", type: :integer, minmum: 1, maximum: 365, in: :body
         parameter :write_off_rule, "Write off rule", type: :string, in: :body, required: true, enum: ["no_write_off", "write_off_convert"]
-        parameter :write_off_rule_percent, "Percent for 'write_off_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-        parameter :write_off_rule_points, "Points for 'write_off_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+        parameter :write_off_rule_percent, "Percent for 'write_off_convert' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+        parameter :write_off_rule_points, "Points for 'write_off_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
         parameter :accordance_rule, "Accordance rule", type: :string, in: :body, required: true, enum: ["no_accordance", "accordance_convert"]
-        parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-        parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+        parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+        parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
         parameter :rounding_rule, "Rounding rule", type: :string, in: :body, required: true, enum: ["no_rounding", "rounding_math", "rounding_small", "rounding_big"]
         parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
         parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true

@@ -12,25 +12,25 @@ resource "Create loyalty program" do
 
     context "Loyalty level description" do
       parameter :name, "Name", type: :string, in: :body, required: false
-      parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
+      parameter :min_price, "Min price or sum for activate bonus (IN CENTS)", type: :integer, minmum: 0, maximum: 10000000000, in: :body, required: true
       parameter :begin_date, "Begin date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
       parameter :end_date, "End date (in format dd.mm.yyyy)", type: :string, in: :body, required: true
       # parameter :write_off_points, "How much points to write off (money * (write_off_points / write_off_money))", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
       # parameter :write_off_money, "How much money to write off (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body, required: true
       parameter :accrual_rule, "Accrual rule", type: :string, in: :body, required: true, enum: ["no_accrual", "accrual_percent", "accrual_convert"]
-      parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-      parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-      parameter :accrual_money, "Money for 'accrual_convert' rule (IN CENTS)", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :accrual_percent, "Percent for 'accrual_percent' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+      parameter :accrual_points, "Points for 'accrual_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
+      parameter :accrual_money, "Money for 'accrual_convert' rule (IN CENTS)", type: :integer, minmum: 0, maximum: 10000000000, in: :body
       parameter :burning_rule, "Burning rule", type: :string, in: :body, required: true, enum: ["no_burning", "burning_days"]
       parameter :burning_days, "Days for 'burning_days' rule", type: :integer, minmum: 1, maximum: 365, in: :body
       parameter :activation_rule, "Activation rule", type: :string, in: :body, required: true, enum: ["activation_moment", "activation_days"]
       parameter :activation_days, "Days for 'activation_days' rule", type: :integer, minmum: 1, maximum: 365, in: :body
       parameter :write_off_rule, "Write off rule", type: :string, in: :body, required: true, enum: ["no_write_off", "write_off_convert"]
-      parameter :write_off_rule_percent, "Percent for 'write_off_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-      parameter :write_off_rule_points, "Points for 'write_off_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :write_off_rule_percent, "Percent for 'write_off_convert' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+      parameter :write_off_rule_points, "Points for 'write_off_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
       parameter :accordance_rule, "Accordance rule", type: :string, in: :body, required: true, enum: ["no_accordance", "accordance_convert"]
-      parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 100, in: :body
-      parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :accordance_percent, "Percent for 'accordance_convert' rule", type: :integer, minmum: 0, maximum: 100, in: :body
+      parameter :accordance_points, "Points for 'accordance_convert' rule", type: :integer, minmum: 0, maximum: 10000000000, in: :body
       parameter :accrual_on_points, "Accrual when points added", type: :boolean, in: :body, required: true
 
       example "Loyalty level description" do
@@ -46,12 +46,12 @@ resource "Create loyalty program" do
       parameter :accrual_on_register, "Accrual when registered", type: :boolean, in: :body, required: true
       parameter :accrual_on_first_buy, "Accrual on first purchase", type: :boolean, in: :body, required: true
       parameter :accrual_on_recommend, "Accrual on recommend", type: :boolean, in: :body, required: true
-      parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-      parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :recommend_recommendator_points, "Points for recommendator", type: :integer, minmum: 0, maximum: 10000000000, in: :body
+      parameter :recommend_registered_points, "Points for registered", type: :integer, minmum: 0, maximum: 10000000000, in: :body
       parameter :write_off_limited, "Min price limited", type: :boolean, in: :body, required: true
       parameter :write_off_min_price, "Min price for 'write_off_limited'", type: :integer, in: :body, required: true
-      parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
-      parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 1, maximum: 10000000000, in: :body
+      parameter :register_points, "Points for 'accrual_on_register'", type: :integer, minmum: 0, maximum: 10000000000, in: :body
+      parameter :first_buy_points, "Points for 'accrual_on_first_buy'", type: :integer, minmum: 0, maximum: 10000000000, in: :body
       parameter :sms_on_register, "Sms on register", type: :boolean, in: :body, required: true
       parameter :sms_on_points, "Sms on points", type: :boolean, in: :body, required: true
       parameter :sms_on_write_off, "Sms on write off", type: :boolean, in: :body, required: true
