@@ -60,7 +60,7 @@ module Api
 
           if @user.save
             program = @auth_user.operator.company.loyalty_program
-            client = @user.build_client(company: @auth_user.operator.company, loyalty_program: program)
+            client = @user.build_client(company: @auth_user.operator.company, loyalty_program: program, card_number: params[:card_number])
             if client.save
               @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
 
@@ -68,7 +68,9 @@ module Api
               notification.client = @user.client
               notification.sms_status = :sent
               notification.save
+
               SmsHelper.send_register(@user.client, password)
+
               if program
                 if program.accrual_on_register
                   points = ClientPoint.new(
@@ -82,9 +84,8 @@ module Api
                   )
                   points.save
                 end
-
                 if params[:recommendator_phone] && program.accrual_on_recommend
-                  rec_user = @users.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone]).sanitized}%").first
+                  rec_user = User.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone], company_id:  @auth_user.operator.company.id).sanitized}%").first
                   if rec_user && rec_user.client
                     points1 = ClientPoint.new(
                       current_points: program.recommend_registered_points,
@@ -107,6 +108,8 @@ module Api
                       points_source: :recommend_recommendator
                     )
                     points2.save
+
+                    @user.client.recommendator_id = rec_user.client.id
                   end
                 end
               end
@@ -160,7 +163,7 @@ module Api
         end
 
         def user_params
-          params.permit(:phone, :email, :first_name, :last_name, :second_name, :gender)
+          params.permit(:phone, :email, :first_name, :last_name, :second_name, :gender, :birth_day)
         end
 
         def profile_params
