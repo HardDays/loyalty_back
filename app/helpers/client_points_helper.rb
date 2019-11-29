@@ -105,9 +105,9 @@ module ClientPointsHelper
                                 write_off_program(order, write_off_points)
                             end
                             if program.sms_on_burning
-                                if program.burning_rule.to_sym == :burning_days
-                                    burning_date = DateTime.now + program.burning_days.days
-                                    notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - program.sms_burning_days.days)
+                                if level.burning_rule.to_sym == :burning_days
+                                    burning_date = DateTime.now + level.burning_days.days
+                                    notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
                                     notification.sms_status = :pending
                                     notification.client_point = client_points
                                     notification.client = client
@@ -119,7 +119,7 @@ module ClientPointsHelper
                                 notification = ClientSms.new(sms_type: :points_accrued, send_at: client_points.activation_date)
                                 notification.client_point = client_points
                                 notification.client = client
-                                if program.activation_rule.to_sym == :activation_days
+                                if level.activation_rule.to_sym == :activation_days
                                     notification.sms_status = :pending
                                 else
                                     notification.sms_status = :sent
