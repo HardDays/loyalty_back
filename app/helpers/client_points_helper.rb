@@ -101,9 +101,6 @@ module ClientPointsHelper
                             points_source: :ordered
                         )
                         if client_points.save
-                            if write_off_points
-                                write_off_program(order, write_off_points)
-                            end
                             if program.sms_on_burning
                                 if level.burning_rule.to_sym == :burning_days
                                     burning_date = DateTime.now + level.burning_days.days
@@ -127,11 +124,12 @@ module ClientPointsHelper
                                 end
                                 notification.save
                             end
-                            return true
                         end
                     else
-                        return false
+                    if write_off_points
+                        write_off_program(order, write_off_points)
                     end
+                    return true
                 end
             end
         end
