@@ -58,7 +58,7 @@ module ReportsHelper
 
         average_price = orders_date.average(:price).to_i
 
-        points = ClientPoint.joins(:client).where(client: clients)
+        points = ClientPoint.joins(:client).where(client: clients_new)
 
         accrued_points = filter_date(points, 'client_points.created_at', begin_date, end_date).sum(:initial_points)
         current_points = filter_date(points, 'client_points.updated_at', begin_date, end_date).sum(:current_points)
