@@ -33,14 +33,14 @@ module ReportsHelper
 
     def self.filter_operators(collection, operators)
         if operators
-            collection = collection.where(orders: {operator_id: operators})
+            collection = collection.where(orders: {operator: Operator.where(user_id: operators)})
         end
         return collection
     end
 
     def self.general(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         clients = Client.where(company_id: company.id)
-        #clients = filter_programs(clients, loyalty_programs)
+        clients = filter_operators(clients, operators)
 
         clients_count = filter_date(clients, 'created_at', begin_date, end_date).count
         

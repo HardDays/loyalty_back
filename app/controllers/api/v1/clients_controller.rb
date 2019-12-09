@@ -60,7 +60,7 @@ module Api
 
           if @user.save
             program = @auth_user.operator.company.loyalty_program
-            client = @user.build_client(company: @auth_user.operator.company, loyalty_program: program, card_number: params[:card_number])
+            client = @user.build_client(operator: @auth_user.operator, company: @auth_user.operator.company, loyalty_program: program, card_number: params[:card_number])
             if client.save
               @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
 
