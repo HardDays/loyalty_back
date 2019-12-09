@@ -40,9 +40,9 @@ module ReportsHelper
 
     def self.general(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         clients = Client.where(company_id: company.id)
-        clients = filter_operators(clients, operators)
+        clients_operators = filter_operators(clients, operators)
 
-        clients_count = filter_date(clients, 'created_at', begin_date, end_date).count
+        clients_count = filter_date(clients_operators, 'created_at', begin_date, end_date).count
         
         orders = Order.joins(:client).where(client: clients)
         orders = filter_operators(orders, operators)
