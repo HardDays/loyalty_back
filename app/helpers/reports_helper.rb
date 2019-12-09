@@ -33,7 +33,7 @@ module ReportsHelper
 
     def self.filter_operators(collection, operators)
         if operators
-            collection = collection.where(orders: {operator: Operator.where(user_id: operators)})
+            collection = collection.where(orders: {operator_id: Operator.where(user_id: operators).pluck(:id)})
         end
         return collection
     end
