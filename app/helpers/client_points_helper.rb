@@ -181,8 +181,9 @@ module ClientPointsHelper
     def self.write_off_program(order, write_off_points)
         program = order.loyalty_program
         client = order.client
+        level = order.level
         if program && order.write_off_status.to_sym == :not_written_off
-            level = self.find_level(client, program, order.price)
+            #level = self.find_level(client, program, order.price)
             if self.write_off(order, write_off_points, level)
                 if program.sms_on_write_off
                     points = client.valid_points
