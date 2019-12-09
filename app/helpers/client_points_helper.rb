@@ -125,7 +125,7 @@ module ClientPointsHelper
                                 notification.save
                             end
                         end
-                    else
+                    end
                     if write_off_points
                         write_off_program(order, write_off_points)
                     end
