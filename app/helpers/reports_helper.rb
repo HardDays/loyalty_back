@@ -40,9 +40,10 @@ module ReportsHelper
 
     def self.general(company, begin_date, end_date, stores, loyalty_programs, promotions, operators)
         clients = Client.where(company_id: company.id)
-        clients_operators = filter_operators(clients, operators)
+        clients_new = filter_operators(clients, operators)
+        #TODO: filter_stores
 
-        clients_count = filter_date(clients_operators, 'created_at', begin_date, end_date).count
+        clients_count = filter_date(clients_new, 'created_at', begin_date, end_date).count
         
         orders = Order.joins(:client).where(client: clients)
         orders = filter_operators(orders, operators)
@@ -58,7 +59,6 @@ module ReportsHelper
         average_price = orders_date.average(:price).to_i
 
         points = ClientPoint.joins(:client).where(client: clients)
-        points = points.joins(:order).where(order: orders)
 
         accrued_points = filter_date(points, 'client_points.created_at', begin_date, end_date).sum(:initial_points)
         current_points = filter_date(points, 'client_points.updated_at', begin_date, end_date).sum(:current_points)
