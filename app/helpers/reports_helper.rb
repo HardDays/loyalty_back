@@ -63,7 +63,7 @@ module ReportsHelper
         accrued_points = filter_date(points, 'client_points.created_at', begin_date, end_date).sum(:initial_points)
         current_points = filter_date(points, 'client_points.updated_at', begin_date, end_date).sum(:current_points)
         
-        written_off_points = accrued_points - current_points
+        written_off_points = orders_date.where(write_off_status: :written_off).sum(:write_off_points)
 
         # accrued_points = filter_date(points, 'client_points.created_at', begin_date, end_date)
         # accrued_points = accrued_points.sum(:initial_points)
