@@ -42,6 +42,9 @@ class Order < ApplicationRecord
             if options[:promotion] && promotion
                 attrs[:promotion] = promotion.as_json(only: [:id, :name])            
             end
+            if options[:client_point] && client_point
+                attrs[:points] = client_point.initial_points
+            end
         end
 
         return attrs

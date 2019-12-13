@@ -40,7 +40,7 @@ module Api
             params[:operators],
             params[:limit],
             params[:offset]
-        ), client: true, operator: true, store: true, loyalty_program: true, promotion: true
+        ), client: true, operator: true, store: true, loyalty_program: true, promotion: true, client_point: true
       end
 
       def sms
