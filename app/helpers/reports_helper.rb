@@ -54,7 +54,7 @@ module ReportsHelper
 
         orders_count = orders_date.count
 
-        cards_count = orders_date.where('clients.card_number <> null').select('clients.card_number').uniq.count
+        cards_count = orders_date.where('clients.card_number is not null').select('clients.card_number').uniq.count
 
         average_price = orders_date.average(:price).to_i
 
