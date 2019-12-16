@@ -31,7 +31,7 @@ module Api
 
       # GET /clients
       def index
-        @users = User.joins(:client).where(company_id: @auth_user.operator.company_id)
+        @users = User.joins(:client).where(client: {company_id: @auth_user.operator.company_id})
         if params[:name]
           @users = @users.where('lower(concat(users.first_name, \' \', users.last_name)) LIKE ?', "%#{params[:name].downcase}%").or(@users.where('lower(concat(users.last_name, \' \', users.first_name)) LIKE ?', "%#{params[:name].downcase}%"))
         end
