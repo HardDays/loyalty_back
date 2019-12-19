@@ -7,6 +7,7 @@ module Api
         def create
           card = Card.new(card_params)
           card.company = @auth_user.operator.company
+          card.operator = @auth_user.operator
           if card.save
             render json: card
           else
