@@ -15,7 +15,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 10000000000,
       "in": "body",
       "required": true,
@@ -50,7 +50,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 100,
       "in": "body",
       "name": "accrual_percent",
@@ -58,7 +58,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 10000000000,
       "in": "body",
       "name": "accrual_points",
@@ -66,7 +66,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 10000000000,
       "in": "body",
       "name": "accrual_money",
@@ -123,7 +123,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 100,
       "in": "body",
       "name": "write_off_rule_percent",
@@ -131,7 +131,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 10000000000,
       "in": "body",
       "name": "write_off_rule_points",
@@ -150,7 +150,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 100,
       "in": "body",
       "name": "accordance_percent",
@@ -158,7 +158,7 @@
     },
     {
       "type": "integer",
-      "minmum": 1,
+      "minmum": 0,
       "maximum": 10000000000,
       "in": "body",
       "name": "accordance_points",

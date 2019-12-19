@@ -28,7 +28,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/auth/password/request",
-      "request_body": "{\"email\":\"1aae1d5e892dbff337fc7c6bc5351fa7@5113a41bf285edcabb2b7acd10133a48.xx\"}",
+      "request_body": "{\"email\":\"db3ee896a60ee48f82e523e96ba075bc@6cdc3f9917f91806568270b13177ae15.xx\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -42,12 +42,12 @@
       "response_body": null,
       "response_headers": {
         "Cache-Control": "no-cache",
-        "X-Request-Id": "a794731a-d592-49b8-96dc-8defddfeea0a",
-        "X-Runtime": "0.726013",
+        "X-Request-Id": "4a033a92-5495-46e3-984c-2a48f23b49d5",
+        "X-Runtime": "0.668279",
         "Vary": "Origin"
       },
       "response_content_type": null,
-      "curl": "curl \"http://localhost:3000api/v1/auth/password/request\" -d '{\"email\":\"1aae1d5e892dbff337fc7c6bc5351fa7@5113a41bf285edcabb2b7acd10133a48.xx\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/request\" -d '{\"email\":\"db3ee896a60ee48f82e523e96ba075bc@6cdc3f9917f91806568270b13177ae15.xx\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

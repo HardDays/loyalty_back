@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'clients/profile', action: :profile, controller: 'clients'
       get 'clients/profile/orders', action: :profile_orders, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
+      post 'clients/:id/points', action: :create_points, controller: 'clients'
       put 'clients/profile', action: :update_profile, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'
 
@@ -34,6 +35,8 @@ Rails.application.routes.draw do
       post 'operators', action: :create, controller: 'operators'
       put 'operators/:id', action: :update, controller: 'operators'
       #delete 'operators/:id', action: :destroy, controller: 'operators'
+
+      post 'cards', action: :create, controller: 'cards'
 
       get 'companies', action: :show, controller: 'companies'
       post 'companies', action: :create, controller: 'companies'

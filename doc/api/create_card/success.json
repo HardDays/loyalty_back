@@ -1,0 +1,59 @@
+{
+  "resource": "Create card",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/cards",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "number",
+      "description": "Card number"
+    },
+    {
+      "minmum": 0,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "points",
+      "description": "Points"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/cards",
+      "request_body": "{\"number\":\"228 882\",\"points\":1337}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkxNiwiZXhwIjoxNTc3MzUzNjU3fQ.aPdzPkFKDB7YF7KedhDYcKrG7x7lG09NcIoeOoBbxQU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 3,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2019-12-19T09:47:37.448Z\",\n  \"updated_at\": \"2019-12-19T09:47:37.448Z\",\n  \"operator_id\": null,\n  \"company_id\": 27273\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"a12e12494e98b7642b2102b8feaa4fff\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "ebabb33a-f37a-489c-b054-96e3e41237e4",
+        "X-Runtime": "0.030225",
+        "Vary": "Origin",
+        "Content-Length": "159"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkxNiwiZXhwIjoxNTc3MzUzNjU3fQ.aPdzPkFKDB7YF7KedhDYcKrG7x7lG09NcIoeOoBbxQU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

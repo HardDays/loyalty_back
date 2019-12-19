@@ -19,16 +19,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/phone?phone=79966895453",
+      "request_path": "api/v1/clients/phone?phone=79914740617",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjcxMiwiZXhwIjoxNTc0NDI2ODg3fQ.0KdZfOr_L9bkGd2VsBFdjmz-yP94N30OwY6Q8dfeNCE",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkzNSwiZXhwIjoxNTc3MzUzNjU3fQ.TTyhImXpdMSqN6E9ocgdv9tVkDQ1PrJO4C3lQx5m9AQ",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79966895453"
+        "phone": "79914740617"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -38,13 +38,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"edc48cd3b0bc4fa7ba23aad40b8508a1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "1229a159-a62d-480d-92e8-8221417b4d00",
-        "X-Runtime": "0.006967",
+        "X-Request-Id": "7849cba5-3361-4af5-9f0d-0e4b7a6e4faf",
+        "X-Runtime": "0.007036",
         "Vary": "Origin",
         "Content-Length": "15"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79966895453\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NjcxMiwiZXhwIjoxNTc0NDI2ODg3fQ.0KdZfOr_L9bkGd2VsBFdjmz-yP94N30OwY6Q8dfeNCE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79914740617\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkzNSwiZXhwIjoxNTc3MzUzNjU3fQ.TTyhImXpdMSqN6E9ocgdv9tVkDQ1PrJO4C3lQx5m9AQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

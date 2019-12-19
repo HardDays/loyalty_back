@@ -109,6 +109,40 @@
       ]
     },
     {
+      "name": "Create card",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_card/success.json",
+          "groups": "all",
+          "route": "api/v1/cards",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_card/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/cards",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_card/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/cards",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_card/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/cards",
+          "method": "post"
+        }
+      ]
+    },
+    {
       "name": "List clients",
       "explanation": null,
       "examples": [
@@ -234,6 +268,40 @@
           "groups": "all",
           "route": "api/v1/clients/:id",
           "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Add points",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "add_points/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "add_points/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "add_points/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "add_points/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "post"
         }
       ]
     },

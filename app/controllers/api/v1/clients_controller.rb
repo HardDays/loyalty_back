@@ -1,7 +1,7 @@
 module Api
   module V1
     class ClientsController < ApplicationController
-      before_action :auth_find, only: [:update]
+      before_action :auth_find, only: [:update, :create_points]
       before_action :auth_operator, only: [:create, :index, :phone]
       before_action :auth_client, only: [:profile, :profile_orders, :update_profile]
 
@@ -84,6 +84,21 @@ module Api
                   )
                   points.save
                 end
+                if @user.client.card_number
+                  card = Card.find_by(number: @user.client.card_number, company_id: @auth_user.operator.company_id)
+                  if card
+                    points = ClientPoint.new(
+                      current_points: card.points,
+                      initial_points: card.points,
+                      burning_date: DateTime.now + 100.years,
+                      activation_date: DateTime.now,
+                      client: @user.client,
+                      points_source: :card
+                    )
+                    points.save
+                  end
+                end
+
                 if params[:recommendator_phone] && program.accrual_on_recommend
                   rec_user = User.where('phone LIKE ?', "%#{Phonelib.parse(params[:recommendator_phone], company_id:  @auth_user.operator.company.id).sanitized}%").first
                   if rec_user && rec_user.client
@@ -125,7 +140,7 @@ module Api
         end
       end
 
-      # PUT /clients
+      # PUT /clients/:id
       def update
         ActiveRecord::Base.transaction do
           if @user.update(user_params)
@@ -134,6 +149,24 @@ module Api
           else
             render json: @user.errors, status: :unprocessable_entity
           end
+        end
+      end
+
+      # POST /clients/:id/points
+      def create_points
+        points = ClientPoint.new(
+          current_points: params[:points],
+          initial_points: params[:points],
+          burning_date: DateTime.now + 100.years,
+          activation_date: DateTime.now,
+          client: @user.client,
+          operator: @auth_user.operator,
+          points_source: :operator
+        )
+        if points.save
+          render status: :ok
+        else
+          render json: points.errors, status: :unprocessable_entity
         end
       end
 

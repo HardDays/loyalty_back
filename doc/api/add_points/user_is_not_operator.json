@@ -1,0 +1,50 @@
+{
+  "resource": "Add points",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/clients/:id/points",
+  "description": "User is not operator",
+  "explanation": null,
+  "parameters": [
+    {
+      "minmum": 0,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "points",
+      "description": "Points"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/clients/57981/points",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Nzk4MiwiZXhwIjoxNTc3MzUzNjU5fQ.05JaQVZxaEZa8iWy6dlIeIlNqoBRu-PSu21moBG6Kyg",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "217b6153-c0de-4abd-bad7-ab5ca98283a5",
+        "X-Runtime": "0.003287",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/57981/points\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1Nzk4MiwiZXhwIjoxNTc3MzUzNjU5fQ.05JaQVZxaEZa8iWy6dlIeIlNqoBRu-PSu21moBG6Kyg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

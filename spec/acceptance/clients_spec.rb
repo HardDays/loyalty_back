@@ -284,6 +284,69 @@ resource "Update client" do
   end
 end
 
+resource "Add points" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  post "api/v1/clients/:id/points" do
+    parameter :points, "Points", minmum: 0, maximum: 100000000, type: :integer, in: :body, required: true
+    
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
+      @client_user = create_client(@company)
+    end
+
+    let(:id) { @client_user.id }
+    let(:authorization) { @operator.token }
+
+    context "Success" do
+      let(:points) { 100000 }
+
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
+      end
+    end
+
+    context "Wrong fields" do
+      let(:raw_post) { params.to_json }
+
+      example "Wrong fields" do
+        do_request
+        expect(status).to eq(422)
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
+      end
+    end
+
+    context "User is not operator" do
+      before do
+        @wrong_user = create_user
+      end
+
+      let(:authorization) { @wrong_user.token }
+
+      example "User is not operator" do
+        do_request
+        expect(status).to eq(403)
+      end
+    end
+  end
+end
+
 resource "Client profile" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
