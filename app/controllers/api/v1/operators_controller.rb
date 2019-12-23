@@ -22,12 +22,10 @@ module Api
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
-          password = SecureRandom.hex(4)
-          @user.password = password
+          # TODO: send to email or phone
+          @user.password = '1234567' #SecureRandom.hex(4)
           operator = @user.build_operator(store_id: params[:store_id], company: @auth_user.creator.company, operator_status: :active)
           if @user.save && operator.save
-            SmsHelper.send_register(@user.client, password)
-
             @user.create_user_confirmation(confirm_status: :confirmed)
             render json: @user
           else
