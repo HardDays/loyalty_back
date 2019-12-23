@@ -35,13 +35,13 @@ module SmsHelper
 
     def self.send(phone, message)
         begin
-            client = Twilio::REST::Client.new
-                client.messages.create({
-                    from: Rails.configuration.twilio_phone_number,
-                    to: '+' + phone,
-                    body: message
-                }
-            )
+            # client = Twilio::REST::Client.new
+            #     client.messages.create({
+            #         from: Rails.configuration.twilio_phone_number,
+            #         to: '+' + phone,
+            #         body: message
+            #     }
+            # )
             puts '##########################'
             puts '##########################'
             puts '##########################'

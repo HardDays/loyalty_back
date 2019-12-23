@@ -55,7 +55,7 @@ module Api
       def create
         ActiveRecord::Base.transaction do
           @user = User.new(user_params)
-          password = SecureRandom.hex(4)
+          password = '1234567' #SecureRandom.hex(4)
           @user.password = password
 
           if @user.save
