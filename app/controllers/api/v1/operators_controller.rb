@@ -30,6 +30,7 @@ module Api
             render json: @user
           else
             render json: @user.errors, status: :unprocessable_entity
+            raise ActiveRecord::Rollback
           end
         end
       end

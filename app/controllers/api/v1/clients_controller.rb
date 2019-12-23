@@ -133,6 +133,7 @@ module Api
             else
               puts json: client.errors
               render json: client.errors, status: :unprocessable_entity
+              raise ActiveRecord::Rollback
             end
           else
             render json: @user.errors, status: :unprocessable_entity
