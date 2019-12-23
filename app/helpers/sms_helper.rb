@@ -18,33 +18,45 @@ module SmsHelper
     end
 
     def self.send_points_write_off(client, points)
-        send(client.user.phone, "You written off #{points} bonus points")
+        send(client.user.phone, "Списано #{points} бонусов лояльности")
     end
 
     def self.send_points_burn(client, points, date)
-        send(client.user.phone, "#{points} points will be burned off at #{date}")
+        send(client.user.phone, "#{points} бонусов сгорят #{date}")
     end
 
     def self.send_points_receive(client, points)
-        send(client.user.phone, "You received #{points} bonus points")
+        send(client.user.phone, "Вы получили #{points} бонусов")
     end
 
     def self.send_register(client, password)
-        send(client.user.phone, "You regeistered in bonus points system. Your password is #{password}")
+        send(client.user.phone, "Вы зарегистированы в системе лояльности. Ваш пароль #{password}")
     end
 
     def self.send(phone, message)
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
-        puts 'SMS SENT TO ' + phone + ' ' + message
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
-        puts '##########################'
+        begin
+            client = Twilio::REST::Client.new
+                client.messages.create({
+                    from: Rails.configuration.twilio_phone_number,
+                    to: '+' + phone,
+                    body: message
+                }
+            )
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+            puts 'SMS SENT TO ' + phone + ' ' + message
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+            puts '##########################'
+        rescue => ex
+            puts 'AAAAAAAAAAAAAAAAAA'
+            puts ex
+        end
     end
 
 end

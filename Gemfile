@@ -93,3 +93,5 @@ gem 'apitome', '~> 0.2.1'
 gem 'rufus-scheduler'
 
 gem 'phonelib'
+
+gem 'twilio-ruby'

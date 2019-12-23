@@ -62,7 +62,7 @@ module Api
             program = @auth_user.operator.company.loyalty_program
             client = @user.build_client(operator: @auth_user.operator, company: @auth_user.operator.company, loyalty_program: program, card_number: params[:card_number])
             if client.save
-              @user.create_user_confirmation(confirm_status: :unconfirmed, code: '0000')
+              @user.create_user_confirmation(confirm_status: :confirmed, code: SecureRandom.hex[0..5])
 
               notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
               notification.client = @user.client
