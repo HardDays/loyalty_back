@@ -1,7 +1,7 @@
 class PasswordMailer < ApplicationMailer
-    def password_email(user, password_reset)
+    def password_email(user, password)
       @user = user
-      @password_reset = password_reset
-      mail(to: @user.email, subject: 'Восстановление пароля')
+      @password = password
+      mail(to: @user.email, subject: 'Пароль от лояльности')
     end
 end
