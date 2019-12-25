@@ -58,7 +58,7 @@ Rails.application.configure do
 
   config.token_salt = 'dfsdfdfs9831723'
 
-  config.twilio_phone_number = '+12053509973'
+  config.twilio_phone_number = '+14807250646'
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
