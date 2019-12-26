@@ -104,7 +104,7 @@ module ClientPointsHelper
                             if program.sms_on_burning
                                 if level.burning_rule.to_sym == :burning_days
                                     burning_date = DateTime.now + level.burning_days.days
-                                    notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - level.sms_burning_days.days)
+                                    notification = ClientSms.new(sms_type: :points_burned, send_at: burning_date - program.sms_burning_days.days)
                                     notification.sms_status = :pending
                                     notification.client_point = client_points
                                     notification.client = client
