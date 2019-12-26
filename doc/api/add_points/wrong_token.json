@@ -22,7 +22,7 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/57978/points",
+      "request_path": "api/v1/clients/58612/points",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -39,12 +39,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "a907e7a7-9e8d-4dc4-92e6-da597bd3b0f6",
-        "X-Runtime": "0.001313",
+        "X-Request-Id": "f80ec2bd-7066-4764-b807-52fd8f22a2a2",
+        "X-Runtime": "0.001573",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/57978/points\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/58612/points\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

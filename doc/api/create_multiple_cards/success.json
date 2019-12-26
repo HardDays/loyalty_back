@@ -1,0 +1,66 @@
+{
+  "resource": "Create multiple cards",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/cards/range",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "begin_range",
+      "description": "Begin range"
+    },
+    {
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "end_range",
+      "description": "End range"
+    },
+    {
+      "minmum": 0,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "points",
+      "description": "Points"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/cards/range",
+      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1MiwiZXhwIjoxNTc3OTYxNjM0fQ.ydWCNYmND8Vi0wp82mr9-n0SjQqvw19T0qrv8uKXsCc",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "e5192231-004d-461d-8275-0b593c352b0f",
+        "X-Runtime": "0.070836",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1MiwiZXhwIjoxNTc3OTYxNjM0fQ.ydWCNYmND8Vi0wp82mr9-n0SjQqvw19T0qrv8uKXsCc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

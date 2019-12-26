@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       #delete 'operators/:id', action: :destroy, controller: 'operators'
 
       post 'cards', action: :create, controller: 'cards'
+      post 'cards/range', action: :create_range, controller: 'cards'
 
       get 'companies', action: :show, controller: 'companies'
       post 'companies', action: :create, controller: 'companies'

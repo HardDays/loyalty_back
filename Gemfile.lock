@@ -64,6 +64,8 @@ GEM
     erubi (1.9.0)
     et-orbi (1.2.2)
       tzinfo
+    faraday (0.17.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.11.2-x86-mingw32)
     fugit (1.3.3)
       et-orbi (~> 1.1, >= 1.1.8)
@@ -108,6 +110,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     msgpack (1.3.1-x86-mingw32)
+    multipart-post (2.1.1)
     mustache (1.1.0)
     nested_form (0.3.2)
     nio4r (2.5.2)
@@ -211,6 +214,10 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    twilio-ruby (5.31.0)
+      faraday (~> 0.9)
+      jwt (>= 1.5, <= 2.5)
+      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.3)
@@ -238,6 +245,7 @@ DEPENDENCIES
   rspec-rails
   rspec_api_documentation (~> 4.9.0)
   rufus-scheduler
+  twilio-ruby
   tzinfo-data
 
 RUBY VERSION

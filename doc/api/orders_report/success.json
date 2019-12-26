@@ -69,7 +69,7 @@
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODE3MywiZXhwIjoxNTc3MzUzNjY0fQ.v0niAeN7BChY1NLzZckCVA5sgH5Uhl9aWb40yxd-vCA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODgwNywiZXhwIjoxNTc3OTYxNjQxfQ.7oSV_XLpdzWindPcwfAkqEvVO_r1T_veg_l8AR-FpGY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -78,18 +78,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 1064,\n    \"operator_id\": 58174,\n    \"store_id\": 16880,\n    \"loyalty_program_id\": 9599,\n    \"price\": 5000,\n    \"created_at\": \"2019-12-19T09:47:44.280Z\",\n    \"updated_at\": \"2019-12-19T09:47:44.280Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"client_id\": 58175,\n    \"client\": {\n      \"id\": 58175,\n      \"email\": null,\n      \"created_at\": \"2019-12-19T09:47:44.275Z\",\n      \"updated_at\": \"2019-12-19T09:47:44.275Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79916886721\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 27390,\n      \"loyalty_program_id\": 9599,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null\n    },\n    \"operator\": {\n      \"id\": 58174,\n      \"email\": \"e99d33bc9a5485f04e6ae95cc068ad47@ee3bbadd779a8b4bad941b57bf86e22d.xx\",\n      \"created_at\": \"2019-12-19T09:47:44.251Z\",\n      \"updated_at\": \"2019-12-19T09:47:44.251Z\",\n      \"user_type\": \"operator\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": null,\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"operator\"\n      ],\n      \"store_id\": 16880,\n      \"company_id\": 27390,\n      \"operator_status\": \"active\"\n    },\n    \"store\": {\n      \"id\": 16880,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 9599,\n      \"name\": \"test\"\n    },\n    \"points\": 0\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 1080,\n    \"operator_id\": 58808,\n    \"store_id\": 17059,\n    \"loyalty_program_id\": 9774,\n    \"price\": 5000,\n    \"created_at\": \"2019-12-26T10:40:41.488Z\",\n    \"updated_at\": \"2019-12-26T10:40:41.488Z\",\n    \"write_off_status\": \"not_written_off\",\n    \"write_off_points\": null,\n    \"promotion_id\": null,\n    \"client_id\": 58809,\n    \"client\": {\n      \"id\": 58809,\n      \"email\": null,\n      \"created_at\": \"2019-12-26T10:40:41.480Z\",\n      \"updated_at\": \"2019-12-26T10:40:41.480Z\",\n      \"user_type\": \"client\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": \"79960297384\",\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"client\"\n      ],\n      \"company_id\": 27681,\n      \"loyalty_program_id\": 9774,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null\n    },\n    \"operator\": {\n      \"id\": 58808,\n      \"email\": \"5ab26ff888d04ab64c40dd51f306eac6@3b950bdd10b9ce3e720c7df4cc5c9a57.xx\",\n      \"created_at\": \"2019-12-26T10:40:41.444Z\",\n      \"updated_at\": \"2019-12-26T10:40:41.444Z\",\n      \"user_type\": \"operator\",\n      \"first_name\": \"test\",\n      \"second_name\": null,\n      \"last_name\": \"test\",\n      \"phone\": null,\n      \"gender\": null,\n      \"birth_day\": null,\n      \"user_types\": [\n        \"operator\"\n      ],\n      \"store_id\": 17059,\n      \"company_id\": 27681,\n      \"operator_status\": \"active\"\n    },\n    \"store\": {\n      \"id\": 17059,\n      \"name\": \"test\"\n    },\n    \"loyalty_program\": {\n      \"id\": 9774,\n      \"name\": \"test\"\n    },\n    \"points\": 0\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"263159863caaa3b83ec659c3fb9b34f9\"",
+        "ETag": "W/\"1a027bd6b35e7505ef3a153d496bb940\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "7f2e58d1-d903-49a1-bd06-fa61d51439fa",
-        "X-Runtime": "0.023017",
+        "X-Request-Id": "e7f764f9-2a7c-4070-9b4f-8082ff7c602f",
+        "X-Runtime": "0.025233",
         "Vary": "Origin",
         "Content-Length": "1136"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODE3MywiZXhwIjoxNTc3MzUzNjY0fQ.v0niAeN7BChY1NLzZckCVA5sgH5Uhl9aWb40yxd-vCA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODgwNywiZXhwIjoxNTc3OTYxNjQxfQ.7oSV_XLpdzWindPcwfAkqEvVO_r1T_veg_l8AR-FpGY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

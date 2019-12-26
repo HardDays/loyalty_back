@@ -47,16 +47,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients?phone=79987312637&name=test&card_number=12345",
+      "request_path": "api/v1/clients?phone=79975971632&name=test&card_number=12345",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkyNSwiZXhwIjoxNTc3MzUzNjU3fQ.qU2wKnjXUv_vuHb4b3enllk-aZK1sJGpESdZdHq43S0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1OSwiZXhwIjoxNTc3OTYxNjM0fQ.oqhdyqLl6tUQV17_TFzqRV47nNeYhkGWznoUtDqHDlw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79987312637",
+        "phone": "79975971632",
         "name": "test",
         "card_number": "12345"
       },
@@ -68,13 +68,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "3f306573-3118-48f6-9dfa-227cfb9e62d3",
-        "X-Runtime": "0.028315",
+        "X-Request-Id": "b5b5a479-1526-4876-a268-32561c12e47b",
+        "X-Runtime": "0.027753",
         "Vary": "Origin",
         "Content-Length": "2"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79987312637&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkyNSwiZXhwIjoxNTc3MzUzNjU3fQ.qU2wKnjXUv_vuHb4b3enllk-aZK1sJGpESdZdHq43S0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79975971632&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1OSwiZXhwIjoxNTc3OTYxNjM0fQ.oqhdyqLl6tUQV17_TFzqRV47nNeYhkGWznoUtDqHDlw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

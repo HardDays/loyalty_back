@@ -143,6 +143,33 @@
       ]
     },
     {
+      "name": "Create multiple cards",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_multiple_cards/success.json",
+          "groups": "all",
+          "route": "api/v1/cards/range",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_multiple_cards/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/cards/range",
+          "method": "post"
+        },
+        {
+          "description": "User is not operator",
+          "link": "create_multiple_cards/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/cards/range",
+          "method": "post"
+        }
+      ]
+    },
+    {
       "name": "List clients",
       "explanation": null,
       "examples": [

@@ -33,7 +33,7 @@
       "request_body": "{\"number\":\"228 882\",\"points\":1337}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkxNiwiZXhwIjoxNTc3MzUzNjU3fQ.aPdzPkFKDB7YF7KedhDYcKrG7x7lG09NcIoeOoBbxQU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU0MywiZXhwIjoxNTc3OTYxNjM0fQ.4Y71O8rnrU3GuULr5kATDnwn07SVSAoruA_iSJQiYu0",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -42,18 +42,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 3,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2019-12-19T09:47:37.448Z\",\n  \"updated_at\": \"2019-12-19T09:47:37.448Z\",\n  \"operator_id\": null,\n  \"company_id\": 27273\n}",
+      "response_body": "{\n  \"id\": 27,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2019-12-26T10:40:34.434Z\",\n  \"updated_at\": \"2019-12-26T10:40:34.434Z\",\n  \"operator_id\": 13498,\n  \"company_id\": 27561\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"a12e12494e98b7642b2102b8feaa4fff\"",
+        "ETag": "W/\"1a05f3f15503019db4c9cd7f345fc186\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "ebabb33a-f37a-489c-b054-96e3e41237e4",
-        "X-Runtime": "0.030225",
+        "X-Request-Id": "d0daabcf-4fc9-4075-8b56-b37cf5cbb83b",
+        "X-Runtime": "0.031701",
         "Vary": "Origin",
-        "Content-Length": "159"
+        "Content-Length": "161"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1NzkxNiwiZXhwIjoxNTc3MzUzNjU3fQ.aPdzPkFKDB7YF7KedhDYcKrG7x7lG09NcIoeOoBbxQU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU0MywiZXhwIjoxNTc3OTYxNjM0fQ.4Y71O8rnrU3GuULr5kATDnwn07SVSAoruA_iSJQiYu0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

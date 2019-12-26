@@ -1,23 +1,33 @@
 {
-  "resource": "Sms",
+  "resource": "Create multiple cards",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "api/v1/sms",
+  "route": "api/v1/cards/range",
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
+      "type": "integer",
       "in": "body",
       "required": true,
-      "name": "message",
-      "description": "Message"
+      "name": "begin_range",
+      "description": "Begin range"
     },
     {
       "type": "integer",
       "in": "body",
-      "name": "loyalty_program_id",
-      "description": "Id of loyalty program"
+      "required": true,
+      "name": "end_range",
+      "description": "End range"
+    },
+    {
+      "minmum": 0,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "points",
+      "description": "Points"
     }
   ],
   "response_fields": [
@@ -26,8 +36,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/sms",
-      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":9781}",
+      "request_path": "api/v1/cards/range",
+      "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -43,12 +53,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "732e59ea-6d97-4880-a077-a9c39a33bae9",
-        "X-Runtime": "0.001522",
+        "X-Request-Id": "b8dab78d-d4bf-471f-b0fd-db31a630ed24",
+        "X-Runtime": "0.001371",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":9781}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
