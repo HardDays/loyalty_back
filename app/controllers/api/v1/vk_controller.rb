@@ -25,9 +25,9 @@ module Api
                     if params[:type] == 'confirmation'
                         settings.confirmed = true
                         settings.save
-                        render settings.confirmation_code
+                        render plain: settings.confirmation_code
                     else
-                        render 'ok'
+                        render plain: 'ok'
                     end
                 end
             end
