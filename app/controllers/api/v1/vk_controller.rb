@@ -21,7 +21,7 @@ module Api
             company = Company.find(params[:id])
             if company 
                 settings = company.vk_setting
-                if settings && settings.callback_code == params[:callback_code]
+                if settings && settings.callback_code == params[:code]
                     if params[:type] == 'confirmation'
                         settings.confirmed = true
                         settings.save
