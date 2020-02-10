@@ -13,7 +13,7 @@ module Api
                 render json: settings, status: :ok
             else
                 render json: settings.errors, status: :unprocessable_entity
-            else
+            end
         end
         
         # POST /vk/callback 
@@ -49,6 +49,6 @@ module Api
                 params.permit(:confirmation_code)
             end
          
-      end
+        end
     end
-  end
+end
