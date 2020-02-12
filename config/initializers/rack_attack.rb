@@ -11,6 +11,7 @@ end
 
 Rack::Attack.throttle('limit all register', limit: 1, period: 10) do |req|
     if (req.path == '/creators' or req.path == '/clients' or req.path == '/operators') and req.post?
+        puts 'RAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK\n\n'
         req.ip
     end
 end
