@@ -95,3 +95,5 @@ gem 'rufus-scheduler'
 gem 'phonelib'
 
 gem 'twilio-ruby'
+
+gem 'vkontakte_api', '~> 1.4'

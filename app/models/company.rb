@@ -2,7 +2,7 @@ class Company < ApplicationRecord
     belongs_to :creator
     #belongs_to :tariff_plan_purchase
     has_one :loyalty_program
-    has_one :vk_setting
+    has_one :vk_group
 
     has_many :operators
     has_many :clients
