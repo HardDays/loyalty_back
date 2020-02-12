@@ -53,7 +53,7 @@ module Api
                     @user = User.find_by(email: params[:email])
                 end
                 if @user
-                    @confirmation = PasswordReset.new(user_id: @user.id, code: SecureRandom.hex, confirm_status: :unconfirmed)
+                    @confirmation = PasswordReset.new(user_id: @user.id, code: SecureRandom.hex[0..6], confirm_status: :unconfirmed)
                     @confirmation.save
                     if params[:email]
                         ResetMailer.reset_email(@user, @confirmation).deliver

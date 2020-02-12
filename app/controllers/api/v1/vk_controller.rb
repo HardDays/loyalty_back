@@ -31,8 +31,14 @@ module Api
                         group.save
                         render plain: group.confirmation_code
                     else
-                        client = Client.find_by(vk_id: params[:object][:from_id])
-                        if client
+                        client_id = nil
+                        if params[:type] == 'group_join'
+                            client_id = params[:object][:user_id]
+                        else 
+                            client_id = params[:object][:from_id]
+                        end
+                        client = Client.find_by(vk_id: client_id)
+                        if client && client_id
                             post_id = nil
                             if params[:type] == 'wall_reply_new'
                                 post_id = params[:object][:post_id]
