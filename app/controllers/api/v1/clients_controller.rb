@@ -3,11 +3,27 @@ module Api
     class ClientsController < ApplicationController
       before_action :auth_find, only: [:update, :create_points]
       before_action :auth_operator, only: [:create, :index, :phone]
-      before_action :auth_client, only: [:profile, :profile_orders, :update_profile]
+      before_action :auth_client, only: [:profile, :profile_orders, :update_profile, :confirm_vk]
 
       # GET /clients/profile
       def profile
         render json: @auth_user, points: true, loyalty_program: true
+      end
+
+      # GET /clients/confirm/vk
+      def confirm_vk
+        vk_id = nil
+        begin
+          vk = VkontakteApi::Client.new(params[:access_token])
+          vk_user = vk.users.get[0]
+
+          @auth_user.client.vk_id = vk_user.id
+          @auth_user.client.save
+          render status: :ok
+        rescue => ex
+          puts json: ex
+          render json: {"error_code": ex.error_code}, status: :unprocessable_entity
+        end
       end
 
       # PUT /clients/profile
