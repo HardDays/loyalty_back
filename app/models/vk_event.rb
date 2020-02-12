@@ -5,4 +5,7 @@ class VkEvent < ApplicationRecord
     validates :post_id, length: {minimum: 1, maximum: 128}, allow_nil: true
 
     enum event_type: [:group_join, :wall_repost, :wall_like, :wall_reply_new]
+
+    validates :client, uniqueness: { scope: [:vk_group, :post_id, :event_type] }
+
 end

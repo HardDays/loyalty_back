@@ -39,13 +39,14 @@ module Api
                             elsif params[:type] == 'wall_repost'
                                 post_id = params[:object][:copy_history][0][:id]
                             end
-
-                            event = VkEvent.find_by(event_type: params[:type], client_id: client.id, group_id: group.id, post_id: post_id)
-                            if not event
-                                event = VkEvent.new(client_id: client.id, group_id: group.id, event_type: params[:type], post_id: post_id)
-                                event.save
-                                #todo: add points
-                            end
+                            event = VkEvent.new(client_id: client.id, group_id: group.id, event_type: params[:type], post_id: post_id)
+                            event.save
+                            # event = VkEvent.find_by(event_type: params[:type], client_id: client.id, group_id: group.id, post_id: post_id)
+                            # if not event
+                            #     event = VkEvent.new(client_id: client.id, group_id: group.id, event_type: params[:type], post_id: post_id)
+                            #     event.save
+                            #     #todo: add points
+                            # end
                         end
                         render plain: 'ok'
                     end
