@@ -12,7 +12,7 @@ module VkHelper
             likes.each do |like|
                 client = Client.find_by(vk_id: like)
                 if client
-                    event = VkEvent.new(client_id: client.id, group_id: group.id, event_type :wall_like, post_id: p.id)
+                    event = VkEvent.new(client_id: client.id, group_id: group.id, event_type: :wall_like, post_id: p.id)
                     event.save
                 end
             end
