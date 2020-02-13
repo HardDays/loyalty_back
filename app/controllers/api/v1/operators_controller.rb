@@ -28,7 +28,7 @@ module Api
           if user.save && operator.save
             user.create_user_confirmation(confirm_status: :confirmed)
             begin
-              PasswordMailer.password_email(@user, password).deliver!
+              PasswordMailer.password_email(user, password).deliver!
             rescue => ex
               puts 'EMAIL ERROR'
               puts json: ex
