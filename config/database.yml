@@ -24,11 +24,11 @@ default: &default
 
 development:
   <<: *default
-  database: loyalty_lend
+  database: loyalty_lend_1
 
 test:
   <<: *default
-  database: loyalty_lend_test
+  database: loyalty_lend_test_1
 
 production:
   <<: *default
