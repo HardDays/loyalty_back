@@ -59,6 +59,11 @@ Rails.application.configure do
 
   config.twilio_phone_number = '+14807250646'
 
+  VkontakteApi.configure do |config|
+    config.api_version = '5.103'
+  end
+
+
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 

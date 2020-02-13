@@ -202,10 +202,33 @@ module ClientPointsHelper
 
     def self.write_off(order, write_off_points, level)
         client = order.client
-        points = client.valid_points
         total = client.valid_points.sum(:current_points)
         money = ((order.price * level.write_off_rule_percent) / 100.0)
         current_points = [0, [write_off_points, money, total].min.to_i].max.to_i
+        self.write_off_number(client, current_points)
+        # points.each do |p|
+        #     if p.current_points >= current_points
+        #         p.current_points -= current_points
+        #         current_points = 0
+        #         p.save
+        #     else 
+        #         current_points -= p.current_points
+        #         p.current_points = 0
+        #         p.save
+        #     end
+        #     if current_points <= 0
+        #         break
+        #     end
+        # end
+        order.write_off_status = :written_off
+        order.write_off_points = [0, [write_off_points, money, total].min.to_i].max.to_i
+        order.save
+        return true
+    end
+
+    def self.write_off_number(client, number)
+        points = client.valid_points
+        current_points = number
     
         points.each do |p|
             if p.current_points >= current_points
@@ -221,10 +244,6 @@ module ClientPointsHelper
                 break
             end
         end
-        order.write_off_status = :written_off
-        order.write_off_points = [0, [write_off_points, money, total].min.to_i].max.to_i
-        order.save
-        return true
     end
 
     def self.find_level(client, program, price)

@@ -1,18 +1,7 @@
-require 'sidekiq/web'
-require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
   #apipie
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # namespace 'api' do
-  #   namespace 'v1' do
-  #     resources :company
-  #     resources :company_info
-  #     resources :call_back
-  #   end
-  # end
-  mount Sidekiq::Web => '/sidekiq'
-
 
   namespace 'api' do
     namespace 'v1' do
@@ -35,6 +24,7 @@ Rails.application.routes.draw do
       post 'clients/:id/points', action: :create_points, controller: 'clients'
       put 'clients/profile', action: :update_profile, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'
+      delete 'clients/:id/points', action: :remove_points, controller: 'clients'
 
       get 'operators', action: :index, controller: 'operators'
       get 'operators/:id', action: :show, controller: 'operators'

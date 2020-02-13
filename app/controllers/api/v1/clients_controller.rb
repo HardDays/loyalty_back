@@ -1,7 +1,7 @@
 module Api
   module V1
     class ClientsController < ApplicationController
-      before_action :auth_find, only: [:update, :create_points]
+      before_action :auth_find, only: [:update, :create_points, :remove_points]
       before_action :auth_operator, only: [:create, :index, :phone]
       before_action :auth_client, only: [:profile, :profile_orders, :update_profile, :confirm_vk]
 
@@ -12,7 +12,6 @@ module Api
 
       # GET /clients/confirm/vk
       def confirm_vk
-        vk_id = nil
         begin
           vk = VkontakteApi::Client.new(params[:access_token])
           vk_user = vk.users.get[0]
@@ -184,6 +183,14 @@ module Api
           render status: :ok
         else
           render json: points.errors, status: :unprocessable_entity
+        end
+      end
+
+      # DELETE /clients/:id/points
+      def remove_points
+        if params[:points]
+          ClientPointsHelper.write_off_number(@user.client, [params[:points], 0].max)
+          render status: :ok
         end
       end
 
