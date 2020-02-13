@@ -1,0 +1,4 @@
+:schedule:
+  vk:
+    every: '1m'
+    class: VkScheduler

@@ -100,4 +100,4 @@ gem 'vkontakte_api', '~> 1.4'
 
 gem 'rack-attack'
 
-gem 'whenever'
+gem 'sidekiq-scheduler'
