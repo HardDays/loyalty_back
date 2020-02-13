@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   #     resources :call_back
   #   end
   # end
+  mount Sidekiq::Web => '/sidekiq'
+
 
   namespace 'api' do
     namespace 'v1' do
