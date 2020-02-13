@@ -1,6 +1,0 @@
-:schedule:
-  vk:
-    every: '1m'
-    class: VkScheduler
-    queue: scheduler
-    enabled: true

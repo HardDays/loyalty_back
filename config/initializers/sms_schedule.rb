@@ -8,3 +8,7 @@ scheduler.cron '12 00 * * * Europe/Moscow' do
         puts 'sms error', ex
     end
 end
+
+scheduler.every '10s' do
+    puts 'aaaaaa'
+end
