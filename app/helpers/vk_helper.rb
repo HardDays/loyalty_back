@@ -2,7 +2,7 @@ module VkHelper
 
     TOKEN = Rails.configuration.vk_token
 
-    def self.find_likes(group)
+    def self.find_likes
         id = -(group.group_id.to_i)
 
         vk = VkontakteApi::Client.new(TOKEN)

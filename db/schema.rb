@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_092153) do
+ActiveRecord::Schema.define(version: 2020_02_12_094715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_092153) do
     t.integer "promotion_id"
     t.integer "loyalty_program_id"
     t.integer "operator_id"
+    t.integer "vk_event_id"
   end
 
   create_table "client_sms", force: :cascade do |t|
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_092153) do
     t.string "card_number"
     t.integer "recommendator_id"
     t.integer "operator_id"
+    t.string "vk_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -255,6 +257,25 @@ ActiveRecord::Schema.define(version: 2019_12_19_092153) do
     t.string "phone"
     t.integer "gender"
     t.date "birth_day"
+  end
+
+  create_table "vk_events", force: :cascade do |t|
+    t.integer "vk_group_id"
+    t.integer "client_id"
+    t.integer "event_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "post_id"
+  end
+
+  create_table "vk_groups", force: :cascade do |t|
+    t.integer "company_id"
+    t.string "confirmation_code"
+    t.boolean "confirmed"
+    t.string "callback_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "group_id"
   end
 
 end
