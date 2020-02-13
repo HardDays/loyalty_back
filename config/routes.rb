@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
   #apipie
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
