@@ -24,7 +24,7 @@ default: &default
 
 development:
   <<: *default
-  database: loyalty_lend
+  database: loyalty_lend_test
 
 test:
   <<: *default
