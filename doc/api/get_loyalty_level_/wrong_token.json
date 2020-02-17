@@ -176,6 +176,12 @@
       "required": true,
       "name": "accrual_on_points",
       "description": "Accrual when points added"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -185,7 +191,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":9731}",
+      "request_body": "{\"loyalty_program_id\":13159,\"company_id\":32882}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -201,12 +207,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "e00ccc34-4870-41aa-b550-a5ce9443715d",
-        "X-Runtime": "0.001408",
+        "X-Request-Id": "52f63688-6c84-4aba-b4fd-099cfc10473e",
+        "X-Runtime": "0.001515",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":9731}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":13159,\"company_id\":32882}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

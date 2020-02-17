@@ -14,6 +14,12 @@
       "required": true,
       "name": "points",
       "description": "Points"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -22,11 +28,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/58615/points",
-      "request_body": null,
+      "request_path": "api/v1/clients/70902/points",
+      "request_body": "{\"company_id\":32860}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODYxNiwiZXhwIjoxNTc3OTYxNjM2fQ.fodp_guJ4db6Ri2AMvNqRU4QbtVRTzd1kOE6mp9STlk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkwMywiZXhwIjoxNTgyMzcyMjU2fQ.HorIzqN5a8dIZFuJx5cmvumqFPATBSt0sCXCZ91SueU",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -39,12 +45,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5a3e0e37-806c-45d4-ad21-b5a565e3f050",
-        "X-Runtime": "0.003373",
+        "X-Request-Id": "a64c1e06-0d95-442c-b81f-32b2c1713419",
+        "X-Runtime": "0.004790",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/58615/points\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODYxNiwiZXhwIjoxNTc3OTYxNjM2fQ.fodp_guJ4db6Ri2AMvNqRU4QbtVRTzd1kOE6mp9STlk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/70902/points\" -d '{\"company_id\":32860}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkwMywiZXhwIjoxNTgyMzcyMjU2fQ.HorIzqN5a8dIZFuJx5cmvumqFPATBSt0sCXCZ91SueU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

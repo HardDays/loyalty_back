@@ -6,7 +6,12 @@
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -15,7 +20,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_programs",
-      "request_body": null,
+      "request_body": "{\"company_id\":32896}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "b21edb42-65f5-413b-a029-6ee681aa1c28",
-        "X-Runtime": "0.001836",
+        "X-Request-Id": "6bc14731-80a4-438d-a499-835c9b796d21",
+        "X-Runtime": "0.001420",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '{\"company_id\":32896}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

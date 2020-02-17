@@ -26,25 +26,26 @@
       "request_body": "{\"name\":\"test\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY0MCwiZXhwIjoxNTc3OTYxNjM2fQ.o2p3t1-sZC5XS3MEX9puCIdYlLykHPFR-BdFATmde3E",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkyNywiZXhwIjoxNTgyMzcyMjU3fQ.EHUMA0iDbrfwlNBj6SjQDpPmZjESUedFNV7UIKCf6BE",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 403,
-      "response_status_text": "Forbidden",
-      "response_body": null,
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"creator\": [\n    \"must exist\"\n  ]\n}",
       "response_headers": {
-        "Content-Type": "text/html; charset=utf-8",
+        "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "ff354f82-cf92-492f-95be-339fd059ad99",
-        "X-Runtime": "0.004153",
-        "Vary": "Origin"
+        "X-Request-Id": "faceffa8-83ac-4e64-8f64-a200316182a0",
+        "X-Runtime": "0.007206",
+        "Vary": "Origin",
+        "Content-Length": "26"
       },
-      "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY0MCwiZXhwIjoxNTc3OTYxNjM2fQ.o2p3t1-sZC5XS3MEX9puCIdYlLykHPFR-BdFATmde3E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkyNywiZXhwIjoxNTgyMzcyMjU3fQ.EHUMA0iDbrfwlNBj6SjQDpPmZjESUedFNV7UIKCf6BE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

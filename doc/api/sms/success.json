@@ -18,6 +18,12 @@
       "in": "body",
       "name": "loyalty_program_id",
       "description": "Id of loyalty program"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -27,10 +33,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/sms",
-      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":9780}",
+      "request_body": "{\"message\":\"Test\",\"loyalty_program_id\":13208,\"company_id\":32960}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODgyMywiZXhwIjoxNTc3OTYxNjQyfQ.qgnC33swDMSdZDqBLupiePtzEcwtnXN7bF3u5TvQROk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTEwOCwiZXhwIjoxNTgyMzcyMjYzfQ.-ezN3zQJ8qsiLYzIZqE-aRadkOicH6TXlSkYZCE62bQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -44,13 +50,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "ceeec61d-ab41-4396-a331-1865ef6bf633",
-        "X-Runtime": "0.034596",
+        "X-Request-Id": "e1912d66-f0e2-40e0-a42c-ea9bfe49afc2",
+        "X-Runtime": "0.064409",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":9780}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODgyMywiZXhwIjoxNTc3OTYxNjQyfQ.qgnC33swDMSdZDqBLupiePtzEcwtnXN7bF3u5TvQROk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/sms\" -d '{\"message\":\"Test\",\"loyalty_program_id\":13208,\"company_id\":32960}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTEwOCwiZXhwIjoxNTgyMzcyMjYzfQ.-ezN3zQJ8qsiLYzIZqE-aRadkOicH6TXlSkYZCE62bQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

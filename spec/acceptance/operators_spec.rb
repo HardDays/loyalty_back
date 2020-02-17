@@ -4,23 +4,27 @@ resource "Create operator" do
 
   post "api/v1/operators" do
     parameter :email, "Email", type: :string, in: :body, required: true
+    parameter :phone, "Phone", type: :string, in: :body, required: true
     parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
     parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
     parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
     parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     parameter :store_id, "Store", type: :integer, in: :body
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @user = create_creator(create_user)
-      create_company(@user)
+      @company = create_company(@user)
       @store = create_store(@user)
     end
 
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:email) { "test@test.com" }
+      let(:phone) { "+79993331144" }
       let(:first_name) { "test" }
       let(:last_name) { "test" }
       let(:second_name) { "test" }
@@ -49,6 +53,7 @@ resource "Create operator" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -62,6 +67,7 @@ resource "Create operator" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not creator" do
         do_request
@@ -76,14 +82,14 @@ resource "Update operator" do
   header "Authorization", :authorization
 
   put "api/v1/operators/:id" do
-    parameter :email, "Email", type: :string, in: :body, required: true
-    parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
-    parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
-    parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
+    # parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: false
+    # parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: false
+    # parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
+    # parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
+    # parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     parameter :store_id, "Store", type: :integer, in: :body
     parameter :operator_status, "Status (deleted or active)", type: :string, in: :body
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -94,12 +100,10 @@ resource "Update operator" do
 
     let(:id) { @operator.id }
     let(:authorization) { @creator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
-      let(:email) { "new@test.com" }
-      let(:first_name) { "new test" }
-      let(:last_name) { "new test" }
-      let(:second_name) { "new test" }
+
       let(:store_id) { @store.id }
 
       let(:raw_post) { params.to_json }
@@ -110,29 +114,13 @@ resource "Update operator" do
 
         body = JSON.parse(response_body)
         expect(status).to eq(200)
-        expect(body["email"]).to eq("new@test.com")
-        expect(body["first_name"]).to eq("new test")
-        expect(body["last_name"]).to eq("new test")
-        expect(body["second_name"]).to eq("new test")
-        expect(body["store_id"]).to eq(@store.id)
-      end
-    end
-
-    context "Wrong fields" do
-      let(:email) { "f" }
-      let(:first_name) { "" }
-      let(:store_id) { 0 }
-
-      let(:raw_post) { params.to_json }
-
-      example "Wrong fields" do
-        do_request
-        expect(status).to eq(422)
+        expect(body['operator'][0]["store_id"]).to eq(@store.id)
       end
     end
 
     context "Not found" do
       let(:id) { 0 }
+      let(:raw_post) { params.to_json }
 
       example "Not found" do
         do_request
@@ -142,6 +130,7 @@ resource "Update operator" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -155,6 +144,7 @@ resource "Update operator" do
       end
 
       let(:authorization) { @wrong_creator.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not creator" do
         do_request
@@ -227,6 +217,7 @@ resource "Get operators" do
   parameter :store_id, "Store id", type: :integer
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
+  parameter :company_id, "Company id", type: :integer, required: true
 
   before do
     @creator = create_creator(create_user)
@@ -243,6 +234,7 @@ resource "Get operators" do
   let(:limit) { 3 }
 
   let(:authorization) { @creator.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/operators" do
     
@@ -270,7 +262,10 @@ resource "Get operator" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   get "api/v1/operators/:id" do
+
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)
@@ -280,7 +275,8 @@ resource "Get operator" do
 
     let(:authorization) { @creator.token }
     let(:id) { @operator.id }
-      
+    let(:company_id) { @company.id }
+
     context "Success" do
       
       example "Success" do
@@ -300,6 +296,7 @@ resource "Get operator" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request

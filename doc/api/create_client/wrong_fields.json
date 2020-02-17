@@ -74,6 +74,12 @@
       "required": false,
       "name": "recommendator_phone",
       "description": "Recommendator phone"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -83,10 +89,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/clients",
-      "request_body": "{\"email\":\"f\",\"first_name\":\"\"}",
+      "request_body": "{\"email\":\"f\",\"first_name\":\"\",\"company_id\":32850}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU4MiwiZXhwIjoxNTc3OTYxNjM1fQ.qOk8KZ2tOkXo39BGG1aUX6BiQf2gIK2jeKpOYYITSbU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg3MiwiZXhwIjoxNTgyMzcyMjU1fQ.AJhwHCRsi6MbZx25hu0cc8e2xeBxQDplFF3qf7cm2IE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -95,17 +101,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ],\n  \"last_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_body": "{\n  \"email\": [\n    \"INVALID\"\n  ],\n  \"phone\": [\n    \"INVALID\",\n    \"EMPTY_FIELD\"\n  ],\n  \"first_name\": [\n    \"TOO_SHORT\"\n  ],\n  \"last_name\": [\n    \"TOO_SHORT\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6ddf0203-18d9-470b-915c-b9837783ae47",
-        "X-Runtime": "0.010350",
+        "X-Request-Id": "35c1d2c7-ba65-4977-8681-8e94ae4c93da",
+        "X-Runtime": "0.016577",
         "Vary": "Origin",
-        "Content-Length": "74"
+        "Content-Length": "108"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '{\"email\":\"f\",\"first_name\":\"\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU4MiwiZXhwIjoxNTc3OTYxNjM1fQ.qOk8KZ2tOkXo39BGG1aUX6BiQf2gIK2jeKpOYYITSbU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients\" -d '{\"email\":\"f\",\"first_name\":\"\",\"company_id\":32850}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg3MiwiZXhwIjoxNTgyMzcyMjU1fQ.AJhwHCRsi6MbZx25hu0cc8e2xeBxQDplFF3qf7cm2IE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

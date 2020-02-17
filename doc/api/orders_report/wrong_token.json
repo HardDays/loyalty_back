@@ -57,6 +57,12 @@
       "type": "integer",
       "name": "offset",
       "description": "Offset"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -65,7 +71,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/reports/orders",
+      "request_path": "api/v1/reports/orders?company_id=32955",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -74,6 +80,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32955"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -82,12 +89,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "11d80741-e09c-46bc-bd60-deb8baa36cd6",
-        "X-Runtime": "0.003026",
+        "X-Request-Id": "0852bcee-9339-4472-a18a-f04ab435f6e0",
+        "X-Runtime": "0.001441",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/reports/orders?company_id=32955\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

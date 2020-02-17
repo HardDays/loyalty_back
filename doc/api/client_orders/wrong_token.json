@@ -6,7 +6,12 @@
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -14,7 +19,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/profile/orders",
+      "request_path": "api/v1/clients/profile/orders?company_id=32864",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -23,6 +28,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32864"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -31,12 +37,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "38771ec9-8c8d-4c2b-a866-88fcd1cbdcda",
-        "X-Runtime": "0.001874",
+        "X-Request-Id": "3c5f12f2-84da-42f6-a777-5d50a0d94383",
+        "X-Runtime": "0.001607",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile/orders\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile/orders?company_id=32864\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

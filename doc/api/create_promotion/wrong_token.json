@@ -6,7 +6,12 @@
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -15,7 +20,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/promotions",
-      "request_body": null,
+      "request_body": "{\"company_id\":32939}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "506284b5-4ce9-4b70-9461-85204cfe6fed",
-        "X-Runtime": "0.001335",
+        "X-Request-Id": "7cb05318-a7e3-44dc-b8cf-0519d8526972",
+        "X-Runtime": "0.001563",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{\"company_id\":32939}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

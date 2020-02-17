@@ -6,7 +6,12 @@
   "description": "User is not creator",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -14,11 +19,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_programs/9746",
-      "request_body": null,
+      "request_path": "api/v1/loyalty_programs/13174",
+      "request_body": "{\"company_id\":32901}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4NSwiZXhwIjoxNTc3OTYxNjM4fQ.mmnKOolSukqYySSwNPOSlpdd3XHx5yMwOi3WXL5GWVs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk3MiwiZXhwIjoxNTgyMzcyMjU4fQ.7crJfBgBxR4oRsLCx0UNXHdqkxf4gQPsUkKNmllW2Xk",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "596bd80f-767c-4f47-bb9a-1645a5aa6f56",
-        "X-Runtime": "0.003315",
+        "X-Request-Id": "f05f981b-fe73-4cea-bad7-9fbe1317a892",
+        "X-Runtime": "0.004511",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/9746\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4NSwiZXhwIjoxNTc3OTYxNjM4fQ.mmnKOolSukqYySSwNPOSlpdd3XHx5yMwOi3WXL5GWVs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/13174\" -d '{\"company_id\":32901}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk3MiwiZXhwIjoxNTgyMzcyMjU4fQ.7crJfBgBxR4oRsLCx0UNXHdqkxf4gQPsUkKNmllW2Xk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

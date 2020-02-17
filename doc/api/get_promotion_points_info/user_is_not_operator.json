@@ -25,6 +25,12 @@
       "required": true,
       "name": "promotion_id",
       "description": "Promotion id"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -33,17 +39,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=58750&promotion_id=1645",
+      "request_path": "api/v1/orders/promotion/points?user_id=71035&promotion_id=2279&company_id=32926",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc1MSwiZXhwIjoxNTc3OTYxNjM5fQ.NQXGgvvw3It1_1LGRRkflQMxQ50d2P4dXhqNwcEjQPo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAzNiwiZXhwIjoxNTgyMzcyMjYwfQ.NeufLTrghJL83gFcHQWLFEl4FLig_km-NeMwiOWEHn8",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "58750",
-        "promotion_id": "1645"
+        "user_id": "71035",
+        "promotion_id": "2279",
+        "company_id": "32926"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +59,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "c94355dd-72da-4d3d-92ef-d74b6512b9d2",
-        "X-Runtime": "0.004092",
+        "X-Request-Id": "e1c8bda3-df29-405c-9ca8-317f304422b0",
+        "X-Runtime": "0.005819",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=58750&promotion_id=1645\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc1MSwiZXhwIjoxNTc3OTYxNjM5fQ.NQXGgvvw3It1_1LGRRkflQMxQ50d2P4dXhqNwcEjQPo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=71035&promotion_id=2279&company_id=32926\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAzNiwiZXhwIjoxNTgyMzcyMjYwfQ.NeufLTrghJL83gFcHQWLFEl4FLig_km-NeMwiOWEHn8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

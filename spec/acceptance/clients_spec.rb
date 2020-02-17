@@ -10,21 +10,24 @@ resource "List clients" do
     parameter :card_number, "Name", minmum: 1, maximum: 128, type: :string, required: false
     parameter :limit, "Limit", type: :integer, required: false
     parameter :offset, "Offset", type: :integer, required: false
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)
       @store = create_store(@creator)
+      create_program(@company)
       @operator = create_operator(create_user, @store, @company)
       @client_user = create_client(@company)
     end
 
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:phone) { @client_user.phone }
       let(:name) { @client_user.first_name }
-      let(:card_number) { @client_user.client.card_number }
+      let(:card_number) { @client_user.client(@company).card_number }
 
       let(:raw_post) { params.to_json }
 
@@ -64,6 +67,7 @@ resource "Check client phone" do
 
   get "api/v1/clients/phone" do
     parameter :phone, "Phone", type: :string,  required: false
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -75,6 +79,7 @@ resource "Check client phone" do
     end
 
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:phone) { @client_user.phone }
@@ -126,6 +131,7 @@ resource "Create client" do
     #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
     parameter :card_number, "Card number", type: :string, in: :body
     parameter :recommendator_phone, "Recommendator phone", type: :string, in: :body, required: false
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @user = create_creator(create_user)
@@ -136,6 +142,7 @@ resource "Create client" do
     end
 
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:phone) { "79992238223" }
@@ -168,6 +175,7 @@ resource "Create client" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -181,6 +189,7 @@ resource "Create client" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not operator" do
         do_request
@@ -195,15 +204,16 @@ resource "Update client" do
   header "Authorization", :authorization
 
   put "api/v1/clients/:id" do
-    parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
-    parameter :email, "Email", type: :string, in: :body, required: true
-    parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
-    parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
-    parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
-    parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
+    # parameter :phone, "Phone (format: 7xxxxxxxxxx)", type: :string, in: :body, required: true
+    # parameter :email, "Email", type: :string, in: :body, required: true
+    # parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    # parameter :last_name, "Last name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    # parameter :second_name, "Second name", minmum: 1, maximum: 128, type: :string, in: :body
+    # parameter :gender, "Gender", type: :string, in: :body, enum: ["male", "female"]
+    # parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
     parameter :card_number, "Card number", type: :string, in: :body
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -216,12 +226,9 @@ resource "Update client" do
 
     let(:id) { @client_user.id }
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
-      let(:phone) { "380501009533" }
-      let(:first_name) { "new test" }
-      let(:last_name) { "new test" }
-      let(:second_name) { "new test" }
 
       let(:raw_post) { params.to_json }
 
@@ -231,28 +238,12 @@ resource "Update client" do
 
         body = JSON.parse(response_body)
         expect(status).to eq(200)
-        expect(body["phone"]).to eq("380501009533")
-        expect(body["first_name"]).to eq("new test")
-        expect(body["last_name"]).to eq("new test")
-        expect(body["second_name"]).to eq("new test")
-      end
-    end
-
-    context "Wrong fields" do
-      let(:email) { "f" }
-      let(:first_name) { "" }
-      let(:store_id) { 0 }
-
-      let(:raw_post) { params.to_json }
-
-      example "Wrong fields" do
-        do_request
-        expect(status).to eq(422)
       end
     end
 
     context "Not found" do
       let(:id) { 0 }
+      let(:raw_post) { params.to_json }
 
       example "Not found" do
         do_request
@@ -262,6 +253,7 @@ resource "Update client" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -275,6 +267,7 @@ resource "Update client" do
       end
 
       let(:authorization) { @wrong_operator.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not operator" do
         do_request
@@ -290,7 +283,8 @@ resource "Add points" do
 
   post "api/v1/clients/:id/points" do
     parameter :points, "Points", minmum: 0, maximum: 100000000, type: :integer, in: :body, required: true
-    
+    parameter :company_id, "Company id", type: :integer, required: true
+
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)
@@ -302,6 +296,7 @@ resource "Add points" do
 
     let(:id) { @client_user.id }
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:points) { 100000 }
@@ -325,6 +320,7 @@ resource "Add points" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -338,6 +334,7 @@ resource "Add points" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not operator" do
         do_request
@@ -352,6 +349,8 @@ resource "Client profile" do
   header "Authorization", :authorization
 
   get "api/v1/clients/profile" do
+    parameter :company_id, "Company id", type: :integer, required: true
+
     before do
       @creator = create_creator(create_user)
       @company = create_company(@creator)
@@ -360,6 +359,7 @@ resource "Client profile" do
     end
 
     let(:authorization) { @client_user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
  
@@ -384,6 +384,8 @@ resource "Client orders" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   get "api/v1/clients/profile/orders" do
     before do
       @creator = create_creator(create_user)
@@ -397,6 +399,7 @@ resource "Client orders" do
     end
 
     let(:authorization) { @client_user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       example "Success" do
@@ -430,6 +433,7 @@ resource "Update profile" do
     #parameter :birth_day, "Date of birth (format: dd.mm.yyyy)", type: :string, in: :body
     #parameter :loyalty_program_id, "Loyalty program", type: :integer, in: :body
     #parameter :card_number, "Card number", type: :string, in: :body
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -441,6 +445,7 @@ resource "Update profile" do
     end
 
     let(:authorization) { @client_user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:first_name) { "new test" }
@@ -475,6 +480,7 @@ resource "Update profile" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request

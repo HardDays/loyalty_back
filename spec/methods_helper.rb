@@ -1,5 +1,5 @@
 def create_user
-    user = User.new(email: SecureRandom.hex + "@" + SecureRandom.hex + ".xx", password: "1234567", first_name: "test", last_name: "test")
+    user = User.new(phone: "+7999" + rand(1000000..10000000).to_s, email: SecureRandom.hex + "@" + SecureRandom.hex + ".xx", password: "1234567", first_name: "test", last_name: "test")
     user.save
     user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
     return user
@@ -9,26 +9,29 @@ def create_creator(user)
     # t = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
     # t.save
 
-    user.create_creator
+    cr = user.creators.build
+    cr.save
     return user
 end
 
 def create_operator(user, store, company)
-    user.create_operator(store_id: store.id, company_id: company.id, operator_status: :active)
+    op = user.operators.build(store_id: store.id, company_id: company.id, operator_status: :active)
+    op.save
     return user
 end
 
 def create_client(company)
-    user = User.new(phone: "+799" + rand(10000000..100000000).to_s, password: "1234567", first_name: "test", last_name: "test")
+    user = User.new(phone: "+799" + rand(10000000..100000000).to_s, email: SecureRandom.hex + "@" + SecureRandom.hex + ".xx",  password: "1234567", first_name: "test", last_name: "test")
     user.save
     user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
-    user.create_client(company_id: company.id, card_number: '12345', loyalty_program: company.loyalty_program)
+    cl = user.clients.build(company_id: company.id, card_number: '12345', loyalty_program: company.loyalty_program)
+    cl.save
     return user
 end
 
 def create_company(user)
     company = Company.new(name: "test")
-    company.creator = user.creator
+    company.creator = user.creators.first
     
     # tariff_plan = TariffPlan.new(name: "test", description: "test", days: 7, tariff_type: :demo, price: 0)
     # tariff_plan.save
@@ -40,13 +43,13 @@ end
 
 def create_store(user)
     store = Store.new(name: "test", country: "test", street: "test", city: "test", house: "1" )
-    store.company = user.creator.company
+    store.company = user.creators.first.company
     store.save
     return store
 end
 
 def create_order(user, operator, store, promotion)
-    order = Order.new(price: 10000, promotion: promotion, client: user.client, write_off_status: :not_written_off, store: store, operator: operator.operator)
+    order = Order.new(price: 10000, promotion: promotion, client: user.clients.first, write_off_status: :not_written_off, store: store, operator: operator.operators.first)
     order.save
     return order
 end

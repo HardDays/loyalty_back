@@ -1,19 +1,27 @@
 class Operator < ApplicationRecord
   
-  belongs_to :store, optional: true
-  belongs_to :company
-  belongs_to :user
+    belongs_to :store, optional: true
+    belongs_to :company
+    belongs_to :user
 
-  has_many :orders, dependent: :nullify
+    has_many :orders, dependent: :nullify
 
-  enum operator_status: [:active, :deleted]
+    enum operator_status: [:active, :deleted]
 
-  def as_json(options = {})
-    attrs = super.except('user_id').except('id')
+    validates :user, uniqueness: { scope: [:company] }
+    validate :validate_store
 
-    attrs[:user_type] = :operator
-    attrs[:operator_status] = operator_status
+    def validate_store
+        if store.present? && store.company.id != company.id
+            errors.add(:store, 'WRONG_FIELD')
+        end
+    end
 
-    return attrs
-  end
+    def as_json(options = {})
+        attrs = super.except('user_id').except('id')
+
+        #attrs[:user_type] = :operator
+
+        return attrs
+    end
 end

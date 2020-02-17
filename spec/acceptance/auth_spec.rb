@@ -14,8 +14,8 @@ resource "Login" do
     let(:raw_post) { params.to_json }
 
     example "Success" do
-      user = User.new(email: email, password: password, first_name: "test", last_name: "test")
-      user.save
+      user = User.new(email: email, phone: "+7999" + rand(1000000..10000000).to_s, password: password, first_name: "test", last_name: "test")
+      user.save!
       user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
 
       do_request
@@ -28,7 +28,7 @@ resource "Login" do
     end
 
     example "Wrong password" do
-      user = User.new(email: email, password: '7654321', first_name: "test", last_name: "test")
+      user = User.new(email: email, phone: "+7999" + rand(1000000..10000000).to_s, password: '7654321', first_name: "test", last_name: "test")
       user.save
       user.create_user_confirmation(confirm_status: :confirmed, confirm_hash: SecureRandom.hex)
 
@@ -37,7 +37,7 @@ resource "Login" do
     end
 
     example "Email or phone not confirmed" do
-      user = User.new(email: email, password: password, first_name: "test", last_name: "test")
+      user = User.new(email: email, phone: "+7999" + rand(1000000..10000000).to_s, password: password, first_name: "test", last_name: "test")
       user.save
       user.create_user_confirmation(confirm_status: :unconfirmed, confirm_hash: SecureRandom.hex)
 
@@ -62,8 +62,9 @@ resource "Confirmation" do
       let(:raw_post) { params.to_json }
 
       example "Phone success" do
-        user = User.new(phone: "79992281489", password: '1234567', first_name: "test", last_name: "test")
-        user.save
+        user = User.new(email: "test@te23123123321xt.xxt",  phone: "79992281489", password: '1234567', first_name: "test", last_name: "test")
+        user.save!
+        puts json: user.errors
         user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
         do_request
@@ -78,8 +79,8 @@ resource "Confirmation" do
       let(:raw_post) { params.to_json }
 
       example "Phone success" do
-        user = User.new(email: "test@text.xxt", password: '1234567', first_name: "test", last_name: "test")
-        user.save
+        user = User.new(email: "test@text.xxt",phone: "+7999" + rand(1000000..10000000).to_s, password: '1234567', first_name: "test", last_name: "test")
+        user.save!
         user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
         do_request
@@ -88,8 +89,9 @@ resource "Confirmation" do
     end
 
     example "Not found" do
-      user = User.new(phone: '79992281487', password: '1234567', first_name: "test", last_name: "test")
-      user.save
+      user = User.new(email: "test@tex12121121221212t.xxt", phone: '79992281487', password: '1234567', first_name: "test", last_name: "test")
+      user.save!
+      puts json: user.errors
       user.create_user_confirmation(confirm_status: :unconfirmed, code: "0000")
 
       do_request

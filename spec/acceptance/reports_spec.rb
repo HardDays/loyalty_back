@@ -8,6 +8,7 @@ resource "General report" do
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
   parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
+  parameter :company_id, "Company id", type: :integer, required: true
 
   before do
     @creator = create_creator(create_user)
@@ -18,6 +19,7 @@ resource "General report" do
   end
 
   let(:authorization) { @creator.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/reports/general" do
     context "Success" do
@@ -50,7 +52,8 @@ resource "Orders report" do
   parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
-  
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @creator = create_creator(create_user)
     @company = create_company(@creator)
@@ -58,24 +61,25 @@ resource "Orders report" do
     @operator = create_operator(create_user, @store, @company)
     @program = create_program(@company)
     @customer = create_client(@company)
-    @customer.client.loyalty_program = @program
-    @customer.client.save
+    @customer.client(@company).loyalty_program = @program
+    @customer.client(@company).save
 
     @order = Order.new(price: 5000)
-    @order.operator = @operator.operator
-    @order.client = @customer.client
+    @order.operator = @operator.operator(@company)
+    @order.client = @customer.client(@company)
     @order.loyalty_program = @program
     @order.store = @store 
     @order.write_off_status = :not_written_off
     @order.save
 
-    ClientPointsHelper.create_from_program(@customer.client, @order, @program, nil)
+    ClientPointsHelper.create_from_program(@customer.client(@company), @order, @program, nil)
   end
 
   # let(:stores) { [@store.id] }
   # let(:loyalty_programs) { [@program.id] }
   # let(:operators) { [@operator.id] }
   let(:authorization) { @creator.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/reports/orders" do
     context "Success" do
@@ -108,7 +112,8 @@ resource "Clients report" do
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
-  
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @creator = create_creator(create_user)
     @company = create_company(@creator)
@@ -116,21 +121,22 @@ resource "Clients report" do
     @operator = create_operator(create_user, @store, @company)
     @program = create_program(@company)
     @customer = create_client(@company)
-    @customer.client.loyalty_program = @program
-    @customer.client.save
+    @customer.client(@company).loyalty_program = @program
+    @customer.client(@company).save
 
     @order = Order.new(price: 5000)
-    @order.operator = @operator.operator
-    @order.client = @customer.client
+    @order.operator = @operator.operator(@company)
+    @order.client = @customer.client(@company)
     @order.loyalty_program = @program
     @order.store = @store 
     @order.write_off_status = :not_written_off
     @order.save
     
-    ClientPointsHelper.create_from_program(@customer.client, @order, @program, nil)
+    ClientPointsHelper.create_from_program(@customer.client(@company), @order, @program, nil)
   end
 
   let(:authorization) { @creator.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/reports/clients" do
     context "Success" do
@@ -161,6 +167,7 @@ resource "Sms report" do
   parameter :loyalty_programs, "Loyalty progams ids", type: :array, items: {type: :integer}
   parameter :promotions, "Promotions ids", type: :array, items: {type: :integer}
   parameter :operators, "Operators ids", type: :array, items: {type: :integer}
+  parameter :company_id, "Company id", type: :integer, required: true
 
   before do
     @creator = create_creator(create_user)
@@ -171,6 +178,7 @@ resource "Sms report" do
   end
 
   let(:authorization) { @creator.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/reports/sms" do
     context "Success" do

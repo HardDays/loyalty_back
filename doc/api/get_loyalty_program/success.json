@@ -11,6 +11,12 @@
       "required": true,
       "name": "id",
       "description": "Id"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -19,31 +25,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/loyalty_programs/9747",
+      "request_path": "api/v1/loyalty_programs/13175?company_id=32902",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4NiwiZXhwIjoxNTc3OTYxNjM4fQ.uK9kLi_ledWTa-6XVGHotWS8VpU39ef4vaJfrVFISLE",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk3MywiZXhwIjoxNTgyMzcyMjU4fQ.67wLVcq0ULx_yMKXEG3eXSQ6CXU1qoaLHBQxHDUO5kw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32902"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 9747,\n  \"company_id\": 27628,\n  \"name\": \"test\",\n  \"created_at\": \"2019-12-26T10:40:38.419Z\",\n  \"updated_at\": \"2019-12-26T10:40:38.419Z\",\n  \"sum_type\": \"one_buy\",\n  \"rounding_rule\": \"no_rounding\",\n  \"register_points\": null,\n  \"first_buy_points\": 1000,\n  \"write_off_min_price\": null,\n  \"recommend_recommendator_points\": null,\n  \"recommend_registered_points\": null,\n  \"sms_burning_days\": null,\n  \"accrual_on_register\": false,\n  \"accrual_on_first_buy\": true,\n  \"write_off_limited\": false,\n  \"sms_on_register\": false,\n  \"sms_on_points\": false,\n  \"sms_on_write_off\": false,\n  \"sms_on_burning\": false,\n  \"sms_on_birthday\": false,\n  \"accrual_on_recommend\": false,\n  \"loyalty_levels\": [\n    {\n      \"id\": 9967,\n      \"level_type\": null,\n      \"min_price\": 100,\n      \"begin_date\": null,\n      \"end_date\": null,\n      \"accrual_rule\": \"no_accrual\",\n      \"accrual_percent\": null,\n      \"accrual_points\": null,\n      \"accrual_money\": null,\n      \"burning_rule\": \"no_burning\",\n      \"burning_days\": null,\n      \"activation_rule\": \"activation_moment\",\n      \"activation_days\": null,\n      \"write_off_rule\": \"write_off_convert\",\n      \"write_off_rule_percent\": 30,\n      \"write_off_rule_points\": 100,\n      \"accordance_rule\": \"no_accordance\",\n      \"accordance_points\": null,\n      \"accordance_percent\": null,\n      \"accrual_on_points\": false,\n      \"accrual_on_birthday\": null,\n      \"birthday_points\": null,\n      \"created_at\": \"2019-12-26T10:40:38.422Z\",\n      \"updated_at\": \"2019-12-26T10:40:38.422Z\",\n      \"loyalty_program_id\": 9747,\n      \"write_off_points\": null,\n      \"write_off_money\": null,\n      \"promotion\": null,\n      \"name\": null\n    }\n  ]\n}",
+      "response_body": "{\n  \"id\": 13175,\n  \"company_id\": 32902,\n  \"name\": \"test\",\n  \"created_at\": \"2020-02-15T11:50:58.992Z\",\n  \"updated_at\": \"2020-02-15T11:50:58.992Z\",\n  \"sum_type\": \"one_buy\",\n  \"rounding_rule\": \"no_rounding\",\n  \"register_points\": null,\n  \"first_buy_points\": 1000,\n  \"write_off_min_price\": null,\n  \"recommend_recommendator_points\": null,\n  \"recommend_registered_points\": null,\n  \"sms_burning_days\": null,\n  \"accrual_on_register\": false,\n  \"accrual_on_first_buy\": true,\n  \"write_off_limited\": false,\n  \"sms_on_register\": false,\n  \"sms_on_points\": false,\n  \"sms_on_write_off\": false,\n  \"sms_on_burning\": false,\n  \"sms_on_birthday\": false,\n  \"accrual_on_recommend\": false,\n  \"loyalty_levels\": [\n    {\n      \"id\": 13421,\n      \"level_type\": null,\n      \"min_price\": 100,\n      \"begin_date\": null,\n      \"end_date\": null,\n      \"accrual_rule\": \"no_accrual\",\n      \"accrual_percent\": null,\n      \"accrual_points\": null,\n      \"accrual_money\": null,\n      \"burning_rule\": \"no_burning\",\n      \"burning_days\": null,\n      \"activation_rule\": \"activation_moment\",\n      \"activation_days\": null,\n      \"write_off_rule\": \"write_off_convert\",\n      \"write_off_rule_percent\": 30,\n      \"write_off_rule_points\": 100,\n      \"accordance_rule\": \"no_accordance\",\n      \"accordance_points\": null,\n      \"accordance_percent\": null,\n      \"accrual_on_points\": false,\n      \"accrual_on_birthday\": null,\n      \"birthday_points\": null,\n      \"created_at\": \"2020-02-15T11:50:58.994Z\",\n      \"updated_at\": \"2020-02-15T11:50:58.994Z\",\n      \"loyalty_program_id\": 13175,\n      \"write_off_points\": null,\n      \"write_off_money\": null,\n      \"promotion\": null,\n      \"name\": null\n    }\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"bd50232f3cd200ad4c7b5f134d33c363\"",
+        "ETag": "W/\"e4aa97ff65b9333f925ae2c2e0a362c1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c8496873-943e-4ccf-a7ba-8740c4c4977e",
-        "X-Runtime": "0.006459",
+        "X-Request-Id": "7fa48ff8-1c8a-4b88-92e0-88596ea1b8fd",
+        "X-Runtime": "0.005762",
         "Vary": "Origin",
-        "Content-Length": "1313"
+        "Content-Length": "1316"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/9747\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4NiwiZXhwIjoxNTc3OTYxNjM4fQ.uK9kLi_ledWTa-6XVGHotWS8VpU39ef4vaJfrVFISLE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/13175?company_id=32902\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk3MywiZXhwIjoxNTgyMzcyMjU4fQ.67wLVcq0ULx_yMKXEG3eXSQ6CXU1qoaLHBQxHDUO5kw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

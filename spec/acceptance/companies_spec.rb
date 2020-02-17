@@ -60,7 +60,7 @@ resource "Create company" do
 
       example "User is not creator" do
         do_request
-        expect(status).to eq(403)
+        expect(status).to eq(422)
       end
     end
   end
@@ -72,13 +72,15 @@ resource "Update company" do
 
   before do
     @user = create_creator(create_user)
-    create_company(@user)
+    @company = create_company(@user)
   end
   
   let(:authorization) { @user.token }
+  let(:company_id) { @company.id }
 
   put "api/v1/companies" do
     parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
 
     context "Success" do
       let(:name) { "new name" }
@@ -137,12 +139,15 @@ resource "Get company" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @user = create_creator(create_user)
-    create_company(@user)
+    @company = create_company(@user)
   end
   
   let(:authorization) { @user.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/companies" do  
     context "Success" do

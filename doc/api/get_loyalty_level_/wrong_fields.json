@@ -176,6 +176,12 @@
       "required": true,
       "name": "accrual_on_points",
       "description": "Accrual when points added"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -185,10 +191,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_levels",
-      "request_body": "{\"loyalty_program_id\":9730}",
+      "request_body": "{\"loyalty_program_id\":13158,\"company_id\":32881}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY2MCwiZXhwIjoxNTc3OTYxNjM3fQ.zTo2Zkc9FWLc2JTQfuQ3JDdwJFFlwbuDXG8mSs6Cl2Y",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk0NywiZXhwIjoxNTgyMzcyMjU4fQ.NavTScQe99TPfT0dEMYqwbP6On6Bn0bSMj1Bg5PKXfU",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -201,13 +207,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "05131e6e-2f68-4ead-b5d0-63b348a2ce51",
-        "X-Runtime": "0.014060",
+        "X-Request-Id": "21fdf972-c315-4554-ab48-0ad251a2d63c",
+        "X-Runtime": "0.014905",
         "Vary": "Origin",
         "Content-Length": "260"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":9730}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY2MCwiZXhwIjoxNTc3OTYxNjM3fQ.zTo2Zkc9FWLc2JTQfuQ3JDdwJFFlwbuDXG8mSs6Cl2Y\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels\" -d '{\"loyalty_program_id\":13158,\"company_id\":32881}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk0NywiZXhwIjoxNTgyMzcyMjU4fQ.NavTScQe99TPfT0dEMYqwbP6On6Bn0bSMj1Bg5PKXfU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

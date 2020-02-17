@@ -6,7 +6,12 @@
   "description": "User is not creator",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -14,11 +19,11 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/loyalty_levels/9961",
-      "request_body": "{}",
+      "request_path": "api/v1/loyalty_levels/13415",
+      "request_body": "{\"company_id\":32892}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY3NCwiZXhwIjoxNTc3OTYxNjM4fQ.rtTSvpJQ8CGeeAKb4lw0Z2BweL4TIRejcr4-DZF9S-s",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk2MSwiZXhwIjoxNTgyMzcyMjU4fQ.6YyWlZPA9h3XjOBUtrwFPCqNH-UTAwUd8t-V5UcUcYw",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0c1d1d2b-e4eb-40f5-89a5-fe41a9aa46a1",
-        "X-Runtime": "0.003354",
+        "X-Request-Id": "a3e23a94-12b3-4ed7-898a-ae7bb948bf41",
+        "X-Runtime": "0.004862",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/9961\" -d '{}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY3NCwiZXhwIjoxNTc3OTYxNjM4fQ.rtTSvpJQ8CGeeAKb4lw0Z2BweL4TIRejcr4-DZF9S-s\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/13415\" -d '{\"company_id\":32892}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk2MSwiZXhwIjoxNTgyMzcyMjU4fQ.6YyWlZPA9h3XjOBUtrwFPCqNH-UTAwUd8t-V5UcUcYw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

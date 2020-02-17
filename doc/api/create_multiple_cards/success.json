@@ -28,6 +28,12 @@
       "required": true,
       "name": "points",
       "description": "Points"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -37,10 +43,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards/range",
-      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337}",
+      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":32840}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1MiwiZXhwIjoxNTc3OTYxNjM0fQ.ydWCNYmND8Vi0wp82mr9-n0SjQqvw19T0qrv8uKXsCc",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0MiwiZXhwIjoxNTgyMzcyMjU0fQ.xv2j3EzrWj1HdVM1IsKO7oFzrmugOh2y-sw_2KrPh-k",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -54,13 +60,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e5192231-004d-461d-8275-0b593c352b0f",
-        "X-Runtime": "0.070836",
+        "X-Request-Id": "bd4d417a-2682-48b8-94b6-d523fdb51b14",
+        "X-Runtime": "0.084756",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1MiwiZXhwIjoxNTc3OTYxNjM0fQ.ydWCNYmND8Vi0wp82mr9-n0SjQqvw19T0qrv8uKXsCc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":32840}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0MiwiZXhwIjoxNTgyMzcyMjU0fQ.xv2j3EzrWj1HdVM1IsKO7oFzrmugOh2y-sw_2KrPh-k\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

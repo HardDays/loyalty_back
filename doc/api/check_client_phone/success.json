@@ -11,6 +11,12 @@
       "required": false,
       "name": "phone",
       "description": "Phone"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -19,16 +25,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/phone?phone=79919927414",
+      "request_path": "api/v1/clients/phone?phone=79960597516&company_id=32846",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU2OSwiZXhwIjoxNTc3OTYxNjM1fQ.ZXNYepPw7ft5OVW0dZooNWsqRlNKso32kfmF76fMY4k",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg1OSwiZXhwIjoxNTgyMzcyMjU1fQ.34waFn4tkS8ekbP-YTkCM8qEbu66buuoBfxLdAQqkuU",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79919927414"
+        "phone": "79960597516",
+        "company_id": "32846"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -38,13 +45,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"edc48cd3b0bc4fa7ba23aad40b8508a1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "49dc0b79-ad56-4980-83e8-342a5c9507aa",
-        "X-Runtime": "0.007243",
+        "X-Request-Id": "24e78fb9-5568-4b1a-a411-c5a6144eee7f",
+        "X-Runtime": "0.008344",
         "Vary": "Origin",
         "Content-Length": "15"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79919927414\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU2OSwiZXhwIjoxNTc3OTYxNjM1fQ.ZXNYepPw7ft5OVW0dZooNWsqRlNKso32kfmF76fMY4k\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79960597516&company_id=32846\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg1OSwiZXhwIjoxNTgyMzcyMjU1fQ.34waFn4tkS8ekbP-YTkCM8qEbu66buuoBfxLdAQqkuU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

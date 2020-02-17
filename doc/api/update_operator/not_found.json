@@ -7,55 +7,6 @@
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "email",
-      "description": "Email"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "first_name",
-      "description": "First name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "required": true,
-      "name": "last_name",
-      "description": "Last name"
-    },
-    {
-      "minmum": 1,
-      "maximum": 128,
-      "type": "string",
-      "in": "body",
-      "name": "second_name",
-      "description": "Second name"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "enum": [
-        "male",
-        "female"
-      ],
-      "name": "gender",
-      "description": "Gender"
-    },
-    {
-      "type": "string",
-      "in": "body",
-      "name": "birth_day",
-      "description": "Date of birth (format: dd.mm.yyyy)"
-    },
-    {
       "type": "integer",
       "in": "body",
       "name": "store_id",
@@ -66,6 +17,12 @@
       "in": "body",
       "name": "operator_status",
       "description": "Status (deleted or active)"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -75,10 +32,10 @@
     {
       "request_method": "PUT",
       "request_path": "api/v1/operators/0",
-      "request_body": null,
+      "request_body": "{\"company_id\":32911}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODcwMSwiZXhwIjoxNTc3OTYxNjM4fQ.KjSGxaxNl1rgWsAnhH1fOHZcye5osVeg8HXeVdi_mvU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk4NiwiZXhwIjoxNTgyMzcyMjU5fQ.jKQeYJX860ZEI-dIwpOZhuGxVpGFZaKRLr_EzEkiTBg",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -91,12 +48,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5dfa5ee0-501b-4bda-a565-fa33e062abbe",
-        "X-Runtime": "0.004520",
+        "X-Request-Id": "7fd7710a-ddad-42ef-9e43-bbb29536ac9f",
+        "X-Runtime": "0.006245",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators/0\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODcwMSwiZXhwIjoxNTc3OTYxNjM4fQ.KjSGxaxNl1rgWsAnhH1fOHZcye5osVeg8HXeVdi_mvU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators/0\" -d '{\"company_id\":32911}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk4NiwiZXhwIjoxNTgyMzcyMjU5fQ.jKQeYJX860ZEI-dIwpOZhuGxVpGFZaKRLr_EzEkiTBg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

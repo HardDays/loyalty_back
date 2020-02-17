@@ -2,6 +2,8 @@ resource "Create store" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   post "api/v1/stores" do
     parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
     parameter :city, "City", type: :string, minmum: 1, maximum: 64, in: :body, required: true
@@ -11,10 +13,11 @@ resource "Create store" do
 
     before do
       @user = create_creator(create_user)
-      create_company(@user)
+      @company = create_company(@user)
     end
 
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:name) { "test" }
@@ -45,6 +48,7 @@ resource "Create store" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -58,6 +62,7 @@ resource "Create store" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not creator" do
         do_request
@@ -71,14 +76,17 @@ resource "Update store" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @user = create_creator(create_user)
-    create_company(@user)
+    @company = create_company(@user)
     @store = create_store(@user)
   end
 
   let(:id) { @store.id }
   let(:authorization) { @user.token }
+  let(:company_id) { @company.id }
 
   put "api/v1/stores/:id" do
     parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
@@ -123,6 +131,7 @@ resource "Update store" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -137,6 +146,7 @@ resource "Update store" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not owner" do
         do_request
@@ -146,6 +156,7 @@ resource "Update store" do
 
     context "Not found" do
       let(:id) { 0 }
+      let(:raw_post) { params.to_json }
 
       example "Not found" do
         do_request
@@ -215,18 +226,23 @@ resource "Delete store" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @user = create_creator(create_user)
-    create_company(@user)
+    @company = create_company(@user)
     @store = create_store(@user)
   end
 
   let(:id) { @store.id }
   let(:authorization) { @user.token }
+  let(:company_id) { @company.id }
 
   delete "api/v1/stores/:id" do
 
     context "Success" do
+      let(:raw_post) { params.to_json }
+
       example "Success" do
         do_request
         expect(status).to eq(204)
@@ -236,6 +252,7 @@ resource "Delete store" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -250,6 +267,7 @@ resource "Delete store" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not owner" do
         do_request
@@ -259,6 +277,7 @@ resource "Delete store" do
 
     context "Not found" do
       let(:id) { 0 }
+      let(:raw_post) { params.to_json }
 
       example "Not found" do
         do_request
@@ -275,16 +294,18 @@ resource "List stores" do
 
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
-  
+  parameter :company_id, "Company id", type: :integer, required: true
+
   before do
     @user = create_creator(create_user)
-    create_company(@user)
+    @company =  create_company(@user)
     create_store(@user)
     create_store(@user)
     create_store(@user)
   end
 
   let(:authorization) { @user.token }
+  let(:company_id) { @company.id }
 
   get "api/v1/stores" do
     

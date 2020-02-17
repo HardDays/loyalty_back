@@ -25,6 +25,12 @@
       "required": true,
       "name": "promotion_id",
       "description": "Promotion id"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -33,17 +39,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=1643",
+      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=2277&company_id=32924",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc0MywiZXhwIjoxNTc3OTYxNjM5fQ.Vud9bbjOA-1iMjMzMzBULimwHo4ibMVXOCmCMSt9mKs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAyOCwiZXhwIjoxNTgyMzcyMjYwfQ.09iXlMOnwreQLpG7-x6YwckHPQ5DD0WoCubq01vXMCw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
         "user_id": "0",
-        "promotion_id": "1643"
+        "promotion_id": "2277",
+        "company_id": "32924"
       },
       "request_content_type": "application/json",
       "response_status": 404,
@@ -52,12 +59,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "79cf2573-e281-418a-8893-3b4e6fa07c9a",
-        "X-Runtime": "0.003212",
+        "X-Request-Id": "8fbca376-b9fa-4785-9b05-5f1ec09929e4",
+        "X-Runtime": "0.003358",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=1643\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc0MywiZXhwIjoxNTc3OTYxNjM5fQ.Vud9bbjOA-1iMjMzMzBULimwHo4ibMVXOCmCMSt9mKs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=2277&company_id=32924\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAyOCwiZXhwIjoxNTgyMzcyMjYwfQ.09iXlMOnwreQLpG7-x6YwckHPQ5DD0WoCubq01vXMCw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

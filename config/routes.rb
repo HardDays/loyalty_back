@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   #apipie
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  #TODO:!!!!!!!!!!!!!!!!!!!!!!!!! filter nested models in GET clients etc !!!!!!!!!!!!!
+
   namespace 'api' do
     namespace 'v1' do
 
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
       get 'clients/profile', action: :profile, controller: 'clients'
       get 'clients/profile/orders', action: :profile_orders, controller: 'clients'
       post 'clients', action: :create, controller: 'clients'
-      post 'clients/confirm/vk', action: :confirm_vk, controller: 'clients'
+      post 'clients/profile/confirm/vk', action: :confirm_vk, controller: 'clients'
       post 'clients/:id/points', action: :create_points, controller: 'clients'
       put 'clients/profile', action: :update_profile, controller: 'clients'
       put 'clients/:id', action: :update, controller: 'clients'

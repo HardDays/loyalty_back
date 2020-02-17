@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_094715) do
+ActiveRecord::Schema.define(version: 2020_02_13_164356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,16 +72,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_094715) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string "legal_entity"
-    t.string "postcode"
-    t.string "inn"
-    t.string "bic"
-    t.integer "bank"
-    t.string "invoice"
-    t.string "kpp"
-    t.string "checking_account"
-    t.string "phone"
-    t.string "web_site"
     t.string "name"
     t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
@@ -90,7 +80,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_094715) do
   end
 
   create_table "creators", force: :cascade do |t|
-    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

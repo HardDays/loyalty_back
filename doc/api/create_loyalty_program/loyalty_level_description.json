@@ -7,6 +7,12 @@
   "explanation": null,
   "parameters": [
     {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    },
+    {
       "type": "string",
       "in": "body",
       "required": false,

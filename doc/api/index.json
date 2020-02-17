@@ -269,13 +269,6 @@
           "method": "put"
         },
         {
-          "description": "Wrong fields",
-          "link": "update_client/wrong_fields.json",
-          "groups": "all",
-          "route": "api/v1/clients/:id",
-          "method": "put"
-        },
-        {
           "description": "Not found",
           "link": "update_client/not_found.json",
           "groups": "all",
@@ -847,13 +840,6 @@
         {
           "description": "Success",
           "link": "update_operator/success.json",
-          "groups": "all",
-          "route": "api/v1/operators/:id",
-          "method": "put"
-        },
-        {
-          "description": "Wrong fields",
-          "link": "update_operator/wrong_fields.json",
           "groups": "all",
           "route": "api/v1/operators/:id",
           "method": "put"

@@ -14,6 +14,12 @@
       "required": true,
       "name": "points",
       "description": "Points"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -22,8 +28,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/58612/points",
-      "request_body": null,
+      "request_path": "api/v1/clients/70899/points",
+      "request_body": "{\"company_id\":32859}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -39,12 +45,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f80ec2bd-7066-4764-b807-52fd8f22a2a2",
-        "X-Runtime": "0.001573",
+        "X-Request-Id": "53d99880-cc09-4c68-aec1-7c6958c318fb",
+        "X-Runtime": "0.001421",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/58612/points\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/70899/points\" -d '{\"company_id\":32859}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

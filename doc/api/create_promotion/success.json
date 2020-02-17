@@ -7,6 +7,12 @@
   "explanation": null,
   "parameters": [
     {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    },
+    {
       "type": "string",
       "minmum": 1,
       "maximum": 128,
@@ -199,10 +205,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/promotions",
-      "request_body": "{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}",
+      "request_body": "{\"company_id\":32937,\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc4NCwiZXhwIjoxNTc3OTYxNjQwfQ.xJhgxwrtUY-bz7Nth826sc4q-jAVvB4SNdeGrwJd04s",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTA2OSwiZXhwIjoxNTgyMzcyMjYxfQ.2hH61ACPTwMtUq9dRpe-s2I4EYJUlszQAAF3I836IUY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -211,18 +217,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1651,\n  \"name\": \"test\",\n  \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n  \"end_date\": \"2019-12-31T00:00:00.000Z\",\n  \"created_at\": \"2019-12-26T10:40:40.774Z\",\n  \"updated_at\": \"2019-12-26T10:40:40.774Z\",\n  \"company_id\": 27664,\n  \"accrual_rule\": \"no_accrual\",\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_rule\": \"no_burning\",\n  \"burning_days\": null,\n  \"activation_rule\": \"activation_moment\",\n  \"activation_days\": null,\n  \"write_off_rule\": \"no_write_off\",\n  \"write_off_rule_percent\": 1,\n  \"write_off_rule_points\": 1,\n  \"accordance_rule\": \"no_accordance\",\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"accrual_on_points\": false,\n  \"write_off_limited\": false,\n  \"write_off_min_price\": null,\n  \"rounding_rule\": \"no_rounding\"\n}",
+      "response_body": "{\n  \"id\": 2285,\n  \"name\": \"test\",\n  \"begin_date\": \"2019-08-31T00:00:00.000Z\",\n  \"end_date\": \"2019-12-31T00:00:00.000Z\",\n  \"created_at\": \"2020-02-15T11:51:01.907Z\",\n  \"updated_at\": \"2020-02-15T11:51:01.907Z\",\n  \"company_id\": 32937,\n  \"accrual_rule\": \"no_accrual\",\n  \"accrual_percent\": null,\n  \"accrual_points\": null,\n  \"accrual_money\": null,\n  \"burning_rule\": \"no_burning\",\n  \"burning_days\": null,\n  \"activation_rule\": \"activation_moment\",\n  \"activation_days\": null,\n  \"write_off_rule\": \"no_write_off\",\n  \"write_off_rule_percent\": 1,\n  \"write_off_rule_points\": 1,\n  \"accordance_rule\": \"no_accordance\",\n  \"accordance_points\": null,\n  \"accordance_percent\": null,\n  \"accrual_on_points\": false,\n  \"write_off_limited\": false,\n  \"write_off_min_price\": null,\n  \"rounding_rule\": \"no_rounding\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"fd4720ce3a1303673454d6cf66d6fdd9\"",
+        "ETag": "W/\"e56ecaaaaf1c01ecf3f0aad971a9ed74\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "f016f7eb-35fc-4c48-9213-c5dc28218965",
-        "X-Runtime": "0.015977",
+        "X-Request-Id": "f42cb960-066d-411b-941e-6df2be21620e",
+        "X-Runtime": "0.016250",
         "Vary": "Origin",
         "Content-Length": "684"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc4NCwiZXhwIjoxNTc3OTYxNjQwfQ.xJhgxwrtUY-bz7Nth826sc4q-jAVvB4SNdeGrwJd04s\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions\" -d '{\"company_id\":32937,\"name\":\"test\",\"begin_date\":\"31.08.2019\",\"end_date\":\"31.12.2019\",\"accrual_rule\":\"no_accrual\",\"burning_rule\":\"no_burning\",\"activation_rule\":\"activation_moment\",\"write_off_rule\":\"no_write_off\",\"write_off_rule_percent\":1,\"write_off_rule_points\":1,\"accordance_rule\":\"no_accordance\",\"rounding_rule\":\"no_rounding\",\"accrual_on_points\":false,\"write_off_limited\":false}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTA2OSwiZXhwIjoxNTgyMzcyMjYxfQ.2hH61ACPTwMtUq9dRpe-s2I4EYJUlszQAAF3I836IUY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

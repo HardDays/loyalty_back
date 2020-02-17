@@ -7,6 +7,7 @@ resource "Get program points info" do
   get "api/v1/orders/loyalty_program/points" do
     parameter :user_id, "Id of client", type: :integer, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -15,12 +16,13 @@ resource "Get program points info" do
       @operator = create_operator(create_user, @store, @company)
       @program = create_program(@company)
       @customer = create_client(@company)
-      @customer.client.loyalty_program = @program
-      @customer.client.save
+      @customer.client(@company).loyalty_program = @program
+      @customer.client(@company).save
     end
 
     let(:user_id) { @customer.id }
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:price) { 10000 }
@@ -80,6 +82,7 @@ resource "Get promotion points info" do
     parameter :user_id, "Id of client", type: :integer, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, required: true
     parameter :promotion_id, "Promotion id", type: :integer, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -94,6 +97,7 @@ resource "Get promotion points info" do
     let(:user_id) { @customer.id }
     let(:promotion_id) { @promotion.id }
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:price) { 10000 }
@@ -154,6 +158,7 @@ resource "Create order for loyalty program" do
     parameter :user_id, "Id of client", type: :integer, in: :body, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :write_off_points, "How much points to write off", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: false
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -162,12 +167,13 @@ resource "Create order for loyalty program" do
       @operator = create_operator(create_user, @store, @company)
       @program = create_program(@company)
       @customer = create_client(@company)
-      @customer.client.loyalty_program = @program
-      @customer.client.save
+      @customer.client(@company).loyalty_program = @program
+      @customer.client(@company).save
     end
 
     let(:user_id) { @customer.id }
     let(:authorization) { @operator.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:price) { 10000 }
@@ -177,7 +183,6 @@ resource "Create order for loyalty program" do
 
       example "Success" do
         do_request
-        puts json: @customer.client.client_points
         expect(status).to eq(200)
       end
     end
@@ -239,6 +244,7 @@ resource "Create order for promotion" do
     parameter :promotion_id, "Id of promotion", type: :integer, in: :body, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :write_off_points, "How much points to write off", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: false
+    parameter :company_id, "Company id", type: :integer, required: true
 
     before do
       @creator = create_creator(create_user)
@@ -253,6 +259,7 @@ resource "Create order for promotion" do
     let(:user_id) { @customer.id }
     let(:authorization) { @operator.token }
     let(:promotion_id) { @promotion.id }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:price) { 10000 }

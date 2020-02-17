@@ -6,7 +6,12 @@
   "description": "Success",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -14,31 +19,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/profile",
+      "request_path": "api/v1/clients/profile?company_id=32861",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODYxOCwiZXhwIjoxNTc3OTYxNjM2fQ.WiyD-HJt7_OC0Wb52SWC3tQaJWKTxC2exYcV2i-iYYw",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkwNSwiZXhwIjoxNTgyMzcyMjU2fQ.5TUMUeUNoTER5vtR4_9y0Dm5RMyHA-vPGohTrYUmkFw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32861"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 58618,\n  \"email\": null,\n  \"created_at\": \"2019-12-26T10:40:36.325Z\",\n  \"updated_at\": \"2019-12-26T10:40:36.325Z\",\n  \"user_type\": \"client\",\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79911647865\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"user_types\": [\n    \"client\"\n  ],\n  \"company_id\": 27587,\n  \"loyalty_program_id\": 9718,\n  \"card_number\": \"12345\",\n  \"recommendator_id\": null,\n  \"operator_id\": null,\n  \"points\": 0,\n  \"loyalty_program\": {\n    \"id\": 9718,\n    \"company_id\": 27587,\n    \"name\": \"test\",\n    \"created_at\": \"2019-12-26T10:40:36.310Z\",\n    \"updated_at\": \"2019-12-26T10:40:36.310Z\",\n    \"sum_type\": \"one_buy\",\n    \"rounding_rule\": \"no_rounding\",\n    \"register_points\": null,\n    \"first_buy_points\": 1000,\n    \"write_off_min_price\": null,\n    \"recommend_recommendator_points\": null,\n    \"recommend_registered_points\": null,\n    \"sms_burning_days\": null,\n    \"accrual_on_register\": false,\n    \"accrual_on_first_buy\": true,\n    \"write_off_limited\": false,\n    \"sms_on_register\": false,\n    \"sms_on_points\": false,\n    \"sms_on_write_off\": false,\n    \"sms_on_burning\": false,\n    \"sms_on_birthday\": false,\n    \"accrual_on_recommend\": false,\n    \"loyalty_levels\": [\n      {\n        \"id\": 9937,\n        \"level_type\": null,\n        \"min_price\": 100,\n        \"begin_date\": null,\n        \"end_date\": null,\n        \"accrual_rule\": \"no_accrual\",\n        \"accrual_percent\": null,\n        \"accrual_points\": null,\n        \"accrual_money\": null,\n        \"burning_rule\": \"no_burning\",\n        \"burning_days\": null,\n        \"activation_rule\": \"activation_moment\",\n        \"activation_days\": null,\n        \"write_off_rule\": \"write_off_convert\",\n        \"write_off_rule_percent\": 30,\n        \"write_off_rule_points\": 100,\n        \"accordance_rule\": \"no_accordance\",\n        \"accordance_points\": null,\n        \"accordance_percent\": null,\n        \"accrual_on_points\": false,\n        \"accrual_on_birthday\": null,\n        \"birthday_points\": null,\n        \"created_at\": \"2019-12-26T10:40:36.310Z\",\n        \"updated_at\": \"2019-12-26T10:40:36.310Z\",\n        \"loyalty_program_id\": 9718,\n        \"write_off_points\": null,\n        \"write_off_money\": null,\n        \"promotion\": null,\n        \"name\": null\n      }\n    ]\n  }\n}",
+      "response_body": "{\n  \"id\": 70905,\n  \"email\": \"c5d2343aa2d7a7961f456352a2ad5834@8dbd483c48ee3bb9b86c784f977fd515.xx\",\n  \"created_at\": \"2020-02-15T11:50:56.565Z\",\n  \"updated_at\": \"2020-02-15T11:50:56.565Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79990648585\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-02-15T11:50:56.576Z\",\n      \"updated_at\": \"2020-02-15T11:50:56.576Z\",\n      \"company_id\": 32861,\n      \"loyalty_program_id\": 13146,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"2d7507793888938fed6f05cf1a7639d3\"",
+        "ETag": "W/\"774b671e31e55aed4a0b04b357cf3741\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e8209795-ab2d-48a4-9fe6-9042804d26cc",
-        "X-Runtime": "0.017080",
+        "X-Request-Id": "950ae71f-8451-41a6-a2ca-22eb16e8992e",
+        "X-Runtime": "0.009129",
         "Vary": "Origin",
-        "Content-Length": "1714"
+        "Content-Length": "543"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODYxOCwiZXhwIjoxNTc3OTYxNjM2fQ.WiyD-HJt7_OC0Wb52SWC3tQaJWKTxC2exYcV2i-iYYw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile?company_id=32861\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkwNSwiZXhwIjoxNTgyMzcyMjU2fQ.5TUMUeUNoTER5vtR4_9y0Dm5RMyHA-vPGohTrYUmkFw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

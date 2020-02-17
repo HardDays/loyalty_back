@@ -5,6 +5,7 @@ resource "Register creator" do
 
   post "api/v1/creators" do
     parameter :email, "Email", type: :string, in: :body, required: true
+    parameter :phone, "Phone", type: :string, in: :body, required: true
     parameter :password, "Password", minmum: 7, maximum: 64, type: :string, in: :body, required: true
     parameter :password_confirmation, "Password confirm", minmum: 7, maximum: 64, type: :string, in: :body
     parameter :first_name, "First name", minmum: 1, maximum: 128, type: :string, in: :body, required: true
@@ -15,6 +16,7 @@ resource "Register creator" do
 
     context "Success" do
       let(:email) { "test@test.com" }
+      let(:phone) { "+79993331122" }
       let(:password) { "1234567" }
       let(:password_confirmation) { "1234567" }
       let(:first_name) { "test" }

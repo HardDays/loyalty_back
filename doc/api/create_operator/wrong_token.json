@@ -14,6 +14,13 @@
       "description": "Email"
     },
     {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "phone",
+      "description": "Phone"
+    },
+    {
       "minmum": 1,
       "maximum": 128,
       "type": "string",
@@ -60,6 +67,12 @@
       "in": "body",
       "name": "store_id",
       "description": "Store"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -69,7 +82,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/operators",
-      "request_body": null,
+      "request_body": "{\"company_id\":32908}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -85,12 +98,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "902aee9e-65c6-41d7-ab1d-1ba320c1ca19",
-        "X-Runtime": "0.001303",
+        "X-Request-Id": "fddb759b-7932-4b25-8f66-1e8a454beda0",
+        "X-Runtime": "0.001451",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '{\"company_id\":32908}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

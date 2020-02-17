@@ -39,6 +39,12 @@
       "required": false,
       "name": "offset",
       "description": "Offset"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -47,34 +53,35 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients?phone=79975971632&name=test&card_number=12345",
+      "request_path": "api/v1/clients?phone=79976851238&name=test&card_number=12345&company_id=32843",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1OSwiZXhwIjoxNTc3OTYxNjM0fQ.oqhdyqLl6tUQV17_TFzqRV47nNeYhkGWznoUtDqHDlw",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0OSwiZXhwIjoxNTgyMzcyMjU0fQ.OsQ6TES-WgluFRsd5Cqcue2j0Ypj9dsAXUWbUAmX2bA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79975971632",
+        "phone": "79976851238",
         "name": "test",
-        "card_number": "12345"
+        "card_number": "12345",
+        "company_id": "32843"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n\n]",
+      "response_body": "[\n  {\n    \"id\": 70850,\n    \"email\": \"52ccaa4d6e51edc82dccc7225e50778c@1b5376bd3f0be1b1ba2ff4e2a02735a3.xx\",\n    \"created_at\": \"2020-02-15T11:50:54.832Z\",\n    \"updated_at\": \"2020-02-15T11:50:54.832Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79976851238\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n      {\n        \"created_at\": \"2020-02-15T11:50:54.859Z\",\n        \"updated_at\": \"2020-02-15T11:50:54.859Z\",\n        \"company_id\": 32843,\n        \"loyalty_program_id\": 13128,\n        \"card_number\": \"12345\",\n        \"recommendator_id\": null,\n        \"operator_id\": null,\n        \"vk_id\": null\n      }\n    ],\n    \"operator\": [\n\n    ],\n    \"creator\": [\n\n    ]\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
+        "ETag": "W/\"76c52e8bc28c9f5dfd163a687dffb6a6\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "b5b5a479-1526-4876-a268-32561c12e47b",
-        "X-Runtime": "0.027753",
+        "X-Request-Id": "ad64d195-e009-4c26-83d5-524836c6cf32",
+        "X-Runtime": "0.034810",
         "Vary": "Origin",
-        "Content-Length": "2"
+        "Content-Length": "545"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79975971632&name=test&card_number=12345\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODU1OSwiZXhwIjoxNTc3OTYxNjM0fQ.oqhdyqLl6tUQV17_TFzqRV47nNeYhkGWznoUtDqHDlw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients?phone=79976851238&name=test&card_number=12345&company_id=32843\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0OSwiZXhwIjoxNTgyMzcyMjU0fQ.OsQ6TES-WgluFRsd5Cqcue2j0Ypj9dsAXUWbUAmX2bA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

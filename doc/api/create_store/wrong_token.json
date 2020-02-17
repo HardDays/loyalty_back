@@ -7,6 +7,12 @@
   "explanation": null,
   "parameters": [
     {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    },
+    {
       "type": "string",
       "minmum": 1,
       "maximum": 128,
@@ -59,7 +65,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/stores",
-      "request_body": null,
+      "request_body": "{\"company_id\":32964}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -75,12 +81,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "71ec5f65-6969-48d2-80d7-3f28f76bb886",
-        "X-Runtime": "0.002146",
+        "X-Request-Id": "e9099aed-c245-492e-bc4c-f88d3d17ce7e",
+        "X-Runtime": "0.001409",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores\" -d '{\"company_id\":32964}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

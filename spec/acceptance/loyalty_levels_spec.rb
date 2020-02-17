@@ -5,7 +5,9 @@ resource "Get loyalty level " do
   resource "Get loyalty level" do
     header 'Content-Type', 'application/json'
     header "Authorization", :authorization
-  
+    
+    parameter :company_id, "Company id", type: :integer, required: true
+
     get "api/v1/loyalty_levels/:id" do
       before do
         @user = create_creator(create_user)
@@ -14,6 +16,8 @@ resource "Get loyalty level " do
       end
   
       let(:id) { @program.loyalty_levels.first.id }
+      let(:company_id) { @company.id }
+
       let(:authorization) { @user.token }
   
       context "Success" do
@@ -110,9 +114,11 @@ resource "Get loyalty level " do
     # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
     # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
     # parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
 
     let(:loyalty_program_id) { @program.id }
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:name) { "name" }
@@ -226,9 +232,11 @@ resource "Update loyalty level" do
     # parameter :sms_on_burning, "Sms on burning", type: :boolean, in: :body, required: true
     # parameter :sms_burning_days, "Days for 'sms_on_burning'", type: :integer, minmum: 1, maximum: 365, in: :body
     # parameter :sms_on_birthday, "Sms on birthday", type: :boolean, in: :body, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
 
     let(:id) { @program.loyalty_levels.first.id }
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       let(:name) { "name" }
@@ -320,7 +328,10 @@ resource "Delete loyalty level" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   delete "api/v1/loyalty_levels/:id" do
+
     before do
       @user = create_creator(create_user)
       @company = create_company(@user)
@@ -329,8 +340,11 @@ resource "Delete loyalty level" do
 
     let(:id) { @program.loyalty_levels.first.id }
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
+      let(:raw_post) { params.to_json }
+
       example "Success" do
         do_request
         expect(status).to eq(204)

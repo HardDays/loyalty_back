@@ -15,6 +15,18 @@
       "type": "integer",
       "name": "offset",
       "description": "Offset"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -23,15 +35,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/promotions",
+      "request_path": "api/v1/promotions?company_id=32949",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc5OSwiZXhwIjoxNTc3OTYxNjQxfQ.ebirEFy8OyfMssiFVVa5AiWYj2Yng_hEE3KImP6gsAE",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTA4NCwiZXhwIjoxNTgyMzcyMjYyfQ.u4d7by27Ld5rULFmBfCxOH1g0q970aqzx6SNXGJ5a9I",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32949"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -41,13 +54,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "61c961bb-8730-4510-b54c-c2ddc4ad8e2b",
-        "X-Runtime": "0.009489",
+        "X-Request-Id": "8283aca3-e386-4642-a09d-1ed91571ccb2",
+        "X-Runtime": "0.009254",
         "Vary": "Origin",
         "Content-Length": "2"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODc5OSwiZXhwIjoxNTc3OTYxNjQxfQ.ebirEFy8OyfMssiFVVa5AiWYj2Yng_hEE3KImP6gsAE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions?company_id=32949\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTA4NCwiZXhwIjoxNTgyMzcyMjYyfQ.u4d7by27Ld5rULFmBfCxOH1g0q970aqzx6SNXGJ5a9I\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

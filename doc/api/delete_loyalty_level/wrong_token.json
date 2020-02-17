@@ -6,7 +6,12 @@
   "description": "Wrong token",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -14,8 +19,8 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/loyalty_levels/9959",
-      "request_body": "{}",
+      "request_path": "api/v1/loyalty_levels/13413",
+      "request_body": "{\"company_id\":32890}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "84410edc-7f21-493c-9c7b-aa5989f40e38",
-        "X-Runtime": "0.001469",
+        "X-Request-Id": "b4c8f8a8-b20f-4661-b8a4-708d4c6835c3",
+        "X-Runtime": "0.001915",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/9959\" -d '{}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/13413\" -d '{\"company_id\":32890}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

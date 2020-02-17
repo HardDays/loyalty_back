@@ -15,6 +15,12 @@
       "type": "integer",
       "name": "offset",
       "description": "Offset"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -23,31 +29,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/stores",
+      "request_path": "api/v1/stores?company_id=32977",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODg0NSwiZXhwIjoxNTc3OTYxNjQyfQ.0mdZHbG8f3Css7CXDa6i9Ljm2BX-bkmgu6M1jkwygf4",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTEzMCwiZXhwIjoxNTgyMzcyMjY0fQ.oFFEzdLV78COJ8QCpff3-HN757YAUbtqGd3MOUVK8_Q",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
+        "company_id": "32977"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 17077,\n    \"name\": \"test\",\n    \"company_id\": 27704,\n    \"created_at\": \"2019-12-26T10:40:42.610Z\",\n    \"updated_at\": \"2019-12-26T10:40:42.610Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 17078,\n    \"name\": \"test\",\n    \"company_id\": 27704,\n    \"created_at\": \"2019-12-26T10:40:42.610Z\",\n    \"updated_at\": \"2019-12-26T10:40:42.610Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 17079,\n    \"name\": \"test\",\n    \"company_id\": 27704,\n    \"created_at\": \"2019-12-26T10:40:42.610Z\",\n    \"updated_at\": \"2019-12-26T10:40:42.610Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 20314,\n    \"name\": \"test\",\n    \"company_id\": 32977,\n    \"created_at\": \"2020-02-15T11:51:04.067Z\",\n    \"updated_at\": \"2020-02-15T11:51:04.067Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 20313,\n    \"name\": \"test\",\n    \"company_id\": 32977,\n    \"created_at\": \"2020-02-15T11:51:04.060Z\",\n    \"updated_at\": \"2020-02-15T11:51:04.060Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 20312,\n    \"name\": \"test\",\n    \"company_id\": 32977,\n    \"created_at\": \"2020-02-15T11:51:04.055Z\",\n    \"updated_at\": \"2020-02-15T11:51:04.055Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"b3f1d0e014a0aea6e10ad2c860b88f67\"",
+        "ETag": "W/\"cab17d617b0af854de6249130697553a\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c8124277-b73f-4e57-bfde-ae3d66fd4b64",
-        "X-Runtime": "0.009904",
+        "X-Request-Id": "ac772abd-ad95-4b8f-9de4-e39743f37ff2",
+        "X-Runtime": "0.009313",
         "Vary": "Origin",
         "Content-Length": "556"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODg0NSwiZXhwIjoxNTc3OTYxNjQyfQ.0mdZHbG8f3Css7CXDa6i9Ljm2BX-bkmgu6M1jkwygf4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores?company_id=32977\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTEzMCwiZXhwIjoxNTgyMzcyMjY0fQ.oFFEzdLV78COJ8QCpff3-HN757YAUbtqGd3MOUVK8_Q\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -6,7 +6,12 @@
   "description": "Not found",
   "explanation": null,
   "parameters": [
-
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
   ],
   "response_fields": [
 
@@ -15,10 +20,10 @@
     {
       "request_method": "PUT",
       "request_path": "api/v1/loyalty_programs/0",
-      "request_body": null,
+      "request_body": "{\"company_id\":32899}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4MiwiZXhwIjoxNTc3OTYxNjM4fQ.8KjF1cXfYjsZWV82Z2KQydz5LheD5qpyStSWVjSFdJQ",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk2OSwiZXhwIjoxNTgyMzcyMjU4fQ.am_GmVOWXUGKZ_brt6F0d3ljfVzp17I_PwiGKaHETVE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -31,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f92b976b-c230-492c-9bcf-0990a36f7214",
-        "X-Runtime": "0.004389",
+        "X-Request-Id": "aeff114c-369a-4a55-8085-b1cb871e4a3f",
+        "X-Runtime": "0.005544",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/0\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY4MiwiZXhwIjoxNTc3OTYxNjM4fQ.8KjF1cXfYjsZWV82Z2KQydz5LheD5qpyStSWVjSFdJQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs/0\" -d '{\"company_id\":32899}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk2OSwiZXhwIjoxNTgyMzcyMjU4fQ.am_GmVOWXUGKZ_brt6F0d3ljfVzp17I_PwiGKaHETVE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

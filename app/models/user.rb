@@ -4,13 +4,19 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_one :operator, dependent: :destroy
-    has_one :creator, dependent: :destroy
-    has_one :client, dependent: :destroy
+    # has_one :operator, dependent: :destroy
+    # has_one :creator, dependent: :destroy
+    # has_one :client, dependent: :destroy
+    has_many :operators, dependent: :destroy
+    has_many :creators, dependent: :destroy
+    has_many :clients, dependent: :destroy
+    
     has_one :user_confirmation, dependent: :destroy 
 
-    validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, if: lambda { |m| !m.phone.present? || (m.email.present? && m.phone.present?) }
-    validates :phone, phone: true, uniqueness: true, presence: true, if: lambda { |m| !m.email.present? || (m.email.present? && m.phone.present?) }
+    # validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, if: lambda { |m| !m.phone.present? || (m.email.present? && m.phone.present?) }
+    # validates :phone, phone: true, uniqueness: true, presence: true, if: lambda { |m| !m.email.present? || (m.email.present? && m.phone.present?) }
+    validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true
+    validates :phone, phone: true, uniqueness: true, presence: true
     validates :password, presence: true, confirmation: true, length: {minimum: 7, maximum: 128}, if: lambda { |m| m.password.present? }
 
     validates :first_name, length: {minimum: 1, maximum: 128}
@@ -26,13 +32,13 @@ class User < ApplicationRecord
         end
     end
 
-    def company
-        if creator
-            return creator.company
-        else
-            return operator.company
-        end
-    end
+    # def company
+    #     if creator
+    #         return creator.company
+    #     else
+    #         return operator.company
+    #     end
+    # end
 
     def token
         payload = {
@@ -53,43 +59,82 @@ class User < ApplicationRecord
         end
     end
 
+    def creator(company)
+        begin
+            return creators.where(id: company.creator_id).first
+        rescue => ex
+        end
+    end
+
+    def operator(company)
+        begin
+            return operators.where(company_id: company.id, operator_status: :active).first
+        rescue => ex
+        end
+    end
+
+    def client(company)
+        begin
+            return clients.where(company_id: company.id).first
+        rescue => ex
+        end
+    end
+
+    def company_creator?(company)
+        if !creator(company)
+            raise ApplicationController::Forbidden
+        end
+    end
+
+    def company_operator?(company)
+        if !operator(company)
+            raise ApplicationController::Forbidden
+        end
+    end
+
+    def company_client?(company)
+        if !client(company)
+            raise ApplicationController::Forbidden
+        end
+    end
+
     #TODO: refactor
 
-    def role(value)
-        if !value
-            raise ApplicationController::Forbidden
-        end
-    end
+    # def role(value)
+    #     if !value
+    #         raise ApplicationController::Forbidden
+    #     end
+    # end
 
-    def roles(value)
-        if value.all?{|v| !v}
-            raise ApplicationController::Forbidden
-        end
-    end
+    # def roles(value)
+    #     if value.all?{|v| !v}
+    #         raise ApplicationController::Forbidden
+    #     end
+    # end
     
-    def creator_role
-        return self.creator != nil
-    end
+    # def creator_role
+    #     return self.creator != nil
+    # end
 
-    def operator_role
-        return self.operator != nil && self.operator.operator_status != 'deleted'
-    end
+    # def operator_role
+    #     return self.operator != nil && self.operator.operator_status != 'deleted'
+    # end
 
-    def client_role
-        return self.client != nil
-    end
+    # def client_role
+    #     return self.client != nil
+    # end
     
-    def permission(value, current)
-        if !(value && current && value.company == current.company)
-            raise ApplicationController::Forbidden
-        end
-    end
+    # def permission(value, current)
+    #     if !(value && current && value.company == current.company)
+    #         raise ApplicationController::Forbidden
+    #     end
+    # end
 
-    def permissions(value, current)
-        if !(value && current && current.all?{|c| c && c.company != value.company})
-            raise ApplicationController::Forbidden
-        end
-    end
+    # def permissions(value, current)
+    #     if !(value && current && current.all?{|c| c && c.company != value.company})
+    #         raise ApplicationController::Forbidden
+    #     end
+    # end
 
     # def creator_permission(value)
     #     self.permission(value, self.creator)
@@ -123,19 +168,27 @@ class User < ApplicationRecord
             end
         end
         
-        attrs[:user_types] = []
-        if client
-            attrs = attrs.merge(client.as_json(options))
-            attrs[:user_types] << :client
-        end
-        if creator
-            attrs = attrs.merge(creator.as_json(options))
-            attrs[:user_types] << :creator
-        end
-        if operator && operator.operator_status != 'deleted'
-            attrs = attrs.merge(operator.as_json(options))
-            attrs[:user_types] << :operator
-        end
+        attrs[:client] = clients
+        attrs[:operator] = operators
+        attrs[:creator] = creators
+
+
+        # attrs[:user_types] = []
+        # if client
+        #     attrs = attrs.merge(client.as_json(options))
+        #     attrs[:user_types] << :client
+        # end
+        # if creator
+        #     attrs = attrs.merge(creator.as_json(options))
+        #     attrs[:user_types] << :creator
+        # end
+        # if operator && operator.operator_status != 'deleted'
+        #     attrs = attrs.merge(operator.as_json(options))
+        #     attrs[:user_types] << :operator
+        # end
+
+
+
 
         return attrs.except('password_digest')
     end

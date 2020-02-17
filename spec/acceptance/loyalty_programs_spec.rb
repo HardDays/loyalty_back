@@ -2,13 +2,17 @@ resource "Create loyalty program" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   post "api/v1/loyalty_programs" do
+    
     before do
       @user = create_creator(create_user)
-      create_company(@user)
+      @company = create_company(@user)
     end
 
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Loyalty level description" do
       parameter :name, "Name", type: :string, in: :body, required: false
@@ -101,7 +105,6 @@ resource "Create loyalty program" do
     context "Wrong fields" do
       let(:name) { "" }
 
-      let(:raw_post) { params.to_json }
       let(:loyalty_levels) do
         [
           {
@@ -116,6 +119,7 @@ resource "Create loyalty program" do
           }
         ]
       end
+      let(:raw_post) { params.to_json }
 
       example "Wrong fields" do
         do_request
@@ -125,6 +129,7 @@ resource "Create loyalty program" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -138,6 +143,7 @@ resource "Create loyalty program" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not creator" do
         do_request
@@ -151,6 +157,8 @@ resource "Update loyalty program" do
   header 'Content-Type', 'application/json'
   header "Authorization", :authorization
 
+  parameter :company_id, "Company id", type: :integer, required: true
+
   put "api/v1/loyalty_programs/:id" do
     before do
       @user = create_creator(create_user)
@@ -160,6 +168,7 @@ resource "Update loyalty program" do
 
     let (:id) { @program.id }
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       parameter :name, "Name", type: :string, minmum: 1, maximum: 128, in: :body, required: true
@@ -180,6 +189,7 @@ resource "Update loyalty program" do
 
     context "Not found" do
       let(:id) { 0 }
+      let(:raw_post) { params.to_json }
 
       example "Not found" do
         do_request
@@ -189,6 +199,7 @@ resource "Update loyalty program" do
 
     context "Wrong token" do
       let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
 
       example "Wrong token" do
         do_request
@@ -202,6 +213,7 @@ resource "Update loyalty program" do
       end
 
       let(:authorization) { @wrong_user.token }
+      let(:raw_post) { params.to_json }
 
       example "User is not creator" do
         do_request
@@ -271,6 +283,7 @@ resource "Get loyalty program" do
   header "Authorization", :authorization
 
   parameter :id, "Id", type: :integer, required: true
+  parameter :company_id, "Company id", type: :integer, required: true
 
   get "api/v1/loyalty_programs/:id" do
     before do
@@ -281,6 +294,7 @@ resource "Get loyalty program" do
 
     let(:authorization) { @user.token }
     let(:id) { @porgram.id }
+    let(:company_id) { @company.id }
 
     context "Success" do
       example "Success" do
@@ -297,6 +311,7 @@ resource "List loyalty programs" do
 
   parameter :limit, "Limit", type: :integer
   parameter :offset, "Offset", type: :integer
+  parameter :company_id, "Company id", type: :integer, required: true
 
   get "api/v1/loyalty_programs" do
     before do
@@ -306,6 +321,7 @@ resource "List loyalty programs" do
     end
 
     let(:authorization) { @user.token }
+    let(:company_id) { @company.id }
 
     context "Success" do
       example "Success" do

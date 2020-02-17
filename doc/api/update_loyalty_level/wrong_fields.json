@@ -170,6 +170,12 @@
       "required": true,
       "name": "accrual_on_points",
       "description": "Accrual when points added"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
     }
   ],
   "response_fields": [
@@ -178,11 +184,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/9954",
-      "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null}",
+      "request_path": "api/v1/loyalty_levels/13408",
+      "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":32885}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY2NSwiZXhwIjoxNTc3OTYxNjM3fQ.x8cVuMqkk7BhfDgQrsUHVSoaCRj87PlsZNCYrmHtbDk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk1MiwiZXhwIjoxNTgyMzcyMjU4fQ.yY9dqkplbna1oe19H_AUB99RgaL9AD1gKsCGFKe1ywQ",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -195,13 +201,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "430cd913-e628-4014-8960-5872f51c75e0",
-        "X-Runtime": "0.013548",
+        "X-Request-Id": "24cc206e-d3d0-4d8d-87de-a7f969be8344",
+        "X-Runtime": "0.017163",
         "Vary": "Origin",
         "Content-Length": "151"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/9954\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1ODY2NSwiZXhwIjoxNTc3OTYxNjM3fQ.x8cVuMqkk7BhfDgQrsUHVSoaCRj87PlsZNCYrmHtbDk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/13408\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":32885}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDk1MiwiZXhwIjoxNTgyMzcyMjU4fQ.yY9dqkplbna1oe19H_AUB99RgaL9AD1gKsCGFKe1ywQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
