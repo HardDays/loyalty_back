@@ -33,18 +33,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=71013&price=10000&company_id=32919",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=73213&price=10000&company_id=33944",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAxMiwiZXhwIjoxNTgyMzcyMjYwfQ.vay61UOviAx3dCjrcoeaL_ErtdZHffFFR-EyCBbly68",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIxMiwiZXhwIjoxNTkwMDU5OTc5fQ.r0yizPuSP3aUHIWZCrshWpgId-sZCZlWHOHJoLf5SJ0",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "71013",
+        "user_id": "73213",
         "price": "10000",
-        "company_id": "32919"
+        "company_id": "33944"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -54,13 +54,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a3e673e3-7cd9-4c5a-a9b8-8783ce839e7c",
-        "X-Runtime": "0.022102",
+        "X-Request-Id": "050b9809-d015-4b05-9a50-1b49769ed5e7",
+        "X-Runtime": "0.022097",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=71013&price=10000&company_id=32919\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAxMiwiZXhwIjoxNTgyMzcyMjYwfQ.vay61UOviAx3dCjrcoeaL_ErtdZHffFFR-EyCBbly68\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=73213&price=10000&company_id=33944\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIxMiwiZXhwIjoxNTkwMDU5OTc5fQ.r0yizPuSP3aUHIWZCrshWpgId-sZCZlWHOHJoLf5SJ0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

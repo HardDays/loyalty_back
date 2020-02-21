@@ -1,0 +1,62 @@
+{
+  "resource": "Create vk group",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/vk/groups",
+  "description": "Wrong fields",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "group_id",
+      "description": "Vk group id"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "confirmation_code",
+      "description": "Confirmation code"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/vk/groups",
+      "request_body": "{\"company_id\":34005}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMywiZXhwIjoxNTkwMDU5OTgzfQ.KRe-_4jWsKHO3iU7Xm8RzP0q9KVc8FrpI_p0sGW-B8E",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"confirmation_code\": [\n    \"TOO_SHORT\"\n  ],\n  \"group_id\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "e66e5bc7-23ec-44d4-9ef4-8931c0b3ecbf",
+        "X-Runtime": "0.009135",
+        "Vary": "Origin",
+        "Content-Length": "60"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34005}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMywiZXhwIjoxNTkwMDU5OTgzfQ.KRe-_4jWsKHO3iU7Xm8RzP0q9KVc8FrpI_p0sGW-B8E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

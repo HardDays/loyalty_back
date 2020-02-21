@@ -29,7 +29,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/loyalty_programs?company_id=32904",
+      "request_path": "api/v1/loyalty_programs?company_id=33929",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "32904"
+        "company_id": "33929"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -47,12 +47,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "9febae82-bb47-4ce9-9478-55706b943fd7",
-        "X-Runtime": "0.001465",
+        "X-Request-Id": "65b23d84-b9f6-4236-bc38-4c5ef1658adf",
+        "X-Runtime": "0.001496",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs?company_id=32904\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs?company_id=33929\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

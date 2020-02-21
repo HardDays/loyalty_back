@@ -43,10 +43,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards/range",
-      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":32840}",
+      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":33865}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0MiwiZXhwIjoxNTgyMzcyMjU0fQ.xv2j3EzrWj1HdVM1IsKO7oFzrmugOh2y-sw_2KrPh-k",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA0MywiZXhwIjoxNTkwMDU5OTcyfQ.wIlM3zB2XaIUDYsokFsvgHlQdFS0aVw8SFzSyf-jmms",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -60,13 +60,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "bd4d417a-2682-48b8-94b6-d523fdb51b14",
-        "X-Runtime": "0.084756",
+        "X-Request-Id": "0475db87-c8f6-49a7-9b2e-d63f5e10f3c4",
+        "X-Runtime": "0.100887",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":32840}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg0MiwiZXhwIjoxNTgyMzcyMjU0fQ.xv2j3EzrWj1HdVM1IsKO7oFzrmugOh2y-sw_2KrPh-k\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":33865}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA0MywiZXhwIjoxNTkwMDU5OTcyfQ.wIlM3zB2XaIUDYsokFsvgHlQdFS0aVw8SFzSyf-jmms\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=0&company_id=32920",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=0&company_id=33945",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAxNSwiZXhwIjoxNTgyMzcyMjYwfQ.iC9M0j7nIT6XXp0a3bc4CMqX4ZSpuQ2fV68erIA74MY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIxNSwiZXhwIjoxNTkwMDU5OTc5fQ.ZYLRuQmHDMnccUU6enx2f29NHQiBDuA2HqzNrHPLhDA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
         "user_id": "0",
-        "company_id": "32920"
+        "company_id": "33945"
       },
       "request_content_type": "application/json",
       "response_status": 404,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5bdfe676-e6b9-4d31-b546-3c96a3eafc99",
-        "X-Runtime": "0.003667",
+        "X-Request-Id": "b926c6b1-aa8a-4654-a9b0-79f92ff73f74",
+        "X-Runtime": "0.004467",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=0&company_id=32920\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAxNSwiZXhwIjoxNTgyMzcyMjYwfQ.iC9M0j7nIT6XXp0a3bc4CMqX4ZSpuQ2fV68erIA74MY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=0&company_id=33945\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIxNSwiZXhwIjoxNTkwMDU5OTc5fQ.ZYLRuQmHDMnccUU6enx2f29NHQiBDuA2HqzNrHPLhDA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -16,6 +16,7 @@ resource "General report" do
     @store = create_store(@creator)
     @operator = create_operator(create_user, @store, @company)
     @program = create_program(@company)
+    @group = create_vk_group(@company)
   end
 
   let(:authorization) { @creator.token }

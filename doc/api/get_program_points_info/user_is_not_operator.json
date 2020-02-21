@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=71022&company_id=32922",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=73222&company_id=33947",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAyMywiZXhwIjoxNTgyMzcyMjYwfQ.JFD2x3fMdh8HGYQ0QlevCy33zwUyb9ld11-zOoUd0jg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIyMywiZXhwIjoxNTkwMDU5OTc5fQ.wTgVMvScH59GBg9nl8hWSaMPEegqX438AyR5Hk8979I",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "71022",
-        "company_id": "32922"
+        "user_id": "73222",
+        "company_id": "33947"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "d24f8ebe-08c2-40d5-8256-1e307582215d",
-        "X-Runtime": "0.005322",
+        "X-Request-Id": "ff5e3c62-486d-4812-91e9-a3c86dc92184",
+        "X-Runtime": "0.005304",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=71022&company_id=32922\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MTAyMywiZXhwIjoxNTgyMzcyMjYwfQ.JFD2x3fMdh8HGYQ0QlevCy33zwUyb9ld11-zOoUd0jg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=73222&company_id=33947\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzIyMywiZXhwIjoxNTkwMDU5OTc5fQ.wTgVMvScH59GBg9nl8hWSaMPEegqX438AyR5Hk8979I\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

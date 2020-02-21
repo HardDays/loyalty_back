@@ -57,6 +57,7 @@ module ReportsHelper
         cards_count = orders_date.where('clients.card_number is not null').select('clients.card_number').uniq.count
 
         average_price = orders_date.average(:price).to_i
+        total_price = orders_date.sum(:price)
 
         points = ClientPoint.joins(:client).where(client: clients_new)
 
@@ -64,6 +65,19 @@ module ReportsHelper
         current_points = filter_date(points, 'client_points.updated_at', begin_date, end_date).sum(:current_points)
         
         written_off_points = orders_date.where(write_off_status: :written_off).sum(:write_off_points)
+
+        vk_likes_count = 0
+        vk_joined_count = 0
+        vk_reposts_count = 0
+        vk_comments_count = 0 
+        if company.vk_group
+            vk_events = company.vk_group.vk_events
+            vk_events = filter_date(vk_events, 'vk_events.created_at', begin_date, end_date)
+            vk_likes_count = vk_events.where(event_type: :wall_like).count
+            vk_joined_count = vk_events.where(event_type: :group_join).count
+            vk_reposts_count = vk_events.where(event_type: :wall_repost).count
+            vk_comments_count = vk_events.where(event_type: :wall_reply_new).count
+        end
 
         # accrued_points = filter_date(points, 'client_points.created_at', begin_date, end_date)
         # accrued_points = accrued_points.sum(:initial_points)
@@ -123,8 +137,13 @@ module ReportsHelper
             orders_count: orders_count,
             cards_count: cards_count,
             average_price: average_price,
+            total_price: total_price,
             accrued_points: accrued_points,
             written_off_points: written_off_points,
+            vk_likes_count: vk_likes_count,
+            vk_joined_count: vk_joined_count,
+            vk_reposts_count: vk_reposts_count,
+            vk_comments_count: vk_comments_count
             #current_points: current_points,
             # accrued_points: accrued_points,
             # written_off_points: written_off_points,

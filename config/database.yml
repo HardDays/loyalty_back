@@ -12,6 +12,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
+development:
+  <<: *default
+  database: loyalty_back2
+
+test:
+  <<: *default
+  database: loyalty_back2_test
+
 # моя база
 
 # default: &default
@@ -22,13 +30,14 @@ default: &default
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5   } %>
 #   timeout: 5000
 
-development:
-  <<: *default
-  database: loyalty_lend_test
+# development:
+#   <<: *default
+#   database: loyalty_lend
 
-test:
-  <<: *default
-  database: loyalty_lend_test
+# test:
+#   <<: *default
+#   database: loyalty_lend_test
+
 
 production:
   <<: *default

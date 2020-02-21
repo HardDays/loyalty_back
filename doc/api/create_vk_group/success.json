@@ -1,0 +1,63 @@
+{
+  "resource": "Create vk group",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/vk/groups",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "group_id",
+      "description": "Vk group id"
+    },
+    {
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "confirmation_code",
+      "description": "Confirmation code"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/vk/groups",
+      "request_body": "{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"company_id\":34004}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMiwiZXhwIjoxNTkwMDU5OTgzfQ.Xl6SEowPOhdymIbL4Sw9O8p2zNT8UiTYFmbZnbTHXNk",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 2,\n  \"company_id\": 34004,\n  \"confirmation_code\": \"45857340\",\n  \"confirmed\": false,\n  \"callback_code\": \"df459f090\",\n  \"created_at\": \"2020-02-21T11:19:43.558Z\",\n  \"updated_at\": \"2020-02-21T11:19:43.558Z\",\n  \"group_id\": \"123\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"df1fcc75a0ec08b6dcd006e3d503fc1c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "124ccb7d-d18b-4637-9483-ced004ddac64",
+        "X-Runtime": "0.023003",
+        "Vary": "Origin",
+        "Content-Length": "201"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"company_id\":34004}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMiwiZXhwIjoxNTkwMDU5OTgzfQ.Xl6SEowPOhdymIbL4Sw9O8p2zNT8UiTYFmbZnbTHXNk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

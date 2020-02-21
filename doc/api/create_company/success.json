@@ -26,7 +26,7 @@
       "request_body": "{\"name\":\"test\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkyMywiZXhwIjoxNTgyMzcyMjU3fQ.C5dr23O0V7YHWs1OpcT_XKnViCzi7oNw6iXPAbWNROY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzEyNCwiZXhwIjoxNTkwMDU5OTc1fQ.HXno0ETLAjffZHA0wYQXZSTjanjHzQIuV7p_owkwcpc",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -35,18 +35,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 32868,\n  \"name\": \"test\",\n  \"created_at\": \"2020-02-15T11:50:57.214Z\",\n  \"updated_at\": \"2020-02-15T11:50:57.214Z\",\n  \"tariff_plan_purchase_id\": null\n}",
+      "response_body": "{\n  \"id\": 33893,\n  \"name\": \"test\",\n  \"created_at\": \"2020-02-21T11:19:35.680Z\",\n  \"updated_at\": \"2020-02-21T11:19:35.680Z\",\n  \"tariff_plan_purchase_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"ac7ea9ccfd78cb3f55244f79923544c0\"",
+        "ETag": "W/\"cf8510250c67cc4eaf3933b40c467a4e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "96d69328-7387-4bcc-af54-13187fe186ad",
-        "X-Runtime": "0.014279",
+        "X-Request-Id": "9ba10ac6-2812-48b0-9967-b3171ed862d0",
+        "X-Runtime": "0.019917",
         "Vary": "Origin",
         "Content-Length": "137"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDkyMywiZXhwIjoxNTgyMzcyMjU3fQ.C5dr23O0V7YHWs1OpcT_XKnViCzi7oNw6iXPAbWNROY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/companies\" -d '{\"name\":\"test\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzEyNCwiZXhwIjoxNTkwMDU5OTc1fQ.HXno0ETLAjffZHA0wYQXZSTjanjHzQIuV7p_owkwcpc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

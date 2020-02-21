@@ -35,10 +35,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards",
-      "request_body": "{\"number\":\"228 882\",\"points\":1337,\"company_id\":32836}",
+      "request_body": "{\"number\":\"228 882\",\"points\":1337,\"company_id\":33861}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDgzMywiZXhwIjoxNTgyMzcyMjU0fQ.qP19X3TnuDTkbQyeolLzase_37flWYtIwfyXYIY4Qvs",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzAzNCwiZXhwIjoxNTkwMDU5OTcyfQ.YJHokWUAakG5s5aVRA_Cl8-A3svCz3paMvTuJWEgRPg",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -47,18 +47,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 921,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2020-02-15T11:50:54.258Z\",\n  \"updated_at\": \"2020-02-15T11:50:54.258Z\",\n  \"operator_id\": null,\n  \"company_id\": 32836\n}",
+      "response_body": "{\n  \"id\": 1054,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2020-02-21T11:19:32.232Z\",\n  \"updated_at\": \"2020-02-21T11:19:32.232Z\",\n  \"operator_id\": null,\n  \"company_id\": 33861\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"d03db860479f6de0310f44c12121ffc7\"",
+        "ETag": "W/\"5a04ce8088121746cc93520c4460a826\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e0c4adfb-39c4-4c2e-b12e-84e74ddf8d92",
-        "X-Runtime": "0.029878",
+        "X-Request-Id": "84b1fd29-36cc-442c-b8c5-5fbd8b5937ee",
+        "X-Runtime": "0.034840",
         "Vary": "Origin",
-        "Content-Length": "161"
+        "Content-Length": "162"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337,\"company_id\":32836}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDgzMywiZXhwIjoxNTgyMzcyMjU0fQ.qP19X3TnuDTkbQyeolLzase_37flWYtIwfyXYIY4Qvs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337,\"company_id\":33861}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzAzNCwiZXhwIjoxNTkwMDU5OTcyfQ.YJHokWUAakG5s5aVRA_Cl8-A3svCz3paMvTuJWEgRPg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

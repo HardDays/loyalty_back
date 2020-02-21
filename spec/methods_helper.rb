@@ -86,6 +86,13 @@ def create_program(company)
     return program
 end
 
+def create_vk_group(company)
+    vk_group = VkGroup.new(group_id: '123', confirmation_code: '12132132')
+    vk_group.company = company
+    vk_group.save
+    return vk_group
+end
+
 def create_promotion(company)
     promo = Promotion.new(
         name: "test", 

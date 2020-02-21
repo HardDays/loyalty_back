@@ -11,7 +11,7 @@ module Api
                     group.confirmed = false
                     group.callback_code = SecureRandom.hex[0..8]
                     if group.save
-                        render json: group, status: :ok
+                        render json: group
                     else
                         render json: group.errors, status: :unprocessable_entity
                     end
@@ -58,9 +58,9 @@ module Api
             private
 
            	def auth
-				@auth_user = User.authorize(request.headers['Authorization'])
+                @auth_user = User.authorize(request.headers['Authorization'])
                 @company = Company.find(params[:company_id])
-                @user.company_creator?(@company)
+                @auth_user.company_creator?(@company)
 			end
             
             def group_params

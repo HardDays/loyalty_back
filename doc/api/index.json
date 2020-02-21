@@ -488,33 +488,6 @@
       ]
     },
     {
-      "name": "Register creator",
-      "explanation": null,
-      "examples": [
-        {
-          "description": "Success",
-          "link": "register_creator/success.json",
-          "groups": "all",
-          "route": "api/v1/creators",
-          "method": "post"
-        },
-        {
-          "description": "Wrong fields",
-          "link": "register_creator/wrong_fields.json",
-          "groups": "all",
-          "route": "api/v1/creators",
-          "method": "post"
-        },
-        {
-          "description": "Success",
-          "link": "register_creator/success.json",
-          "groups": "all",
-          "route": "api/v1/creators",
-          "method": "get"
-        }
-      ]
-    },
-    {
       "name": "Update creator profile",
       "explanation": null,
       "examples": [
@@ -1419,6 +1392,40 @@
           "groups": "all",
           "route": "api/v1/stores",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create vk group",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_vk_group/success.json",
+          "groups": "all",
+          "route": "api/v1/vk/groups",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_vk_group/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/vk/groups",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_vk_group/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/vk/groups",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_vk_group/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/vk/groups",
+          "method": "post"
         }
       ]
     }

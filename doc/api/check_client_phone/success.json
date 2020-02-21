@@ -25,17 +25,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/phone?phone=79960597516&company_id=32846",
+      "request_path": "api/v1/clients/phone?phone=79983427646&company_id=33871",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg1OSwiZXhwIjoxNTgyMzcyMjU1fQ.34waFn4tkS8ekbP-YTkCM8qEbu66buuoBfxLdAQqkuU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA2MCwiZXhwIjoxNTkwMDU5OTczfQ.XeOvRJagwEGUxpjfbNU_8gj1APfo9PxFrbukxxv_4Jw",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79960597516",
-        "company_id": "32846"
+        "phone": "79983427646",
+        "company_id": "33871"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -45,13 +45,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"edc48cd3b0bc4fa7ba23aad40b8508a1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "24e78fb9-5568-4b1a-a411-c5a6144eee7f",
-        "X-Runtime": "0.008344",
+        "X-Request-Id": "80f84ce2-2b51-470e-9d46-fe7beb40d6ee",
+        "X-Runtime": "0.009502",
         "Vary": "Origin",
         "Content-Length": "15"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79960597516&company_id=32846\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MDg1OSwiZXhwIjoxNTgyMzcyMjU1fQ.34waFn4tkS8ekbP-YTkCM8qEbu66buuoBfxLdAQqkuU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79983427646&company_id=33871\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA2MCwiZXhwIjoxNTkwMDU5OTczfQ.XeOvRJagwEGUxpjfbNU_8gj1APfo9PxFrbukxxv_4Jw\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

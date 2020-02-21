@@ -5,4 +5,6 @@ class VkGroup < ApplicationRecord
     validates :confirmed, inclusion: {in: [true, false]}
     validates :group_id, length: {minimum: 1, maximum: 256}
 
+    has_many :vk_events
+
 end

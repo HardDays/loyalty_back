@@ -22,5 +22,4 @@ module VkHelper
             end
         end
     end
-
 end
