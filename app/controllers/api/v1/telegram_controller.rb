@@ -30,7 +30,16 @@ module Api
                                 group.group_id = params[:message][:chat][:id]
                                 group.save
                             end
-                        else
+                        end
+                    end
+                    if params[:message] && params[:message][:new_chat_participant]
+                        group = TelegramGroup.find_by(group_id: params[:message][:chat][:id])
+                        if group
+                            client = Client.find_by(telegram_id: params[:message][:new_chat_participant][:username])
+                            if client
+                                event = TelegramEvent.new(client_id: client.id, telegram_group_id: group.id, event_type: :group_join)
+                                event.save
+                            end
                         end
                     end
                 rescue => ex

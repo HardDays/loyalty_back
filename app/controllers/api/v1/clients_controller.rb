@@ -241,7 +241,7 @@ module Api
 			end
 
 			def client_params
-				params.permit(:loyalty_program_id, :card_number)
+				params.permit(:loyalty_program_id, :card_number, :vk_id, :telegram_id)
 			end
 		end
 	end
