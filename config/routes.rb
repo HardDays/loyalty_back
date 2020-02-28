@@ -55,6 +55,9 @@ Rails.application.routes.draw do
       post 'vk/groups', action: :create_group, controller: 'vk'
       post 'vk/callback/:id/:code', action: :callback, controller: 'vk'
 
+      post 'telegram/groups', action: :create_group, controller: 'telegram'
+      post 'telegram/callback/oggfhgdufugvmdfghd8f4ngf', action: :callback, controller: 'telegram'
+
       get 'loyalty_levels/:id', action: :show, controller: 'loyalty_levels'
       post 'loyalty_levels', action: :create, controller: 'loyalty_levels'
       put 'loyalty_levels/:id', action: :update, controller: 'loyalty_levels'
