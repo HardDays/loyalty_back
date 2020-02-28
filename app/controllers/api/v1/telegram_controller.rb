@@ -21,14 +21,20 @@ module Api
 
             # POST /telegram/callback 
             def callback
-                puts params[:message]
-                text = params[:message][:text].split(' ')
-                if text[0] == '/set_group'
-                    group = TelegramGroup.find_by(bot_code: text[1])
-                    if group
-                        group.group_id = params[:message][:chat][:id]
-                        group.save
+                begin
+                    if params[:message] && params[:message][:text]
+                        text = params[:message][:text].split(' ')
+                        if text[0] == '/set_group'
+                            group = TelegramGroup.find_by(bot_code: text[1])
+                            if group
+                                group.group_id = params[:message][:chat][:id]
+                                group.save
+                            end
+                        else
+                        end
                     end
+                rescue => ex
+                    puts ex
                 end
             end
     
