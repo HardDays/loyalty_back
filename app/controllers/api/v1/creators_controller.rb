@@ -13,30 +13,30 @@ module Api
 
 			# POST /creators
 			def create
-				# ActiveRecord::Base.transaction do
-				# 	user = User.find_by(email: params[:email])
-				# 	if not user
-				# 		user = User.new(user_params)
-				# 	end
-				# 	creator = user.creators.build
-				# 	if user.save
-				# 		if creator.save
-				# 			user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..3])
-				# 			begin
-				# 				ConfirmationMailer.confirmation_email(@user).deliver!
-				# 			rescue => ex
-				# 				puts json: ex
-				# 			end
-				# 			render json: user
-				# 		else
-				# 			render json: creator.errors, status: :unprocessable_entity
-				# 			raise ActiveRecord::Rollback
-				# 		end
-				# 	else
-				# 		render json: user.errors, status: :unprocessable_entity
-				# 		raise ActiveRecord::Rollback
-				# 	end
-				# end
+				ActiveRecord::Base.transaction do
+					user = User.find_by(email: params[:email])
+					if not user
+						user = User.new(user_params)
+					end
+					creator = user.creators.build
+					if user.save
+						if creator.save
+							user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..3])
+							begin
+								ConfirmationMailer.confirmation_email(@user).deliver!
+							rescue => ex
+								puts json: ex
+							end
+							render json: user
+						else
+							render json: creator.errors, status: :unprocessable_entity
+							raise ActiveRecord::Rollback
+						end
+					else
+						render json: user.errors, status: :unprocessable_entity
+						raise ActiveRecord::Rollback
+					end
+				end
 			end
 
 			# PUT /creators/profile
