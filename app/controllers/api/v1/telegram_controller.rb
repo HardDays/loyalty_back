@@ -21,7 +21,7 @@ module Api
 
             # POST /telegram/callback 
             def callback
-               puts params[:chat][:chat_id]
+               puts params[:message][:chat][:id]
                 
             end
     
