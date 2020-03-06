@@ -21,6 +21,7 @@ class Operator < ApplicationRecord
         attrs = super.except('user_id').except('id')
 
         #attrs[:user_type] = :operator
+        attrs[:company] = company
 
         return attrs
     end

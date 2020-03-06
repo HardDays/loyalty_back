@@ -23,6 +23,7 @@ class Client < ApplicationRecord
 
 		#attrs[:user_type] = :client
 		attrs[:card_number] = card_number
+		attrs[:company] = company
 
 		if options
 			if options[:points]
