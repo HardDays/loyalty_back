@@ -34,14 +34,12 @@ module Api
 					)
 					if user.save
 						if operator.save
-							if !user.persisted?
-								user.create_user_confirmation(confirm_status: :confirmed)
-								begin
-									PasswordMailer.password_email(user, user.password).deliver!
-								rescue => ex
-									puts 'EMAIL ERROR'
-									puts json: ex
-								end
+							user.create_user_confirmation(confirm_status: :confirmed)
+							begin
+								PasswordMailer.password_email(user, user.password).deliver!
+							rescue => ex
+								puts 'EMAIL ERROR'
+								puts json: ex
 							end
 							render json: user
 						else

@@ -87,16 +87,16 @@ module Api
 							card_number: params[:card_number]
 						)
 						if client.save
-							if !user.persisted?
-								notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
-								notification.client = user.client
-								notification.sms_status = :sent
-								notification.save
+							#if !user.persisted?
+							notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
+							notification.client = user.client
+							notification.sms_status = :sent
+							notification.save
 
-								SmsHelper.send_register(client, user.password)
+							SmsHelper.send_register(client, user.password)
 
-								user.create_user_confirmation(confirm_status: :confirmed, code: SecureRandom.hex[0..5])
-							end
+							user.create_user_confirmation(confirm_status: :confirmed, code: SecureRandom.hex[0..5])
+							#end
 
 							if program
 								if program.accrual_on_register
