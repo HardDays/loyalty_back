@@ -89,7 +89,7 @@ module Api
 						if client.save
 							#if !user.persisted?
 							notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
-							notification.client = user.client
+							notification.client = client
 							notification.sms_status = :sent
 							notification.save
 
