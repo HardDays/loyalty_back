@@ -24,7 +24,7 @@ module Api
 					user = User.find_by(email: params[:email])
 					if not user
 						user = User.new(user_params)
-						user.password = SecureRandom.hex(4)
+						user.password = '1234567' #SecureRandom.hex(4)
 					end
 					
 					operator = user.operators.build(
