@@ -168,9 +168,9 @@ class User < ApplicationRecord
             end
         end
         
-        attrs[:client] = clients
-        attrs[:operator] = operators
-        attrs[:creator] = creators
+        attrs[:client] = clients.as_json(options)
+        attrs[:operator] = operators.as_json(options)
+        attrs[:creator] = creators.as_json(options)
 
 
         # attrs[:user_types] = []
