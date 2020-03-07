@@ -1,9 +1,10 @@
 module Api
   	module V1
     	class LoyaltyProgramsController < ApplicationController
-			before_action :auth_create, only: [:create, :index]
+			before_action :auth_create, only: [:create]
 			before_action :auth_find, only: [:update, :destroy]
 			before_action :set_program, only: [:show]
+			before_action :auth, only: [:show, :index]
 
 			def index
 				render json: @company.loyalty_program, loyalty_levels: true
@@ -45,7 +46,7 @@ module Api
 			def auth
 				@auth_user = User.authorize(request.headers['Authorization'])
 				@company = Company.find(params[:company_id])
-				@auth_user.company_creator?(@company)
+				#@auth_user.company_creator?(@company)
 			end
 			
 			def auth_create
