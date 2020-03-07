@@ -12,7 +12,7 @@ module Api
                 if @user 
                     if @user.authenticate(params[:password]) 
                         if @user.user_confirmation.confirm_status.to_sym == :confirmed
-                            render json: @user, token: true
+                            render json: @user, token: true, loyalty_progam: true, points: true
                         else
                             render status: :forbidden
                         end
