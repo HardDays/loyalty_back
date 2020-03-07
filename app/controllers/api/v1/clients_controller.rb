@@ -2,8 +2,9 @@ module Api
   	module V1
 		class ClientsController < ApplicationController
 			before_action :auth_create, only: [:create, :index, :phone]
-			before_action :auth_find, only: [:update, :create_points, :remove_points]
+			before_action :auth_find, only: [:update]
 			before_action :auth_profile, only: [:profile, :profile_orders, :update_profile, :confirm_vk]
+			before_action :auth_find_creator, only: [:create_points, :remove_points]
 
 			# GET /clients/profile
 			def profile
@@ -226,6 +227,14 @@ module Api
 				set_user
 				@user.company_client?(@company)
 			end
+
+			def auth_find_creator
+				auth
+				@auth_user.company_creator?(@company)
+				set_user
+				@user.company_client?(@company)
+			end
+
 
 			def auth_profile
 				auth
