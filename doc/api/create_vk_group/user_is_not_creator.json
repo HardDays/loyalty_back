@@ -18,7 +18,43 @@
       "in": "body",
       "required": true,
       "name": "confirmation_code",
-      "description": "Confirmation code"
+      "description": "Confirmation code (use this code for link for callback api: https://fathomless-earth-40434.herokuapp.com/api/test/v1/vk/callback/<company_id>/<code>) "
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "group_join_points",
+      "description": "Group join"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_repost_points",
+      "description": "Repost"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_like_points",
+      "description": "Post like"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_reply_points",
+      "description": "Post comment"
     },
     {
       "type": "integer",
@@ -34,10 +70,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/vk/groups",
-      "request_body": "{\"company_id\":34007}",
+      "request_body": "{\"company_id\":34469}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzNiwiZXhwIjoxNTkwMDU5OTgzfQ.EhCeLGHGPq7-72CacgzxoUw0DgBKsdCRJd3xH0X8nT8",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDMyOSwiZXhwIjoxNTkxNjA3Mzc5fQ.1p1rc6GOGz2VhqOtH_HPkm_cwHF1oJ1f7_x_fmLcfss",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -50,12 +86,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "3077ba4c-d75e-4d74-911f-fd5b59072611",
-        "X-Runtime": "0.004305",
+        "X-Request-Id": "8d07997d-a6fe-420b-8313-575def4d42dd",
+        "X-Runtime": "0.003901",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34007}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzNiwiZXhwIjoxNTkwMDU5OTgzfQ.EhCeLGHGPq7-72CacgzxoUw0DgBKsdCRJd3xH0X8nT8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34469}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDMyOSwiZXhwIjoxNTkxNjA3Mzc5fQ.1p1rc6GOGz2VhqOtH_HPkm_cwHF1oJ1f7_x_fmLcfss\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

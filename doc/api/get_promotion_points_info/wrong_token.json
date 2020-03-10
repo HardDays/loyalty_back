@@ -39,7 +39,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=73232&promotion_id=2418&company_id=33950",
+      "request_path": "api/v1/orders/promotion/points?user_id=74222&promotion_id=2478&company_id=34409",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -48,9 +48,9 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "73232",
-        "promotion_id": "2418",
-        "company_id": "33950"
+        "user_id": "74222",
+        "promotion_id": "2478",
+        "company_id": "34409"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -59,12 +59,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "356033ce-245b-4260-9071-00b7894d8ef7",
-        "X-Runtime": "0.001558",
+        "X-Request-Id": "17239241-5301-4af2-99ea-7312b8de280e",
+        "X-Runtime": "0.002199",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=73232&promotion_id=2418&company_id=33950\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=74222&promotion_id=2478&company_id=34409\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

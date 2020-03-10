@@ -18,7 +18,43 @@
       "in": "body",
       "required": true,
       "name": "confirmation_code",
-      "description": "Confirmation code"
+      "description": "Confirmation code (use this code for link for callback api: https://fathomless-earth-40434.herokuapp.com/api/test/v1/vk/callback/<company_id>/<code>) "
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "group_join_points",
+      "description": "Group join"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_repost_points",
+      "description": "Repost"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_like_points",
+      "description": "Post like"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_reply_points",
+      "description": "Post comment"
     },
     {
       "type": "integer",
@@ -34,10 +70,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/vk/groups",
-      "request_body": "{\"company_id\":34005}",
+      "request_body": "{\"company_id\":34467}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMywiZXhwIjoxNTkwMDU5OTgzfQ.KRe-_4jWsKHO3iU7Xm8RzP0q9KVc8FrpI_p0sGW-B8E",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDMyNiwiZXhwIjoxNTkxNjA3Mzc5fQ.GAm1ZbuC2kvESTu8BvrWLaXnyEUhG65BsYAE_M7BqAA",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -46,17 +82,17 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"confirmation_code\": [\n    \"TOO_SHORT\"\n  ],\n  \"group_id\": [\n    \"TOO_SHORT\"\n  ]\n}",
+      "response_body": "{\n  \"confirmation_code\": [\n    \"TOO_SHORT\"\n  ],\n  \"group_id\": [\n    \"TOO_SHORT\"\n  ],\n  \"group_join_points\": [\n    \"is not included in the list\"\n  ],\n  \"wall_repost_points\": [\n    \"is not included in the list\"\n  ],\n  \"wall_like_points\": [\n    \"is not included in the list\"\n  ],\n  \"wall_reply_points\": [\n    \"is not included in the list\"\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "e66e5bc7-23ec-44d4-9ef4-8931c0b3ecbf",
-        "X-Runtime": "0.009135",
+        "X-Request-Id": "f86424e9-f315-4777-89cf-76aef794bb4f",
+        "X-Runtime": "0.010593",
         "Vary": "Origin",
-        "Content-Length": "60"
+        "Content-Length": "268"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34005}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzMzMywiZXhwIjoxNTkwMDU5OTgzfQ.KRe-_4jWsKHO3iU7Xm8RzP0q9KVc8FrpI_p0sGW-B8E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34467}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDMyNiwiZXhwIjoxNTkxNjA3Mzc5fQ.GAm1ZbuC2kvESTu8BvrWLaXnyEUhG65BsYAE_M7BqAA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

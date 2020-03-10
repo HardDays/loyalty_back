@@ -56,10 +56,10 @@
     {
       "request_method": "PUT",
       "request_path": "api/v1/clients/profile",
-      "request_body": "{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":33890}",
+      "request_body": "{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":34350}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzExNywiZXhwIjoxNTkwMDU5OTc1fQ.ka3gdH7d5ULVeJEGcdAaieWxnqjKJJAjZsP9lf-YCV0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDEwOSwiZXhwIjoxNTkxNjA3MzcyfQ.0BVVBCpYr4-ZV9k2fmFo-PAa6y2UTWGeXT2rl4Qq2p8",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -68,18 +68,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 73117,\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"phone\": \"79963451075\",\n  \"email\": \"c9d7106897a9267f4880265beebd684b@1885f94582cba978a8d6039a8c9fa9c1.xx\",\n  \"created_at\": \"2020-02-21T11:19:35.336Z\",\n  \"updated_at\": \"2020-02-21T11:19:35.365Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-02-21T11:19:35.348Z\",\n      \"updated_at\": \"2020-02-21T11:19:35.348Z\",\n      \"company_id\": 33890,\n      \"loyalty_program_id\": 13773,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 74109,\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"phone\": \"79965831880\",\n  \"email\": \"d5becb9b57ca87d81d21330fe5ad9592@16e98fdd1c95a7acc51927f94ec7cc59.xx\",\n  \"created_at\": \"2020-03-10T09:09:32.971Z\",\n  \"updated_at\": \"2020-03-10T09:09:32.993Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-03-10T09:09:32.980Z\",\n      \"updated_at\": \"2020-03-10T09:09:32.980Z\",\n      \"company_id\": 34350,\n      \"loyalty_program_id\": 14051,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": null,\n      \"company\": {\n        \"id\": 34350,\n        \"name\": \"test\",\n        \"created_at\": \"2020-03-10T09:09:32.930Z\",\n        \"updated_at\": \"2020-03-10T09:09:32.930Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"eab36c24a3744d1779175b4315521d1b\"",
+        "ETag": "W/\"f56cd64a305bf67e8d9ac6b27c2c6daa\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "46976527-ae83-4822-ab0a-3d5bbaa289ec",
-        "X-Runtime": "0.020324",
+        "X-Request-Id": "6268244d-9221-4120-b2cb-f1ddac1def40",
+        "X-Runtime": "0.016848",
         "Vary": "Origin",
-        "Content-Length": "557"
+        "Content-Length": "730"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -d '{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":33890}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzExNywiZXhwIjoxNTkwMDU5OTc1fQ.ka3gdH7d5ULVeJEGcdAaieWxnqjKJJAjZsP9lf-YCV0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -d '{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":34350}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDEwOSwiZXhwIjoxNTkxNjA3MzcyfQ.0BVVBCpYr4-ZV9k2fmFo-PAa6y2UTWGeXT2rl4Qq2p8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

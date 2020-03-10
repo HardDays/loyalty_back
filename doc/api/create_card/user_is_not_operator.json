@@ -35,10 +35,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards",
-      "request_body": "{\"company_id\":33864}",
+      "request_body": "{\"company_id\":34321}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA0MSwiZXhwIjoxNTkwMDU5OTcyfQ.fMm_JEYQXYptnSk3e0NdA9AznRHdxL8pKNy_qPeX9VU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDAyMywiZXhwIjoxNTkxNjA3MzcwfQ.J3NU8BYMXFNOHrFYtJ58Kw-GzydNo2-FwLkl3cDCtQY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -51,12 +51,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "2bb9779f-1824-47c6-8f03-f73136f17546",
-        "X-Runtime": "0.004977",
+        "X-Request-Id": "ded6218d-3081-41b8-b961-d5f62e1bc837",
+        "X-Runtime": "0.004173",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"company_id\":33864}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzA0MSwiZXhwIjoxNTkwMDU5OTcyfQ.fMm_JEYQXYptnSk3e0NdA9AznRHdxL8pKNy_qPeX9VU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"company_id\":34321}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDAyMywiZXhwIjoxNTkxNjA3MzcwfQ.J3NU8BYMXFNOHrFYtJ58Kw-GzydNo2-FwLkl3cDCtQY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

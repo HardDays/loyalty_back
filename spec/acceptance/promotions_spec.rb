@@ -258,17 +258,17 @@ resource "Create promotion" do
         end
       end
   
-      context "User is not creator" do
-        before do
-          @wrong_user = create_user
-        end
+      # context "User is not creator" do
+      #   before do
+      #     @wrong_user = create_user
+      #   end
   
-        let(:authorization) { @wrong_user.token }
+      #   let(:authorization) { @wrong_user.token }
   
-        example "User is not creator" do
-          do_request
-          expect(status).to eq(403)
-        end
-      end
+      #   example "User is not creator" do
+      #     do_request
+      #     expect(status).to eq(403)
+      #   end
+      # end
     end
   end

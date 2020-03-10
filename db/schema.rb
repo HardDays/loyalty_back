@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_164356) do
+ActiveRecord::Schema.define(version: 2020_03_10_084415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_164356) do
     t.integer "recommendator_id"
     t.integer "operator_id"
     t.string "vk_id"
+    t.string "telegram_username"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -225,6 +226,23 @@ ActiveRecord::Schema.define(version: 2020_02_13_164356) do
     t.integer "tariff_type"
   end
 
+  create_table "telegram_events", force: :cascade do |t|
+    t.integer "event_type"
+    t.integer "client_id"
+    t.integer "telegram_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "telegram_groups", force: :cascade do |t|
+    t.integer "company_id"
+    t.string "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "bot_code"
+    t.integer "join_points"
+  end
+
   create_table "user_confirmations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "confirm_status"
@@ -265,6 +283,10 @@ ActiveRecord::Schema.define(version: 2020_02_13_164356) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "group_id"
+    t.integer "group_join_points"
+    t.integer "wall_repost_points"
+    t.integer "wall_like_points"
+    t.integer "wall_reply_points"
   end
 
 end

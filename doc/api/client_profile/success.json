@@ -19,32 +19,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/profile?company_id=33886",
+      "request_path": "api/v1/clients/profile?company_id=34346",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzEwNiwiZXhwIjoxNTkwMDU5OTc0fQ.gQen8eWMf8VZgV3BVzxeVueVPhxf_fQ3JhsqE_ItUos",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDA5OCwiZXhwIjoxNTkxNjA3MzcyfQ.Ay1FRzuNRnFphrsGoJaNo8RFsk86-Pwi63Dyr5TQUts",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "33886"
+        "company_id": "34346"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 73106,\n  \"email\": \"35c6094eb218aa24bc00a98b81be7165@e9311593d501a6322314534654af4c49.xx\",\n  \"created_at\": \"2020-02-21T11:19:34.874Z\",\n  \"updated_at\": \"2020-02-21T11:19:34.874Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79978273526\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-02-21T11:19:34.887Z\",\n      \"updated_at\": \"2020-02-21T11:19:34.887Z\",\n      \"company_id\": 33886,\n      \"loyalty_program_id\": 13769,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 74098,\n  \"email\": \"83d31b4210630921a685965757a5a7b7@d961f558aadc5ceb10112562f0b12a97.xx\",\n  \"created_at\": \"2020-03-10T09:09:32.586Z\",\n  \"updated_at\": \"2020-03-10T09:09:32.586Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79929358275\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-03-10T09:09:32.596Z\",\n      \"updated_at\": \"2020-03-10T09:09:32.596Z\",\n      \"company_id\": 34346,\n      \"loyalty_program_id\": 14047,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": null,\n      \"company\": {\n        \"id\": 34346,\n        \"name\": \"test\",\n        \"created_at\": \"2020-03-10T09:09:32.569Z\",\n        \"updated_at\": \"2020-03-10T09:09:32.569Z\",\n        \"tariff_plan_purchase_id\": null\n      },\n      \"points\": 0,\n      \"loyalty_program\": {\n        \"id\": 14047,\n        \"company_id\": 34346,\n        \"name\": \"test\",\n        \"created_at\": \"2020-03-10T09:09:32.574Z\",\n        \"updated_at\": \"2020-03-10T09:09:32.574Z\",\n        \"sum_type\": \"one_buy\",\n        \"rounding_rule\": \"no_rounding\",\n        \"register_points\": null,\n        \"first_buy_points\": 1000,\n        \"write_off_min_price\": null,\n        \"recommend_recommendator_points\": null,\n        \"recommend_registered_points\": null,\n        \"sms_burning_days\": null,\n        \"accrual_on_register\": false,\n        \"accrual_on_first_buy\": true,\n        \"write_off_limited\": false,\n        \"sms_on_register\": false,\n        \"sms_on_points\": false,\n        \"sms_on_write_off\": false,\n        \"sms_on_burning\": false,\n        \"sms_on_birthday\": false,\n        \"accrual_on_recommend\": false,\n        \"loyalty_levels\": [\n          {\n            \"id\": 14302,\n            \"level_type\": null,\n            \"min_price\": 100,\n            \"begin_date\": null,\n            \"end_date\": null,\n            \"accrual_rule\": \"no_accrual\",\n            \"accrual_percent\": null,\n            \"accrual_points\": null,\n            \"accrual_money\": null,\n            \"burning_rule\": \"no_burning\",\n            \"burning_days\": null,\n            \"activation_rule\": \"activation_moment\",\n            \"activation_days\": null,\n            \"write_off_rule\": \"write_off_convert\",\n            \"write_off_rule_percent\": 30,\n            \"write_off_rule_points\": 100,\n            \"accordance_rule\": \"no_accordance\",\n            \"accordance_points\": null,\n            \"accordance_percent\": null,\n            \"accrual_on_points\": false,\n            \"accrual_on_birthday\": null,\n            \"birthday_points\": null,\n            \"created_at\": \"2020-03-10T09:09:32.576Z\",\n            \"updated_at\": \"2020-03-10T09:09:32.576Z\",\n            \"loyalty_program_id\": 14047,\n            \"write_off_points\": null,\n            \"write_off_money\": null,\n            \"promotion\": null,\n            \"name\": null\n          }\n        ]\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"f7ade2e6c2a2babefb3ab26b7a952fc6\"",
+        "ETag": "W/\"b3c96080b5bde3c9df0ccc11d7671129\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "328a6da4-3d07-4efe-a434-d695ab4f9ddc",
-        "X-Runtime": "0.010463",
+        "X-Request-Id": "3ac9ccd3-8503-421d-8de8-7c7d914a7219",
+        "X-Runtime": "0.022859",
         "Vary": "Origin",
-        "Content-Length": "543"
+        "Content-Length": "2062"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile?company_id=33886\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MzEwNiwiZXhwIjoxNTkwMDU5OTc0fQ.gQen8eWMf8VZgV3BVzxeVueVPhxf_fQ3JhsqE_ItUos\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile?company_id=34346\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDA5OCwiZXhwIjoxNTkxNjA3MzcyfQ.Ay1FRzuNRnFphrsGoJaNo8RFsk86-Pwi63Dyr5TQUts\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

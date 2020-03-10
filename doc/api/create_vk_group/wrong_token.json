@@ -18,7 +18,43 @@
       "in": "body",
       "required": true,
       "name": "confirmation_code",
-      "description": "Confirmation code"
+      "description": "Confirmation code (use this code for link for callback api: https://fathomless-earth-40434.herokuapp.com/api/test/v1/vk/callback/<company_id>/<code>) "
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "group_join_points",
+      "description": "Group join"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_repost_points",
+      "description": "Repost"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_like_points",
+      "description": "Post like"
+    },
+    {
+      "type": "integer",
+      "minmum": 0,
+      "maximum": 10000000000,
+      "in": "body",
+      "required": true,
+      "name": "wall_reply_points",
+      "description": "Post comment"
     },
     {
       "type": "integer",
@@ -34,7 +70,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/vk/groups",
-      "request_body": "{\"company_id\":34006}",
+      "request_body": "{\"company_id\":34468}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -50,12 +86,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "873ccee3-7a95-41dd-b375-664cb49e3e9e",
-        "X-Runtime": "0.001421",
+        "X-Request-Id": "69b30e65-f9db-48a9-8247-fd95f1856bf7",
+        "X-Runtime": "0.001550",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34006}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":34468}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

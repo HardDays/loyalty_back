@@ -1,6 +1,6 @@
 module VkHelper
 
-    TOKEN = Rails.configuration.vk_token
+    #TOKEN = Rails.configuration.vk_token
 
     def self.check_likes
         groups = VkGroup.all

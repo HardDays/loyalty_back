@@ -50,8 +50,8 @@
       "response_headers": {
         "Content-Type": "text/plain; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "3fd47ee0-aadd-4792-ada2-b8d1f04b4151",
-        "X-Runtime": "0.002998",
+        "X-Request-Id": "ea633c4e-0942-475c-8bcc-dee7a3dc1d66",
+        "X-Runtime": "0.002894",
         "Vary": "Origin",
         "Content-Length": "1"
       },

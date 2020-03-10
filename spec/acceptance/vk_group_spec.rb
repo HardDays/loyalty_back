@@ -4,7 +4,12 @@ resource "Create vk group" do
   
     post "api/v1/vk/groups" do
       parameter :group_id, "Vk group id", type: :string, in: :body, required: true
-      parameter :confirmation_code, "Confirmation code", type: :string, in: :body, required: true
+      parameter :confirmation_code, "Confirmation code (use this code for link for callback api: https://fathomless-earth-40434.herokuapp.com/api/test/v1/vk/callback/<company_id>/<code>) ", type: :string, in: :body, required: true
+      parameter :group_join_points, "Group join", type: :integer, minmum: 0, maximum: 10000000000, in: :body, required: true
+      parameter :wall_repost_points, "Repost", type: :integer, minmum: 0, maximum: 10000000000, in: :body, required: true
+      parameter :wall_like_points, "Post like", type: :integer, minmum: 0, maximum: 10000000000, in: :body, required: true
+      parameter :wall_reply_points, "Post comment", type: :integer, minmum: 0, maximum: 10000000000, in: :body, required: true
+
       parameter :company_id, "Company id", type: :integer, required: true
 
       before do
@@ -17,6 +22,11 @@ resource "Create vk group" do
   
       context "Success" do
         let(:group_id) { "123" }
+        let(:group_join_points) { 1000 }
+        let(:wall_repost_points) { 1000 }
+        let(:wall_like_points) { 1000 }
+        let(:wall_reply_points) { 1000 }
+
         let(:confirmation_code) { "45857340" }
   
         let(:raw_post) { params.to_json }

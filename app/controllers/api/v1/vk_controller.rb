@@ -64,7 +64,7 @@ module Api
 			end
             
             def group_params
-                params.permit(:confirmation_code, :group_id)
+                params.permit(:confirmation_code, :group_id, :group_join_points, :wall_repost_points, :wall_like_points, :wall_reply_points)
             end
         end
     end

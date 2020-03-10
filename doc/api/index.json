@@ -326,6 +326,33 @@
       ]
     },
     {
+      "name": "Remove points",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "remove_points/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "delete"
+        },
+        {
+          "description": "Wrong token",
+          "link": "remove_points/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "delete"
+        },
+        {
+          "description": "User is not operator",
+          "link": "remove_points/user_is_not_operator.json",
+          "groups": "all",
+          "route": "api/v1/clients/:id/points",
+          "method": "delete"
+        }
+      ]
+    },
+    {
       "name": "Client profile",
       "explanation": null,
       "examples": [
@@ -762,13 +789,6 @@
           "groups": "all",
           "route": "api/v1/loyalty_programs",
           "method": "get"
-        },
-        {
-          "description": "User is not creator",
-          "link": "list_loyalty_programs/user_is_not_creator.json",
-          "groups": "all",
-          "route": "api/v1/loyalty_programs",
-          "method": "get"
         }
       ]
     },
@@ -1156,13 +1176,6 @@
           "groups": "all",
           "route": "api/v1/promotions",
           "method": "get"
-        },
-        {
-          "description": "User is not creator",
-          "link": "list_promotions/user_is_not_creator.json",
-          "groups": "all",
-          "route": "api/v1/promotions",
-          "method": "get"
         }
       ]
     },
@@ -1392,6 +1405,40 @@
           "groups": "all",
           "route": "api/v1/stores",
           "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Create telegram group",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "create_telegram_group/success.json",
+          "groups": "all",
+          "route": "api/v1/telegram/groups",
+          "method": "post"
+        },
+        {
+          "description": "Wrong fields",
+          "link": "create_telegram_group/wrong_fields.json",
+          "groups": "all",
+          "route": "api/v1/telegram/groups",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "create_telegram_group/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/telegram/groups",
+          "method": "post"
+        },
+        {
+          "description": "User is not creator",
+          "link": "create_telegram_group/user_is_not_creator.json",
+          "groups": "all",
+          "route": "api/v1/telegram/groups",
+          "method": "post"
         }
       ]
     },

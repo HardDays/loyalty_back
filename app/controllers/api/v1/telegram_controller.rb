@@ -6,7 +6,7 @@ module Api
              # POST /telegram/groups 
              def create_group
                 if not @company.telegram_group
-                    group = TelegramGroup.new
+                    group = TelegramGroup.new(group_params)
                     group.company = @company
                     group.bot_code = SecureRandom.hex[0..10]
                     if group.save
@@ -49,12 +49,15 @@ module Api
     
         
         private
-
            	def auth
                 @auth_user = User.authorize(request.headers['Authorization'])
                 @company = Company.find(params[:company_id])
                 @auth_user.company_creator?(@company)
-			end
+            end
+            
+            def group_params
+                params.permit(:join_points)
+            end
         end
     end
 end

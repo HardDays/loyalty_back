@@ -1,0 +1,58 @@
+{
+  "resource": "Remove points",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/clients/:id/points",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "minmum": 0,
+      "maximum": 100000000,
+      "type": "integer",
+      "in": "body",
+      "required": true,
+      "name": "points",
+      "description": "Points"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/clients/74089/points",
+      "request_body": "{\"points\":100000,\"company_id\":34343}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDA4NywiZXhwIjoxNTkxNjA3MzcyfQ.k08ITIwRN1hAFe2BLhWd85KLH-V9QIDRvUsAH4voUts",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "82203ab3-f563-4e64-8fb2-48d3d9163f39",
+        "X-Runtime": "0.009110",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/74089/points\" -d '{\"points\":100000,\"company_id\":34343}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDA4NywiZXhwIjoxNTkxNjA3MzcyfQ.k08ITIwRN1hAFe2BLhWd85KLH-V9QIDRvUsAH4voUts\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
