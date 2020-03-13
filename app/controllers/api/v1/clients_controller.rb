@@ -183,8 +183,8 @@ module Api
 			# POST /clients/:id/points
 			def create_points
 				points = ClientPoint.new(
-					current_points: params[:points],
-					initial_points: params[:points],
+					current_points: params[:points].to_i,
+					initial_points: params[:points].to_i,
 					burning_date: DateTime.now + 100.years,
 					activation_date: DateTime.now,
 					client: @user.client(@company),
@@ -201,7 +201,7 @@ module Api
 			# DELETE /clients/:id/points
 			def remove_points
 				if params[:points]
-					ClientPointsHelper.write_off_number(@user.client(@company), [params[:points], 0].max)
+					ClientPointsHelper.write_off_number(@user.client(@company), [params[:points].to_i, 0].max)
 					render status: :ok
 				end
 			end

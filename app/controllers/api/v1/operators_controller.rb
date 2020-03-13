@@ -81,7 +81,7 @@ module Api
 			def auth_find
 				auth_create
 				@user = User.find(params[:id])
-				@user.company_operator?(@company)
+				@user.company_creator?(@company)
 			end
 
 			def operator_params
