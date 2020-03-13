@@ -99,6 +99,12 @@ class User < ApplicationRecord
         end
     end
 
+    def any_operator?(company)
+        if !any_operator(company)
+            raise ApplicationController::Forbidden
+        end
+    end
+
     def company_operator_creator?(company)
         if !operator(company) && !creator(company)
             raise ApplicationController::Forbidden
