@@ -73,6 +73,13 @@ class User < ApplicationRecord
         end
     end
 
+    def any_operator(company)
+        begin
+            return operators.where(company_id: company.id).first
+        rescue => ex
+        end
+    end
+
     def client(company)
         begin
             return clients.where(company_id: company.id).first
