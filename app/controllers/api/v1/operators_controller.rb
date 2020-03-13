@@ -56,7 +56,7 @@ module Api
 			# PUT /operators/:id
 			def update
 				ActiveRecord::Base.transaction do
-					operator = @user.operator(@company)
+					operator = @user.any_operator(@company)
 					if operator.update(operator_params)
 						render json: @user
 					else 
