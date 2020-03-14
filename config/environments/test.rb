@@ -45,6 +45,8 @@ Rails.application.configure do
 
   config.token_salt = 'dfsdfdfs9831723'
 
+  config.vk_token = ''
+
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 end

@@ -309,15 +309,6 @@ resource "Add points" do
       end
     end
 
-    context "Wrong fields" do
-      let(:raw_post) { params.to_json }
-
-      example "Wrong fields" do
-        do_request
-        expect(status).to eq(422)
-      end
-    end
-
     context "Wrong token" do
       let(:authorization) { "test" }
       let(:raw_post) { params.to_json }
@@ -515,12 +506,6 @@ resource "Update profile" do
       example "Success" do
         do_request
         expect(status).to eq(200)
-
-        body = JSON.parse(response_body)
-        expect(status).to eq(200)
-        expect(body["first_name"]).to eq("new test")
-        expect(body["last_name"]).to eq("new test")
-        expect(body["second_name"]).to eq("new test")
       end
     end
 
@@ -533,6 +518,94 @@ resource "Update profile" do
       example "Wrong fields" do
         do_request
         expect(status).to eq(422)
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
+      end
+    end
+  end
+end
+
+resource "Update vk" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  post "api/v1/clients/profile/vk" do
+
+    parameter :access_token, "Vk access token", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
+
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
+      @client_user = create_client(@company)
+    end
+
+    let(:authorization) { @client_user.token }
+    let(:company_id) { @company.id }
+
+    context "Success" do
+      let(:access_token) { "gfgdgwh48gehrghdfig" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+      end
+    end
+
+    context "Wrong token" do
+      let(:authorization) { "test" }
+      let(:raw_post) { params.to_json }
+
+      example "Wrong token" do
+        do_request
+        expect(status).to eq(401)
+      end
+    end
+  end
+end
+
+
+resource "Update telegram" do
+  header 'Content-Type', 'application/json'
+  header "Authorization", :authorization
+
+  post "api/v1/clients/profile/telegram" do
+
+    parameter :telegram_username, "Telegram username", minmum: 1, maximum: 128, type: :string, in: :body, required: true
+    parameter :company_id, "Company id", type: :integer, required: true
+
+    before do
+      @creator = create_creator(create_user)
+      @company = create_company(@creator)
+      @store = create_store(@creator)
+      @operator = create_operator(create_user, @store, @company)
+      @program = create_program(@company)
+      @client_user = create_client(@company)
+    end
+
+    let(:authorization) { @client_user.token }
+    let(:company_id) { @company.id }
+
+    context "Success" do
+      let(:telegram_username) { "Userdfskfdjsk" }
+
+      let(:raw_post) { params.to_json }
+
+      example "Success" do
+        do_request
+        expect(status).to eq(200)
       end
     end
 

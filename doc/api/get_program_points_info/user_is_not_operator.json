@@ -33,17 +33,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=74212&company_id=34406",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=74885&company_id=34717",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDIxMywiZXhwIjoxNTkxNjA3Mzc2fQ.hm7T06jx3so4KfQ624E0v5qSZrbSSlxVJN2LAMOBM1M",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg4NiwiZXhwIjoxNTkxOTU2NDYzfQ.0uikJ5LzsNUYfqRmYSgg6PA3U9WFN13w804SinAvoVM",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "74212",
-        "company_id": "34406"
+        "user_id": "74885",
+        "company_id": "34717"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "c0c66766-c12b-42b6-8b25-6ee9664eed98",
-        "X-Runtime": "0.004654",
+        "X-Request-Id": "f9a919e0-73ec-4bf2-8647-b8a953657894",
+        "X-Runtime": "0.010848",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=74212&company_id=34406\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDIxMywiZXhwIjoxNTkxNjA3Mzc2fQ.hm7T06jx3so4KfQ624E0v5qSZrbSSlxVJN2LAMOBM1M\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=74885&company_id=34717\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg4NiwiZXhwIjoxNTkxOTU2NDYzfQ.0uikJ5LzsNUYfqRmYSgg6PA3U9WFN13w804SinAvoVM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

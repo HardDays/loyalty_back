@@ -19,8 +19,8 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/promotions/2492",
-      "request_body": "{\"company_id\":34431}",
+      "request_path": "api/v1/promotions/2532",
+      "request_body": "{\"company_id\":34742}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -36,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "724642a2-9d6d-43b6-9c42-10736043a1ad",
-        "X-Runtime": "0.001744",
+        "X-Request-Id": "5a794325-d5b8-4df0-9927-3aaca1c857f2",
+        "X-Runtime": "0.003462",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions/2492\" -d '{\"company_id\":34431}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/2532\" -d '{\"company_id\":34742}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

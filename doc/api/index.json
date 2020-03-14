@@ -303,13 +303,6 @@
           "method": "post"
         },
         {
-          "description": "Wrong fields",
-          "link": "add_points/wrong_fields.json",
-          "groups": "all",
-          "route": "api/v1/clients/:id/points",
-          "method": "post"
-        },
-        {
           "description": "Wrong token",
           "link": "add_points/wrong_token.json",
           "groups": "all",
@@ -416,6 +409,46 @@
           "groups": "all",
           "route": "api/v1/clients/profile",
           "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Update vk",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_vk/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/vk",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_vk/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/vk",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Update telegram",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "update_telegram/success.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/telegram",
+          "method": "post"
+        },
+        {
+          "description": "Wrong token",
+          "link": "update_telegram/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/clients/profile/telegram",
+          "method": "post"
         }
       ]
     },

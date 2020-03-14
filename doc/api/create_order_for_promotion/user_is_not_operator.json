@@ -52,10 +52,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/orders/promotion",
-      "request_body": "{\"user_id\":74257,\"promotion_id\":2484,\"company_id\":34420}",
+      "request_body": "{\"user_id\":74930,\"promotion_id\":2524,\"company_id\":34731}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDI1OCwiZXhwIjoxNTkxNjA3Mzc3fQ.b0t41AgmIbpYvbOhJX4RG5vn5dXjCX1vPb9aVTHD_wU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDkzMSwiZXhwIjoxNTkxOTU2NDY1fQ.hqAuVHGPlWNPDJJ9baCAXox-BTISJY5wG_3YLMINZlg",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -68,12 +68,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "95d784f5-ecee-49a6-b27e-16ae9077d2e3",
-        "X-Runtime": "0.005088",
+        "X-Request-Id": "6bbd2bd5-83db-4450-b22d-31979e80983c",
+        "X-Runtime": "0.009088",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":74257,\"promotion_id\":2484,\"company_id\":34420}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDI1OCwiZXhwIjoxNTkxNjA3Mzc3fQ.b0t41AgmIbpYvbOhJX4RG5vn5dXjCX1vPb9aVTHD_wU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":74930,\"promotion_id\":2524,\"company_id\":34731}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDkzMSwiZXhwIjoxNTkxOTU2NDY1fQ.hqAuVHGPlWNPDJJ9baCAXox-BTISJY5wG_3YLMINZlg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

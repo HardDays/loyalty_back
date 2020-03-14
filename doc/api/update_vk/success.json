@@ -1,0 +1,57 @@
+{
+  "resource": "Update vk",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/clients/profile/vk",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "access_token",
+      "description": "Vk access token"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/clients/profile/vk",
+      "request_body": "{\"access_token\":\"gfgdgwh48gehrghdfig\",\"company_id\":34660}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDc3OSwiZXhwIjoxNTkxOTU2NDU2fQ.We93hwaIGy-L5ChAKjFPGgQbp4b6DkC_4jRjA-xtISI",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"error_code\": 5\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "9d281ac8-af2b-4daf-961f-ea957554c407",
+        "X-Runtime": "0.289462",
+        "Vary": "Origin",
+        "Content-Length": "16"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile/vk\" -d '{\"access_token\":\"gfgdgwh48gehrghdfig\",\"company_id\":34660}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDc3OSwiZXhwIjoxNTkxOTU2NDU2fQ.We93hwaIGy-L5ChAKjFPGgQbp4b6DkC_4jRjA-xtISI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

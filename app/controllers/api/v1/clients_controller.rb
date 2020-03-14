@@ -3,7 +3,7 @@ module Api
 		class ClientsController < ApplicationController
 			before_action :auth_index, only: [:create, :index, :phone]
 			before_action :auth_find_operator, only: [:update]
-			before_action :auth_profile, only: [:profile, :profile_orders, :update_profile, :confirm_vk]
+			before_action :auth_profile, only: [:profile, :profile_orders, :update_profile, :update_vk, :update_telegram]
 			before_action :auth_find_creator, only: [:create_points, :remove_points]
 
 			# GET /clients/profile
@@ -11,8 +11,8 @@ module Api
 				render json: @auth_user, points: true, loyalty_program: true
 			end
 
-			# POST /clients/profile/confirm/vk
-			def confirm_vk
+			# POST /clients/profile/vk
+			def update_vk
 				begin
 					client = @auth_user.client(@company)
 
@@ -21,10 +21,23 @@ module Api
 					
 					client.vk_id = vk_user.id
 					client.save
-					render status: :ok
+					render json: @auth_user, status: :ok
 				rescue => ex
 					puts json: ex
 					render json: {"error_code": ex.error_code}, status: :unprocessable_entity
+				end
+			end
+
+			# POST /clients/profile/telegram
+			def update_telegram
+				begin
+					client = @auth_user.client(@company)
+					
+					client.telegram_username = params[:telegram_username]
+					client.save
+					render json: @auth_user, status: :ok
+				rescue => ex
+					render status: :unprocessable_entity
 				end
 			end
 
@@ -251,7 +264,7 @@ module Api
 			end
 
 			def client_params
-				params.permit(:loyalty_program_id, :card_number, :vk_id, :telegram_id)
+				params.permit(:loyalty_program_id, :card_number)
 			end
 		end
 	end

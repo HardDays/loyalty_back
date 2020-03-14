@@ -38,7 +38,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/auth/password/update",
-      "request_body": "{\"code\":\"5d3fd3bcfeedcf7af8e81e25e0446547\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
+      "request_body": "{\"code\":\"5e6557dfccbbd351dace1af095cf3887\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org",
@@ -49,18 +49,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 74012,\n  \"phone\": \"79998645662\",\n  \"email\": \"12dd942a4f9bfe06b0cb6dd2eba1b816@500a9cfb48e533d79968f957ef3fe9a7.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2020-03-10T09:09:29.883Z\",\n  \"updated_at\": \"2020-03-10T09:09:29.909Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 74676,\n  \"phone\": \"79997096519\",\n  \"email\": \"f8a6e77cfa069b8bd7eec71b2d929a1e@8ff3cd571da8805aa155608d89e91cda.xx\",\n  \"first_name\": \"test\",\n  \"last_name\": \"test\",\n  \"second_name\": null,\n  \"created_at\": \"2020-03-14T10:07:31.120Z\",\n  \"updated_at\": \"2020-03-14T10:07:31.157Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"27fd6d9336643ebd392eaf3cc8e5c90c\"",
+        "ETag": "W/\"9fde310910d285bc0d53508b76886d7d\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d9d3c964-8e5e-4474-aaf4-baa59eaa9719",
-        "X-Runtime": "0.019707",
+        "X-Request-Id": "af248733-cc24-470a-87b9-a20abd081ad0",
+        "X-Runtime": "0.031958",
         "Vary": "Origin",
         "Content-Length": "338"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"5d3fd3bcfeedcf7af8e81e25e0446547\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/auth/password/update\" -d '{\"code\":\"5e6557dfccbbd351dace1af095cf3887\",\"password\":\"11111111\",\"password_confirmation\":\"11111111\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

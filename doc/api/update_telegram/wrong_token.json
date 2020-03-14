@@ -1,0 +1,56 @@
+{
+  "resource": "Update telegram",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/v1/clients/profile/telegram",
+  "description": "Wrong token",
+  "explanation": null,
+  "parameters": [
+    {
+      "minmum": 1,
+      "maximum": 128,
+      "type": "string",
+      "in": "body",
+      "required": true,
+      "name": "telegram_username",
+      "description": "Telegram username"
+    },
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/clients/profile/telegram",
+      "request_body": "{\"company_id\":34663}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "test",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "5aa17248-6893-4ba2-8c64-3dee4f7b981a",
+        "X-Runtime": "0.002154",
+        "Vary": "Origin"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile/telegram\" -d '{\"company_id\":34663}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
