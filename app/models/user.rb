@@ -43,7 +43,7 @@ class User < ApplicationRecord
     def token
         payload = {
             user_id: id,
-            exp: 90.days.from_now.to_i
+            #exp: 90.days.from_now.to_i
         }
         return JWT.encode(payload, Rails.configuration.token_salt)
     end
@@ -187,9 +187,15 @@ class User < ApplicationRecord
             end
         end
         
-        attrs[:client] = clients.as_json(options)
-        attrs[:operator] = operators.as_json(options)
-        attrs[:creator] = creators.as_json(options)
+        if options && options[:company]
+            attrs[:client] = clients.where(company_id: options[:company].id)
+            attrs[:creator] = creators.where(company_id: options[:company].id)
+            attrs[:operator] = operators.where(company_id: options[:company].id)
+        else
+            attrs[:client] = clients.as_json(options)
+            attrs[:operator] = operators.as_json(options)
+            attrs[:creator] = creators.as_json(options)
+        end
 
 
         # attrs[:user_types] = []

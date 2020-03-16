@@ -72,7 +72,7 @@ module Api
 				if params[:card_number]
 					users = users.where(clients: {card_number: params[:card_number]})
 				end
-				render json: users.limit(params[:limit]).offset(params[:offset]), points: true
+				render json: users.limit(params[:limit]).offset(params[:offset]), points: true, company: @company
 			end
 
 			# GET /clients/phone
@@ -169,7 +169,7 @@ module Api
 									end
 								end
 							end
-							render json: user
+							render json: user, company: @company
 						else
 							render json: client.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback
@@ -186,7 +186,7 @@ module Api
 				ActiveRecord::Base.transaction do
 					client = @user.client(@company)
 					if client.update(client_params)
-						render json: @user
+						render json: @user, company: @company
 					else
 						render json: client.errors, status: :unprocessable_entity
 					end

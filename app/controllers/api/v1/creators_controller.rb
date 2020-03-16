@@ -23,7 +23,7 @@ module Api
 						if creator.save
 							user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..3])
 							begin
-								ConfirmationMailer.confirmation_email(@user).deliver!
+								ConfirmationMailer.confirmation_email(user).deliver!
 							rescue => ex
 								puts json: ex
 							end

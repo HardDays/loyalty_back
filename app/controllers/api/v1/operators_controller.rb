@@ -10,7 +10,7 @@ module Api
 				if params[:store_id]
 					operators = operators.where(store_id: params[:store_id])
 				end
-				render json: operators.limit(params[:limit]).offset(params[:offset]).collect{|o| o.user}
+				render json: operators.limit(params[:limit]).offset(params[:offset]).collect{|o| o.user}, company: @company
 			end
 
 			# GET /operators/:id
@@ -41,7 +41,7 @@ module Api
 								puts 'EMAIL ERROR'
 								puts json: ex
 							end
-							render json: user
+							render json: user, company: @company
 						else
 							render json: operator.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback
@@ -58,7 +58,7 @@ module Api
 				ActiveRecord::Base.transaction do
 					operator = @user.any_operator(@company)
 					if operator.update(operator_params)
-						render json: @user
+						render json: @user, company: @company
 					else 
 						puts json: operator.errors
 						render json: operator.errors, status: :unprocessable_entity
