@@ -43,10 +43,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards/range",
-      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":34630}",
+      "request_body": "{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":34785}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDY4OSwiZXhwIjoxNTkxOTU2NDUyfQ.tYQ9aWTYsIfqjJNWvTYrW94Ac2RBYY5Eq5b4n287kww",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTAyNH0.oPnFbUsCVZU2a2D9bRJQZc5dbNstuf2zB010Eq-BtJA",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -60,13 +60,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a32c9bd7-c53b-462b-871e-a6a3779a064d",
-        "X-Runtime": "0.104668",
+        "X-Request-Id": "ba84a765-1c30-433c-99ec-44a21cdaadaa",
+        "X-Runtime": "0.078835",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":34630}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDY4OSwiZXhwIjoxNTkxOTU2NDUyfQ.tYQ9aWTYsIfqjJNWvTYrW94Ac2RBYY5Eq5b4n287kww\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards/range\" -d '{\"begin_range\":\"0000000001\",\"end_range\":\"0000000018\",\"points\":1337,\"company_id\":34785}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTAyNH0.oPnFbUsCVZU2a2D9bRJQZc5dbNstuf2zB010Eq-BtJA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

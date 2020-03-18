@@ -187,10 +187,16 @@ class User < ApplicationRecord
             end
         end
         
-        if options && options[:company]
-            attrs[:client] = clients.where(company_id: options[:company].id)
-            attrs[:creator] = creators.where(company_id: options[:company].id)
-            attrs[:operator] = operators.where(company_id: options[:company].id)
+        attrs[:client] = []
+        attrs[:operator] = []
+        attrs[:creator] = []
+
+        if options && options[:company] && options[:role]
+            if options[:role] == :client
+                attrs[:client] = clients.where(company_id: options[:company].id)
+            else
+                attrs[:operator] = operators.where(company_id: options[:company].id)
+            end
         else
             attrs[:client] = clients.as_json(options)
             attrs[:operator] = operators.as_json(options)

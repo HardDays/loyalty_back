@@ -71,7 +71,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/reports/clients?company_id=34751",
+      "request_path": "api/v1/reports/clients?company_id=34906",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "34751"
+        "company_id": "34906"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -89,12 +89,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "b5f85667-8075-4bce-94ea-3568ab567a0b",
-        "X-Runtime": "0.001961",
+        "X-Request-Id": "710d60b4-d2a7-43bc-be6b-8c6bb6ffbf8e",
+        "X-Runtime": "0.001649",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/reports/clients?company_id=34751\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/reports/clients?company_id=34906\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

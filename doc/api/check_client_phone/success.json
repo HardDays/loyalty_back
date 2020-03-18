@@ -25,17 +25,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/clients/phone?phone=79921502687&company_id=34636",
+      "request_path": "api/v1/clients/phone?phone=79943421150&company_id=34791",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDcwNiwiZXhwIjoxNTkxOTU2NDUzfQ.8SLd9Wki4sEVfLHEsDuc3n4k4C1q6oa2v6oYGAycQfY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTA0MX0.4qD99Gy8SG1_-3MmqnjNGYRekK5QKWq5v_DSQGZOBn8",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "phone": "79921502687",
-        "company_id": "34636"
+        "phone": "79943421150",
+        "company_id": "34791"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -45,13 +45,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"edc48cd3b0bc4fa7ba23aad40b8508a1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "73803f46-eadf-4f94-af88-f62455722661",
-        "X-Runtime": "0.011045",
+        "X-Request-Id": "ace0eb27-045f-4a02-adca-587fde50a056",
+        "X-Runtime": "0.009306",
         "Vary": "Origin",
         "Content-Length": "15"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79921502687&company_id=34636\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDcwNiwiZXhwIjoxNTkxOTU2NDUzfQ.8SLd9Wki4sEVfLHEsDuc3n4k4C1q6oa2v6oYGAycQfY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/phone?phone=79943421150&company_id=34791\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTA0MX0.4qD99Gy8SG1_-3MmqnjNGYRekK5QKWq5v_DSQGZOBn8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

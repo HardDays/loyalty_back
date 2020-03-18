@@ -35,13 +35,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['HOST_IP'], port: '3000' }
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: ENV['HOST_IP'] + ':3000',
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
+    # address: 'smtp.gmail.com',
+    # port: 587,
+    # domain: ENV['HOST_IP'] + ':3000',
+    # user_name: ENV['GMAIL_USERNAME'],
+    # password: ENV['GMAIL_PASSWORD'],
+    # authentication: 'plain',
+    # enable_starttls_auto: true
   }
 
   config.vk_token = ENV['VK_TOKEN']
@@ -55,7 +55,7 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  config.token_salt = 'dfsdfdfs9831723'
+  config.token_salt = ENV['TOKEN_SALT']
 
   config.twilio_phone_number = '+14807250646'
 

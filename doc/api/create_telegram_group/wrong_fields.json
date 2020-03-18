@@ -29,10 +29,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/telegram/groups",
-      "request_body": "{\"company_id\":34774}",
+      "request_body": "{\"company_id\":34929}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDk5NCwiZXhwIjoxNTkxOTU2NDcyfQ.esjLI_j73Q8Jva-vFpbvD3PuCQVj9KpOyWJ8ilJqECA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMyOX0.pMe13SRFzgcf3K1CVQ4D8ETk9Mcc7n1NQVV3Xibq8zo",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -45,13 +45,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0727aeef-62a4-4cbc-9e70-3036b03f4a34",
-        "X-Runtime": "0.016541",
+        "X-Request-Id": "94cb54a5-ef95-428a-b01e-c6a69dbc4fb6",
+        "X-Runtime": "0.009573",
         "Vary": "Origin",
         "Content-Length": "47"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"company_id\":34774}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDk5NCwiZXhwIjoxNTkxOTU2NDcyfQ.esjLI_j73Q8Jva-vFpbvD3PuCQVj9KpOyWJ8ilJqECA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"company_id\":34929}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMyOX0.pMe13SRFzgcf3K1CVQ4D8ETk9Mcc7n1NQVV3Xibq8zo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -21,10 +21,12 @@ module Api
 			# POST /operators 
 			def create
 				ActiveRecord::Base.transaction do
+					new_user = false
 					user = User.find_by(email: params[:email])
 					if not user
 						user = User.new(user_params)
 						user.password = '1234567' #SecureRandom.hex(4)
+						new_user = true
 					end
 					
 					operator = user.operators.build(
@@ -34,14 +36,16 @@ module Api
 					)
 					if user.save
 						if operator.save
-							user.create_user_confirmation(confirm_status: :confirmed)
-							begin
-								PasswordMailer.password_email(user, user.password).deliver!
-							rescue => ex
-								puts 'EMAIL ERROR'
-								puts json: ex
+							if new_user
+								user.create_user_confirmation(confirm_status: :confirmed)
+								begin
+									PasswordMailer.password_email(user, user.password).deliver!
+								rescue => ex
+									puts 'EMAIL ERROR'
+									puts json: ex
+								end
 							end
-							render json: user, company: @company
+							render json: user, company: @company, role: :operator
 						else
 							render json: operator.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback

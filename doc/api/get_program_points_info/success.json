@@ -33,18 +33,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=74876&price=10000&company_id=34714",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=75211&price=10000&company_id=34869",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg3NSwiZXhwIjoxNTkxOTU2NDYyfQ.tKI-yAnTrJ0or4nB56UOxDNoFKSmTQAeCXKhz-tsPOI",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIxMH0.uJDKyaSyPIIr_DPnYueL4OXAOEg2KvBpWoasj2I8X98",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "74876",
+        "user_id": "75211",
         "price": "10000",
-        "company_id": "34714"
+        "company_id": "34869"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -54,13 +54,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "f6127964-8d2c-490a-ad37-4744d34f14f5",
-        "X-Runtime": "0.041525",
+        "X-Request-Id": "da0722eb-e1c8-4d1f-b1a1-2962ec5c1696",
+        "X-Runtime": "0.021635",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=74876&price=10000&company_id=34714\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg3NSwiZXhwIjoxNTkxOTU2NDYyfQ.tKI-yAnTrJ0or4nB56UOxDNoFKSmTQAeCXKhz-tsPOI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=75211&price=10000&company_id=34869\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIxMH0.uJDKyaSyPIIr_DPnYueL4OXAOEg2KvBpWoasj2I8X98\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

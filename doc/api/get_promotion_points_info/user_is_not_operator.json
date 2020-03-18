@@ -39,18 +39,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=74898&promotion_id=2519&company_id=34721",
+      "request_path": "api/v1/orders/promotion/points?user_id=75233&promotion_id=2539&company_id=34876",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg5OSwiZXhwIjoxNTkxOTU2NDYzfQ.LcSpmiaHzfVuZqy1qbRax0z_VNPw3Kq7FqCo5bCIM5g",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIzNH0.etB-jbf8OEq68E3GKQ07Lp20QNUOfIdg2eMHSAN8XQA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "74898",
-        "promotion_id": "2519",
-        "company_id": "34721"
+        "user_id": "75233",
+        "promotion_id": "2539",
+        "company_id": "34876"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -59,12 +59,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "9f7978bb-da1a-41e6-a0a2-0b7d4822bb4b",
-        "X-Runtime": "0.009807",
+        "X-Request-Id": "6ed68d5e-da35-4503-a045-c495391d2eb3",
+        "X-Runtime": "0.005777",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=74898&promotion_id=2519&company_id=34721\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg5OSwiZXhwIjoxNTkxOTU2NDYzfQ.LcSpmiaHzfVuZqy1qbRax0z_VNPw3Kq7FqCo5bCIM5g\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=75233&promotion_id=2539&company_id=34876\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIzNH0.etB-jbf8OEq68E3GKQ07Lp20QNUOfIdg2eMHSAN8XQA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

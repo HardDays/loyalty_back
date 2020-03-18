@@ -45,7 +45,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/orders/loyalty_program",
-      "request_body": "{\"user_id\":74911,\"company_id\":34725}",
+      "request_body": "{\"user_id\":75246,\"company_id\":34880}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -61,12 +61,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "9f80df0d-5f25-4662-83b7-66d97ffb6148",
-        "X-Runtime": "0.002890",
+        "X-Request-Id": "764a4aca-0ce9-4278-b152-a100869f62eb",
+        "X-Runtime": "0.001541",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":74911,\"company_id\":34725}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program\" -d '{\"user_id\":75246,\"company_id\":34880}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

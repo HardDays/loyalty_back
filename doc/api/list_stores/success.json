@@ -29,32 +29,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/stores?company_id=34771",
+      "request_path": "api/v1/stores?company_id=34926",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDk5MSwiZXhwIjoxNTkxOTU2NDcyfQ.ZDY2BoOJfcYGvHPwJ39ZYMYIWsUQAMhE_QQDyDrZCH0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMyNn0.N1qCujg3B-IAmKhI2IiWRB3d8VHz07xMEUjqcUkUuT0",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "34771"
+        "company_id": "34926"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 21382,\n    \"name\": \"test\",\n    \"company_id\": 34771,\n    \"created_at\": \"2020-03-14T10:07:52.011Z\",\n    \"updated_at\": \"2020-03-14T10:07:52.011Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 21381,\n    \"name\": \"test\",\n    \"company_id\": 34771,\n    \"created_at\": \"2020-03-14T10:07:52.001Z\",\n    \"updated_at\": \"2020-03-14T10:07:52.001Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 21380,\n    \"name\": \"test\",\n    \"company_id\": 34771,\n    \"created_at\": \"2020-03-14T10:07:51.993Z\",\n    \"updated_at\": \"2020-03-14T10:07:51.993Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 21475,\n    \"name\": \"test\",\n    \"company_id\": 34926,\n    \"created_at\": \"2020-03-18T09:31:27.865Z\",\n    \"updated_at\": \"2020-03-18T09:31:27.865Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 21474,\n    \"name\": \"test\",\n    \"company_id\": 34926,\n    \"created_at\": \"2020-03-18T09:31:27.860Z\",\n    \"updated_at\": \"2020-03-18T09:31:27.860Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  },\n  {\n    \"id\": 21473,\n    \"name\": \"test\",\n    \"company_id\": 34926,\n    \"created_at\": \"2020-03-18T09:31:27.855Z\",\n    \"updated_at\": \"2020-03-18T09:31:27.855Z\",\n    \"country\": \"test\",\n    \"city\": \"test\",\n    \"street\": \"test\",\n    \"house\": \"1\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"ea4646a7b7a2d52c9dd828e895b63d46\"",
+        "ETag": "W/\"07a5d8614f43087ff5eeaa936701e7e3\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "085fbc46-659b-4d48-9d1e-211e4d3744ff",
-        "X-Runtime": "0.029424",
+        "X-Request-Id": "e3f8ea00-ebbe-4d04-8b6b-dfb0d0a8cb3f",
+        "X-Runtime": "0.011031",
         "Vary": "Origin",
         "Content-Length": "556"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/stores?company_id=34771\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDk5MSwiZXhwIjoxNTkxOTU2NDcyfQ.ZDY2BoOJfcYGvHPwJ39ZYMYIWsUQAMhE_QQDyDrZCH0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/stores?company_id=34926\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMyNn0.N1qCujg3B-IAmKhI2IiWRB3d8VHz07xMEUjqcUkUuT0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

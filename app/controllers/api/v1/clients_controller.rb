@@ -72,7 +72,7 @@ module Api
 				if params[:card_number]
 					users = users.where(clients: {card_number: params[:card_number]})
 				end
-				render json: users.limit(params[:limit]).offset(params[:offset]), points: true, company: @company
+				render json: users.limit(params[:limit]).offset(params[:offset]), points: true, company: @company, role: :client
 			end
 
 			# GET /clients/phone
@@ -87,9 +87,11 @@ module Api
 			def create
 				ActiveRecord::Base.transaction do
 					user = User.find_by(email: params[:email])
+					new_user = false
 					if not user
 						user = User.new(user_params)
 						user.password = '1234567' #SecureRandom.hex(4)
+						new_user = true
 					end
 					
 					if user.save
@@ -101,17 +103,22 @@ module Api
 							card_number: params[:card_number]
 						)
 						if client.save
-							#if !user.persisted?
 							notification = ClientSms.new(sms_type: :registered, send_at: DateTime.now)
 							notification.client = client
 							notification.sms_status = :sent
 							notification.save
+							
+							#SmsHelper.send_register(client, user.password)
 
-							SmsHelper.send_register(client, user.password)
-
-							user.create_user_confirmation(confirm_status: :confirmed, code: SecureRandom.hex[0..5])
-							#end
-
+							if new_user
+								user.create_user_confirmation(confirm_status: :confirmed, code: SecureRandom.hex[0..5])
+								begin
+									PasswordMailer.password_email(user, user.password).deliver!
+								rescue => ex
+									puts 'EMAIL ERROR'
+									puts json: ex
+								end
+							end
 							if program
 								if program.accrual_on_register
 									points = ClientPoint.new(
@@ -169,7 +176,7 @@ module Api
 									end
 								end
 							end
-							render json: user, company: @company
+							render json: user, company: @company, role: :operator
 						else
 							render json: client.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback

@@ -46,15 +46,15 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 74668,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2020-03-14T10:07:29.788Z\",\n  \"updated_at\": \"2020-03-14T10:07:29.788Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79995476207\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDY2OCwiZXhwIjoxNTkxOTU2NDUwfQ.Nwfq8FYVjTCO1pKp7sZNsC-sJLcUcAHshQhPKJcdNkY\",\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 75003,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2020-03-18T09:31:12.286Z\",\n  \"updated_at\": \"2020-03-18T09:31:12.286Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79997484171\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTAwM30.84znaBQdNWsK80vXpT4dfBCDsoia-dBRN_a180TYtjk\",\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"c3398d6acd516113ed21822baa739ad8\"",
+        "ETag": "W/\"b6e139bd9406b31150f44ea6711fe38c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "f36a1a62-bee5-4d40-9edf-6ef47282ddde",
-        "X-Runtime": "0.165646",
+        "X-Request-Id": "98642dc6-89b7-46e2-bca6-e87ef4786b82",
+        "X-Runtime": "0.182091",
         "Vary": "Origin",
-        "Content-Length": "405"
+        "Content-Length": "382"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": "curl \"http://localhost:3000api/v1/auth/login\" -d '{\"email\":\"test@test.com\",\"password\":\"1234567\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
