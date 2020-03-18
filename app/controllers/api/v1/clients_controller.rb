@@ -176,7 +176,7 @@ module Api
 									end
 								end
 							end
-							render json: user, company: @company, role: :operator
+							render json: user, company: @company, role: :client
 						else
 							render json: client.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback
