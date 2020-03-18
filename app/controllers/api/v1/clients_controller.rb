@@ -86,7 +86,7 @@ module Api
 			# POST /clients
 			def create
 				ActiveRecord::Base.transaction do
-					user = User.find_by(email: params[:email])
+					user = User.find_by('email = ? OR phone = ?', params[:email], params[:phone])
 					new_user = false
 					if not user
 						user = User.new(user_params)

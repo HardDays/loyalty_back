@@ -22,7 +22,7 @@ module Api
 			def create
 				ActiveRecord::Base.transaction do
 					new_user = false
-					user = User.find_by(email: params[:email])
+					user = User.find_by('email = ? OR phone = ?', params[:email], params[:phone])
 					if not user
 						user = User.new(user_params)
 						user.password = '1234567' #SecureRandom.hex(4)
