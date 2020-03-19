@@ -4,7 +4,7 @@ module Api
 			before_action :auth_index, only: [:create, :index, :phone]
 			before_action :auth_find_operator, only: [:update]
 			before_action :auth_profile, only: [:profile, :profile_orders, :update_profile, :update_vk, :update_telegram]
-			before_action :auth_find_creator, only: [:create_points, :remove_points]
+			before_action :auth_service_token, only: [:create_points, :remove_points]
 
 			# GET /clients/profile
 			def profile
@@ -249,9 +249,14 @@ module Api
 				@user.company_client?(@company)
 			end
 
-			def auth_find_creator
-				auth
-				@auth_user.company_creator?(@company)
+			def auth_service_token
+				if params[:service_token]
+					@company = Company.find(params[:company_id])
+					@company.valid_token?(params[:service_token])
+				else
+					auth
+					@auth_user.company_creator?(@company)
+				end
 				set_user
 				@user.company_client?(@company)
 			end

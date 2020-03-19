@@ -42,6 +42,8 @@ Rails.application.routes.draw do
       post 'companies', action: :create, controller: 'companies'
       put 'companies', action: :update, controller: 'companies'
 
+      get 'service_tokens/:token_type', action: :show, controller: 'service_tokens'
+
       get 'stores', action: :index, controller: 'stores'
       post 'stores', action: :create, controller: 'stores'
       put 'stores/:id', action: :update, controller: 'stores'

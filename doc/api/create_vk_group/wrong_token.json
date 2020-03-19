@@ -70,7 +70,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/vk/groups",
-      "request_body": "{\"company_id\":35245}",
+      "request_body": "{\"company_id\":36183}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -86,12 +86,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "bf28a617-511a-4550-ba60-4fc34bade775",
-        "X-Runtime": "0.001579",
+        "X-Request-Id": "6eb7beee-c337-4dc3-9065-3fe36a8ebe37",
+        "X-Runtime": "0.001661",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":35245}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"company_id\":36183}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

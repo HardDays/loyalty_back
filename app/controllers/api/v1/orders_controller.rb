@@ -78,10 +78,14 @@ module Api
 			end
 
 			def auth
-				@auth_user = User.authorize(request.headers['Authorization'])
 				@user = User.find(params[:user_id])
 				@company = Company.find(params[:company_id])
-				@auth_user.company_operator?(@company)
+				if params[:service_token]
+					@company.valid_token?(params[:service_token])
+				else
+					@auth_user = User.authorize(request.headers['Authorization'])
+					@auth_user.company_operator?(@company)
+				end
 				@user.company_client?(@company)
 			end
 
@@ -91,8 +95,7 @@ module Api
 
 			def auth_promotion
 				auth
-				@promotion = Promotion.find(params[:promotion_id])
-				@auth_user.company_operator?(@promotion.company)
+				@promotion = Promotion.find_by(id: params[:promotion_id], company_id: params[:company_id])
 			end
 
 			def order_params

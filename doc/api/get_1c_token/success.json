@@ -1,0 +1,50 @@
+{
+  "resource": "Get 1c token",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/service_tokens/one_s",
+  "description": "Success",
+  "explanation": null,
+  "parameters": [
+    {
+      "type": "integer",
+      "required": true,
+      "name": "company_id",
+      "description": "Company id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/service_tokens/one_s?company_id=36156",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODE0NX0.GjNDm1RUVuhUW29x3cxS8z-7ufwy6_bQbmJPIjK63ek",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "company_id": "36156"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"one_s\": \"d54db07225d8cb8df7b783a618bab3bb\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"2db654c2d269e3284687404148d098ed\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "72a3f451-3d79-4e1d-bb94-c554f38c7cc4",
+        "X-Runtime": "0.033989",
+        "Vary": "Origin",
+        "Content-Length": "44"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000api/v1/service_tokens/one_s?company_id=36156\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODE0NX0.GjNDm1RUVuhUW29x3cxS8z-7ufwy6_bQbmJPIjK63ek\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

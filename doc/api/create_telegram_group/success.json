@@ -29,10 +29,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/telegram/groups",
-      "request_body": "{\"join_points\":1000,\"company_id\":35239}",
+      "request_body": "{\"join_points\":1000,\"company_id\":36177}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTk5Nn0.Wsv0WGmGvs5FmG-G87B05fBtjdiT1mVkh0DbBi0hhIg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODE3MX0.74w55YqA2cDsKS80AkuBVN85nFEo8EPMu2HsJ6Z1zQY",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -41,18 +41,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 6,\n  \"company_id\": 35239,\n  \"group_id\": null,\n  \"created_at\": \"2020-03-19T07:51:06.879Z\",\n  \"updated_at\": \"2020-03-19T07:51:06.879Z\",\n  \"bot_code\": \"91a5c5744ef\",\n  \"join_points\": 1000\n}",
+      "response_body": "{\n  \"id\": 12,\n  \"company_id\": 36177,\n  \"group_id\": null,\n  \"created_at\": \"2020-03-19T10:19:25.794Z\",\n  \"updated_at\": \"2020-03-19T10:19:25.794Z\",\n  \"bot_code\": \"e6a5194e34f\",\n  \"join_points\": 1000\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"c5afd2fcb95aedf61390759b882ca27b\"",
+        "ETag": "W/\"fe842eb1bdcc9d7acaa82af7417e5ea7\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "57614926-6ed0-49fc-b6a9-449765d581ea",
-        "X-Runtime": "0.056477",
+        "X-Request-Id": "dfca1321-3279-4761-b82c-cf87b9d3846c",
+        "X-Runtime": "0.046736",
         "Vary": "Origin",
-        "Content-Length": "167"
+        "Content-Length": "168"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"join_points\":1000,\"company_id\":35239}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTk5Nn0.Wsv0WGmGvs5FmG-G87B05fBtjdiT1mVkh0DbBi0hhIg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"join_points\":1000,\"company_id\":36177}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODE3MX0.74w55YqA2cDsKS80AkuBVN85nFEo8EPMu2HsJ6Z1zQY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

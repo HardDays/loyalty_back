@@ -39,19 +39,19 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=75892&price=10000&promotion_id=2576&company_id=35184",
+      "request_path": "api/v1/orders/promotion/points?user_id=78065&price=10000&promotion_id=2696&company_id=36120",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTg5MX0.MPMHM2CVQvZs9DDv5ewnPYcBUcbAb6HP-TYBgp3rMS8",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA2NH0.6jkJNB_QmNcuambqvzp0atEjkpuIqsRQ6cZFs45aK04",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "75892",
+        "user_id": "78065",
         "price": "10000",
-        "promotion_id": "2576",
-        "company_id": "35184"
+        "promotion_id": "2696",
+        "company_id": "36120"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -61,13 +61,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "6bf1bbf4-2415-4592-881c-0bb63bf7c396",
-        "X-Runtime": "0.017479",
+        "X-Request-Id": "9599180f-57ba-4b47-a122-8b3d008fe438",
+        "X-Runtime": "0.016301",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=75892&price=10000&promotion_id=2576&company_id=35184\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTg5MX0.MPMHM2CVQvZs9DDv5ewnPYcBUcbAb6HP-TYBgp3rMS8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=78065&price=10000&promotion_id=2696&company_id=36120\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA2NH0.6jkJNB_QmNcuambqvzp0atEjkpuIqsRQ6cZFs45aK04\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

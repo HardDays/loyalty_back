@@ -52,10 +52,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/orders/promotion",
-      "request_body": "{\"user_id\":75921,\"promotion_id\":2580,\"price\":10000,\"write_off_points\":null,\"company_id\":35193}",
+      "request_body": "{\"user_id\":78094,\"promotion_id\":2700,\"price\":10000,\"write_off_points\":null,\"company_id\":36129}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTkyMH0.B61nBg_eRUFz_QQfSUm-HqZq8xML1LljQ1v1gnl3LEc",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA5M30.4iA6CnYNZPiSANLikOID-_KR7MMp-R-fcT4fn0wJz8Q",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -64,18 +64,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1315,\n  \"operator_id\": 75920,\n  \"store_id\": 21634,\n  \"loyalty_program_id\": null,\n  \"price\": 10000,\n  \"created_at\": \"2020-03-19T07:51:03.034Z\",\n  \"updated_at\": \"2020-03-19T07:51:03.034Z\",\n  \"write_off_status\": \"not_written_off\",\n  \"write_off_points\": null,\n  \"promotion_id\": 2580,\n  \"client_id\": 75921\n}",
+      "response_body": "{\n  \"id\": 1361,\n  \"operator_id\": 78093,\n  \"store_id\": 22192,\n  \"loyalty_program_id\": null,\n  \"price\": 10000,\n  \"created_at\": \"2020-03-19T10:19:22.604Z\",\n  \"updated_at\": \"2020-03-19T10:19:22.604Z\",\n  \"write_off_status\": \"not_written_off\",\n  \"write_off_points\": null,\n  \"promotion_id\": 2700,\n  \"client_id\": 78094\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"a8d8ebff85e3394f561dea17d6459516\"",
+        "ETag": "W/\"58524c457506c0cc758c4fe3675c5f8d\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c0766793-8015-4515-9d51-e8469bed27d1",
-        "X-Runtime": "0.031513",
+        "X-Request-Id": "af982b34-5eaf-415e-b17a-122d2b6f0a9e",
+        "X-Runtime": "0.028123",
         "Vary": "Origin",
         "Content-Length": "267"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":75921,\"promotion_id\":2580,\"price\":10000,\"write_off_points\":null,\"company_id\":35193}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTkyMH0.B61nBg_eRUFz_QQfSUm-HqZq8xML1LljQ1v1gnl3LEc\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion\" -d '{\"user_id\":78094,\"promotion_id\":2700,\"price\":10000,\"write_off_points\":null,\"company_id\":36129}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA5M30.4iA6CnYNZPiSANLikOID-_KR7MMp-R-fcT4fn0wJz8Q\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

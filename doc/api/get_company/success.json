@@ -19,32 +19,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/companies?company_id=35135",
+      "request_path": "api/v1/companies?company_id=36071",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgwMn0._dZ5gUtQ9iVDlECL8D9Qsu84PEmzlhCHGMJABBEbBT0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3Nzk3NX0.B1IyhjVlqNwZgNWJR6lGzdqU7NTjFCpx_HIlSP7cvtA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "35135"
+        "company_id": "36071"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 35135,\n  \"name\": \"test\",\n  \"created_at\": \"2020-03-19T07:50:57.579Z\",\n  \"updated_at\": \"2020-03-19T07:50:57.579Z\",\n  \"tariff_plan_purchase_id\": null\n}",
+      "response_body": "{\n  \"id\": 36071,\n  \"name\": \"test\",\n  \"created_at\": \"2020-03-19T10:19:18.151Z\",\n  \"updated_at\": \"2020-03-19T10:19:18.151Z\",\n  \"tariff_plan_purchase_id\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"7fadf102d0a4d9ce0d0e5026bf531b25\"",
+        "ETag": "W/\"0defa10daa627bfb5dd8a5e776da3f85\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "665755fc-518c-4326-9502-59748802ee80",
-        "X-Runtime": "0.007173",
+        "X-Request-Id": "8496e86e-6576-40a8-b070-f1997c307873",
+        "X-Runtime": "0.006395",
         "Vary": "Origin",
         "Content-Length": "137"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/companies?company_id=35135\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgwMn0._dZ5gUtQ9iVDlECL8D9Qsu84PEmzlhCHGMJABBEbBT0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/companies?company_id=36071\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3Nzk3NX0.B1IyhjVlqNwZgNWJR6lGzdqU7NTjFCpx_HIlSP7cvtA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

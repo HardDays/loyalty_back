@@ -33,7 +33,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=75885&company_id=35182",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=78058&company_id=36118",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -42,8 +42,8 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "75885",
-        "company_id": "35182"
+        "user_id": "78058",
+        "company_id": "36118"
       },
       "request_content_type": "application/json",
       "response_status": 401,
@@ -52,12 +52,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "da918dd1-805c-4fc7-ba30-aeedca3cba8a",
-        "X-Runtime": "0.003171",
+        "X-Request-Id": "37f24540-47ee-4a52-8f62-d4c7e0b66ab0",
+        "X-Runtime": "0.003456",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=75885&company_id=35182\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=78058&company_id=36118\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

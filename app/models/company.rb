@@ -4,6 +4,7 @@ class Company < ApplicationRecord
     has_one :loyalty_program
     has_one :vk_group
     has_one :telegram_group
+    has_one :service_token
 
     has_many :operators
     has_many :clients
@@ -14,8 +15,8 @@ class Company < ApplicationRecord
     
     validates :name, length: {minimum: 1, maximum: 128}
 
-    def ownership(creator)
-        if creator != self.creator
+    def valid_token?(token)
+        if not service_token || service_token.one_s != token 
             raise ApplicationController::Forbidden
         end
     end

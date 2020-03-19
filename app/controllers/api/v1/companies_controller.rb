@@ -41,10 +41,13 @@ module Api
 			end
 
 			def auth_creator
-				auth
 				@company = Company.find(params[:company_id])
-				@auth_user = User.authorize(request.headers['Authorization'])
-				@auth_user.company_creator?(@company)
+				if params[:service_token]
+					@company.valid_token?(params[:service_token])
+				else
+					auth
+					@auth_user.company_creator?(@company)
+				end
 			end
 
 			def company_params

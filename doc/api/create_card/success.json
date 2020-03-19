@@ -35,10 +35,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/cards",
-      "request_body": "{\"number\":\"228 882\",\"points\":1337,\"company_id\":35092}",
+      "request_body": "{\"number\":\"228 882\",\"points\":1337,\"company_id\":36028}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTY4NX0.U4CmSpvqARZOJa_9zuj1RtDGXNX7gQI8h99GTLRYrQ0",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3Nzg1OH0.__8kR0vsetAKmdnVSEV9mawPQD9Yiavo0NY8XWNjg9E",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -47,18 +47,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1206,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2020-03-19T07:50:52.517Z\",\n  \"updated_at\": \"2020-03-19T07:50:52.517Z\",\n  \"operator_id\": null,\n  \"company_id\": 35092\n}",
+      "response_body": "{\n  \"id\": 1320,\n  \"number\": \"228 882\",\n  \"points\": 1337,\n  \"created_at\": \"2020-03-19T10:19:13.389Z\",\n  \"updated_at\": \"2020-03-19T10:19:13.389Z\",\n  \"operator_id\": null,\n  \"company_id\": 36028\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"edf85ba37a3d1562b89898c4f700420c\"",
+        "ETag": "W/\"134e72cf33ee87b11153bdb915172324\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "53a9151b-5e31-43a3-94ea-dd1bf8307dc0",
-        "X-Runtime": "0.040628",
+        "X-Request-Id": "a6239b90-19c1-43b9-b864-487519a6b1e7",
+        "X-Runtime": "0.035029",
         "Vary": "Origin",
         "Content-Length": "162"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337,\"company_id\":35092}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTY4NX0.U4CmSpvqARZOJa_9zuj1RtDGXNX7gQI8h99GTLRYrQ0\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/cards\" -d '{\"number\":\"228 882\",\"points\":1337,\"company_id\":36028}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3Nzg1OH0.__8kR0vsetAKmdnVSEV9mawPQD9Yiavo0NY8XWNjg9E\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

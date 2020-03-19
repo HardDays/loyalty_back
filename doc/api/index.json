@@ -1286,6 +1286,26 @@
       ]
     },
     {
+      "name": "Get 1c token",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Success",
+          "link": "get_1c_token/success.json",
+          "groups": "all",
+          "route": "api/v1/service_tokens/one_s",
+          "method": "get"
+        },
+        {
+          "description": "Wrong token",
+          "link": "get_1c_token/wrong_token.json",
+          "groups": "all",
+          "route": "api/v1/service_tokens/one_s",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Sms",
       "explanation": null,
       "examples": [
