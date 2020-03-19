@@ -19,11 +19,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/promotions/2549",
-      "request_body": "{\"company_id\":34894}",
+      "request_path": "api/v1/promotions/2589",
+      "request_body": "{\"company_id\":35205}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTI3Nn0.PPhhCGnxkz3P81OPsFr_GZ0ZAj67IsK6utrQWdegY-A",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTk0NH0.D_qVgreodKOaLg63m7btASphnYyg_sPV6QutsYv1piI",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "cd492477-ac95-424e-b7b0-354c6823f8ec",
-        "X-Runtime": "0.006670",
+        "X-Request-Id": "e8b7f195-b25f-470e-abb7-500cbce82488",
+        "X-Runtime": "0.012052",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions/2549\" -d '{\"company_id\":34894}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTI3Nn0.PPhhCGnxkz3P81OPsFr_GZ0ZAj67IsK6utrQWdegY-A\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/2589\" -d '{\"company_id\":35205}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTk0NH0.D_qVgreodKOaLg63m7btASphnYyg_sPV6QutsYv1piI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

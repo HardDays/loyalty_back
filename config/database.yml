@@ -4,39 +4,39 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  username: root
-  password: root
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
-  <<: *default
-  database: loyalty_back2
-
-test:
-  <<: *default
-  database: loyalty_back2_test
-
-# моя база
-
 # default: &default
 #   adapter: postgresql
 #   encoding: unicode
-#   username: postgres
+#   username: root
 #   password: root
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5   } %>
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 #   timeout: 5000
 
 # development:
 #   <<: *default
-#   database: loyalty_lend
+#   database: loyalty_back2
 
 # test:
 #   <<: *default
-#   database: loyalty_lend_test
+#   database: loyalty_back2_test
+
+# моя база
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: root
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5   } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: loyalty_lend
+
+test:
+  <<: *default
+  database: loyalty_lend_test
 
 
 # production:

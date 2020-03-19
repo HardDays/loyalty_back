@@ -11,20 +11,17 @@ module Api
 			def create
 				ActiveRecord::Base.transaction do
 					company = Company.new(company_params)
-
-					@auth_user.creators.each do |creator|
-						if !creator.company
-							company.creator = creator
-							break
+					creator = @auth_user.creators.build
+					if creator.save
+						company.creator = creator
+						if company.save
+							render json: company
+						else
+							render json: company.errors, status: :unprocessable_entity
+							raise ActiveRecord::Rollback
 						end
-					end
-					#@tariff_plan = TariffPlan.where(tariff_type: :demo).first
-					#@company.create_tariff_plan_purchase(tariff_plan_id: @tariff_plan.id, expired_at: DateTime.now + @tariff_plan.days.days)
-					
-					if company.save
-						render json: company
 					else
-						render json: company.errors, status: :unprocessable_entity
+						render json: creator.errors, status: :unprocessable_entity
 					end
 				end
 			end

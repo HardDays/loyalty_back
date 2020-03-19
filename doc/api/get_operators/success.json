@@ -34,34 +34,34 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/operators?store_id=21430&limit=3&company_id=34864",
+      "request_path": "api/v1/operators?store_id=21616&limit=3&company_id=35175",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTE5MX0.vpmODM4cBOGEVTe4K8T1DFKjViBCdXU98XRU5ehq_8Q",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTg1OX0.mtTu7YZ3rFzc_i7yPmRh0q6sLFScT_7oaxCrM1AOoOM",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "store_id": "21430",
+        "store_id": "21616",
         "limit": "3",
-        "company_id": "34864"
+        "company_id": "35175"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 75192,\n    \"email\": \"db781b37249ef663ef856c36e3a59dff@7f61b17a75f6023904bb0332058997e7.xx\",\n    \"created_at\": \"2020-03-18T09:31:22.834Z\",\n    \"updated_at\": \"2020-03-18T09:31:22.834Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79997391585\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21430,\n        \"created_at\": \"2020-03-18T09:31:22.846Z\",\n        \"updated_at\": \"2020-03-18T09:31:22.846Z\",\n        \"company_id\": 34864,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 34864,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-18T09:31:22.818Z\",\n          \"updated_at\": \"2020-03-18T09:31:22.818Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  },\n  {\n    \"id\": 75193,\n    \"email\": \"1e809aae65373a8becc299cf24c9b659@56046f7b7847f6733a818f01e843a44f.xx\",\n    \"created_at\": \"2020-03-18T09:31:22.856Z\",\n    \"updated_at\": \"2020-03-18T09:31:22.856Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79991905219\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21430,\n        \"created_at\": \"2020-03-18T09:31:22.868Z\",\n        \"updated_at\": \"2020-03-18T09:31:22.868Z\",\n        \"company_id\": 34864,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 34864,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-18T09:31:22.818Z\",\n          \"updated_at\": \"2020-03-18T09:31:22.818Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  },\n  {\n    \"id\": 75194,\n    \"email\": \"b26b79ce664673064a21cf461f1f7445@359857310963f1c4ce4929456548a84d.xx\",\n    \"created_at\": \"2020-03-18T09:31:22.877Z\",\n    \"updated_at\": \"2020-03-18T09:31:22.877Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79995281027\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21430,\n        \"created_at\": \"2020-03-18T09:31:22.889Z\",\n        \"updated_at\": \"2020-03-18T09:31:22.889Z\",\n        \"company_id\": 34864,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 34864,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-18T09:31:22.818Z\",\n          \"updated_at\": \"2020-03-18T09:31:22.818Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  }\n]",
+      "response_body": "[\n  {\n    \"id\": 75860,\n    \"email\": \"921ec45bb0f2a47eab049c8d8d22cf1f@c819af0433dda55309b6501d67911c41.xx\",\n    \"created_at\": \"2020-03-19T07:51:00.451Z\",\n    \"updated_at\": \"2020-03-19T07:51:00.451Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79999511897\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21616,\n        \"created_at\": \"2020-03-19T07:51:00.466Z\",\n        \"updated_at\": \"2020-03-19T07:51:00.466Z\",\n        \"company_id\": 35175,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 35175,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-19T07:51:00.432Z\",\n          \"updated_at\": \"2020-03-19T07:51:00.432Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  },\n  {\n    \"id\": 75861,\n    \"email\": \"9c09130531469390f6c54f33b0b9de9f@11ff3ac3f53bb60911e93742627b15cf.xx\",\n    \"created_at\": \"2020-03-19T07:51:00.478Z\",\n    \"updated_at\": \"2020-03-19T07:51:00.478Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79994104611\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21616,\n        \"created_at\": \"2020-03-19T07:51:00.493Z\",\n        \"updated_at\": \"2020-03-19T07:51:00.493Z\",\n        \"company_id\": 35175,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 35175,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-19T07:51:00.432Z\",\n          \"updated_at\": \"2020-03-19T07:51:00.432Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  },\n  {\n    \"id\": 75862,\n    \"email\": \"d90f90cfddf441b5c412fcf734f90bcd@2421a5f51a1ae461815ea63ea8b9a1e9.xx\",\n    \"created_at\": \"2020-03-19T07:51:00.505Z\",\n    \"updated_at\": \"2020-03-19T07:51:00.505Z\",\n    \"user_type\": null,\n    \"first_name\": \"test\",\n    \"second_name\": null,\n    \"last_name\": \"test\",\n    \"phone\": \"79995599385\",\n    \"gender\": null,\n    \"birth_day\": null,\n    \"client\": [\n\n    ],\n    \"operator\": [\n      {\n        \"store_id\": 21616,\n        \"created_at\": \"2020-03-19T07:51:00.520Z\",\n        \"updated_at\": \"2020-03-19T07:51:00.520Z\",\n        \"company_id\": 35175,\n        \"operator_status\": \"active\",\n        \"company\": {\n          \"id\": 35175,\n          \"name\": \"test\",\n          \"created_at\": \"2020-03-19T07:51:00.432Z\",\n          \"updated_at\": \"2020-03-19T07:51:00.432Z\",\n          \"tariff_plan_purchase_id\": null\n        }\n      }\n    ],\n    \"creator\": [\n\n    ]\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"af815cd93bd6662074c16dee4ebfda16\"",
+        "ETag": "W/\"e2de98d8fa12603493092a26a3fe2cd9\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d38c9ec2-689e-4da7-9a96-6579af9cd2ee",
-        "X-Runtime": "0.029953",
+        "X-Request-Id": "0ad7291e-aeaa-49c5-ab22-5110297fb891",
+        "X-Runtime": "0.039490",
         "Vary": "Origin",
         "Content-Length": "1894"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators?store_id=21430&limit=3&company_id=34864\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTE5MX0.vpmODM4cBOGEVTe4K8T1DFKjViBCdXU98XRU5ehq_8Q\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators?store_id=21616&limit=3&company_id=35175\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTg1OX0.mtTu7YZ3rFzc_i7yPmRh0q6sLFScT_7oaxCrM1AOoOM\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

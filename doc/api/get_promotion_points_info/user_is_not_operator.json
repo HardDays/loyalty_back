@@ -39,18 +39,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=75233&promotion_id=2539&company_id=34876",
+      "request_path": "api/v1/orders/promotion/points?user_id=75901&promotion_id=2579&company_id=35187",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIzNH0.etB-jbf8OEq68E3GKQ07Lp20QNUOfIdg2eMHSAN8XQA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTkwMn0.MNHrQJB38cVCOctLFt-YDtlB1ZHbsB9xGnWxSdjOdlg",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "75233",
-        "promotion_id": "2539",
-        "company_id": "34876"
+        "user_id": "75901",
+        "promotion_id": "2579",
+        "company_id": "35187"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -59,12 +59,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6ed68d5e-da35-4503-a045-c495391d2eb3",
-        "X-Runtime": "0.005777",
+        "X-Request-Id": "9f6373fc-36d5-4bd2-a6eb-1d25ff411252",
+        "X-Runtime": "0.005591",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=75233&promotion_id=2539&company_id=34876\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTIzNH0.etB-jbf8OEq68E3GKQ07Lp20QNUOfIdg2eMHSAN8XQA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=75901&promotion_id=2579&company_id=35187\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTkwMn0.MNHrQJB38cVCOctLFt-YDtlB1ZHbsB9xGnWxSdjOdlg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

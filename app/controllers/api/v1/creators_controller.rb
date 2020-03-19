@@ -14,13 +14,10 @@ module Api
 			# POST /creators
 			def create
 				ActiveRecord::Base.transaction do
-					user = User.find_by(email: params[:email])
+					user = User.find_by('email = ? OR phone = ?', params[:email], Phonelib.parse(params[:phone]).sanitized)
 					if not user
 						user = User.new(user_params)
-					end
-					creator = user.creators.build
-					if user.save
-						if creator.save
+						if user.save
 							user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..8])
 							begin
 								ConfirmationMailer.confirmation_email(user).deliver!
@@ -29,12 +26,11 @@ module Api
 							end
 							render json: user
 						else
-							render json: creator.errors, status: :unprocessable_entity
+							render json: user.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback
 						end
 					else
-						render json: user.errors, status: :unprocessable_entity
-						raise ActiveRecord::Rollback
+						render json: user
 					end
 				end
 			end

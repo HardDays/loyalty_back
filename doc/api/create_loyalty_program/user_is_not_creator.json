@@ -20,10 +20,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/loyalty_programs",
-      "request_body": "{\"company_id\":34848}",
+      "request_body": "{\"company_id\":35159}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTE2N30.kGS6IHG1SB7uCv7VRd63nBduja06Isx7UX3YfAX3REA",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgzNX0.4nXYkUj-fKuC6tCwmCK2PSFH1TVhMxMzcT3HPWdfm9Q",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -36,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "85dbfece-e135-4c77-9dac-06b1e80ce4e5",
-        "X-Runtime": "0.004961",
+        "X-Request-Id": "13099012-4b93-4c2e-a522-7504ce490919",
+        "X-Runtime": "0.009003",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '{\"company_id\":34848}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTE2N30.kGS6IHG1SB7uCv7VRd63nBduja06Isx7UX3YfAX3REA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_programs\" -d '{\"company_id\":35159}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgzNX0.4nXYkUj-fKuC6tCwmCK2PSFH1TVhMxMzcT3HPWdfm9Q\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

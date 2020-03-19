@@ -70,10 +70,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/vk/groups",
-      "request_body": "{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"group_join_points\":1000,\"wall_repost_points\":1000,\"wall_like_points\":1000,\"wall_reply_points\":1000,\"company_id\":34932}",
+      "request_body": "{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"group_join_points\":1000,\"wall_repost_points\":1000,\"wall_like_points\":1000,\"wall_reply_points\":1000,\"company_id\":35243}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMzM30.NR48yci3QmNYDP5M7FWdiobGl-jF-w9HYhRLxEcQuRQ",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NjAwMX0.Yi3ONkVwcZoKx3xIvamy9fk-9FtITr1WnCUAw3FAc_o",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -82,18 +82,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 8,\n  \"company_id\": 34932,\n  \"confirmation_code\": \"45857340\",\n  \"confirmed\": false,\n  \"callback_code\": \"6a97269a2\",\n  \"created_at\": \"2020-03-18T09:31:28.207Z\",\n  \"updated_at\": \"2020-03-18T09:31:28.207Z\",\n  \"group_id\": \"123\",\n  \"group_join_points\": 1000,\n  \"wall_repost_points\": 1000,\n  \"wall_like_points\": 1000,\n  \"wall_reply_points\": 1000\n}",
+      "response_body": "{\n  \"id\": 10,\n  \"company_id\": 35243,\n  \"confirmation_code\": \"45857340\",\n  \"confirmed\": false,\n  \"callback_code\": \"4f7478abb\",\n  \"created_at\": \"2020-03-19T07:51:07.124Z\",\n  \"updated_at\": \"2020-03-19T07:51:07.124Z\",\n  \"group_id\": \"123\",\n  \"group_join_points\": 1000,\n  \"wall_repost_points\": 1000,\n  \"wall_like_points\": 1000,\n  \"wall_reply_points\": 1000\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"0d57187188816cd9a71e781429bb798e\"",
+        "ETag": "W/\"52ff861ac88570a0bb087264f9ed5e62\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "7bb2ce8c-2d28-410b-9ec8-ccb80baaf36b",
-        "X-Runtime": "0.027741",
+        "X-Request-Id": "a387d665-a7e7-4ae6-a7d4-e4d0f9d22fb7",
+        "X-Runtime": "0.031308",
         "Vary": "Origin",
-        "Content-Length": "301"
+        "Content-Length": "302"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"group_join_points\":1000,\"wall_repost_points\":1000,\"wall_like_points\":1000,\"wall_reply_points\":1000,\"company_id\":34932}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTMzM30.NR48yci3QmNYDP5M7FWdiobGl-jF-w9HYhRLxEcQuRQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/vk/groups\" -d '{\"group_id\":\"123\",\"confirmation_code\":\"45857340\",\"group_join_points\":1000,\"wall_repost_points\":1000,\"wall_like_points\":1000,\"wall_reply_points\":1000,\"company_id\":35243}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NjAwMX0.Yi3ONkVwcZoKx3xIvamy9fk-9FtITr1WnCUAw3FAc_o\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -47,22 +47,6 @@ resource "Create company" do
           expect(status).to eq(401)
       end
     end
-
-    context "User is not creator" do
-      before do
-        @wrong_user = create_user
-      end
-
-      let(:name) { "test" }
-      let(:authorization) { @wrong_user.token }
-
-      let(:raw_post) { params.to_json }
-
-      example "User is not creator" do
-        do_request
-        expect(status).to eq(422)
-      end
-    end
   end
 end
 

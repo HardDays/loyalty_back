@@ -19,16 +19,16 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/companies?company_id=34826",
+      "request_path": "api/v1/companies?company_id=35137",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTEzN30.noN8g428Igzc92dgmNpd_Xb5i0qt8wEXoH6qN_CqF7o",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgwNX0.YfwQFd2A_XQBiRERiCpGbYjCm2tdVdW5xkGfa6JHnI8",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "34826"
+        "company_id": "35137"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -37,12 +37,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "0b24635c-82aa-433f-a5c4-1507c8283180",
-        "X-Runtime": "0.006022",
+        "X-Request-Id": "6c6f4d4c-8260-41ad-a84d-8e1f93cd9c5d",
+        "X-Runtime": "0.006616",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/companies?company_id=34826\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTEzN30.noN8g428Igzc92dgmNpd_Xb5i0qt8wEXoH6qN_CqF7o\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/companies?company_id=35137\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NTgwNX0.YfwQFd2A_XQBiRERiCpGbYjCm2tdVdW5xkGfa6JHnI8\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -476,13 +476,6 @@
           "groups": "all",
           "route": "api/v1/companies",
           "method": "post"
-        },
-        {
-          "description": "User is not creator",
-          "link": "create_company/user_is_not_creator.json",
-          "groups": "all",
-          "route": "api/v1/companies",
-          "method": "post"
         }
       ]
     },
