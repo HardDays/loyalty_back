@@ -193,9 +193,9 @@ class User < ApplicationRecord
 
         if options && options[:company] && options[:role]
             if options[:role] == :client
-                attrs[:client] = clients.where(company_id: options[:company].id)
+                attrs[:client] = clients.where(company_id: options[:company].id).as_json(options)
             else
-                attrs[:operator] = operators.where(company_id: options[:company].id)
+                attrs[:operator] = operators.where(company_id: options[:company].id).as_json(options)
             end
         else
             attrs[:client] = clients.as_json(options)
