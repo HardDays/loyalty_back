@@ -25,6 +25,12 @@
       "required": true,
       "name": "company_id",
       "description": "Company id"
+    },
+    {
+      "type": "string",
+      "required": false,
+      "name": "service_token",
+      "description": "Service token for intergration"
     }
   ],
   "response_fields": [
@@ -33,17 +39,17 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/loyalty_program/points?user_id=78061&company_id=36119",
+      "request_path": "api/v1/orders/loyalty_program/points?user_id=78396&company_id=36276",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA2Mn0.m-uRTEZFBI2Zyd30ytRbPfo08E7MoSP0lBfXXmEMtkk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODM5N30.kd9hN4osTGG6vTWZectLMBKvqhry_nSoFQOeIi6Jt8w",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "78061",
-        "company_id": "36119"
+        "user_id": "78396",
+        "company_id": "36276"
       },
       "request_content_type": "application/json",
       "response_status": 403,
@@ -52,12 +58,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5e6d5b81-9e90-4918-8ddb-4ba8036a0b92",
-        "X-Runtime": "0.006798",
+        "X-Request-Id": "38e74f96-143b-4e65-8c47-56a7d5374a89",
+        "X-Runtime": "0.005963",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=78061&company_id=36119\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODA2Mn0.m-uRTEZFBI2Zyd30ytRbPfo08E7MoSP0lBfXXmEMtkk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/loyalty_program/points?user_id=78396&company_id=36276\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODM5N30.kd9hN4osTGG6vTWZectLMBKvqhry_nSoFQOeIi6Jt8w\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

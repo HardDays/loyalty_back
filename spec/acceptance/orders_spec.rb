@@ -8,6 +8,7 @@ resource "Get program points info" do
     parameter :user_id, "Id of client", type: :integer, required: true
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, required: true
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)
@@ -83,6 +84,7 @@ resource "Get promotion points info" do
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, required: true
     parameter :promotion_id, "Promotion id", type: :integer, required: true
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)
@@ -159,6 +161,7 @@ resource "Create order for loyalty program" do
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :write_off_points, "How much points to write off", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: false
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)
@@ -245,6 +248,7 @@ resource "Create order for promotion" do
     parameter :price, "Price in cents", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :write_off_points, "How much points to write off", minmum: 1, maximum: 100000000, type: :integer, in: :body, required: false
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)

@@ -285,6 +285,7 @@ resource "Add points" do
   post "api/v1/clients/:id/points" do
     parameter :points, "Points", minmum: 0, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)
@@ -343,6 +344,7 @@ resource "Remove points" do
   delete "api/v1/clients/:id/points" do
     parameter :points, "Points", minmum: 0, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)
