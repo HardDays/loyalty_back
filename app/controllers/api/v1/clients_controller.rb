@@ -208,8 +208,7 @@ module Api
 					burning_date: DateTime.now + 100.years,
 					activation_date: DateTime.now,
 					client: @user.client(@company),
-					operator: @auth_user.operator(@company),
-					points_source: :operator
+					points_source: :creator
 				)
 				if points.save
 					render status: :ok
