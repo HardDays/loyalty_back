@@ -260,7 +260,6 @@ module Api
 				@user.company_client?(@company)
 			end
 
-
 			def auth_profile
 				auth
 				@auth_user.company_client?(@company)
