@@ -18,7 +18,7 @@ class Company < ApplicationRecord
     def valid_token?(token)
         puts 'AAAAAAAAAAAAAAAAAA'
         puts json: service_token
-        if (not service_token) || service_token.one_s != token 
+        if service_token == nil || service_token.one_s != token 
             raise ApplicationController::Forbidden
         end
     end
