@@ -24,7 +24,7 @@ module Api
 							rescue => ex
 								puts json: ex
 							end
-							render json: user
+							render json: user, token: true
 						else
 							render json: user.errors, status: :unprocessable_entity
 							raise ActiveRecord::Rollback
