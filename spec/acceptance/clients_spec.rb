@@ -11,6 +11,7 @@ resource "List clients" do
     parameter :limit, "Limit", type: :integer, required: false
     parameter :offset, "Offset", type: :integer, required: false
     parameter :company_id, "Company id", type: :integer, required: true
+    parameter :service_token, "Service token for intergration", type: :string, required: false
 
     before do
       @creator = create_creator(create_user)

@@ -237,8 +237,13 @@ module Api
 			end
 
 			def auth_index
-				auth
-				@auth_user.company_operator_creator?(@company)
+				if params[:service_token]
+					@company = Company.find(params[:company_id])
+					@company.valid_token?(params[:service_token])
+				else 
+					auth
+					@auth_user.company_operator_creator?(@company)
+				end
 			end
 
 			def auth_find_operator

@@ -16,8 +16,6 @@ class Company < ApplicationRecord
     validates :name, length: {minimum: 1, maximum: 128}
 
     def valid_token?(token)
-        puts 'AAAAAAAAAAAAAAAAAA'
-        puts json: service_token
         if service_token == nil || service_token.one_s != token 
             raise ApplicationController::Forbidden
         end
