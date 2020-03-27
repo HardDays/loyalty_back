@@ -119,6 +119,9 @@ Rails.application.configure do
     config.api_version = '5.103'
   end
 
+  config.admin_login = ENV['ADMIN_LOGIN']
+  config.admin_password = ENV['ADMIN_PASSWORD']
+
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector

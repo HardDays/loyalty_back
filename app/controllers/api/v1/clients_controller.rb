@@ -275,7 +275,7 @@ module Api
 			end
 
 			def profile_params
-				params.permit(:first_name, :last_name, :second_name, :gender)
+				params.permit(:first_name, :last_name, :second_name, :gender, :birth_day)
 			end
 
 			def client_params

@@ -203,7 +203,6 @@ class User < ApplicationRecord
             attrs[:creator] = creators.as_json(options)
         end
 
-
         # attrs[:user_types] = []
         # if client
         #     attrs = attrs.merge(client.as_json(options))
@@ -217,9 +216,6 @@ class User < ApplicationRecord
         #     attrs = attrs.merge(operator.as_json(options))
         #     attrs[:user_types] << :operator
         # end
-
-
-
 
         return attrs.except('password_digest')
     end
