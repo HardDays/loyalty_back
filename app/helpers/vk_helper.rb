@@ -7,7 +7,7 @@ module VkHelper
         
         groups.each do |group|
             id = -(group.group_id.to_i)
-
+            puts json: group
             vk = VkontakteApi::Client.new(TOKEN)
             posts = vk.wall.get(owner_id: id, v: '5.103').items
             posts.each do |p|
