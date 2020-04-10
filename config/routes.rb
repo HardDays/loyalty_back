@@ -55,9 +55,12 @@ Rails.application.routes.draw do
       put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
       # delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
 
+      get 'vk/groups', action: :show, controller: 'vk'
       post 'vk/groups', action: :create_group, controller: 'vk'
       post 'vk/callback/:id/:code', action: :callback, controller: 'vk'
 
+
+      get 'telegram/groups', action: :show, controller: 'telegram'
       post 'telegram/groups', action: :create_group, controller: 'telegram'
       post 'telegram/callback/oggfhgdufugvmdfghd8f4ngf', action: :callback, controller: 'telegram'
 

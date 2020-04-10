@@ -1,8 +1,17 @@
 module Api
     module V1
         class VkController < ApplicationController
-            before_action :auth, only: [:create_group]
+            before_action :auth, only: [:create_group, :show]
             
+            # GET /vk/groups
+            def show
+                if @company.vk_group
+                    render json: @company.vk_group
+                else 
+                    render status: :not_found
+                end
+            end
+
             # POST /vk/groups 
             def create_group
                 if not @company.vk_group

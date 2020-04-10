@@ -1,8 +1,17 @@
 module Api
     module V1
         class TelegramController < ApplicationController
-            before_action :auth, only: [:create_group]
+            before_action :auth, only: [:create_group, :show]
             
+            # GET /telegram/groups
+            def show
+                if @company.telegram_group
+                    render json: @company.telegram_group
+                else 
+                    render status: :not_found
+                end
+            end
+
              # POST /telegram/groups 
              def create_group
                 if not @company.telegram_group
