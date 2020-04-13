@@ -17,7 +17,7 @@ module Api
           @user = User.new(user_params)
           if @user.save
             @user.create_creator
-            @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..3])
+            @user.create_user_confirmation(confirm_status: :unconfirmed, code: SecureRandom.hex[0..6])
             begin
               ConfirmationMailer.confirmation_email(@user).deliver!
             rescue => ex
