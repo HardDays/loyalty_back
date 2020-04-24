@@ -55,8 +55,9 @@ Rails.application.routes.draw do
       put 'loyalty_programs/:id', action: :update, controller: 'loyalty_programs'
       # delete 'loyalty_programs/:id', action: :destroy, controller: 'loyalty_programs'
 
-      get 'vk/groups', action: :show, controller: 'vk'
+      get 'vk/groups', action: :show_group, controller: 'vk'
       post 'vk/groups', action: :create_group, controller: 'vk'
+      put 'vk/groups', action: :update_group, controller: 'vk'
       post 'vk/callback/:id/:code', action: :callback, controller: 'vk'
 
 

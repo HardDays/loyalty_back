@@ -1,10 +1,10 @@
 module Api
     module V1
         class VkController < ApplicationController
-            before_action :auth, only: [:create_group, :show]
+            before_action :auth, only: [:create_group, :show_group, :update_group]
             
             # GET /vk/groups
-            def show
+            def show_group
                 if @company.vk_group
                     render json: @company.vk_group
                 else 
@@ -26,6 +26,20 @@ module Api
                     end
                 else
                     render json: @company.vk_group
+                end
+            end
+
+            # PUT /vk/groups 
+            def update_group
+                group = @company.vk_group
+                if group
+                    if group.update(group_params)
+                        render json: group
+                    else
+                        render json: group.errors, status: :unprocessable_entity
+                    end
+                else
+                    render status: :not_found
                 end
             end
             
