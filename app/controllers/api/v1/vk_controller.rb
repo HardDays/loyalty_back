@@ -55,8 +55,10 @@ module Api
                             render plain: group.confirmation_code
                         else
                             client_id = nil
+                            points = 0
                             if params[:type] == 'group_join'
                                 client_id = params[:object][:user_id]
+                                points = group.group_join_points
                             else 
                                 client_id = params[:object][:from_id]
                             end
@@ -65,11 +67,23 @@ module Api
                                 post_id = nil
                                 if params[:type] == 'wall_reply_new'
                                     post_id = params[:object][:post_id]
+                                    points = group.wall_reply_points
                                 elsif params[:type] == 'wall_repost'
                                     post_id = params[:object][:copy_history][0][:id]
+                                    points = group.wall_repost_points
                                 end
                                 event = VkEvent.new(client_id: client.id, vk_group_id: group.id, event_type: params[:type], post_id: post_id)
-                                event.save
+                                if event.save
+                                    points = ClientPoint.new(
+                                        current_points: points,
+                                        initial_points: points,
+                                        burning_date: DateTime.now + 100.years,
+                                        activation_date: DateTime.now,
+                                        client_id: client.id,
+                                        points_source: :vk
+                                    )
+                                    points.save
+                                end
                             end
                             render plain: 'ok'
                         end

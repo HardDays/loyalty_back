@@ -7,7 +7,7 @@ module VkHelper
         
         groups.each do |group|
             id = -(group.group_id.to_i)
-            puts json: group
+
             vk = VkontakteApi::Client.new(TOKEN)
             posts = vk.wall.get(owner_id: id, v: '5.103').items
             posts.each do |p|
@@ -16,7 +16,17 @@ module VkHelper
                     client = Client.find_by(vk_id: like)
                     if client
                         event = VkEvent.new(client_id: client.id, vk_group_id: group.id, event_type: :wall_like, post_id: p.id)
-                        event.save
+                        if event.save
+                            points = ClientPoint.new(
+                                current_points: group.wall_like_points,
+                                initial_points: group.wall_like_points,
+                                burning_date: DateTime.now + 100.years,
+                                activation_date: DateTime.now,
+                                client_id: client.id,
+                                points_source: :vk
+                            )
+                            points.save
+                        end
                     end
                 end
             end
