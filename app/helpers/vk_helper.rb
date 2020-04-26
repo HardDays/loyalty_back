@@ -10,6 +10,11 @@ module VkHelper
 
             vk = VkontakteApi::Client.new(TOKEN)
             posts = vk.wall.get(owner_id: id, v: '5.103').items
+            puts '##############'
+            puts id
+            puts json: posts
+            puts '##############'
+
             posts.each do |p|
                 likes = vk.likes.getList(type: 'post', owner_id: id, item_id: p.id, v: '5.103').items
                 likes.each do |like|
