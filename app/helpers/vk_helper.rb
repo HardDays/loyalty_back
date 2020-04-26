@@ -36,7 +36,7 @@ module VkHelper
                     end
                 end
             end
-        rescue => ex
+        rescue Exception => ex
         end
     end
 end
