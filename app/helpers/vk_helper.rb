@@ -18,7 +18,7 @@ module VkHelper
                 posts.each do |p|
                     likes = vk.likes.getList(type: 'post', owner_id: id, item_id: p.id, v: '5.103').items
                     likes.each do |like|
-                        client = Client.find_by(vk_id: like)
+                        client = Client.find_by(vk_id: like, company_id: group.company_id)
                         if client
                             event = VkEvent.new(client_id: client.id, vk_group_id: group.id, event_type: :wall_like, post_id: p.id)
                             if event.save

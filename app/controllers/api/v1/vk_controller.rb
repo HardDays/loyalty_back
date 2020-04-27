@@ -62,7 +62,7 @@ module Api
                             else 
                                 client_id = params[:object][:from_id]
                             end
-                            client = Client.find_by(vk_id: client_id)
+                            client = Client.find_by(vk_id: client_id, company: company.id)
                             if client && client_id
                                 post_id = nil
                                 if params[:type] == 'wall_reply_new'
