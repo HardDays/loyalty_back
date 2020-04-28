@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-  database: logaylty_back_production
+  database: loyalty_back_production
   username: loyalty_back
   password: <%= ENV['LOYALTY_BACK_DATABASE_PASSWORD'] %>
   host: localhost
