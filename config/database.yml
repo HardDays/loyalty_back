@@ -24,7 +24,7 @@ production:
   <<: *default
   database: logaylty_back_production
   username: loyalty_back
-  password: <%= ENV['FOOD_BACK_DATABASE_PASSWORD'] %>
+  password: <%= ENV['LOYALTY_BACK_DATABASE_PASSWORD'] %>
   host: localhost
   port: 5432
 
