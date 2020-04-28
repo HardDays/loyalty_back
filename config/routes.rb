@@ -1,13 +1,13 @@
 
 Rails.application.routes.draw do
-  #apipie
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
-  #TODO:!!!!!!!!!!!!!!!!!!!!!!!!! filter nested models in GET clients etc !!!!!!!!!!!!!
+  if Rails.env.production?
+    mount RailsAdmin::Engine => '/admin_hidden_123', as: 'rails_admin'
+  else
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
 
   namespace 'api' do
     namespace 'v1' do
-
       post 'auth/login', action: :login, controller: 'auth'
       post 'auth/confirm', action: :confirm, controller: 'auth'
       post 'auth/password/request', action: :request_password, controller: 'auth'
