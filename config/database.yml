@@ -20,6 +20,14 @@ test:
   <<: *default
   database: loyalty_back2_test
 
+production:
+  <<: *default
+  database: logaylty_back_production
+  username: loyalty_back
+  password: <%= ENV['FOOD_BACK_DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
+
 # моя база
 
 # default: &default
