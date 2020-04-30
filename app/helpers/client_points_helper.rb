@@ -86,7 +86,9 @@ module ClientPointsHelper
                         elsif program.rounding_rule.to_sym == :rounding_small
                             points = points - rest
                         elsif program.rounding_rule.to_sym == :rounding_big 
-                            points = (points - rest) + 100
+                            if rest > 0
+                                points = (points - rest) + 100
+                            end
                         end
                         
                         client_points = ClientPoint.new(
