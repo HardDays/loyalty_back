@@ -4,10 +4,16 @@ module ClientPointsHelper
         if promotion.begin_date <= DateTime.now && promotion.end_date >= DateTime.now
             if (promotion.accrual_on_points && write_off_points) || !write_off_points
                 points = 0
+                price = order.price
+                if write_off_points
+                    total = client.valid_points.sum(:current_points)
+                    money = ((order.price * promotion.write_off_rule_percent) / 100.0)
+                    price = [0, [write_off_points, money, total].min.to_i].max.to_i
+                end
                 if promotion.accrual_rule.to_sym == :accrual_percent
-                    points = (order.price * promotion.accrual_percent) / 100.0
+                    points = (price * promotion.accrual_percent) / 100.0
                 elsif promotion.accrual_rule.to_sym == :accrual_convert
-                    promotion = order.price * (promotion.accrual_points / promotion.accrual_money.to_f)
+                    points = price * (promotion.accrual_points / promotion.accrual_money.to_f)
                 end
                 points = points.to_i
     
@@ -60,10 +66,16 @@ module ClientPointsHelper
                 if (program.sum_type.to_sym == :one_buy && order.price >= level.min_price) || (program.sum_type.to_sym == :sum_buy && sum >= level.min_price)
                     if (level.accrual_on_points && write_off_points) || !write_off_points
                         points = 0
+                        price = order.price
+                        if write_off_points
+                            total = client.valid_points.sum(:current_points)
+                            money = ((order.price * level.write_off_rule_percent) / 100.0)
+                            price = [0, [write_off_points, money, total].min.to_i].max.to_i
+                        end
                         if level.accrual_rule.to_sym == :accrual_percent
-                            points = (order.price * level.accrual_percent) / 100.0
+                            points = (price * level.accrual_percent) / 100.0
                         elsif level.accrual_rule.to_sym == :accrual_convert
-                            points = order.price * (level.accrual_points / level.accrual_money.to_f)
+                            points = price * (level.accrual_points / level.accrual_money.to_f)
                         end
                         points = points.to_i
 
