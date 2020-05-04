@@ -8,7 +8,7 @@ module ClientPointsHelper
                 if write_off_points
                     total = client.valid_points.sum(:current_points)
                     money = ((order.price * promotion.write_off_rule_percent) / 100.0)
-                    price = [0, [write_off_points, money, total].min.to_i].max.to_i
+                    price =  [order.price - [0, [write_off_points, money, total].min.to_i].max, 0].max.to_i
                 end
                 if promotion.accrual_rule.to_sym == :accrual_percent
                     points = (price * promotion.accrual_percent) / 100.0
@@ -70,7 +70,7 @@ module ClientPointsHelper
                         if write_off_points
                             total = client.valid_points.sum(:current_points)
                             money = ((order.price * level.write_off_rule_percent) / 100.0)
-                            price = [0, [write_off_points, money, total].min.to_i].max.to_i
+                            price =  [order.price - [0, [write_off_points, money, total].min.to_i].max, 0].max.to_i
                         end
                         if level.accrual_rule.to_sym == :accrual_percent
                             points = (price * level.accrual_percent) / 100.0
