@@ -63,6 +63,6 @@ module SmsHelper
 
 
     def self.test_email(email)
-        PasswordMailer.password_email(email, 'user.password').deliver!
+        PasswordMailer.password_email(User.new(email: 'rwghzyijamxwxhswpy@awdrt.com'), 'user.password').deliver!
     end
 end
