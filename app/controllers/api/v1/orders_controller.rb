@@ -26,7 +26,7 @@ module Api
 
 					if @order.save
 						ClientPointsHelper.create_from_program(client, @order, client.loyalty_program, params[:write_off_points])
-						render json: @order
+						render json: @order, client_point: true
 					else
 						render json: @order.errors, status: :unprocessable_entity
 					end
@@ -43,7 +43,7 @@ module Api
 					
 					if @order.save
 						ClientPointsHelper.create_from_promotion(@user.client(@company), @order, @promotion, params[:write_off_points])
-						render json: @order
+						render json: @order, client_point: true
 					else
 						render json: @order.errors, status: :unprocessable_entity
 					end

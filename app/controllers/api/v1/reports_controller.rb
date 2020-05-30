@@ -26,7 +26,7 @@ module Api
 					params[:operators],
 					params[:limit],
 					params[:offset]
-				)
+				), company: @company, role: :client
 			end
 
 			def orders

@@ -26,6 +26,20 @@
       "required": false,
       "name": "service_token",
       "description": "Service token for intergration"
+    },
+    {
+      "type": "date",
+      "in": "body",
+      "required": false,
+      "name": "burning_date",
+      "description": "Burning date (in format dd.MM.yyyy)"
+    },
+    {
+      "type": "date",
+      "in": "body",
+      "required": false,
+      "name": "activation_date",
+      "description": "Acrivation date (in format dd.MM.yyyy)"
     }
   ],
   "response_fields": [
@@ -34,8 +48,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/78256/points",
-      "request_body": "{\"company_id\":36207}",
+      "request_path": "api/v1/clients/76/points",
+      "request_body": "{\"company_id\":23}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -51,12 +65,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "eadc82d9-c0d4-4958-8a64-fec7f4f8b61a",
-        "X-Runtime": "0.001754",
+        "X-Request-Id": "88e98aa0-922d-4cc3-815e-655a47dd73be",
+        "X-Runtime": "0.001316",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/78256/points\" -d '{\"company_id\":36207}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/76/points\" -d '{\"company_id\":23}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

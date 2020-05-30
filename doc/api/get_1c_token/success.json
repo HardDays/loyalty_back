@@ -19,32 +19,32 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/service_tokens/one_s?company_id=36313",
+      "request_path": "api/v1/service_tokens/one_s?company_id=129",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODQ4MH0.uSQYlrqwwma4ty09EXUDqScOCnqju7gySc3Vl2am2ys",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDB9.6GhpR748n_wNDI5jA56n8_GtwgSk02g_xQ0-4M4FaHQ",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "company_id": "36313"
+        "company_id": "129"
       },
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"one_s\": \"3a74fabe24a8a2e63c9e18b08c996be6\"\n}",
+      "response_body": "{\n  \"one_s\": \"ce4f3924f72c6b6e136dd48328810326\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"39972c4cc6430e490a7205ff0dbb8de7\"",
+        "ETag": "W/\"17fd2c30e9f4f59349ec7ef1bd2b4038\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a6c07d10-9b6b-462e-8557-385c66c91259",
-        "X-Runtime": "0.030888",
+        "X-Request-Id": "940f4c8c-398f-48ae-a5cc-e222535c28f4",
+        "X-Runtime": "0.061711",
         "Vary": "Origin",
         "Content-Length": "44"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/service_tokens/one_s?company_id=36313\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODQ4MH0.uSQYlrqwwma4ty09EXUDqScOCnqju7gySc3Vl2am2ys\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/service_tokens/one_s?company_id=129\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMDB9.6GhpR748n_wNDI5jA56n8_GtwgSk02g_xQ0-4M4FaHQ\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

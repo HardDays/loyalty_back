@@ -286,6 +286,8 @@ resource "Add points" do
     parameter :points, "Points", minmum: 0, maximum: 100000000, type: :integer, in: :body, required: true
     parameter :company_id, "Company id", type: :integer, required: true
     parameter :service_token, "Service token for intergration", type: :string, required: false
+    parameter :burning_date, "Burning date (in format dd.MM.yyyy)", type: :date, in: :body, required: false
+    parameter :activation_date, "Acrivation date (in format dd.MM.yyyy)", type: :date, in: :body, required: false
 
     before do
       @creator = create_creator(create_user)
@@ -302,6 +304,8 @@ resource "Add points" do
 
     context "Success" do
       let(:points) { 100000 }
+      let(:burning_date) { '30.01.2020' }
+      let(:activation_date) { '30.12.2020' }
 
       let(:raw_post) { params.to_json }
 

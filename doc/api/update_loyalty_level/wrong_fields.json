@@ -184,11 +184,11 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/loyalty_levels/15448",
-      "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":36240}",
+      "request_path": "api/v1/loyalty_levels/49",
+      "request_body": "{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":56}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODMyOH0.xrLNBuVQYi7zO7Dqb_-dT8WjfTin7YFQW72ERBV-mbo",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDh9.RqZxGxAUjAYoSiRXPjIGIxemsXzdGlah5EDCJs7YbFI",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -201,13 +201,13 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f483fe40-fe49-4df5-bdfc-c68d06a23805",
-        "X-Runtime": "0.014498",
+        "X-Request-Id": "824999aa-58ee-410a-8237-2b2df7df8fd3",
+        "X-Runtime": "0.018207",
         "Vary": "Origin",
         "Content-Length": "151"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/15448\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":36240}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODMyOH0.xrLNBuVQYi7zO7Dqb_-dT8WjfTin7YFQW72ERBV-mbo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/loyalty_levels/49\" -d '{\"accrual_rule\":null,\"write_off_rule\":null,\"write_off_rule_percent\":null,\"write_off_rule_points\":null,\"accordance_rule\":null,\"accrual_on_points\":null,\"company_id\":56}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDh9.RqZxGxAUjAYoSiRXPjIGIxemsXzdGlah5EDCJs7YbFI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

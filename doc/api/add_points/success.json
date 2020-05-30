@@ -26,6 +26,20 @@
       "required": false,
       "name": "service_token",
       "description": "Service token for intergration"
+    },
+    {
+      "type": "date",
+      "in": "body",
+      "required": false,
+      "name": "burning_date",
+      "description": "Burning date (in format dd.MM.yyyy)"
+    },
+    {
+      "type": "date",
+      "in": "body",
+      "required": false,
+      "name": "activation_date",
+      "description": "Acrivation date (in format dd.MM.yyyy)"
     }
   ],
   "response_fields": [
@@ -34,11 +48,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/78253/points",
-      "request_body": "{\"points\":100000,\"company_id\":36206}",
+      "request_path": "api/v1/clients/73/points",
+      "request_body": "{\"points\":100000,\"company_id\":22,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODI1MX0.Z6pzWH4Ng7_PtG-B_TPB0TF1kNNQw3gHLc9f-kBiqwk",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MX0.NE9F58UKKgNRCWOH8pkEoBmjE2OJy3mYq8Xd0ZTZ3A4",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -52,13 +66,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "bc110c6d-31f6-4f41-ac9f-57192b99eb06",
-        "X-Runtime": "0.039526",
+        "X-Request-Id": "712ccfe4-4df2-404e-8e4f-3a107cdbf7ca",
+        "X-Runtime": "0.031447",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/78253/points\" -d '{\"points\":100000,\"company_id\":36206}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODI1MX0.Z6pzWH4Ng7_PtG-B_TPB0TF1kNNQw3gHLc9f-kBiqwk\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/73/points\" -d '{\"points\":100000,\"company_id\":22,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MX0.NE9F58UKKgNRCWOH8pkEoBmjE2OJy3mYq8Xd0ZTZ3A4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

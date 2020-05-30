@@ -45,18 +45,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=2717&company_id=36278",
+      "request_path": "api/v1/orders/promotion/points?user_id=0&promotion_id=4&company_id=94",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODQwMn0.Cq_1U255SYl9u1e5Bg5C_DzGz4db5ai6pAXa261yxqU",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMjJ9.J-27nnTK-P49_38zHxC5qSSks4-kyOdMuUsSzL5VieA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
         "user_id": "0",
-        "promotion_id": "2717",
-        "company_id": "36278"
+        "promotion_id": "4",
+        "company_id": "94"
       },
       "request_content_type": "application/json",
       "response_status": 404,
@@ -65,12 +65,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "5cc55297-6337-425f-a4b2-66256a4ecae8",
-        "X-Runtime": "0.002586",
+        "X-Request-Id": "b6e41ae7-d4dd-4968-a0ec-2dcbdaf98dfe",
+        "X-Runtime": "0.003868",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=2717&company_id=36278\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODQwMn0.Cq_1U255SYl9u1e5Bg5C_DzGz4db5ai6pAXa261yxqU\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=0&promotion_id=4&company_id=94\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMjJ9.J-27nnTK-P49_38zHxC5qSSks4-kyOdMuUsSzL5VieA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

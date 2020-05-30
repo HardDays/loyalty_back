@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
     # validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, if: lambda { |m| !m.phone.present? || (m.email.present? && m.phone.present?) }
     # validates :phone, phone: true, uniqueness: true, presence: true, if: lambda { |m| !m.email.present? || (m.email.present? && m.phone.present?) }
-    validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true
+    validates :email, length: {maximum: 255}, uniqueness: {case_sensitive: false}, format: {with: URI::MailTo::EMAIL_REGEXP}, allow_nil: true#, presence: true
     validates :phone, phone: true, uniqueness: true, presence: true
     validates :password, presence: true, confirmation: true, length: {minimum: 7, maximum: 128}, if: lambda { |m| m.password.present? }
 

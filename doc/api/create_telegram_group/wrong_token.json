@@ -29,7 +29,7 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/telegram/groups",
-      "request_body": "{\"company_id\":36336}",
+      "request_body": "{\"company_id\":152}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -45,12 +45,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "8a123265-bd5e-4a22-8652-166e7c4dea6b",
-        "X-Runtime": "0.001792",
+        "X-Request-Id": "7fc6e990-8f96-4a5d-a2d3-4df91a919f99",
+        "X-Runtime": "0.001780",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"company_id\":36336}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/telegram/groups\" -d '{\"company_id\":152}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -33,10 +33,11 @@ production:
 # default: &default
 #   adapter: postgresql
 #   encoding: unicode
-#   username: postgres
-#   password: root
+#   username: food_back
+#   password: 12345
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5   } %>
 #   timeout: 5000
+#   host: localhost
 
 # development:
 #   <<: *default

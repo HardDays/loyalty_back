@@ -45,19 +45,19 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "api/v1/orders/promotion/points?user_id=78400&price=10000&promotion_id=2716&company_id=36277",
+      "request_path": "api/v1/orders/promotion/points?user_id=220&price=10000&promotion_id=3&company_id=93",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODM5OX0.sJaO4uWvSTopv0O7BYScxcQtqA7kFWOR-HKcSiE225w",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMTl9.nzyk40bUw4AufKe4YFdHbp_yLdA1u59l2eg6CUBSnCA",
         "Host": "example.org",
         "Cookie": ""
       },
       "request_query_parameters": {
-        "user_id": "78400",
+        "user_id": "220",
         "price": "10000",
-        "promotion_id": "2716",
-        "company_id": "36277"
+        "promotion_id": "3",
+        "company_id": "93"
       },
       "request_content_type": "application/json",
       "response_status": 200,
@@ -67,13 +67,13 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"81017b77e6b32a8df8203193353169a8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "34fc6598-9222-401c-9593-23027cde016e",
-        "X-Runtime": "0.013219",
+        "X-Request-Id": "e1d608c2-98cd-4f6d-b07f-7bf2243dd73d",
+        "X-Runtime": "0.020543",
         "Vary": "Origin",
         "Content-Length": "12"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=78400&price=10000&promotion_id=2716&company_id=36277\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3ODM5OX0.sJaO4uWvSTopv0O7BYScxcQtqA7kFWOR-HKcSiE225w\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/orders/promotion/points?user_id=220&price=10000&promotion_id=3&company_id=93\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMTl9.nzyk40bUw4AufKe4YFdHbp_yLdA1u59l2eg6CUBSnCA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

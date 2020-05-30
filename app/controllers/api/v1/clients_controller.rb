@@ -205,8 +205,8 @@ module Api
 				points = ClientPoint.new(
 					current_points: params[:points].to_i,
 					initial_points: params[:points].to_i,
-					burning_date: DateTime.now + 100.years,
-					activation_date: DateTime.now,
+					burning_date: params[:burning_date] ? DateTime.parse(params[:burning_date]) : DateTime.now + 100.years,
+					activation_date: params[:activation_date] ? DateTime.parse(params[:activation_date]) : DateTime.now,
 					client: @user.client(@company),
 					points_source: :creator
 				)
