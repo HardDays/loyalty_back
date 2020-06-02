@@ -56,10 +56,10 @@
     {
       "request_method": "PUT",
       "request_path": "api/v1/clients/profile",
-      "request_body": "{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":32}",
+      "request_body": "{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":503}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDN9.C8Q3UwLeV9GI-k_Qac3XZ7R3qrsdxLb9K5Gdr_m1X10",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTA2fQ.CN7n_LmKk7s6ScGBANoQvjWA2wtPtIEk1ScD7wUARlo",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -68,18 +68,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 103,\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"phone\": \"79929256499\",\n  \"email\": \"48213d7d14e32a862e43a6771519e452@9fd132609366caa9659846b91c0ad4b7.xx\",\n  \"created_at\": \"2020-05-30T09:00:40.921Z\",\n  \"updated_at\": \"2020-05-30T09:00:40.953Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-05-30T09:00:40.936Z\",\n      \"updated_at\": \"2020-05-30T09:00:40.936Z\",\n      \"company_id\": 32,\n      \"loyalty_program_id\": 32,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": null,\n      \"company\": {\n        \"id\": 32,\n        \"name\": \"test\",\n        \"created_at\": \"2020-05-30T09:00:40.862Z\",\n        \"updated_at\": \"2020-05-30T09:00:40.862Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 1106,\n  \"first_name\": \"new test\",\n  \"last_name\": \"new test\",\n  \"second_name\": \"new test\",\n  \"phone\": \"79925403964\",\n  \"email\": \"307e6a5b598d2596c81c9b342a928efa@34f6b16225ce03b157fb490da321f251.xx\",\n  \"created_at\": \"2020-06-02T10:31:27.868Z\",\n  \"updated_at\": \"2020-06-02T10:31:27.889Z\",\n  \"user_type\": null,\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-06-02T10:31:27.877Z\",\n      \"updated_at\": \"2020-06-02T10:31:27.877Z\",\n      \"company_id\": 503,\n      \"loyalty_program_id\": 310,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": null,\n      \"company\": {\n        \"id\": 503,\n        \"name\": \"test\",\n        \"created_at\": \"2020-06-02T10:31:27.828Z\",\n        \"updated_at\": \"2020-06-02T10:31:27.828Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"67999563cdb6406e3dfef67846c622a9\"",
+        "ETag": "W/\"c0be52df9441ce6e70015c887380aa73\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "fb8b0ed1-889f-4342-a159-aba1be5c0e35",
-        "X-Runtime": "0.025424",
+        "X-Request-Id": "1f92795d-a52a-4e61-adf8-2971a029c613",
+        "X-Runtime": "0.015830",
         "Vary": "Origin",
-        "Content-Length": "719"
+        "Content-Length": "723"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -d '{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":32}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDN9.C8Q3UwLeV9GI-k_Qac3XZ7R3qrsdxLb9K5Gdr_m1X10\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile\" -d '{\"first_name\":\"new test\",\"last_name\":\"new test\",\"second_name\":\"new test\",\"company_id\":503}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTA2fQ.CN7n_LmKk7s6ScGBANoQvjWA2wtPtIEk1ScD7wUARlo\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

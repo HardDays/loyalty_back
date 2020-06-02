@@ -44,15 +44,15 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 6,\n  \"email\": \"test@text.xxt\",\n  \"created_at\": \"2020-05-30T09:00:35.730Z\",\n  \"updated_at\": \"2020-05-30T09:00:35.730Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79999090745\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.YPjPBJ98sM9qx0HGkFnl_YsbW9YxfYsW685y3uR-P78\",\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 1009,\n  \"email\": \"test@text.xxt\",\n  \"created_at\": \"2020-06-02T10:31:24.555Z\",\n  \"updated_at\": \"2020-06-02T10:31:24.555Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79993381642\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDA5fQ.v16ms5dazTlcGZ_oMjfFoWIv4wlRfBK2mVJ2TFs1mOc\",\n  \"client\": [\n\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"6ab9373900c5015ca0ad606ff40d3426\"",
+        "ETag": "W/\"cbeb6eea37c3f6f2fb0dd93f88f53299\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d6c05730-ef2f-417f-a450-7b6ca25fbd14",
-        "X-Runtime": "0.019003",
+        "X-Request-Id": "46f7e1bf-9cbd-4102-8a7c-b09e33b24e6c",
+        "X-Runtime": "0.010648",
         "Vary": "Origin",
-        "Content-Length": "373"
+        "Content-Length": "380"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": "curl \"http://localhost:3000api/v1/auth/confirm\" -d '{\"email\":\"test@text.xxt\",\"code\":\"0000\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""

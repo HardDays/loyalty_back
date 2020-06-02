@@ -29,10 +29,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/clients/profile/telegram",
-      "request_body": "{\"telegram_username\":\"Userdfskfdjsk\",\"company_id\":37}",
+      "request_body": "{\"telegram_username\":\"Userdfskfdjsk\",\"company_id\":508}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTh9.F7bS_noAHyyFrRhJaUC23V4CeQCcBv0bMHJaL5PFfA4",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTIxfQ.D8eSc0gyEhYQ7bCH8xU47jjExdHrE0X_rRMr9OoaWak",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -41,18 +41,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 118,\n  \"email\": \"631575bf282ccd9a56c8be65fdee7d6f@779fee8b70aa2f020df46fca61c6f8e4.xx\",\n  \"created_at\": \"2020-05-30T09:00:41.840Z\",\n  \"updated_at\": \"2020-05-30T09:00:41.840Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79954321096\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-05-30T09:00:41.855Z\",\n      \"updated_at\": \"2020-05-30T09:00:41.872Z\",\n      \"company_id\": 37,\n      \"loyalty_program_id\": 37,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": \"Userdfskfdjsk\",\n      \"company\": {\n        \"id\": 37,\n        \"name\": \"test\",\n        \"created_at\": \"2020-05-30T09:00:41.787Z\",\n        \"updated_at\": \"2020-05-30T09:00:41.787Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 1121,\n  \"email\": \"016e0925f446bf825bfcead25e8f1815@03c7b431b9004ca4582cce6540c52c3f.xx\",\n  \"created_at\": \"2020-06-02T10:31:28.398Z\",\n  \"updated_at\": \"2020-06-02T10:31:28.398Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": null,\n  \"last_name\": \"test\",\n  \"phone\": \"79953472869\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n    {\n      \"created_at\": \"2020-06-02T10:31:28.407Z\",\n      \"updated_at\": \"2020-06-02T10:31:28.417Z\",\n      \"company_id\": 508,\n      \"loyalty_program_id\": 315,\n      \"card_number\": \"12345\",\n      \"recommendator_id\": null,\n      \"operator_id\": null,\n      \"vk_id\": null,\n      \"telegram_username\": \"Userdfskfdjsk\",\n      \"company\": {\n        \"id\": 508,\n        \"name\": \"test\",\n        \"created_at\": \"2020-06-02T10:31:28.363Z\",\n        \"updated_at\": \"2020-06-02T10:31:28.363Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"operator\": [\n\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"58068a948d83e7b850fcb8a304d72e00\"",
+        "ETag": "W/\"25798a334bcf90150b33769ffb638d4a\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "46d868ef-dc86-439c-a030-e7ba338bac9a",
-        "X-Runtime": "0.022858",
+        "X-Request-Id": "328363aa-49b5-4bab-9ec4-ca893e1ada5e",
+        "X-Runtime": "0.014073",
         "Vary": "Origin",
-        "Content-Length": "716"
+        "Content-Length": "720"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/profile/telegram\" -d '{\"telegram_username\":\"Userdfskfdjsk\",\"company_id\":37}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTh9.F7bS_noAHyyFrRhJaUC23V4CeQCcBv0bMHJaL5PFfA4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/profile/telegram\" -d '{\"telegram_username\":\"Userdfskfdjsk\",\"company_id\":508}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTIxfQ.D8eSc0gyEhYQ7bCH8xU47jjExdHrE0X_rRMr9OoaWak\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

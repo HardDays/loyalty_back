@@ -34,11 +34,11 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "api/v1/clients/89/points",
-      "request_body": "{\"company_id\":27}",
+      "request_path": "api/v1/clients/1092/points",
+      "request_body": "{\"company_id\":498}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5MH0.S-cNQqaHh_YWzjFxkwheo_hJBsqY2lK5EnBkt17FvjY",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDkzfQ.ZYWY4p5yHe8u43x0x_GqPtPOIRRWxlJCvZDKhvcPLiE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -51,12 +51,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "23a39ffd-e71c-41fb-93e0-d788dfbd4880",
-        "X-Runtime": "0.007186",
+        "X-Request-Id": "47fa63b4-2625-48c4-b5f4-e9f70871ff78",
+        "X-Runtime": "0.003696",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/89/points\" -d '{\"company_id\":27}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5MH0.S-cNQqaHh_YWzjFxkwheo_hJBsqY2lK5EnBkt17FvjY\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/1092/points\" -d '{\"company_id\":498}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDkzfQ.ZYWY4p5yHe8u43x0x_GqPtPOIRRWxlJCvZDKhvcPLiE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

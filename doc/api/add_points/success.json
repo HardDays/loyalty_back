@@ -48,11 +48,11 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/clients/73/points",
-      "request_body": "{\"points\":100000,\"company_id\":22,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}",
+      "request_path": "api/v1/clients/1076/points",
+      "request_body": "{\"points\":100000,\"company_id\":493,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MX0.NE9F58UKKgNRCWOH8pkEoBmjE2OJy3mYq8Xd0ZTZ3A4",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDc0fQ.owVIOJU5aNCDB7Thxkb_R8qdPbO2ZPYKrsJAfRTYuN4",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -66,13 +66,13 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "712ccfe4-4df2-404e-8e4f-3a107cdbf7ca",
-        "X-Runtime": "0.031447",
+        "X-Request-Id": "a69ce808-15dc-4d95-91d9-42af8d5d4b85",
+        "X-Runtime": "0.025044",
         "Vary": "Origin",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/clients/73/points\" -d '{\"points\":100000,\"company_id\":22,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MX0.NE9F58UKKgNRCWOH8pkEoBmjE2OJy3mYq8Xd0ZTZ3A4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/clients/1076/points\" -d '{\"points\":100000,\"company_id\":493,\"burning_date\":\"30.01.2020\",\"activation_date\":\"30.12.2020\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDc0fQ.owVIOJU5aNCDB7Thxkb_R8qdPbO2ZPYKrsJAfRTYuN4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -82,10 +82,10 @@
     {
       "request_method": "POST",
       "request_path": "api/v1/operators",
-      "request_body": "{\"email\":\"test@test.com\",\"phone\":\"+79993331144\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":37,\"company_id\":76}",
+      "request_body": "{\"email\":\"test@test.com\",\"phone\":\"+79993331144\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":315,\"company_id\":547}",
       "request_headers": {
         "Content-Type": "application/json",
-        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzJ9.3zRyCFIfe9qNn1Y6FSUmfJIovoYiTkBKZuatCW4MHIg",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTc1fQ.UOoaL5dftzdDFZQ1W-9YQxcaj9Rr7X9FEDwF3QyU4HE",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -94,18 +94,18 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 173,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2020-05-30T09:00:44.402Z\",\n  \"updated_at\": \"2020-05-30T09:00:44.402Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": \"79993331144\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n\n  ],\n  \"operator\": [\n    {\n      \"store_id\": 37,\n      \"created_at\": \"2020-05-30T09:00:44.405Z\",\n      \"updated_at\": \"2020-05-30T09:00:44.405Z\",\n      \"company_id\": 76,\n      \"operator_status\": \"active\",\n      \"company\": {\n        \"id\": 76,\n        \"name\": \"test\",\n        \"created_at\": \"2020-05-30T09:00:44.359Z\",\n        \"updated_at\": \"2020-05-30T09:00:44.359Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"creator\": [\n\n  ]\n}",
+      "response_body": "{\n  \"id\": 1176,\n  \"email\": \"test@test.com\",\n  \"created_at\": \"2020-06-02T10:31:30.162Z\",\n  \"updated_at\": \"2020-06-02T10:31:30.162Z\",\n  \"user_type\": null,\n  \"first_name\": \"test\",\n  \"second_name\": \"test\",\n  \"last_name\": \"test\",\n  \"phone\": \"79993331144\",\n  \"gender\": null,\n  \"birth_day\": null,\n  \"client\": [\n\n  ],\n  \"operator\": [\n    {\n      \"store_id\": 315,\n      \"created_at\": \"2020-06-02T10:31:30.165Z\",\n      \"updated_at\": \"2020-06-02T10:31:30.165Z\",\n      \"company_id\": 547,\n      \"operator_status\": \"active\",\n      \"company\": {\n        \"id\": 547,\n        \"name\": \"test\",\n        \"created_at\": \"2020-06-02T10:31:30.134Z\",\n        \"updated_at\": \"2020-06-02T10:31:30.134Z\",\n        \"tariff_plan_purchase_id\": null\n      }\n    }\n  ],\n  \"creator\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"2b9dc9bea0c9b8fc6a8a6639f91d95b1\"",
+        "ETag": "W/\"021c4cbcb5d377db4c38892831c108e6\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9b8aa650-0e03-4194-ac50-45e760b21a6b",
-        "X-Runtime": "0.052450",
+        "X-Request-Id": "bb722c94-6212-40ec-a560-22e2985198ef",
+        "X-Runtime": "0.033450",
         "Vary": "Origin",
-        "Content-Length": "566"
+        "Content-Length": "570"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '{\"email\":\"test@test.com\",\"phone\":\"+79993331144\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":37,\"company_id\":76}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNzJ9.3zRyCFIfe9qNn1Y6FSUmfJIovoYiTkBKZuatCW4MHIg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/operators\" -d '{\"email\":\"test@test.com\",\"phone\":\"+79993331144\",\"first_name\":\"test\",\"last_name\":\"test\",\"second_name\":\"test\",\"store_id\":315,\"company_id\":547}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMTc1fQ.UOoaL5dftzdDFZQ1W-9YQxcaj9Rr7X9FEDwF3QyU4HE\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

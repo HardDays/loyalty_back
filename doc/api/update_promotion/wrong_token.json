@@ -19,8 +19,8 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "api/v1/promotions/15",
-      "request_body": "{\"company_id\":113}",
+      "request_path": "api/v1/promotions/74",
+      "request_body": "{\"company_id\":584}",
       "request_headers": {
         "Content-Type": "application/json",
         "Authorization": "test",
@@ -36,12 +36,12 @@
       "response_headers": {
         "Content-Type": "text/html; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "6b026885-b388-4073-bc7a-28e2541c8b9b",
-        "X-Runtime": "0.001188",
+        "X-Request-Id": "4be7e1c0-6f0b-4737-a27f-0f5c58fcc32e",
+        "X-Runtime": "0.001640",
         "Vary": "Origin"
       },
       "response_content_type": "text/html; charset=utf-8",
-      "curl": "curl \"http://localhost:3000api/v1/promotions/15\" -d '{\"company_id\":113}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000api/v1/promotions/74\" -d '{\"company_id\":584}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: test\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

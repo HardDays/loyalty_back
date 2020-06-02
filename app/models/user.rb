@@ -87,32 +87,40 @@ class User < ApplicationRecord
         end
     end
 
+    def banned(company)
+        begin
+            return CompanyBan.where(company_id: company.id).first
+        rescue => ex
+        end
+        return false
+    end
+
     def company_creator?(company)
-        if !creator(company)
+        if !creator(company) || banned(company)
             raise ApplicationController::Forbidden
         end
     end
 
     def company_operator?(company)
-        if !operator(company)
+        if !operator(company) || banned(company)
             raise ApplicationController::Forbidden
         end
     end
 
     def any_operator?(company)
-        if !any_operator(company)
+        if !any_operator(company) || banned(company)
             raise ApplicationController::Forbidden
         end
     end
 
     def company_operator_creator?(company)
-        if !operator(company) && !creator(company)
+        if !operator(company) && !creator(company) || banned(company)
             raise ApplicationController::Forbidden
         end
     end
 
     def company_client?(company)
-        if !client(company)
+        if !client(company) 
             raise ApplicationController::Forbidden
         end
     end
